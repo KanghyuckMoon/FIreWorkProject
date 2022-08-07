@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1.0021715, g: 1.1373081, b: 1.434166, a: 1}
+  m_IndirectSpecularColor: {r: 1.0717516, g: 1.2351418, b: 1.5945625, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -692,7 +692,10 @@ VisualEffect:
     m_Gradient:
       m_Array: []
     m_NamedObject:
-      m_Array: []
+      m_Array:
+      - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Name: New Texture2D
+        m_Overridden: 1
     m_Bool:
       m_Array: []
 --- !u!4 &1414251778
