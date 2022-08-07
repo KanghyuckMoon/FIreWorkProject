@@ -6,4 +6,6 @@ using UnityEngine;
 public class UserSaveData
 {
 	public string name;
+	public int money;
+	public int happy;
 }
