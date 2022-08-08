@@ -14,6 +14,7 @@ public class FireWorkController : MonoBehaviour
 	[SerializeField] private int _further3 = 0;
 	[SerializeField] private int _further4 = 0;
 	[SerializeField] private int _further5 = 0;
+	private List<string> events = new List<string> { "", "" };
 
 
 	private void Start()

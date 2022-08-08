@@ -26,7 +26,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 		}
 	}
 
-	public void Awake()
+	public virtual void Awake()
 	{
 		//만약 인스턴스가 없을시
 		if (_instance == null)
