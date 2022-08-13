@@ -1,0 +1,26 @@
+{
+  "name": "net.peeweek.vfxgraph-extras",
+  "displayName": "Visual Effect Graph (Extras)",
+  "version": "2020.3.4",
+  "unity": "2020.3",
+  "dependencies": {
+    "com.unity.visualeffectgraph": "10.0.0",
+    "com.unity.shadergraph": "10.0.0"
+  },  
+  "description": "Visual Effect Graph Extras - Extensions and Additions to VFX Graph, not endorsed nor supported by Unity.",
+    "keywords": [
+    "Visual",
+    "Effect",
+    "Graph",
+    "VFX",
+    "VFXGraph",
+    "Extras",
+    "VisualEffect"
+  ],
+  "hideInEditor": false,
+  "author" : 
+  {
+    "name" : "PeeWeeK.NET",
+    "url" : "https://github.com/peeweek/"
+  }
+}

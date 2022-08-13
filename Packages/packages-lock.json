@@ -152,7 +152,7 @@
       }
     },
     "com.unity.render-pipelines.high-definition": {
-      "version": "file:D:/UnityPackage/com.unity.render-pipelines.high-definition@12.1.7",
+      "version": "file:D:/Unity/FIreWorkProject/UnityPackage/com.unity.render-pipelines.high-definition@12.1.7",
       "depth": 0,
       "source": "local",
       "dependencies": {
@@ -269,7 +269,7 @@
       }
     },
     "com.unity.visualeffectgraph": {
-      "version": "file:D:/UnityPackage/com.unity.visualeffectgraph@12.1.7",
+      "version": "file:D:/Unity/FIreWorkProject/UnityPackage/com.unity.visualeffectgraph@12.1.7",
       "depth": 0,
       "source": "local",
       "dependencies": {
