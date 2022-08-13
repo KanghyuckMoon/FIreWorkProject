@@ -152,9 +152,9 @@
       }
     },
     "com.unity.render-pipelines.high-definition": {
-      "version": "12.1.7",
+      "version": "file:D:/UnityPackage/com.unity.render-pipelines.high-definition@12.1.7",
       "depth": 0,
-      "source": "builtin",
+      "source": "local",
       "dependencies": {
         "com.unity.mathematics": "1.2.4",
         "com.unity.burst": "1.6.0",
@@ -269,9 +269,9 @@
       }
     },
     "com.unity.visualeffectgraph": {
-      "version": "12.1.7",
-      "depth": 1,
-      "source": "builtin",
+      "version": "file:D:/UnityPackage/com.unity.visualeffectgraph@12.1.7",
+      "depth": 0,
+      "source": "local",
       "dependencies": {
         "com.unity.shadergraph": "12.1.7",
         "com.unity.render-pipelines.core": "12.1.7"
