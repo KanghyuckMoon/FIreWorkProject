@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1.0717516, g: 1.2351418, b: 1.5945625, a: 1}
+  m_IndirectSpecularColor: {r: 1.0021715, g: 1.1373081, b: 1.434166, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -523,9 +523,8 @@ GameObject:
   - component: {fileID: 1251693544}
   - component: {fileID: 1251693543}
   - component: {fileID: 1251693542}
-  - component: {fileID: 1251693545}
-  - component: {fileID: 1251693548}
   - component: {fileID: 1251693550}
+  - component: {fileID: 1251693551}
   m_Layer: 0
   m_Name: FireworkVFX CPU
   m_TagString: Untagged
@@ -637,120 +636,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1251693545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251693538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be40d2f3409385a48a27caa844ebf5d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  executeInEditor: 1
-  outputEvent:
-    m_Name: Shot
-  outputEvent:
-    m_Name: Shot
-  audioSource: {fileID: 1251693548}
---- !u!82 &1251693548
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251693538}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 59f8d9c8cb2e60a4b82101694e262e66, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &1251693550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,6 +652,22 @@ MonoBehaviour:
   outputEvent:
     m_Name: Explosion
   AudioEFFType: 2
+--- !u!114 &1251693551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251693538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485a6b504bb63cc49adc3b8a67153ca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeInEditor: 1
+  outputEvent:
+    m_Name: Shot
+  AudioEFFType: 1
 --- !u!1 &1284289837
 GameObject:
   m_ObjectHideFlags: 1
@@ -1240,7 +1141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _centerTransform: {fileID: 1370094045}
-  _speed: 5
+  _moveSpeed: 1
+  _zoomSpeed: 1
+  _distance: 0
+  _smoothTime: 0
 --- !u!1 &1656176477
 GameObject:
   m_ObjectHideFlags: 0
