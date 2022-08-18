@@ -6166,7 +6166,8 @@ MonoBehaviour:
   m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
-  m_InputSlots: []
+  m_InputSlots:
+  - {fileID: 8926484042661615621}
   m_OutputSlots: []
   m_Disabled: 0
   m_Subgraph: {fileID: 5371698748595113096, guid: ac432b66a857ddb4d900362e85a44e57, type: 3}
@@ -6300,7 +6301,8 @@ MonoBehaviour:
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
-  m_InputSlots: []
+  m_InputSlots:
+  - {fileID: 8926484042661615620}
   m_OutputSlots: []
   m_Disabled: 0
   m_Subgraph: {fileID: 5371698748595113096, guid: ac432b66a857ddb4d900362e85a44e57, type: 3}
@@ -6440,7 +6442,8 @@ MonoBehaviour:
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
-  m_InputSlots: []
+  m_InputSlots:
+  - {fileID: 8926484042661615618}
   m_OutputSlots: []
   m_Disabled: 0
   m_Subgraph: {fileID: 5371698748595113096, guid: ac432b66a857ddb4d900362e85a44e57, type: 3}
@@ -6462,7 +6465,8 @@ MonoBehaviour:
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
-  m_InputSlots: []
+  m_InputSlots:
+  - {fileID: 8926484042661615619}
   m_OutputSlots: []
   m_Disabled: 0
   m_Subgraph: {fileID: 5371698748595113096, guid: ac432b66a857ddb4d900362e85a44e57, type: 3}
@@ -9820,3 +9824,139 @@ MonoBehaviour:
   title: 
   m_Owners:
   - {fileID: 8926484042661615612}
+--- !u!114 &8926484042661615618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f778ff57c4e8145b9681fe3268d8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661615618}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661615020}
+    m_Value:
+      m_Type:
+        m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":785404.0,"g":785404.0,"b":785404.0,"a":1.0},"time":0.0},{"color":{"r":148.5803985595703,"g":546.1333618164063,"b":766.99609375,"a":1.0},"time":0.032349128276109698},{"color":{"r":785404.0,"g":205603.140625,"b":616809.4375,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":0.6549019813537598,"time":0.7676509022712708},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+    m_Space: 2147483647
+  m_Property:
+    name: HDRGradient
+    m_serializedType:
+      m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661615619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f778ff57c4e8145b9681fe3268d8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661615619}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661615021}
+    m_Value:
+      m_Type:
+        m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":785404.0,"g":785404.0,"b":785404.0,"a":1.0},"time":0.0},{"color":{"r":148.5803985595703,"g":546.1333618164063,"b":766.99609375,"a":1.0},"time":0.032349128276109698},{"color":{"r":785404.0,"g":205603.140625,"b":616809.4375,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":0.6549019813537598,"time":0.7676509022712708},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+    m_Space: 2147483647
+  m_Property:
+    name: HDRGradient
+    m_serializedType:
+      m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661615620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f778ff57c4e8145b9681fe3268d8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661615620}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661615015}
+    m_Value:
+      m_Type:
+        m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":785404.0,"g":785404.0,"b":785404.0,"a":1.0},"time":0.0},{"color":{"r":148.5803985595703,"g":546.1333618164063,"b":766.99609375,"a":1.0},"time":0.032349128276109698},{"color":{"r":785404.0,"g":205603.140625,"b":616809.4375,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":0.6549019813537598,"time":0.7676509022712708},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+    m_Space: 2147483647
+  m_Property:
+    name: HDRGradient
+    m_serializedType:
+      m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661615621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f778ff57c4e8145b9681fe3268d8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661615621}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661615005}
+    m_Value:
+      m_Type:
+        m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":785404.0,"g":785404.0,"b":785404.0,"a":1.0},"time":0.0},{"color":{"r":148.5803985595703,"g":546.1333618164063,"b":766.99609375,"a":1.0},"time":0.032349128276109698},{"color":{"r":785404.0,"g":205603.140625,"b":616809.4375,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":0.6549019813537598,"time":0.7676509022712708},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+    m_Space: 2147483647
+  m_Property:
+    name: HDRGradient
+    m_serializedType:
+      m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  m_Direction: 0
+  m_LinkedSlots: []

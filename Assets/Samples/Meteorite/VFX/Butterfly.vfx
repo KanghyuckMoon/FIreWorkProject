@@ -20,7 +20,7 @@ MonoBehaviour:
     x: 258
     y: -466
     width: 1306
-    height: 3069
+    height: 3087
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4c867f6b72b714dbb5fd1780afe208, type: 3}
-  m_Name: VFX_Butterfly
+  m_Name: Butterfly
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 0}
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_UIInfos: {fileID: 114340500867371532}
   m_ParameterInfo: []
   m_ImportDependencies: []
-  m_GraphVersion: 8
+  m_GraphVersion: 9
   m_ResourceVersion: 1
   m_SubgraphDependencies: []
   m_CategoryPath: 
@@ -59,7 +59,7 @@ VisualEffectResource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VFX_Butterfly
+  m_Name: Butterfly
   m_Graph: {fileID: 114350483966674976}
   m_Infos:
     m_RendererSettings:
@@ -157,7 +157,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 40
+      m_SerializableObject: 5
     m_Space: 2147483647
   m_Property:
     name: Rate
@@ -535,7 +535,7 @@ MonoBehaviour:
   stripCapacity: 16
   particlePerStripCount: 16
   needsComputeBounds: 0
-  boundsSettingMode: 1
+  boundsMode: 1
   m_Space: 0
 --- !u!114 &8926484042661614580
 MonoBehaviour:
@@ -3355,7 +3355,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":2.0,"g":0.8462636470794678,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":1.3123130798339844,"g":0.0,"b":2.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":15.999998092651368,"g":6.785339832305908,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":42.72250747680664,"g":42.72250747680664,"b":42.72250747680664,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
