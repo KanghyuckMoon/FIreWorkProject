@@ -10,7 +10,7 @@ public class SoundManager : Singleton<SoundManager>
 	private AudioMixerGroup _effAudioGroup;
 	private AudioSource _bgmAudioSource = null;
 	private Dictionary<AudioBGMType, AudioClip> _bgmAudioClips = new Dictionary<AudioBGMType, AudioClip>();
-	private Dictionary<AudioEFFType, AudioSource> _effAudioSource = new Dictionary<AudioEFFType, AudioSource>();
+	private Dictionary<AudioEFFType, AudioClip> _effAudioClips = new Dictionary<AudioEFFType, AudioClip>();
 	private AudioBGMType _currentBGMType = AudioBGMType.Count;
 	private bool _isInit = false;
 
@@ -59,7 +59,7 @@ public class SoundManager : Singleton<SoundManager>
 		_bgmAudioSource = audioSource;
 
 		int count = (int)AudioBGMType.Count;
-		for (int i = 0; i < count; ++i)
+		for (int i = 1; i < count; ++i)
 		{
 			string key = System.Enum.GetName(typeof(AudioBGMType), i);
 			AudioClip audioClip = AddressablesManager.Instance.GetResource<AudioClip>(key);
@@ -73,7 +73,7 @@ public class SoundManager : Singleton<SoundManager>
 	private void GenerateEFFAudioSource()
 	{
 		int count = (int)AudioEFFType.Count;
-		for (int i = 0; i < count; ++i)
+		for (int i = 1; i < count; ++i)
 		{
 			//키와 오디오 클립 가져오기
 			string key = System.Enum.GetName(typeof(AudioEFFType), i);
@@ -88,7 +88,7 @@ public class SoundManager : Singleton<SoundManager>
 			audioSource.playOnAwake = false;
 
 			//오디오 소스에 추가하기
-			_effAudioSource.Add((AudioEFFType)i, audioSource);
+			_effAudioClips.Add((AudioEFFType)i, audioClip);
 		}
 	}
 
@@ -103,7 +103,15 @@ public class SoundManager : Singleton<SoundManager>
 			Init();
 		}
 
-		_effAudioSource[audioEFFType].Play();
+		//새로운 오디오 소스 만들기
+		GameObject obj = new GameObject(audioEFFType.ToString());
+		obj.transform.SetParent(transform);
+		AudioSource audioSource = obj.AddComponent<AudioSource>();
+		audioSource.outputAudioMixerGroup = _effAudioGroup;
+		audioSource.clip = _effAudioClips[audioEFFType];
+		audioSource.playOnAwake = false;
+		audioSource.Play();
+
 	}
 
 	/// <summary>

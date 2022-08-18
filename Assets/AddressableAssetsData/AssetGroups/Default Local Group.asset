@@ -25,6 +25,10 @@ MonoBehaviour:
     m_Address: Fire
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: c28fd44c167534e4b936f0b8d5ae5c1a
+    m_Address: MainMixer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f40676d7780e8c64fab3433b4f82e49f, type: 2}
   m_SchemaSet:
