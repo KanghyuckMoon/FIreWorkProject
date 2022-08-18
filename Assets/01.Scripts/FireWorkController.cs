@@ -53,9 +53,13 @@ public class FireWorkController : MonoBehaviour
 		{
 			for(int i = 0; i < _count; ++i)
 			{
+				float lifeTime = Random.Range(1f, 2f);
+				_visualEffect.SetFloat("lifeTime", lifeTime);
+				explosiontime.Add(lifeTime);
 				_visualEffect.SendEvent("Play");
-				explosiontime.Add(1);
+				yield return new WaitForSeconds(0.1f);
 			}
+
 			yield return new WaitForSeconds(_rate);
 		}
 	}
