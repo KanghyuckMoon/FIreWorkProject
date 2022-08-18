@@ -17,13 +17,17 @@ public class UserSaveDataManager : Singleton<UserSaveDataManager>
 		}
 	}
 
-	private UserSaveData _userSaveData = null;
-	private static string _dataPath = Application.persistentDataPath + "/Save/";
+	[SerializeField] private UserSaveData _userSaveData = null;
+	private static string _dataPath = "";
 	private static string _SaveFileName = "Save.txt";
 
-	private void Awake()
+	public override  void Awake()
 	{
-		if(GetCheckBool())
+		base.Awake();
+
+		_dataPath = Application.persistentDataPath + "/Save/";
+
+		if (GetCheckBool())
 		{
 			Load();
 		}

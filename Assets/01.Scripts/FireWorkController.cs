@@ -6,6 +6,14 @@ using UnityEngine.VFX;
 public class FireWorkController : MonoBehaviour
 {
 
+	public float Rate => _rate;
+	public int Count => _count;
+	public int Further1 => _further1;
+	public int Further2 => _further2;
+	public int Further3 => _further3;
+	public int Further4 => _further4;
+	public int Further5 => _further5;
+
 	[SerializeField] private VisualEffect _visualEffect = null;
 	[SerializeField] private float _rate = 0f;
 	[SerializeField] private int _count = 0;
@@ -15,7 +23,6 @@ public class FireWorkController : MonoBehaviour
 	[SerializeField] private int _further4 = 0;
 	[SerializeField] private int _further5 = 0;
 	private List<float> explosiontime = new List<float>();
-
 	public bool corotin;
 
 
