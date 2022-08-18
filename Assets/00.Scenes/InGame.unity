@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1.0021715, g: 1.1373081, b: 1.434166, a: 1}
+  m_IndirectSpecularColor: {r: 1.0717516, g: 1.2351418, b: 1.5945625, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -523,8 +523,8 @@ GameObject:
   - component: {fileID: 1251693544}
   - component: {fileID: 1251693543}
   - component: {fileID: 1251693542}
-  - component: {fileID: 1251693550}
-  - component: {fileID: 1251693551}
+  - component: {fileID: 1251693553}
+  - component: {fileID: 1251693552}
   m_Layer: 0
   m_Name: FireworkVFX CPU
   m_TagString: Untagged
@@ -636,7 +636,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1251693550
+--- !u!114 &1251693552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -645,14 +645,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1251693538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 485a6b504bb63cc49adc3b8a67153ca3, type: 3}
+  m_Script: {fileID: 11500000, guid: 59a5a33d90dec1242bde81cd506ee19c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   executeInEditor: 0
   outputEvent:
     m_Name: Explosion
-  AudioEFFType: 2
---- !u!114 &1251693551
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1656176478}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayFire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1251693553
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -661,13 +675,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1251693538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 485a6b504bb63cc49adc3b8a67153ca3, type: 3}
+  m_Script: {fileID: 11500000, guid: 59a5a33d90dec1242bde81cd506ee19c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executeInEditor: 1
+  executeInEditor: 0
   outputEvent:
     m_Name: Shot
-  AudioEFFType: 1
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1656176478}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1284289837
 GameObject:
   m_ObjectHideFlags: 1
@@ -1145,6 +1173,7 @@ MonoBehaviour:
   _zoomSpeed: 1
   _distance: 0
   _smoothTime: 0
+  _velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1656176477
 GameObject:
   m_ObjectHideFlags: 0

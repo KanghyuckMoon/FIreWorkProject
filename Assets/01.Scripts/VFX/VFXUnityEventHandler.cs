@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.VFX;
+using UnityEngine.VFX.Utility;
 
-public class VFXUnityEventHandler : MonoBehaviour
+
+[RequireComponent(typeof(VisualEffect))]
+public class VFXUnityEventHandler : VFXOutputEventAbstractHandler
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [HideInInspector] public override bool canExecuteInEditor => false;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private UnityEvent _unityEvent;
+
+    public override void OnVFXOutputEvent(VFXEventAttribute eventAttribute)
     {
-        
+        _unityEvent?.Invoke();
     }
 }
+

@@ -130,6 +130,22 @@ public class SoundManager : Singleton<SoundManager>
 		_bgmAudioSource.Play();
 	}
 
+	/// <summary>
+	/// 쏘는 효과음 재생
+	/// </summary>
+	public void PlayShot()
+	{
+		PlayEFF(AudioEFFType.Shot);
+	}
+	/// <summary>
+	/// 폭발하는 효과음 재생
+	/// </summary>
+	public void PlayFire()
+	{
+		PlayEFF(AudioEFFType.Fire);
+	}
+
+
 	private void OneShot(AudioClip clip, float volume)
 	{
 		foreach(var oneShot in _effOneShots)
