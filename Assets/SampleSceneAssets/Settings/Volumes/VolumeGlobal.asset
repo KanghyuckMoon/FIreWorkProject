@@ -151,11 +151,11 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value:
       mode: 0
-      customValue: 116
+      customValue: 90
       additiveValue: 0
       multiplyValue: 0
   scrollSpeed:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value:
       mode: 1
       customValue: 100
@@ -846,11 +846,11 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   localClouds:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   earthCurvature:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   cloudTiling:
     m_OverrideState: 0
     m_Value: {x: 1, y: 1}
@@ -874,7 +874,7 @@ MonoBehaviour:
     m_Value: 0
   numPrimarySteps:
     m_OverrideState: 0
-    m_Value: 48
+    m_Value: 32
   numLightSteps:
     m_OverrideState: 0
     m_Value: 8
@@ -889,7 +889,7 @@ MonoBehaviour:
     m_Value: 0
   cloudPreset:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   cumulusMap:
     m_OverrideState: 0
     m_Value: {fileID: 0}
