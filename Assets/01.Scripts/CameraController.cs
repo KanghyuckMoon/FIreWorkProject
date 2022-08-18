@@ -5,12 +5,14 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform _centerTransform = null;
-    [SerializeField] private float _moveSpeed;
-    [SerializeField] private float _zoomSpeed;
-    [SerializeField] private float _distance;
+    [SerializeField] private float _moveSpeed = 1;
+    [SerializeField] private float _zoomSpeed = 1;
+    [SerializeField] private float _distance = 3;
     [SerializeField] private float _smoothTime;
+    [SerializeField] private Vector3 _velocity;
     Vector3 _yVector = Vector3.zero;
     Vector3 _xVector = Vector3.zero;
+    Vector3 _moveVector = Vector3.zero;
 
     // Update is called once per frame
     void LateUpdate()
@@ -51,6 +53,7 @@ public class CameraController : MonoBehaviour
 
     private void CameraPositionSetting()
     {
-        transform.position = _xVector + _yVector + _centerTransform.position - transform.forward * _distance;
+        _moveVector = _xVector + _yVector + _centerTransform.position - transform.forward * _distance;
+        transform.position = Vector3.SmoothDamp(transform.position, _moveVector, ref _velocity, _smoothTime);
     }
 }
