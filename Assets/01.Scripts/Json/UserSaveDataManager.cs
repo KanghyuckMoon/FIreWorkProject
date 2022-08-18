@@ -5,7 +5,7 @@ using System.IO;
 
 public class UserSaveDataManager : Singleton<UserSaveDataManager>
 {
-	public static UserSaveData UserSaveData
+	public UserSaveData UserSaveData
 	{ 
 		get
 		{
@@ -17,7 +17,7 @@ public class UserSaveDataManager : Singleton<UserSaveDataManager>
 		}
 	}
 
-	private static UserSaveData _userSaveData = null;
+	private UserSaveData _userSaveData = null;
 	private static string _dataPath = Application.persistentDataPath + "/Save/";
 	private static string _SaveFileName = "Save.txt";
 
@@ -38,7 +38,7 @@ public class UserSaveDataManager : Singleton<UserSaveDataManager>
 		{
 			Directory.CreateDirectory(_dataPath);
 		}
-		string jsonData = JsonUtility.ToJson(UserSaveData);
+		string jsonData = JsonUtility.ToJson(Instance.UserSaveData);
 		File.WriteAllText(_dataPath + _SaveFileName, jsonData);
 	}
 
@@ -51,7 +51,7 @@ public class UserSaveDataManager : Singleton<UserSaveDataManager>
 		{
 			string jsonData = File.ReadAllText(_dataPath + _SaveFileName);
 			UserSaveData saverData = JsonUtility.FromJson<UserSaveData>(jsonData);
-			UserSaveData = saverData;
+			Instance.UserSaveData = saverData;
 		}
 	}
 

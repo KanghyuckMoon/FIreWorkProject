@@ -15,7 +15,6 @@ namespace UnityEditor.VFX
     class VFXBasicGPUEvent : VFXContext
     {
         public VFXBasicGPUEvent() : base(VFXContextType.SpawnerGPU, VFXDataType.None, VFXDataType.SpawnEvent) { }
-        public VFXBasicGPUEvent(VFXContextType ThisDataType, VFXDataType InputDataType, VFXDataType OutDataType) : base(ThisDataType, InputDataType, OutDataType) { }
         public override string name { get { return "GPUEvent"; } }
 
         public class InputProperties

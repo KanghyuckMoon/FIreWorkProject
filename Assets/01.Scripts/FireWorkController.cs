@@ -14,12 +14,67 @@ public class FireWorkController : MonoBehaviour
 	[SerializeField] private int _further3 = 0;
 	[SerializeField] private int _further4 = 0;
 	[SerializeField] private int _further5 = 0;
-	private List<string> events = new List<string> { "", "" };
+	private List<float> explosiontime = new List<float>();
+
+	public bool corotin;
 
 
 	private void Start()
 	{
 		UpdateRate();
+		if (corotin)
+		{ 
+			StartCoroutine(FireworkStart());
+		
+		}
+
+	}
+
+	private void Update()
+	{
+		Explosion();
+	}
+
+	[ContextMenu("Play")]
+	public void Play()
+	{
+		_visualEffect.SendEvent("Play");
+	}
+
+	[ContextMenu("Stop")]
+	public void Stop()
+	{
+		_visualEffect.SendEvent("Stop");
+	}
+
+	public IEnumerator FireworkStart()
+	{
+		while(true)
+		{
+			for(int i = 0; i < _count; ++i)
+			{
+				float lifeTime = Random.Range(3f, 4f);
+				_visualEffect.SetFloat("lifeTime", lifeTime);
+				explosiontime.Add(lifeTime);
+				_visualEffect.SendEvent("Play");
+				yield return new WaitForSeconds(0.1f);
+			}
+
+			yield return new WaitForSeconds(_rate);
+		}
+	}
+
+	public void Explosion()
+	{
+		for(int i = 0; i < explosiontime.Count; ++i)
+		{
+			explosiontime[i] -= Time.deltaTime;
+			if(explosiontime[i] <= 0f)
+			{
+				_visualEffect.SendEvent("Explosion");
+				explosiontime.RemoveAt(i--);
+			}
+		}
 	}
 
 	/// <summary>

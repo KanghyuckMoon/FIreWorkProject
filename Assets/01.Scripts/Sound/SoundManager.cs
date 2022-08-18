@@ -10,8 +10,9 @@ public class SoundManager : Singleton<SoundManager>
 	private AudioMixerGroup _effAudioGroup;
 	private AudioSource _bgmAudioSource = null;
 	private Dictionary<AudioBGMType, AudioClip> _bgmAudioClips = new Dictionary<AudioBGMType, AudioClip>();
-	private Dictionary<AudioEFFType, AudioSource> _effAudioSource = new Dictionary<AudioEFFType, AudioSource>();
+	private Dictionary<AudioEFFType, AudioClip> _effAudioClips = new Dictionary<AudioEFFType, AudioClip>();
 	private AudioBGMType _currentBGMType = AudioBGMType.Count;
+	private List<OneShot> _effOneShots = new List<OneShot>();
 	private bool _isInit = false;
 
 	public override void Awake()
@@ -59,7 +60,7 @@ public class SoundManager : Singleton<SoundManager>
 		_bgmAudioSource = audioSource;
 
 		int count = (int)AudioBGMType.Count;
-		for (int i = 0; i < count; ++i)
+		for (int i = 1; i < count; ++i)
 		{
 			string key = System.Enum.GetName(typeof(AudioBGMType), i);
 			AudioClip audioClip = AddressablesManager.Instance.GetResource<AudioClip>(key);
@@ -73,7 +74,7 @@ public class SoundManager : Singleton<SoundManager>
 	private void GenerateEFFAudioSource()
 	{
 		int count = (int)AudioEFFType.Count;
-		for (int i = 0; i < count; ++i)
+		for (int i = 1; i < count; ++i)
 		{
 			//키와 오디오 클립 가져오기
 			string key = System.Enum.GetName(typeof(AudioEFFType), i);
@@ -88,7 +89,7 @@ public class SoundManager : Singleton<SoundManager>
 			audioSource.playOnAwake = false;
 
 			//오디오 소스에 추가하기
-			_effAudioSource.Add((AudioEFFType)i, audioSource);
+			_effAudioClips.Add((AudioEFFType)i, audioClip);
 		}
 	}
 
@@ -103,7 +104,7 @@ public class SoundManager : Singleton<SoundManager>
 			Init();
 		}
 
-		_effAudioSource[audioEFFType].Play();
+		OneShot(_effAudioClips[audioEFFType], 1f);
 	}
 
 	/// <summary>
@@ -127,5 +128,54 @@ public class SoundManager : Singleton<SoundManager>
 		_bgmAudioSource.Stop();
 		_bgmAudioSource.clip = _bgmAudioClips[audioBGMType];
 		_bgmAudioSource.Play();
+	}
+
+	/// <summary>
+	/// 쏘는 효과음 재생
+	/// </summary>
+	public void PlayShot()
+	{
+		PlayEFF(AudioEFFType.Shot);
+	}
+	/// <summary>
+	/// 폭발하는 효과음 재생
+	/// </summary>
+	public void PlayFire()
+	{
+		PlayEFF(AudioEFFType.Fire);
+	}
+
+
+	private void OneShot(AudioClip clip, float volume)
+	{
+		foreach(var oneShot in _effOneShots)
+		{
+			if(!oneShot.gameObject.activeSelf)
+			{
+				AudioSource OneShotaudioSource = oneShot.GetComponent<AudioSource>();
+				OneShotaudioSource.clip = clip;
+				OneShotaudioSource.spatialBlend = 1f;
+				OneShotaudioSource.volume = volume;
+				OneShotaudioSource.gameObject.SetActive(true);
+				OneShotaudioSource.Play();
+				return;
+			}
+		}
+		OneShotGeneration(clip, volume);
+	}
+
+	private void OneShotGeneration(AudioClip clip, float volume)
+	{
+		GameObject gameObject = new GameObject("One shot audio");
+		gameObject.SetActive(false);
+		gameObject.transform.position = Vector3.zero;
+		AudioSource audioSource = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
+		audioSource.clip = clip;
+		audioSource.spatialBlend = 1f;
+		audioSource.volume = volume;
+		audioSource.outputAudioMixerGroup = _effAudioGroup;
+		_effOneShots.Add((OneShot)gameObject.AddComponent(typeof(OneShot)));
+		gameObject.SetActive(true);
+		audioSource.Play();		
 	}
 }
