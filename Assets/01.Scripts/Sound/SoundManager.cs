@@ -12,6 +12,7 @@ public class SoundManager : Singleton<SoundManager>
 	private Dictionary<AudioBGMType, AudioClip> _bgmAudioClips = new Dictionary<AudioBGMType, AudioClip>();
 	private Dictionary<AudioEFFType, AudioClip> _effAudioClips = new Dictionary<AudioEFFType, AudioClip>();
 	private AudioBGMType _currentBGMType = AudioBGMType.Count;
+	private List<OneShot> _effOneShots = new List<OneShot>();
 	private bool _isInit = false;
 
 	public override void Awake()
@@ -103,15 +104,7 @@ public class SoundManager : Singleton<SoundManager>
 			Init();
 		}
 
-		//새로운 오디오 소스 만들기
-		GameObject obj = new GameObject(audioEFFType.ToString());
-		obj.transform.SetParent(transform);
-		AudioSource audioSource = obj.AddComponent<AudioSource>();
-		audioSource.outputAudioMixerGroup = _effAudioGroup;
-		audioSource.clip = _effAudioClips[audioEFFType];
-		audioSource.playOnAwake = false;
-		audioSource.Play();
-
+		OneShot(_effAudioClips[audioEFFType], 1f);
 	}
 
 	/// <summary>
@@ -135,5 +128,38 @@ public class SoundManager : Singleton<SoundManager>
 		_bgmAudioSource.Stop();
 		_bgmAudioSource.clip = _bgmAudioClips[audioBGMType];
 		_bgmAudioSource.Play();
+	}
+
+	private void OneShot(AudioClip clip, float volume)
+	{
+		foreach(var oneShot in _effOneShots)
+		{
+			if(!oneShot.gameObject.activeSelf)
+			{
+				AudioSource OneShotaudioSource = oneShot.GetComponent<AudioSource>();
+				OneShotaudioSource.clip = clip;
+				OneShotaudioSource.spatialBlend = 1f;
+				OneShotaudioSource.volume = volume;
+				OneShotaudioSource.gameObject.SetActive(true);
+				OneShotaudioSource.Play();
+				return;
+			}
+		}
+		OneShotGeneration(clip, volume);
+	}
+
+	private void OneShotGeneration(AudioClip clip, float volume)
+	{
+		GameObject gameObject = new GameObject("One shot audio");
+		gameObject.SetActive(false);
+		gameObject.transform.position = Vector3.zero;
+		AudioSource audioSource = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
+		audioSource.clip = clip;
+		audioSource.spatialBlend = 1f;
+		audioSource.volume = volume;
+		audioSource.outputAudioMixerGroup = _effAudioGroup;
+		_effOneShots.Add((OneShot)gameObject.AddComponent(typeof(OneShot)));
+		gameObject.SetActive(true);
+		audioSource.Play();		
 	}
 }
