@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
+using static Utill.VFX;
 
 public class FireWorkController : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class FireWorkController : MonoBehaviour
 	public int Further2 => _further2;
 	public int Further3 => _further3;
 	public int Further4 => _further4;
-	public int Further5 => _further5;
 	public bool IsCanFurther1
 	{
 		get
@@ -41,13 +41,6 @@ public class FireWorkController : MonoBehaviour
 			return _further3 > 10;
 		}
 	}
-	public bool IsCanFurther5
-	{
-		get
-		{
-			return _further4 > 10;
-		}
-	}
 
 	[SerializeField] private VisualEffect _visualEffect = null;
 	[SerializeField] private float _rate = 5f;
@@ -56,7 +49,12 @@ public class FireWorkController : MonoBehaviour
 	[SerializeField] private int _further2 = 0;
 	[SerializeField] private int _further3 = 0;
 	[SerializeField] private int _further4 = 0;
-	[SerializeField] private int _further5 = 0;
+	[SerializeField] private Gradient _furtherColor1;
+	[SerializeField] private Gradient _furtherColor2;
+	[SerializeField] private Gradient _furtherColor3;
+	[SerializeField] private Gradient _furtherColor4;
+
+
 	private List<float> _explosiontime = new List<float>();
 	public bool corotin;
 
@@ -115,27 +113,11 @@ public class FireWorkController : MonoBehaviour
 	}
 
 	/// <summary>
-	/// VFX 프로퍼티 설정
-	/// </summary>
-	public void VFXSetFloat(string name, float value)
-	{
-		_visualEffect.SetFloat(name, value);
-	}
-
-	/// <summary>
-	/// VFX 프로퍼티 설정
-	/// </summary>
-	public void VFXSetInt(string name, int value)
-	{
-		_visualEffect.SetInt(name, value);
-	}
-
-	/// <summary>
 	/// 주기 설정
 	/// </summary>
 	public void UpdateRate()
 	{
-		VFXSetFloat("Rate", _rate);
+		VFXSetFloat(_visualEffect, "Rate", _rate);
 	}
 
 	/// <summary>
@@ -143,7 +125,7 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount1()
 	{
-		VFXSetInt("FurtherCount1", _further1);
+		VFXSetInt(_visualEffect, "FurtherCount1", _further1);
 	}
 
 	/// <summary>
@@ -151,7 +133,7 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount2()
 	{
-		VFXSetInt("FurtherCount2", _further2);
+		VFXSetInt(_visualEffect, "FurtherCount2", _further2);
 	}
 
 	/// <summary>
@@ -159,7 +141,7 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount3()
 	{
-		VFXSetInt("FurtherCount3", _further3);
+		VFXSetInt(_visualEffect, "FurtherCount3", _further3);
 	}
 
 	/// <summary>
@@ -167,24 +149,39 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount4()
 	{
-		VFXSetInt("FurtherCount4", _further4);
-	}
-
-
-	/// <summary>
-	/// 추가폭발5 설정
-	/// </summary>
-	public void UpdateFurtherCount5()
-	{
-		VFXSetInt("FurtherCount5", _further5);
+		VFXSetInt(_visualEffect, "FurtherCount4", _further4);
 	}
 
 	/// <summary>
-	/// 갯수 설정
+	/// 추가폭발1 색상 지정
 	/// </summary>
-	public void UpdateCount()
+	public void UpdateFurtherColor1()
 	{
-		VFXSetInt("SpawnCount", _count);
+		VFXSetGradient(_visualEffect, "FurtherColor1", _furtherColor1);
+	}
+
+	/// <summary>
+	/// 추가폭발2 색상 지정
+	/// </summary>
+	public void UpdateFurtherColor2()
+	{
+		VFXSetGradient(_visualEffect, "FurtherColor2", _furtherColor2);
+	}
+
+	/// <summary>
+	/// 추가폭발3 색상 지정
+	/// </summary>
+	public void UpdateFurtherColor3()
+	{
+		VFXSetGradient(_visualEffect, "FurtherColor3", _furtherColor3);
+	}
+
+	/// <summary>
+	/// 추가폭발4 색상 지정
+	/// </summary>
+	public void UpdateFurtherColor4()
+	{
+		VFXSetGradient(_visualEffect, "FurtherColor4", _furtherColor4);
 	}
 
 	/// <summary>
@@ -240,21 +237,60 @@ public class FireWorkController : MonoBehaviour
 	}
 
 	/// <summary>
-	/// 추가폭발5 설정
-	/// </summary>
-	public void UpdateFurtherCount5(int add)
-	{
-		_further5 += add;
-		UpdateFurtherCount5();
-	}
-
-	/// <summary>
 	/// 갯수 설정
 	/// </summary>
 	public void UpdateCount(int add)
 	{
 		_count += add;
-		UpdateCount();
+	}
+
+	/// <summary>
+	/// 추가폭발 색상 1변경
+	/// </summary>
+	/// <param name="gradient"></param>
+	public void ChangeFurtherColor1(Gradient gradient)
+	{
+		_furtherColor1 = gradient;
+		UpdateFurtherColor1();
+	}
+	/// <summary>
+	/// 추가폭발 색상 2변경
+	/// </summary>
+	/// <param name="gradient"></param>
+	public void ChangeFurtherColor2(Gradient gradient)
+	{
+		_furtherColor2 = gradient;
+		UpdateFurtherColor2();
+	}
+	/// <summary>
+	/// 추가폭발 색상 3변경
+	/// </summary>
+	/// <param name="gradient"></param>
+	public void ChangeFurtherColor3(Gradient gradient)
+	{
+		_furtherColor3 = gradient;
+		UpdateFurtherColor3();
+	}
+	/// <summary>
+	/// 추가폭발 색상 4변경
+	/// </summary>
+	/// <param name="gradient"></param>
+	public void ChangeFurtherColor4(Gradient gradient)
+	{
+		_furtherColor4 = gradient;
+		UpdateFurtherColor4();
+	}
+
+	[ContextMenu("RefreshUpdateFurtherColor")]
+	/// <summary>
+	/// 현재 색상 새로고침
+	/// </summary>
+	public void RefreshUpdateFurtherColor()
+	{
+		UpdateFurtherColor1();
+		UpdateFurtherColor2();
+		UpdateFurtherColor3();
+		UpdateFurtherColor4();
 	}
 
 }

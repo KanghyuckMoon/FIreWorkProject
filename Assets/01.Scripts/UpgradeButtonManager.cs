@@ -11,7 +11,6 @@ public class UpgradeButtonManager : MonoBehaviour
 	[SerializeField] private Button _furtherbutton2;
 	[SerializeField] private Button _furtherbutton3;
 	[SerializeField] private Button _furtherbutton4;
-	[SerializeField]  private Button _furtherbutton5;
 
 	private FireWorkController _fireWorkController;
 
@@ -24,6 +23,5 @@ public class UpgradeButtonManager : MonoBehaviour
 		_furtherbutton2.onClick.AddListener(() => _fireWorkController.UpdateFurtherCount2(1));
 		_furtherbutton3.onClick.AddListener(() => _fireWorkController.UpdateFurtherCount3(1));
 		_furtherbutton4.onClick.AddListener(() => _fireWorkController.UpdateFurtherCount4(1));
-		_furtherbutton5.onClick.AddListener(() => _fireWorkController.UpdateFurtherCount5(1));
 	}
 }
