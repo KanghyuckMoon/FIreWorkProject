@@ -53,6 +53,10 @@ public class FireWorkController : MonoBehaviour
 	[SerializeField] private Gradient _furtherColor2;
 	[SerializeField] private Gradient _furtherColor3;
 	[SerializeField] private Gradient _furtherColor4;
+	[SerializeField] private Texture2D _furtherTexture1;
+	[SerializeField] private Texture2D _furtherTexture2;
+	[SerializeField] private Texture2D _furtherTexture3;
+	[SerializeField] private Texture2D _furtherTexture4;
 
 
 	private List<float> _explosiontime = new List<float>();
@@ -185,6 +189,38 @@ public class FireWorkController : MonoBehaviour
 	}
 
 	/// <summary>
+	/// 추가폭발1 색상 지정
+	/// </summary>
+	public void UpdateFurtherTexture1()
+	{
+		VFXSetTexture(_visualEffect, "FurtherTexture1", _furtherTexture1);
+	}
+
+	/// <summary>
+	/// 추가폭발2 색상 지정
+	/// </summary>
+	public void UpdateFurtherTexture2()
+	{
+		VFXSetTexture(_visualEffect, "FurtherTexture2", _furtherTexture2);
+	}
+
+	/// <summary>
+	/// 추가폭발3 색상 지정
+	/// </summary>
+	public void UpdateFurtherTexture3()
+	{
+		VFXSetTexture(_visualEffect, "FurtherTexture3", _furtherTexture3);
+	}
+
+	/// <summary>
+	/// 추가폭발4 색상 지정
+	/// </summary>
+	public void UpdateFurtherTexture4()
+	{
+		VFXSetTexture(_visualEffect, "FurtherTexture4", _furtherTexture4);
+	}
+
+	/// <summary>
 	/// 주기 증가
 	/// </summary>
 	/// <param name="add"></param>
@@ -281,6 +317,43 @@ public class FireWorkController : MonoBehaviour
 		UpdateFurtherColor4();
 	}
 
+	/// <summary>
+	/// 추가폭발 색상 1변경
+	/// </summary>
+	/// <param name="gradient"></param>
+	public void ChangeFurtherTexture1(Texture2D texture)
+	{
+		_furtherTexture1 = texture;
+		UpdateFurtherTexture1();
+	}
+	/// <summary>
+	/// 추가폭발 색상 2변경
+	/// </summary>
+	/// <param name="gradient"></param>
+	public void ChangeFurtherTexture2(Texture2D texture)
+	{
+		_furtherTexture2 = texture;
+		UpdateFurtherTexture2();
+	}
+	/// <summary>
+	/// 추가폭발 색상 3변경
+	/// </summary>
+	/// <param name="gradient"></param>
+	public void ChangeFurtherTexture3(Texture2D texture)
+	{
+		_furtherTexture3 = texture;
+		UpdateFurtherTexture3();
+	}
+	/// <summary>
+	/// 추가폭발 색상 4변경
+	/// </summary>
+	/// <param name="gradient"></param>
+	public void ChangeFurtherTexture4(Texture2D texture)
+	{
+		_furtherTexture4 = texture;
+		UpdateFurtherTexture4();
+	}
+
 	[ContextMenu("RefreshUpdateFurtherColor")]
 	/// <summary>
 	/// 현재 색상 새로고침
@@ -292,5 +365,14 @@ public class FireWorkController : MonoBehaviour
 		UpdateFurtherColor3();
 		UpdateFurtherColor4();
 	}
-
+	/// <summary>
+	/// 현재 텍스쳐 새로고침
+	/// </summary>
+	public void RefreshUpdateFurtherTexture()
+	{
+		UpdateFurtherTexture1();
+		UpdateFurtherTexture2();
+		UpdateFurtherTexture3();
+		UpdateFurtherTexture4();
+	}
 }

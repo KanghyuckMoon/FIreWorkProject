@@ -30,6 +30,14 @@ namespace Utill
 		{
 			visualEffect.SetGradient(name, value);
 		}
+
+		/// <summary>
+		/// VFX 프로퍼티 설정
+		/// </summary>
+		public static void VFXSetTexture(VisualEffect visualEffect, string name, Texture value)
+		{
+			visualEffect.SetTexture(name, value);
+		}
 	}
 
 }
