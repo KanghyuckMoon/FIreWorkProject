@@ -13,28 +13,58 @@ public class FireWorkController : MonoBehaviour
 	public int Further3 => _further3;
 	public int Further4 => _further4;
 	public int Further5 => _further5;
+	public bool IsCanFurther1
+	{
+		get
+		{
+			return true;
+		}
+	}
+	public bool IsCanFurther2
+	{
+		get
+		{
+			return _further1 > 10;
+		}
+	}
+	public bool IsCanFurther3
+	{
+		get
+		{
+			return _further2 > 10;
+		}
+	}
+	public bool IsCanFurther4
+	{
+		get
+		{
+			return _further3 > 10;
+		}
+	}
+	public bool IsCanFurther5
+	{
+		get
+		{
+			return _further4 > 10;
+		}
+	}
 
 	[SerializeField] private VisualEffect _visualEffect = null;
-	[SerializeField] private float _rate = 0f;
+	[SerializeField] private float _rate = 5f;
 	[SerializeField] private int _count = 0;
 	[SerializeField] private int _further1 = 0;
 	[SerializeField] private int _further2 = 0;
 	[SerializeField] private int _further3 = 0;
 	[SerializeField] private int _further4 = 0;
 	[SerializeField] private int _further5 = 0;
-	private List<float> explosiontime = new List<float>();
+	private List<float> _explosiontime = new List<float>();
 	public bool corotin;
 
 
 	private void Start()
 	{
 		UpdateRate();
-		if (corotin)
-		{ 
-			StartCoroutine(FireworkStart());
-		
-		}
-
+		StartCoroutine(FireworkStart());
 	}
 
 	private void Update()
@@ -62,7 +92,7 @@ public class FireWorkController : MonoBehaviour
 			{
 				float lifeTime = Random.Range(3f, 4f);
 				_visualEffect.SetFloat("lifeTime", lifeTime);
-				explosiontime.Add(lifeTime);
+				_explosiontime.Add(lifeTime);
 				_visualEffect.SendEvent("Play");
 				yield return new WaitForSeconds(0.1f);
 			}
@@ -73,13 +103,13 @@ public class FireWorkController : MonoBehaviour
 
 	public void Explosion()
 	{
-		for(int i = 0; i < explosiontime.Count; ++i)
+		for(int i = 0; i < _explosiontime.Count; ++i)
 		{
-			explosiontime[i] -= Time.deltaTime;
-			if(explosiontime[i] <= 0f)
+			_explosiontime[i] -= Time.deltaTime;
+			if(_explosiontime[i] <= 0f)
 			{
 				_visualEffect.SendEvent("Explosion");
-				explosiontime.RemoveAt(i--);
+				_explosiontime.RemoveAt(i--);
 			}
 		}
 	}
@@ -157,18 +187,21 @@ public class FireWorkController : MonoBehaviour
 		VFXSetInt("SpawnCount", _count);
 	}
 
-
 	/// <summary>
 	/// 주기 증가
 	/// </summary>
 	/// <param name="add"></param>
 	public void UpdateRate(float add)
 	{
-		_rate += add;
+		_rate -= add;
+		if(_rate < 0.3f)
+		{
+			_rate = 0.3f;
+			Debug.Log("Rete is MIN, Can't more Upgrade");
+		}
+
 		UpdateRate();
 	}
-
-
 
 	/// <summary>
 	/// 추가폭발1 설정
@@ -205,7 +238,6 @@ public class FireWorkController : MonoBehaviour
 		_further4 += add;
 		UpdateFurtherCount4();
 	}
-
 
 	/// <summary>
 	/// 추가폭발5 설정

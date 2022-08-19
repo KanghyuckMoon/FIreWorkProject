@@ -18,11 +18,11 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         ZoomInOut();
-        MoveCamera();
+        MoveMouseCamera();
         CameraPositionSetting();
     }
 
-    private void MoveCamera()
+    private void MoveMouseCamera()
     {
         if(Input.GetMouseButton(1))
         {
@@ -34,13 +34,23 @@ public class CameraController : MonoBehaviour
             _yVector = Vector3.up * _yMove * _moveSpeed * Time.deltaTime;
             _xVector = transform.right * _xMove * _moveSpeed * Time.deltaTime;
 
-            transform.LookAt(_centerTransform);
         }
         else if (Input.GetMouseButtonUp(1))
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
+        else
+		{
+            MoveKeyboardCamera();
+        }
+    }
+    private void MoveKeyboardCamera()
+    {
+        float _xMove = Input.GetAxis("Horizontal");
+        float _yMove = Input.GetAxis("Vertical");
+        _yVector = Vector3.up * _yMove * _moveSpeed * Time.deltaTime;
+        _xVector = transform.right * _xMove * _moveSpeed * Time.deltaTime;
     }
 
     private void ZoomInOut()
@@ -55,5 +65,6 @@ public class CameraController : MonoBehaviour
     {
         _moveVector = _xVector + _yVector + _centerTransform.position - transform.forward * _distance;
         transform.position = Vector3.SmoothDamp(transform.position, _moveVector, ref _velocity, _smoothTime);
+        transform.LookAt(_centerTransform);
     }
 }
