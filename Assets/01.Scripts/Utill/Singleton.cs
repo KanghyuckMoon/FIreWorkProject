@@ -20,6 +20,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 				{
 					_instance = new GameObject(typeof(T).Name).AddComponent<T>();
 				}
+				DontDestroyOnLoad(_instance);
 			}
 
 			return _instance;
@@ -29,7 +30,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 	public virtual void Awake()
 	{
 		//만약 인스턴스가 없을시
-		if (_instance == null)
+		if (Instance == null)
 		{
 			//인스턴스는 해당 오브젝트가 된다.
 			_instance = this as T;
@@ -37,7 +38,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 			//그리고 해당 오브젝트는 삭제되지 않는다.
 			DontDestroyOnLoad(gameObject);
 		}
-		else
+		else if(Instance != this)
 		{
 			//이미 인스턴스가 존재할 경우 이 오브젝트는 삭제된다.
 			Destroy(gameObject);

@@ -9,7 +9,18 @@ public class AchievementChecker
 
 	public AchievementChecker()
 	{
-		_achievements.Add(new Achievement(0, x => x.happy >= 1000));
+		_achievements.Add(new Achievement(0, x => x.happy >= 100));
+		_achievements.Add(new Achievement(1, x => x.happy >= 200));
+		_achievements.Add(new Achievement(2, x => x.happy >= 300));
+		_achievements.Add(new Achievement(3, x => x.happy >= 400));
+		_achievements.Add(new Achievement(4, x => x.happy >= 500));
+		_achievements.Add(new Achievement(5, x => x.happy >= 600));
+		_achievements.Add(new Achievement(6, x => x.happy >= 700));
+		_achievements.Add(new Achievement(7, x => x.happy >= 800));
+		_achievements.Add(new Achievement(8, x => x.happy >= 900));
+		_achievements.Add(new Achievement(9, x => x.happy >= 1000));
+		_achievements.Add(new Achievement(10, x => x.happy >= 1100));
+		_achievements.Add(new Achievement(11, x => x.happy >= 1200));
 	}
 
 	public void CheckAchievement()
@@ -18,7 +29,7 @@ public class AchievementChecker
 		{
 			if(achievement.isAchieve)
 			{
-				return;
+				continue;
 			}
 			else
 			{
