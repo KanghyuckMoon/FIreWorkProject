@@ -10,6 +10,7 @@ public class UIButtonManager : MonoBehaviour
 
     private UIDocument _mainUIDoc; // 메인 UIDocument 
     private VisualElement _rootElement; // 최상위 오브젝트 
+    private VisualElement _gameScreen; // mainUI 화면 
 
     // 버튼
     private Button _settingButton; // 설정 버튼
@@ -22,10 +23,18 @@ public class UIButtonManager : MonoBehaviour
 
     private void Awake()
     {
-        CashingElements(); 
+        CashingElements();
 
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            // 게임 화면 UI 활성화 비활성화 
+            _gameScreen.style.display = _gameScreen.style.display == DisplayStyle.Flex ? DisplayStyle.None : DisplayStyle.Flex; 
+        }
+    }
     /// <summary>
     /// ui빌더의 element(오브젝트)  캐싱 
     /// </summary>
@@ -33,7 +42,7 @@ public class UIButtonManager : MonoBehaviour
     {
         _mainUIDoc = GetComponent<UIDocument>();
         _rootElement = _mainUIDoc.rootVisualElement;
-
+        _gameScreen = _rootElement.Q<VisualElement>("game_screen"); 
         // 버튼 캐싱 
         _settingButton = _rootElement.Q<Button>("SettingButton");
         //_shopButton = _rootElement.Q<Button>("ShopButton");
@@ -56,9 +65,4 @@ public class UIButtonManager : MonoBehaviour
         */
     }
 
-    [ContextMenu("활성화 테스트")]
-    public void UpdateUI()
-    {
-        _settingButton.style.display = DisplayStyle.None; 
-    }
 }
