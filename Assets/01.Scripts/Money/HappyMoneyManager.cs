@@ -42,7 +42,6 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 		happy *= FireWorkController.Further2 > 0 ? FireWorkController.Further2 : 1;
 		happy *= FireWorkController.Further3 > 0 ? FireWorkController.Further3 : 1;
 		happy *= FireWorkController.Further4 > 0 ? FireWorkController.Further4 : 1;
-		happy *= FireWorkController.Further5 > 0 ? FireWorkController.Further5 : 1;
 
 		AddHappy(happy);
 	}
