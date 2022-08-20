@@ -38,16 +38,16 @@ public class ItemChangeManager : MonoBehaviour
 				switch (_currentSettingMode)
 				{
 					case CurrentSettingMode.Further1:
-						FireWorkController.ChangeFurtherColor1(itemData.gradient);
+						FireWorkController.ChangeFurtherColor1(itemData.gradient_1, itemData.gradient_2, itemData.gradient_3);
 						break;
 					case CurrentSettingMode.Further2:
-						FireWorkController.ChangeFurtherColor2(itemData.gradient);
+						FireWorkController.ChangeFurtherColor2(itemData.gradient_1, itemData.gradient_2, itemData.gradient_3);
 						break;
 					case CurrentSettingMode.Further3:
-						FireWorkController.ChangeFurtherColor3(itemData.gradient);
+						FireWorkController.ChangeFurtherColor3(itemData.gradient_1, itemData.gradient_2, itemData.gradient_3);
 						break;
 					case CurrentSettingMode.Further4:
-						FireWorkController.ChangeFurtherColor4(itemData.gradient);
+						FireWorkController.ChangeFurtherColor4(itemData.gradient_1, itemData.gradient_2, itemData.gradient_3);
 						break;
 				}
 				break;

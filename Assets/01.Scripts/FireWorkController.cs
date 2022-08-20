@@ -49,10 +49,18 @@ public class FireWorkController : MonoBehaviour
 	[SerializeField] private int _further2 = 0;
 	[SerializeField] private int _further3 = 0;
 	[SerializeField] private int _further4 = 0;
-	[SerializeField] private Gradient _furtherColor1;
-	[SerializeField] private Gradient _furtherColor2;
-	[SerializeField] private Gradient _furtherColor3;
-	[SerializeField] private Gradient _furtherColor4;
+	[SerializeField] private Gradient _furtherColor1_1;
+	[SerializeField] private Gradient _furtherColor1_2;
+	[SerializeField] private Gradient _furtherColor1_3;
+	[SerializeField] private Gradient _furtherColor2_1;
+	[SerializeField] private Gradient _furtherColor2_2;
+	[SerializeField] private Gradient _furtherColor2_3;
+	[SerializeField] private Gradient _furtherColor3_1;
+	[SerializeField] private Gradient _furtherColor3_2;
+	[SerializeField] private Gradient _furtherColor3_3;
+	[SerializeField] private Gradient _furtherColor4_1;
+	[SerializeField] private Gradient _furtherColor4_2;
+	[SerializeField] private Gradient _furtherColor4_3;
 	[SerializeField] private Texture2D _furtherTexture1;
 	[SerializeField] private Texture2D _furtherTexture2;
 	[SerializeField] private Texture2D _furtherTexture3;
@@ -161,7 +169,9 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherColor1()
 	{
-		VFXSetGradient(_visualEffect, "FurtherColor1", _furtherColor1);
+		VFXSetGradient(_visualEffect, "FurtherColor1_1", _furtherColor1_1);
+		VFXSetGradient(_visualEffect, "FurtherColor1_2", _furtherColor1_2);
+		VFXSetGradient(_visualEffect, "FurtherColor1_3", _furtherColor1_3);
 	}
 
 	/// <summary>
@@ -169,7 +179,9 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherColor2()
 	{
-		VFXSetGradient(_visualEffect, "FurtherColor2", _furtherColor2);
+		VFXSetGradient(_visualEffect, "FurtherColor2_1", _furtherColor2_1);
+		VFXSetGradient(_visualEffect, "FurtherColor2_2", _furtherColor2_2);
+		VFXSetGradient(_visualEffect, "FurtherColor2_3", _furtherColor2_3);
 	}
 
 	/// <summary>
@@ -177,7 +189,9 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherColor3()
 	{
-		VFXSetGradient(_visualEffect, "FurtherColor3", _furtherColor3);
+		VFXSetGradient(_visualEffect, "FurtherColor3_1", _furtherColor3_1);
+		VFXSetGradient(_visualEffect, "FurtherColor3_2", _furtherColor3_2);
+		VFXSetGradient(_visualEffect, "FurtherColor3_3", _furtherColor3_3);
 	}
 
 	/// <summary>
@@ -185,7 +199,9 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherColor4()
 	{
-		VFXSetGradient(_visualEffect, "FurtherColor4", _furtherColor4);
+		VFXSetGradient(_visualEffect, "FurtherColor4_1", _furtherColor4_1);
+		VFXSetGradient(_visualEffect, "FurtherColor4_2", _furtherColor4_2);
+		VFXSetGradient(_visualEffect, "FurtherColor4_3", _furtherColor4_3);
 	}
 
 	/// <summary>
@@ -284,36 +300,44 @@ public class FireWorkController : MonoBehaviour
 	/// 추가폭발 색상 1변경
 	/// </summary>
 	/// <param name="gradient"></param>
-	public void ChangeFurtherColor1(Gradient gradient)
+	public void ChangeFurtherColor1(Gradient gradient1, Gradient gradient2, Gradient gradient3)
 	{
-		_furtherColor1 = gradient;
+		_furtherColor1_1 = gradient1;
+		_furtherColor1_2 = gradient2;
+		_furtherColor1_3 = gradient3;
 		UpdateFurtherColor1();
 	}
 	/// <summary>
 	/// 추가폭발 색상 2변경
 	/// </summary>
 	/// <param name="gradient"></param>
-	public void ChangeFurtherColor2(Gradient gradient)
+	public void ChangeFurtherColor2(Gradient gradient1, Gradient gradient2, Gradient gradient3)
 	{
-		_furtherColor2 = gradient;
+		_furtherColor2_1 = gradient1;
+		_furtherColor2_2 = gradient2;
+		_furtherColor2_3 = gradient3;
 		UpdateFurtherColor2();
 	}
 	/// <summary>
 	/// 추가폭발 색상 3변경
 	/// </summary>
 	/// <param name="gradient"></param>
-	public void ChangeFurtherColor3(Gradient gradient)
+	public void ChangeFurtherColor3(Gradient gradient1, Gradient gradient2, Gradient gradient3)
 	{
-		_furtherColor3 = gradient;
+		_furtherColor3_1 = gradient1;
+		_furtherColor3_2 = gradient2;
+		_furtherColor3_3 = gradient3;
 		UpdateFurtherColor3();
 	}
 	/// <summary>
 	/// 추가폭발 색상 4변경
 	/// </summary>
 	/// <param name="gradient"></param>
-	public void ChangeFurtherColor4(Gradient gradient)
+	public void ChangeFurtherColor4(Gradient gradient1, Gradient gradient2, Gradient gradient3)
 	{
-		_furtherColor4 = gradient;
+		_furtherColor4_1 = gradient1;
+		_furtherColor4_2 = gradient2;
+		_furtherColor4_3 = gradient3;
 		UpdateFurtherColor4();
 	}
 
