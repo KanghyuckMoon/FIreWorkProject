@@ -2523,6 +2523,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 409632, guid: 471c1eb32c770a54ea8a1c3ffbda1de6, type: 3}
   m_PrefabInstance: {fileID: 320648704}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &328854706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 328854707}
+  - component: {fileID: 328854708}
+  m_Layer: 0
+  m_Name: AchievementManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &328854707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328854706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.18613338, y: -0.12144089, z: -3.9458456}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &328854708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328854706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c25b1722c92b5429cfa9ced849f31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _achievementDataSO: {fileID: 11400000, guid: bda4b58d3acb68f4aa93d394a794939d, type: 2}
 --- !u!1001 &332936425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5458,29 +5503,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5310124787708392229, guid: 10c3a7ee2f46fb14889917811dc80d88, type: 3}
   m_PrefabInstance: {fileID: 175425181}
   m_PrefabAsset: {fileID: 0}
---- !u!195 &561819955
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561819952}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 0.2
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &561819956
+--- !u!114 &561819957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5489,10 +5512,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 561819952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 163639e19d4adad498e759ba546e6740, type: 3}
+  m_Script: {fileID: 11500000, guid: 7057cf9430d932540bf980dc6ef4f4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
+  _achievementCode: 0
 --- !u!1001 &562821830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13202,6 +13225,8 @@ MonoBehaviour:
     name: MoonAndFill
     money: 0
     happy: 0
+    haveItem: 
+    haveAchievement: 
 --- !u!4 &1483920246
 Transform:
   m_ObjectHideFlags: 0
@@ -13750,37 +13775,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 486068, guid: 5a318dfcecda8d840adfe5cb4233410d, type: 3}
   m_PrefabInstance: {fileID: 1523425927}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1537366255
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1537366256}
-  m_Layer: 0
-  m_Name: Observer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1537366256
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537366255}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1542535725
 PrefabInstance:
   m_ObjectHideFlags: 0

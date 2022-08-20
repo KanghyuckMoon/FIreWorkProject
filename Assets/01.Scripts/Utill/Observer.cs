@@ -9,5 +9,12 @@ public interface Observer
 		get;
 		set;
 	}
-	public void AddObserver();
+	/// <summary>
+	/// 관찰대상 추가
+	/// </summary>
+	public void AddObservation();
+	/// <summary>
+	/// 관찰대상으로부터 메세지 받기
+	/// </summary>
+	public void ReceiveMessage();
 }
