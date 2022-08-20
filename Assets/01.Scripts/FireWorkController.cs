@@ -92,7 +92,7 @@ public class FireWorkController : MonoBehaviour
 		{
 			for(int i = 0; i < _count; ++i)
 			{
-				float lifeTime = Random.Range(3f, 4f);
+				float lifeTime = Random.Range(3f, 3.5f);
 				_visualEffect.SetFloat("lifeTime", lifeTime);
 				_explosiontime.Add(lifeTime);
 				_visualEffect.SendEvent("Play");
