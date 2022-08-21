@@ -17,7 +17,7 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 49cd21f19e15df04f8c9abc4f3229a05
   m_SerializeEntries:
-  - m_GUID: 59f8d9c8cb2e60a4b82101694e262e66
+  - m_GUID: a76d5973e079d614c806a8c888fe1d63
     m_Address: Shot
     m_ReadOnly: 0
     m_SerializedLabels: []
@@ -27,6 +27,26 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: c28fd44c167534e4b936f0b8d5ae5c1a
     m_Address: MainMixer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 57864855c91ef224593993f54d243387
+    m_Address: Fire3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 734222b42c21a9f46aba8fab91b9fb09
+    m_Address: Fire4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0041e6d7b266a2f409fb0b2d21831363
+    m_Address: Fire1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 32f763f3172ada04f909a4318183dd29
+    m_Address: Fire5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a6a372604c52d4b459e18439752f8f8e
+    m_Address: Fire2
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

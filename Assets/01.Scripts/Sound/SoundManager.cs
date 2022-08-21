@@ -97,14 +97,14 @@ public class SoundManager : Singleton<SoundManager>
 	/// 효과음 재생
 	/// </summary>
 	/// <param name="audioEFFType"></param>
-	public void PlayEFF(AudioEFFType audioEFFType)
+	public void PlayEFF(AudioEFFType audioEFFType, float volume = 1f)
 	{
 		if (!_isInit)
 		{
 			Init();
 		}
 
-		OneShot(_effAudioClips[audioEFFType], 1f);
+		OneShot(_effAudioClips[audioEFFType], volume);
 	}
 
 	/// <summary>
