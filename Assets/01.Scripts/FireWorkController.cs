@@ -101,9 +101,40 @@ public class FireWorkController : MonoBehaviour
 			for(int i = 0; i < _count; ++i)
 			{
 				float lifeTime = Random.Range(3f, 3.5f);
+				float further1lifeTime = 0f;
+				float further2lifeTime = 0f;
+				float further3lifeTime = 0f;
+				float further4lifeTime = 0f;
 				_visualEffect.SetFloat("lifeTime", lifeTime);
 				_explosiontime.Add(lifeTime);
+				if(IsCanFurther1)
+				{
+					further1lifeTime = Random.Range(1f, 1.2f);
+					_visualEffect.SetFloat("FurtherLifeTime1", further1lifeTime);
+					_explosiontime.Add(further1lifeTime + lifeTime);
+				}
+				if(IsCanFurther2)
+				{
+					further2lifeTime = Random.Range(0.8f, 1f);
+					_visualEffect.SetFloat("FurtherLifeTime2", further2lifeTime);
+					_explosiontime.Add(further2lifeTime + further1lifeTime + lifeTime);
+				}
+				if (IsCanFurther3)
+				{
+					further3lifeTime = Random.Range(0.8f, 1f);
+					_visualEffect.SetFloat("FurtherLifeTime3", further3lifeTime);
+					_explosiontime.Add(further3lifeTime + further2lifeTime + further1lifeTime + lifeTime);
+				}
+				if (IsCanFurther4)
+				{
+					further4lifeTime = Random.Range(0.8f, 1f);
+					_visualEffect.SetFloat("FurtherLifeTime4", further4lifeTime);
+					_explosiontime.Add(further4lifeTime + further3lifeTime + further2lifeTime + further1lifeTime + lifeTime);
+				}
+
 				_visualEffect.SendEvent("Play");
+
+
 				yield return new WaitForSeconds(0.1f);
 			}
 
