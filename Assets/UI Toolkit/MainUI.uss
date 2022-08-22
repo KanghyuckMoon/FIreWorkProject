@@ -12,6 +12,54 @@
     -unity-font-style: bold;
     font-size: 30px;
     display: flex;
-    color: rgba(255, 255, 255, 255);
-    background-color: rgba(108, 108, 108, 255);
+    color: rgb(255, 255, 255);
+    background-color: rgb(108, 108, 108);
+}
+
+.button:hover {
+    height: 150px;
+    width: 150px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    -unity-font-style: bold;
+    font-size: 30px;
+    display: flex;
+    color: rgb(255, 255, 255);
+    background-color: rgb(108, 108, 108);
+    -unity-background-image-tint-color: rgb(144, 144, 144);
+    rotate: 0;
+    scale: 1.05 1.05;
+}
+
+.button:active {
+    height: 150px;
+    width: 150px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    -unity-font-style: bold;
+    font-size: 30px;
+    display: flex;
+    color: rgb(255, 255, 255);
+    background-color: rgb(108, 108, 108);
+    -unity-background-image-tint-color: rgb(144, 144, 144);
+    rotate: 0;
+    flex-direction: column;
+    cursor: initial;
+    transition-property: none;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out-back;
+    opacity: 0.9;
+    scale: 0.95 0.95;
 }
