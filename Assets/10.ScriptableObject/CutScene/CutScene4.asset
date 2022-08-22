@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d7e96c7e919a547a901ea36aeb5308, type: 3}
   m_Name: CutScene4
   m_EditorClassIdentifier: 
-  content: []
+  talkDatas:
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: "\uB108\uBB34 \uAC19\uC740 \uBAA8\uC591\uC758 \uBD88\uAF43\uB180\uC774\uB9CC
+      \uBCF4\uB2C8\uAE4C \uC9C8\uB824"
+  - talkObject: 2
+    othername: "\uAE40\uBE44\uC11C"
+    content: "\uADF8\uB7EC\uBA74 \uBD88\uAF43\uB180\uC774\uB97C \uAFB8\uBA70\uBD05\uC2DC\uB2E4!"

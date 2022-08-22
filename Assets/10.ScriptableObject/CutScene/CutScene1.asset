@@ -12,4 +12,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d7e96c7e919a547a901ea36aeb5308, type: 3}
   m_Name: CutScene1
   m_EditorClassIdentifier: 
-  content: []
+  talkDatas:
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: "\uC774\uBC88 \uBA74\uC811\uB3C4 \uD2C0\uB838\uB124.."
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: "\uC624\uB298\uB3C4 \uC220 \uB561\uAE30\uB7EC \uAC00\uC57C\uC9C0"
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: "(\uC804\uD654\uAC00 \uAC78\uB824\uC628\uB2E4)"
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: "\uC544\uBE60? \uC804\uD654 \uC548 \uAC78\uB358 \uC0AC\uB78C\uC774 \uAC11\uC790\uAE30
+      \uC65C \uAC78\uC9C0"
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: 
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: "\uC5EC\uBCF4\uC138\uC694"
+  - talkObject: 2
+    othername: "\uC544\uBE60"
+    content: "\uB124\uAC00 \uB0B4 \uB4A4\uB97C \uC774\uC5B4 \uBD88\uAF43\uB180\uC774
+      \uC12C\uC744 \uC6B4\uC601\uD574"
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: "\uAC11\uC790\uAE30 \uBB34\uC2A8 \uC18C\uB9AC\uC5D0\uC694?"
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: "\uC544\uBE60? \uC544\uBE60?!"
+  - talkObject: 0
+    othername: 
+    content: "(\uC544\uBE60\uC758 \uC7A5\uB840\uC2DD\uC774 \uC774\uB904\uC9C0\uACE0
+      \uC2DC\uAC04\uC774 \uC9C0\uB0AC\uB2E4)"
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: "\uC5EC\uAE30\uAC00 \uC544\uBE60\uAC00 \uB9D0\uD588\uB358 \uBD88\uAF43\uB180\uC774
+      \uC12C\uC778"
+  - talkObject: 2
+    othername: "\uAE40\uBE44\uC11C"
+    content: "\uC544\uBC84\uB2D8\uC758 \uC77C\uC740 \uC548\uD0C0\uAE5D\uAC8C \uB410\uC2B5\uB2C8\uB2E4"
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: "\uB2F9\uC2E0\uC740 \uB204\uAD6C\uC57C?"
+  - talkObject: 2
+    othername: "\uAE40\uBE44\uC11C"
+    content: "\uC800\uB294 \uB2F9\uC2E0 \uC544\uBC84\uB2D8\uC758 \uC720\uC5B8\uC5D0
+      \uB530\uB77C \uB2F9\uC2E0\uC744 \uBD88\uAF43\uB180\uC774 \uC804\uBB38\uAC00\uB85C
+      \uAD50\uC721\uC2DC\uD0AC \uAE40\uBE44\uC11C\uB77C\uACE0 \uD569\uB2C8\uB2E4"
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: "\uB098\uB294 \uBD88\uAF43\uB180\uC774 \uC12C\uC744 \uC6B4\uC601\uD560
+      \uC0DD\uAC01\uC774 \uC5C6\uC2B5\uB2C8\uB2E4, \uADF8\uB7F0 \uC77C \uD560\uC904
+      \uBAB0\uB77C\uC694"
+  - talkObject: 2
+    othername: "\uAE40\uBE44\uC11C"
+    content: "\uB2F9\uC2E0\uC758 \uC544\uBC84\uB2D8\uC740 \uC0AC\uB78C\uB4E4\uC5D0\uAC8C
+      \uBD88\uAF43\uB180\uC774\uB85C \uD589\uBCF5\uC744 \uC804\uB2EC\uD558\uB294
+      \uBD88\uAF43\uB180\uC774 \uC7A5\uC778\uC774\uC168\uC8E0."
+  - talkObject: 2
+    othername: "\uAE40\uBE44\uC11C"
+    content: "\uADF8\uBD84\uC740 \uB2F9\uC2E0\uC774 \uBA87\uB144\uC9F8 \uCDE8\uC5C5\uB3C4
+      \uBABB\uD55C \uCC44 \uBE4C\uB9B0 \uBC29\uC5D0\uC11C \uC220\uB9CC \uB9C8\uC2DC\uB294\uAC78
+      \uD55C\uD0C4\uD558\uC168\uC2B5\uB2C8\uB2E4."
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: " \uB204\uAD74 \uB180\uB9AC\uB098 \uB0B4\uAC00 \uCDE8\uC5C5 \uC548 \uD558\uACE0
+      \uC2F6\uC5B4\uC11C \uC548 \uD588\uC5B4?"
+  - talkObject: 2
+    othername: "\uAE40\uBE44\uC11C"
+    content: "\uC608. \uB2F9\uC2E0\uC740 \uD558\uB358 \uC77C\uC744 \uC790\uC8FC \uB54C\uB824\uCE58\uC6B0\uB294
+      \uC0AC\uB78C\uC774\uB77C\uACE0 \uADF8\uBD84\uC774 \uADF8\uB7EC\uC168\uC8E0."
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: ...
+  - talkObject: 2
+    othername: "\uAE40\uBE44\uC11C"
+    content: "\uC544\uB974\uBC14\uC774\uD2B8\uB77C\uACE0 \uC0DD\uAC01\uD558\uACE0
+      \uBD88\uAF43\uB180\uC774 \uC81C\uC791\uC744 \uD574\uBCF4\uC138\uC694"
+  - talkObject: 1
+    othername: "\uC8FC\uC778\uACF5"
+    content: "\uC544\uBE60\uAC00 \uD558\uB358 \uC77C\uC774\uB2C8 \uAD6C\uACBD\uB9CC
+      \uD558\uB2E4 \uAC08\uAC70\uC57C"
