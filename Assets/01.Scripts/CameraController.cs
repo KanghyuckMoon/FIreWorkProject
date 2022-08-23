@@ -21,6 +21,7 @@ public class CameraController : MonoBehaviour
     {
         ZoomInOut();
         MoveMouseCamera();
+        MoveKeyboardCamera();
         CameraPositionSetting();
     }
 
@@ -33,18 +34,14 @@ public class CameraController : MonoBehaviour
 
             float _xMove = Input.GetAxis("Mouse X");
             float _yMove = Input.GetAxis("Mouse Y");
-            _yRotationInput = _yMove * _moveSpeed * Time.deltaTime;
-            _xRotationInput = _xMove * _moveSpeed * Time.deltaTime;
+            _yRotationInput += _yMove * _moveSpeed * Time.deltaTime;
+            _xRotationInput += _xMove * _moveSpeed * Time.deltaTime;
 
         }
         else if (Input.GetMouseButtonUp(1))
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-        }
-        else
-		{
-            MoveKeyboardCamera();
         }
     }
     private void MoveKeyboardCamera()
@@ -55,16 +52,13 @@ public class CameraController : MonoBehaviour
 
     private void ZoomInOut()
 	{
-        _distance -= Input.GetAxis("Mouse ScrollWheel") * _zoomSpeed;
-
-        if (_distance < 1.0f) _distance = 1.0f;
-        if (_distance > 100.0f) _distance = 100.0f;
+        _distance = Input.GetAxis("Mouse ScrollWheel");
     }
 
     private void CameraPositionSetting()
     {
-        _moveVector = transform.position +  transform.right * (_xMoveInput * _moveSpeed * Time.deltaTime) + transform.up * (_yMoveInput * _moveSpeed * Time.deltaTime) + -transform.forward * _distance;
+        _moveVector = transform.position + transform.right * (_xMoveInput * _moveSpeed * Time.deltaTime) + transform.up * (_yMoveInput * _moveSpeed * Time.deltaTime) + transform.forward* _distance *_zoomSpeed;
         transform.position = Vector3.SmoothDamp(transform.position, _moveVector, ref _velocity, _smoothTime);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(_xRotationInput, _yRotationInput, 0), _smoothTime);;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(-_yRotationInput, _xRotationInput, 0), _smoothTime);;
     }
 }
