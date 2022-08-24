@@ -18,22 +18,24 @@ public class ItemBox : MonoBehaviour
     [SerializeField] private ItemDataSO _itemDataSO;
 
 
-    private ItemData _itemData;
+    //private ItemData _itemData;
+    
     void Start()
     {
-        _itemData = _itemDataSO.GetItemData(_itemCode);
+        //_itemData = _itemDataSO.GetItemData(_itemCode);
     }
 
-    [ContextMenu("DebugChangeItemData")]
+    //[ContextMenu("DebugChangeItemData")]
     public void DebugChangeItemData()
     {
-        _itemData = _itemDataSO.GetItemData(_itemCode);
+        //_itemData = _itemDataSO.GetItemData(_itemCode);
     }
 
 	[ContextMenu("ChangeFirework")]
     public void ChangeFirework()
 	{
-        ItemChangeManager.ChangeFirework(_itemData);
+        //ItemChangeManager.ChangeFirework(_itemData);
+        ItemChangeManager.ChangeFirework(_itemDataSO.GetItemData(_itemCode));
     }
 
 }
