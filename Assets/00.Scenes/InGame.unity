@@ -20175,12 +20175,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualEffect: {fileID: 1415232267}
-  _rate: 1
+  _rate: 3
   _count: 1
-  _further1: 20
-  _further2: 20
-  _further3: 20
-  _further4: 20
+  _further1: 80
+  _further2: 0
+  _further3: 0
+  _further4: 0
   _furtherColor1_1:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
