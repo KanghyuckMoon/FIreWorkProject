@@ -23,6 +23,7 @@ public class ItemChangeManager : MonoBehaviour
 
 	[SerializeField] private FireWorkController _fireWorkController;
 	[SerializeField] private CurrentSettingMode _currentSettingMode;
+	[SerializeField] private float _intensity = 5f;
 
 	/// <summary>
 	/// 받은 아이템데이터로 불꽃놀이 커스터마이즈, 불꽃놀이 변경
@@ -38,16 +39,16 @@ public class ItemChangeManager : MonoBehaviour
 				switch (_currentSettingMode)
 				{
 					case CurrentSettingMode.Further1:
-						FireWorkController.ChangeFurtherColor1(itemData.gradient_1, itemData.gradient_2, itemData.gradient_3);
+						FireWorkController.ChangeFurtherColor1(IntensityChangeGradient(itemData.gradient_1), IntensityChangeGradient(itemData.gradient_2), IntensityChangeGradient(itemData.gradient_3));
 						break;
 					case CurrentSettingMode.Further2:
-						FireWorkController.ChangeFurtherColor2(itemData.gradient_1, itemData.gradient_2, itemData.gradient_3);
+						FireWorkController.ChangeFurtherColor2(IntensityChangeGradient(itemData.gradient_1), IntensityChangeGradient(itemData.gradient_2), IntensityChangeGradient(itemData.gradient_3));
 						break;
 					case CurrentSettingMode.Further3:
-						FireWorkController.ChangeFurtherColor3(itemData.gradient_1, itemData.gradient_2, itemData.gradient_3);
+						FireWorkController.ChangeFurtherColor3(IntensityChangeGradient(itemData.gradient_1), IntensityChangeGradient(itemData.gradient_2), IntensityChangeGradient(itemData.gradient_3));
 						break;
 					case CurrentSettingMode.Further4:
-						FireWorkController.ChangeFurtherColor4(itemData.gradient_1, itemData.gradient_2, itemData.gradient_3);
+						FireWorkController.ChangeFurtherColor4(IntensityChangeGradient(itemData.gradient_1), IntensityChangeGradient(itemData.gradient_2), IntensityChangeGradient(itemData.gradient_3));
 						break;
 				}
 				break;
@@ -69,5 +70,27 @@ public class ItemChangeManager : MonoBehaviour
 				}
 				break;
 		}
+	}
+
+	private Gradient IntensityChangeGradient(Gradient gradient)
+	{
+		Gradient gradientNew = new Gradient();
+		var colorkeys = gradient.colorKeys;
+		gradientNew.alphaKeys = gradient.alphaKeys;
+		for(int i = 1; i < colorkeys.Length; ++i)
+		{
+			int j = i;
+			Color color = SetColor(colorkeys[j].color);
+			colorkeys[j].color = color;
+		}
+		gradientNew.SetKeys(colorkeys, gradientNew.alphaKeys);
+		return gradientNew;
+	}
+
+	private Color SetColor(Color hdrColor)
+	{
+		float factor = Mathf.Pow(2, _intensity);
+		hdrColor = new Color(hdrColor.r * factor, hdrColor.g * factor, hdrColor.b * factor);
+		return hdrColor;
 	}
 }
