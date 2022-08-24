@@ -18,9 +18,9 @@ public class ItemData
 {
 	public int itemCode;
 	public EItem itemType;
-	public Gradient gradient_1;
-	public Gradient gradient_2;
-	public Gradient gradient_3;
+	[GradientUsage(true)] public Gradient gradient_1;
+	[GradientUsage(true)] public Gradient gradient_2;
+	[GradientUsage(true)] public Gradient gradient_3;
 	public Texture2D texture2D;
 
 }
