@@ -13437,13 +13437,13 @@ VisualEffect:
       - m_Value: 1
         m_Name: Rate
         m_Overridden: 1
-      - m_Value: 0.3
+      - m_Value: 1
         m_Name: FurtherSize1
         m_Overridden: 1
-      - m_Value: 0.2
+      - m_Value: 0.3
         m_Name: FurtherSize2
         m_Overridden: 1
-      - m_Value: 0.1
+      - m_Value: 0.2
         m_Name: FurtherSize3
         m_Overridden: 1
       - m_Value: 0.05
@@ -13452,26 +13452,32 @@ VisualEffect:
     m_Vector2f:
       m_Array: []
     m_Vector3f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: -2, y: 13, z: -2}
+        m_Name: HeightVectorMin
+        m_Overridden: 1
+      - m_Value: {x: 2, y: 15, z: 2}
+        m_Name: HeightVectorMax
+        m_Overridden: 1
     m_Vector4f:
       m_Array: []
     m_Uint:
       m_Array: []
     m_Int:
       m_Array:
-      - m_Value: 10
+      - m_Value: 80
         m_Name: FurtherCount1
         m_Overridden: 1
       - m_Value: 1
         m_Name: SpawnCount
         m_Overridden: 1
-      - m_Value: 5
+      - m_Value: 20
         m_Name: FurtherCount2
         m_Overridden: 1
-      - m_Value: 5
+      - m_Value: 0
         m_Name: FurtherCount4
         m_Overridden: 1
-      - m_Value: 5
+      - m_Value: 0
         m_Name: FurtherCount3
         m_Overridden: 1
     m_Matrix4x4f:
@@ -13607,8 +13613,8 @@ VisualEffect:
       - m_Value:
           serializedVersion: 2
           key0: {r: 24543.875, g: 24543.875, b: 24543.875, a: 1}
-          key1: {r: 766.9961, g: 225.58934, b: 148.58037, a: 0.654902}
-          key2: {r: 766.9961, g: 200.7843, b: 211.33339, a: 0}
+          key1: {r: 23.968628, g: 7.152941, b: 4.6431375, a: 0.654902}
+          key2: {r: 23.968628, g: 6.27451, b: 6.6509805, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
@@ -13638,8 +13644,8 @@ VisualEffect:
       - m_Value:
           serializedVersion: 2
           key0: {r: 24543.875, g: 24543.875, b: 24543.875, a: 1}
-          key1: {r: 766.9961, g: 225.58934, b: 148.58037, a: 0.654902}
-          key2: {r: 766.9961, g: 200.7843, b: 211.33339, a: 0}
+          key1: {r: 23.968628, g: 7.152941, b: 4.6431375, a: 0.654902}
+          key2: {r: 23.968628, g: 6.27451, b: 6.6509805, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
@@ -13669,8 +13675,8 @@ VisualEffect:
       - m_Value:
           serializedVersion: 2
           key0: {r: 24543.875, g: 24543.875, b: 24543.875, a: 1}
-          key1: {r: 766.9961, g: 225.58934, b: 148.58037, a: 0.654902}
-          key2: {r: 766.9961, g: 200.7843, b: 211.33339, a: 0}
+          key1: {r: 23.968628, g: 7.152941, b: 4.6431375, a: 0.654902}
+          key2: {r: 23.968628, g: 6.27451, b: 6.6509805, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
@@ -13886,9 +13892,9 @@ VisualEffect:
       - m_Value:
           serializedVersion: 2
           key0: {r: 24543.875, g: 24543.875, b: 24543.875, a: 1}
-          key1: {r: 148.58037, g: 343.44003, b: 766.9961, a: 0.654902}
-          key2: {r: 766.9961, g: 200.7843, b: 406.52136, a: 0}
-          key3: {r: 0, g: 0, b: 0, a: 0}
+          key1: {r: 1.1607844, g: 4.266667, b: 5.992157, a: 0.654902}
+          key2: {r: 5.992157, g: 1.5686275, b: 4.7058825, a: 0}
+          key3: {r: 23.968628, g: 6.27451, b: 18.82353, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
@@ -13896,7 +13902,7 @@ VisualEffect:
           ctime0: 0
           ctime1: 2120
           ctime2: 65535
-          ctime3: 0
+          ctime3: 65535
           ctime4: 0
           ctime5: 0
           ctime6: 0
@@ -13917,9 +13923,9 @@ VisualEffect:
       - m_Value:
           serializedVersion: 2
           key0: {r: 24543.875, g: 24543.875, b: 24543.875, a: 1}
-          key1: {r: 148.5804, g: 546.13336, b: 766.9961, a: 0.654902}
-          key2: {r: 766.9961, g: 200.78432, b: 602.35297, a: 0}
-          key3: {r: 0, g: 0, b: 0, a: 0}
+          key1: {r: 1.1607844, g: 4.266667, b: 5.992157, a: 0.654902}
+          key2: {r: 5.992157, g: 1.5686275, b: 4.7058825, a: 0}
+          key3: {r: 23.968628, g: 6.27451, b: 18.82353, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
@@ -13927,7 +13933,7 @@ VisualEffect:
           ctime0: 0
           ctime1: 2120
           ctime2: 65535
-          ctime3: 0
+          ctime3: 65535
           ctime4: 0
           ctime5: 0
           ctime6: 0
@@ -13948,9 +13954,9 @@ VisualEffect:
       - m_Value:
           serializedVersion: 2
           key0: {r: 24543.875, g: 24543.875, b: 24543.875, a: 1}
-          key1: {r: 148.58037, g: 766.9961, b: 472.60022, a: 0.654902}
-          key2: {r: 493.0021, g: 200.7843, b: 766.9961, a: 0}
-          key3: {r: 0, g: 0, b: 0, a: 0}
+          key1: {r: 1.1607844, g: 4.266667, b: 5.992157, a: 0.654902}
+          key2: {r: 5.992157, g: 1.5686275, b: 4.7058825, a: 0}
+          key3: {r: 23.968628, g: 6.27451, b: 18.82353, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
@@ -13958,7 +13964,7 @@ VisualEffect:
           ctime0: 0
           ctime1: 2120
           ctime2: 65535
-          ctime3: 0
+          ctime3: 65535
           ctime4: 0
           ctime5: 0
           ctime6: 0
@@ -13987,10 +13993,10 @@ VisualEffect:
       - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Name: FurtherTexture3
         m_Overridden: 1
-      - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+      - m_Value: {fileID: 2800000, guid: 6701c32d35546ad4e961e805310dd982, type: 3}
         m_Name: FurtherTexture1
         m_Overridden: 1
-      - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+      - m_Value: {fileID: 2800000, guid: 42db1df37ecfb5045ae0a42a0eefad08, type: 3}
         m_Name: FurtherTexture2
         m_Overridden: 1
     m_Bool:
@@ -16118,7 +16124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648247240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.96, z: -9}
+  m_LocalPosition: {x: 0, y: 4.96, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

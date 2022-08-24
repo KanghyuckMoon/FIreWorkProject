@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Data: {fileID: 8926484042661614568}
   m_InputFlowSlot:
   - link:
-    - context: {fileID: 8926484042661615983}
+    - context: {fileID: 8926484042661616022}
       slotIndex: 0
   m_OutputFlowSlot:
   - link:
@@ -15457,8 +15457,6 @@ MonoBehaviour:
   - link:
     - context: {fileID: 8926484042661615990}
       slotIndex: 0
-    - context: {fileID: 8926484042661614558}
-      slotIndex: 0
   loopDuration: 0
   loopCount: 0
   delayBeforeLoop: 0
@@ -16405,7 +16403,9 @@ MonoBehaviour:
   - link: []
   - link: []
   m_OutputFlowSlot:
-  - link: []
+  - link:
+    - context: {fileID: 8926484042661614558}
+      slotIndex: 0
   loopDuration: 0
   loopCount: 0
   delayBeforeLoop: 0
@@ -16482,7 +16482,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 20
+      m_SerializableObject: 1
     m_Space: 2147483647
   m_Property:
     name: Count
@@ -16516,7 +16516,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 5
+      m_SerializableObject: 3
     m_Space: 2147483647
   m_Property:
     name: Delay
