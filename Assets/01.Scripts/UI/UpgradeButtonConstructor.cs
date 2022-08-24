@@ -2,110 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-public class UIButtonManager : MonoBehaviour
-{
-    private UpgradeButtonConstructor _upgradeButtonConstructor; 
-
-    [SerializeField]
-    private VisualTreeAsset _settingTemplate; // 설정 템플릿 
-    private VisualElement _settingPanel; // 설정 패널 
-
-    private UIDocument _mainUIDoc; // 메인 UIDocument 
-    private VisualElement _rootElement; // 최상위 오브젝트 
-    private VisualElement _gameScreen; // mainUI 화면 
-    private VisualElement _bottomPanel; // 하단 UI 
-
-    // 버튼
-    private Button _settingButton; // 설정 버튼
-    private Button _shopButton; // 상점버튼 
-    private Button _libraryButton; // 라이브러리 버튼
-    private Button _closeOpenButton; // UI 열고 닫기 버튼 
-
-    // 하단 UI버튼들 
-
-
-    // 라벨(텍스트)
-    private Label _happyMoneyLabel; // 행복 재화 표시
-    private Label _moneyLabel; // 돈 재화 표시 
-
-    private FireWorkController _fireWorkController;
-    private void Awake()
-    {
-        CashingElements();
-        SetButtons();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            // 게임 화면 UI 활성화 비활성화 
-            _gameScreen.style.display = _gameScreen.style.display == DisplayStyle.Flex ? DisplayStyle.None : DisplayStyle.Flex;
-            //_gameScreen.visible = _gameScreen.visible == false ? true : false; 
-        }
-    }
-    /// <summary>
-    /// ui빌더의 element(오브젝트)  캐싱 
-    /// </summary>
-    private void CashingElements()
-    {
-          _fireWorkController = FindObjectOfType<FireWorkController>(); 
-
-        _mainUIDoc = GetComponent<UIDocument>();
-        _rootElement = _mainUIDoc.rootVisualElement;
-        _gameScreen = _rootElement.Q<VisualElement>("game_screen");
-        _bottomPanel = _rootElement.Q<VisualElement>("bottomLeft_panel"); 
-        // 버튼 캐싱 
-        _settingButton = _rootElement.Q<Button>("setting-button");
-        //_shopButton = _rootElement.Q<Button>("ShopButton");
-        //_libraryButton = _rootElement.Q<Button>("LibraryButton");
-        _closeOpenButton = _rootElement.Q<Button>("close-open-button");
-
-
-        //// 라벨 캐싱 
-        //_happyMoneyLabel = _rootElement.Q<Label>("HappyMoneyLabel");
-        //_moneyLabel = _rootElement.Q<Label>("MoneyLabel");
-
-        // 업그레이드 버튼 생성
-        _upgradeButtonConstructor = new UpgradeButtonConstructor(_fireWorkController,_rootElement);
-    }
-
-    /// <summary>
-    /// 각 버튼에 이벤트 넣기 
-    /// </summary>
-    private void SetButtons()
-    {
-        /*
-        _settingButton.clicked +=
-            _shopButton.clicked += 
-        _libraryButton.clicked += 
-        */
-        //  _closeOpenButton.clicked += _bottomPanel.GetClasses
-    }
-
-    /// <summary>
-    /// 하단 UI 열고 닫기 
-    /// </summary>
-    private void OpenCloseUI()
-    {
-
-    }
-
-    // 생성 - 리스트 - further값에 따라 잠금 
-    // 체크 
-}
-
+using UnityEngine.UIElements; 
 
 /// <summary>
 /// 업그레이버튼 중간 관리자(생성 및 관리 ) 
 /// </summary>
+[Serializable]
 public class UpgradeButtonConstructor
 {
-    private List<ButtonElement> _buttonElementList = new List<ButtonElement>(); // 업그레이든 버튼 리스트
+    private List<UpgradeButtonElement> _buttonElementList = new List<UpgradeButtonElement>(); // 업그레이든 버튼 리스트
 
     private List<UpgradeButtonType> _buttonTypeList = new List<UpgradeButtonType>();  // 모든 버튼 타입이 담겨있는 리스트
-    private FireWorkController _fireWorkController; 
+    private FireWorkController _fireWorkController;
 
     /// <summary>
     /// 
@@ -124,7 +32,7 @@ public class UpgradeButtonConstructor
         string lockIconName = "lock-icon";
         string buttonName = "button";
         // 업그레이드 버튼 캐싱 후 리스트에 넣기 
-        foreach(UpgradeButtonType buttonType in _buttonTypeList)
+        foreach (UpgradeButtonType buttonType in _buttonTypeList)
         {
             upgradeButtonInfo = CheckElement(buttonType); // 업그레이드 버튼 정보 찾기 
 
@@ -132,7 +40,7 @@ public class UpgradeButtonConstructor
             VisualElement lockElement = upgradeButtonParent.Q<VisualElement>(lockIconName); // 잠금 아이콘
             Button upgradeButton = upgradeButtonParent.Q<Button>(buttonName); // 버튼 
 
-            ButtonElement buttonElement = new ButtonElement(upgradeButton, lockElement, upgradeButtonInfo.isLocked, buttonType); // 생성 
+            UpgradeButtonElement buttonElement = new UpgradeButtonElement(upgradeButton, lockElement, upgradeButtonInfo.isLocked, buttonType); // 생성 
 
             upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
 
@@ -160,12 +68,12 @@ public class UpgradeButtonConstructor
                 upgradeButtonInfo.name = "rate-upgrade-button";
                 upgradeButtonInfo.isLocked = false;
                 upgradeButtonInfo.clickEvent = () => _fireWorkController.UpdateRate(0.5f);
-                break; 
+                break;
             case UpgradeButtonType.Further1:
                 upgradeButtonInfo.name = "further1-upgrade-button";
                 upgradeButtonInfo.isLocked = _fireWorkController.IsCanFurther1;
-                upgradeButtonInfo.clickEvent = () => _fireWorkController.UpdateFurtherCount1(1); 
-                break;  
+                upgradeButtonInfo.clickEvent = () => _fireWorkController.UpdateFurtherCount1(1);
+                break;
             case UpgradeButtonType.Further2:
                 upgradeButtonInfo.name = "further2-upgrade-button";
                 upgradeButtonInfo.isLocked = _fireWorkController.IsCanFurther2;
@@ -182,33 +90,33 @@ public class UpgradeButtonConstructor
                 upgradeButtonInfo.clickEvent = () => _fireWorkController.UpdateFurtherCount4(1);
                 break;
         }
-        return upgradeButtonInfo; 
+        return upgradeButtonInfo;
     }
 
     private void InitEnumList()
     {
-        _buttonTypeList.Clear(); 
+        _buttonTypeList.Clear();
 
-        foreach(UpgradeButtonType buttonType in Enum.GetValues(typeof(UpgradeButtonType)))
+        foreach (UpgradeButtonType buttonType in Enum.GetValues(typeof(UpgradeButtonType)))
         {
-            _buttonTypeList.Add(buttonType); 
+            _buttonTypeList.Add(buttonType);
         }
     }
 
- 
+
     /// <summary>
     /// 버튼을 잠그거나 잠금해제 isLocked - true 잠금 / isLocked - false 잠금 해제 
     /// </summary>
     /// <param name="buttonType"></param>
     /// <param name="isLocked"></param>
-    public void LockOrUnlockButton(UpgradeButtonType buttonType,bool isLocked)
+    public void LockOrUnlockButton(UpgradeButtonType buttonType, bool isLocked)
     {
         _buttonElementList.ForEach((x) =>
         {
             if (x._type == buttonType)
             {
                 x.IsLocked = isLocked;
-                x.LockButton(); 
+                x.LockButton();
             }
         });
     }
@@ -217,14 +125,14 @@ public class UpgradeButtonConstructor
     {
         public string name; // 이름
         public bool isLocked;  // 잠금 여부 
-        public Action clickEvent; 
+        public Action clickEvent;
     }
 }
 
 /// <summary>
 /// 업그레이드 버튼 (SO로 관리할 수도..) 
 /// </summary>
-public class ButtonElement
+public class UpgradeButtonElement
 {
     public UpgradeButtonType _type; // 식별자 
     public Button _button; // 자기 자신
@@ -235,13 +143,13 @@ public class ButtonElement
     private Label _costLabel;  // 가격 텍스트라벨 
 
     private bool _isLocked; // 잠겨있는 상태 
-    
+
     public bool IsLocked
-    { 
+    {
         get => _isLocked;
         set
         {
-            _isLocked = value; 
+            _isLocked = value;
         }
     }
     /// <summary>
@@ -251,7 +159,7 @@ public class ButtonElement
     /// <param name="loackElement">잠금 아이콘이미지</param>
     /// <param name="isLocked">잠금 여부</param>
     /// <param name="code">식별자</param>
-    public ButtonElement(Button button, VisualElement loackElement, bool isLocked, UpgradeButtonType type)
+    public UpgradeButtonElement(Button button, VisualElement loackElement, bool isLocked, UpgradeButtonType type)
     {
         this._button = button;
         this._lockElement = loackElement;
@@ -263,10 +171,10 @@ public class ButtonElement
 
     public void LockButton()
     {
-        if(_isLocked == true) // 잠겨있으면 
+        if (_isLocked == true) // 잠겨있으면 
         {
             _lockElement.style.display = DisplayStyle.Flex;
-            _button.style.display = DisplayStyle.None; 
+            _button.style.display = DisplayStyle.None;
             // 버튼 클릭 안되도록 
             return;
         }
