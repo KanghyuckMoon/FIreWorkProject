@@ -9192,7 +9192,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
+    texture2D: {fileID: 2800000, guid: ca733f4f0d9496d46846514dc855106c, type: 3}
   - itemCode: 102
     itemType: 2
     gradient_1:
@@ -9282,7 +9282,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: 54f2f6137d48e744fbf6250a4eb98c2e, type: 3}
+    texture2D: {fileID: 2800000, guid: 6701c32d35546ad4e961e805310dd982, type: 3}
   - itemCode: 103
     itemType: 2
     gradient_1:
@@ -9372,7 +9372,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: a86f2ba2624db734abeab00334cc06cc, type: 3}
+    texture2D: {fileID: 2800000, guid: cb48bac64cf7fb641b2c3d6f54a49656, type: 3}
   - itemCode: 104
     itemType: 2
     gradient_1:
@@ -9462,7 +9462,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: cc43be5237899c0499f4792c6477dbec, type: 3}
+    texture2D: {fileID: 2800000, guid: 187f860dffb1ab24197e6d7cfdf16a3f, type: 3}
   - itemCode: 105
     itemType: 2
     gradient_1:
@@ -9552,7 +9552,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: 3b2e4e5390abe644c9047b94e1376065, type: 3}
+    texture2D: {fileID: 2800000, guid: 3e1f945d90fbb5541b9311bee491ff72, type: 3}
   - itemCode: 106
     itemType: 2
     gradient_1:
@@ -9642,7 +9642,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: 0c87a10197075bb43a89df15571af469, type: 3}
+    texture2D: {fileID: 2800000, guid: f1e67f4c506014f44937483a33308100, type: 3}
   - itemCode: 107
     itemType: 2
     gradient_1:
@@ -9732,7 +9732,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: 966ea94de6da9884082daa565834b06f, type: 3}
+    texture2D: {fileID: 2800000, guid: 42db1df37ecfb5045ae0a42a0eefad08, type: 3}
   - itemCode: 108
     itemType: 2
     gradient_1:
@@ -9822,7 +9822,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: f32b17fe3ade9464a998e809c09b0673, type: 3}
+    texture2D: {fileID: 2800000, guid: 872d835a33146f14eb57cad0b63f081a, type: 3}
   - itemCode: 109
     itemType: 2
     gradient_1:
@@ -9912,7 +9912,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: da5bba864d84fab4c9352015a60953bc, type: 3}
+    texture2D: {fileID: 2800000, guid: 3e24c2bcfced6ae45babf46de9cbc02d, type: 3}
   - itemCode: 110
     itemType: 2
     gradient_1:
@@ -10002,7 +10002,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: dd1b7b6b5b1df8640a187ee5922f20ef, type: 3}
+    texture2D: {fileID: 2800000, guid: a7b3fa29f55e25241baaab6e8ed2b6c7, type: 3}
   - itemCode: 111
     itemType: 2
     gradient_1:
@@ -10092,7 +10092,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: df2034d9b8cbd4b4f87e2f8da75edeb6, type: 3}
+    texture2D: {fileID: 2800000, guid: cd88e0658b72a6f4f95337a92548491d, type: 3}
   - itemCode: 112
     itemType: 2
     gradient_1:
@@ -10182,7 +10182,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: 7d27e4538f7899c4d8b1a4b0712b77e1, type: 3}
+    texture2D: {fileID: 2800000, guid: 8ff1d051cab451b408540f96cc972214, type: 3}
   - itemCode: 113
     itemType: 2
     gradient_1:
@@ -10272,7 +10272,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: c3097fbf5286afe4692f9d336db11daa, type: 3}
+    texture2D: {fileID: 2800000, guid: 75d77b6e5caa2d34992dd75850d1fba3, type: 3}
   - itemCode: 114
     itemType: 2
     gradient_1:
@@ -10362,7 +10362,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: 57bb5846aaf6f144d99efd4f8439bb63, type: 3}
+    texture2D: {fileID: 2800000, guid: b680bb96868856940adbe445df7e9913, type: 3}
   - itemCode: 115
     itemType: 2
     gradient_1:
@@ -10452,7 +10452,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: fc1ffd82e9b2c3744b0fdf9bccc66a8b, type: 3}
+    texture2D: {fileID: 2800000, guid: fca99727c3ee7e34eaf23e57bccd9249, type: 3}
   - itemCode: 116
     itemType: 2
     gradient_1:
@@ -10542,7 +10542,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: 62bb1123d19cf634b8795e456d1fe37f, type: 3}
+    texture2D: {fileID: 2800000, guid: 61c1b77584cf96549b0201c6b444c41e, type: 3}
   - itemCode: 117
     itemType: 2
     gradient_1:
@@ -10632,7 +10632,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 2800000, guid: 43de5838f293c0c4b9ed1bd014bb898a, type: 3}
+    texture2D: {fileID: 2800000, guid: 714336432d6519441930b3c0ed27ca52, type: 3}
   - itemCode: 118
     itemType: 2
     gradient_1:
@@ -10722,7 +10722,7 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
+    texture2D: {fileID: 2800000, guid: 2d578c9d998e14b4caab97679d84b5a9, type: 3}
   - itemCode: 119
     itemType: 2
     gradient_1:
@@ -10812,4 +10812,94 @@ MonoBehaviour:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    texture2D: {fileID: 10906, guid: 0000000000000000f000000000000000, type: 0}
+    texture2D: {fileID: 2800000, guid: fcb07a52c8e40414c8e0b7368104ce81, type: 3}
+  - itemCode: 119
+    itemType: 2
+    gradient_1:
+      serializedVersion: 2
+      key0: {r: 512, g: 54.375458, b: 0, a: 0}
+      key1: {r: 512, g: 54.375458, b: 0, a: 0}
+      key2: {r: 512, g: 54.375458, b: 0, a: 0}
+      key3: {r: 1, g: 0.49004716, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 65535
+      ctime3: 65535
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 65535
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    gradient_2:
+      serializedVersion: 2
+      key0: {r: 512, g: 54.375458, b: 0, a: 0}
+      key1: {r: 512, g: 54.375458, b: 0, a: 0}
+      key2: {r: 511.99994, g: 14.590588, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 65535
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 65535
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    gradient_3:
+      serializedVersion: 2
+      key0: {r: 512, g: 54.375458, b: 0, a: 0}
+      key1: {r: 512, g: 54.375458, b: 0, a: 0}
+      key2: {r: 511.99994, g: 159.8803, b: 0, a: 0}
+      key3: {r: 62.821312, g: 1266.8965, b: 486.86517, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 65535
+      ctime3: 65535
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 65535
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    texture2D: {fileID: 2800000, guid: 1cfff97b70439e349a42c649e6ccf2e5, type: 3}

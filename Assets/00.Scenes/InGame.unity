@@ -1897,8 +1897,8 @@ Transform:
   m_LocalScale: {x: 0.05, y: 0.02540111, z: 0.054147802}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1697541267}
-  m_RootOrder: 4
+  m_Father: {fileID: 1410248420}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &192330228
 MonoBehaviour:
@@ -9136,8 +9136,8 @@ Transform:
   m_LocalScale: {x: 0.05, y: 0.02540111, z: 0.054147802}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1697541267}
-  m_RootOrder: 2
+  m_Father: {fileID: 1410248420}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &934469625
 MonoBehaviour:
@@ -12529,6 +12529,7 @@ GameObject:
   - component: {fileID: 1310168227}
   - component: {fileID: 1310168226}
   - component: {fileID: 1310168230}
+  - component: {fileID: 1310168231}
   m_Layer: 0
   m_Name: Cloud_Cumulus (2)
   m_TagString: Untagged
@@ -12612,8 +12613,8 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.05080222, z: 0.108295605}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1697541267}
-  m_RootOrder: 3
+  m_Father: {fileID: 1410248420}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1310168230
 MonoBehaviour:
@@ -12628,6 +12629,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _achievementCode: 9
+--- !u!95 &1310168231
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310168225}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1328307993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13357,6 +13378,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 420506, guid: b4c76366100be8d47aaca26006e1e7d5, type: 3}
   m_PrefabInstance: {fileID: 1409379691}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1410248419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410248420}
+  - component: {fileID: 1410248421}
+  m_Layer: 0
+  m_Name: CloudRotate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1410248420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410248419}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4149905532079859832}
+  - {fileID: 934469624}
+  - {fileID: 1310168229}
+  - {fileID: 192330227}
+  m_Father: {fileID: 1697541267}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1410248421
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410248419}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cb1371e7ad9712849aac31dee27ef726, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1415232265
 GameObject:
   m_ObjectHideFlags: 0
@@ -13706,8 +13783,8 @@ VisualEffect:
       - m_Value:
           serializedVersion: 2
           key0: {r: 24543.875, g: 24543.875, b: 24543.875, a: 1}
-          key1: {r: 20.078432, g: 742.902, b: 766.9961, a: 0.654902}
-          key2: {r: 0, g: 385.5059, b: 766.9961, a: 0}
+          key1: {r: 40.658825, g: 47.937256, b: 44.67451, a: 0.654902}
+          key2: {r: 37.39608, g: 42.164707, b: 47.937256, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
@@ -13737,8 +13814,8 @@ VisualEffect:
       - m_Value:
           serializedVersion: 2
           key0: {r: 24543.875, g: 24543.875, b: 24543.875, a: 1}
-          key1: {r: 20.078432, g: 586.2902, b: 766.9961, a: 0.654902}
-          key2: {r: 0, g: 240.94118, b: 766.9961, a: 0}
+          key1: {r: 40.658825, g: 47.937256, b: 45.678432, a: 0.654902}
+          key2: {r: 37.64706, g: 40.407845, b: 47.937256, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
@@ -13768,8 +13845,8 @@ VisualEffect:
       - m_Value:
           serializedVersion: 2
           key0: {r: 24543.875, g: 24543.875, b: 24543.875, a: 1}
-          key1: {r: 20.078432, g: 349.36472, b: 766.9961, a: 0.654902}
-          key2: {r: 0, g: 36.14118, b: 766.9961, a: 0}
+          key1: {r: 40.658825, g: 47.937256, b: 41.913727, a: 0.654902}
+          key2: {r: 37.64706, g: 45.17647, b: 47.937256, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
@@ -17115,10 +17192,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 561819959}
-  - {fileID: 4149905532079859832}
-  - {fileID: 934469624}
-  - {fileID: 1310168229}
-  - {fileID: 192330227}
+  - {fileID: 1410248420}
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22601,8 +22675,8 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.05080222, z: 0.108295605}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1697541267}
-  m_RootOrder: 1
+  m_Father: {fileID: 1410248420}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &4149905532081768212
 MeshRenderer:
