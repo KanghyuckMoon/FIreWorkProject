@@ -1,0 +1,71 @@
+.button1:hover {
+    height: 10%;
+    width: 50%;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    -unity-font-style: bold;
+    font-size: 30px;
+    display: flex;
+    color: rgb(255, 255, 255);
+    background-color: rgb(108, 108, 108);
+    -unity-background-image-tint-color: rgb(144, 144, 144);
+    rotate: 0;
+    scale: 1.05 1.05;
+}
+
+.button1:active {
+    height: 10%;
+    width: 50%;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    -unity-font-style: bold;
+    font-size: 30px;
+    display: flex;
+    color: rgb(255, 255, 255);
+    background-color: rgb(108, 108, 108);
+    -unity-background-image-tint-color: rgb(144, 144, 144);
+    rotate: 0;
+    flex-direction: column;
+    cursor: initial;
+    transition-property: none;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out-back;
+    opacity: 0.9;
+    scale: 0.95 0.95;
+}
+
+.button1 {
+    height: 10%;
+    width: 50%;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    -unity-font-style: bold;
+    font-size: 30px;
+    display: flex;
+    color: rgb(255, 255, 255);
+    background-color: rgb(108, 108, 108);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+}
