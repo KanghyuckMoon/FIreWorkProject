@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrapicSetting : MonoBehaviour
+[System.Serializable]
+public class GrapicSetting 
 {
 	public bool IsFoolScreen
 	{
