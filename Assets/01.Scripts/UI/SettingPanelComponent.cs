@@ -18,6 +18,7 @@ public class SettingPanelComponent : UIComponent
     private Button _endButton; // 게임 종료 버튼
 
     private Button _applyButton; // 적용하기 버튼 
+    private Button _graphicBackButton; // 그래픽 뒤로가기 버튼 
     private DropdownField _dropdownMenu;
     private Toggle _fullScreenToggle; 
     public override void Init(UIButtonManager uiButtonManager)
@@ -37,13 +38,20 @@ public class SettingPanelComponent : UIComponent
         
         _dropdownMenu = _graphicSettingPanel.Q<DropdownField>("graphic-setting");
         _fullScreenToggle = _graphicSettingPanel.Q<Toggle>("fullscreen-toggle");
+        _applyButton = _graphicSettingPanel.Q<Button>("apply-button");
+        _graphicBackButton = _graphicSettingPanel.Q<Button>("back-button"); 
 
         Debug.Log(_dropdownMenu.name);
 
+        // 버튼 이벤트 등록 
+        _settingButton.clicked += () => OpenCloseSetting(_settingPanel);
+        _backButton.clicked += () => OpenCloseSetting(_settingPanel);
 
-        _settingButton.clicked += () => OpenCloseSetting();
-        _backButton.clicked += () => OpenCloseSetting();
-        _fullScreenToggle.RegisterValueChangedCallback((x) => FullScreen()); 
+        // 그래픽 세팅 
+        _fullScreenToggle.RegisterValueChangedCallback((x) => FullScreen());
+        _applyButton.clicked += () => ApplySetting();
+        _graphicBackButton.clicked += () => OpenCloseSetting(_graphicSettingPanel);
+        _graphicButton.clicked += () => OpenCloseSetting(_graphicSettingPanel);
     }
 
     public override void UpdateSometing()
@@ -53,14 +61,14 @@ public class SettingPanelComponent : UIComponent
     /// <summary>
     /// 설정 패널 열고 닫기 
     /// </summary>
-    public void OpenCloseSetting()
+    public void OpenCloseSetting(TemplateContainer settingPanel)
     {
-        if(_settingPanel.style.display.value == DisplayStyle.Flex)
+        if(settingPanel.style.display.value == DisplayStyle.Flex)
         {
-            _settingPanel.style.display = DisplayStyle.None;
+            settingPanel.style.display = DisplayStyle.None;
             return;
         }
-        _settingPanel.style.display = DisplayStyle.Flex;
+        settingPanel.style.display = DisplayStyle.Flex;
     }
 
     /// <summary>
@@ -70,5 +78,13 @@ public class SettingPanelComponent : UIComponent
     {
         Debug.Log("변경이요");
         _grapicSetting.ChangeFoolScreen(); 
+    }
+
+    /// <summary>
+    /// 설정 적용
+    /// </summary>
+    private void ApplySetting()
+    {
+        _grapicSetting.ApplySettingScreen(); 
     }
 }
