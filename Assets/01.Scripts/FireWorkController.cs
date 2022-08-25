@@ -109,21 +109,25 @@ public class FireWorkController : MonoBehaviour
 		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further1);
 		itemChanger.ChangeFirework(itemData1);
 		itemChanger.ChangeFirework(itemDataTexture1);
+		itemChanger.ChangeSize(UserSaveDataManager.Instance.UserSaveData.further1Size);
 
 		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further2ColorLight);
 		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further2);
 		itemChanger.ChangeFirework(itemData2);
 		itemChanger.ChangeFirework(itemDataTexture2);
+		itemChanger.ChangeSize(UserSaveDataManager.Instance.UserSaveData.further2Size);
 
 		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further3ColorLight);
 		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further3);
 		itemChanger.ChangeFirework(itemData3);
 		itemChanger.ChangeFirework(itemDataTexture3);
+		itemChanger.ChangeSize(UserSaveDataManager.Instance.UserSaveData.further3Size);
 
 		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further4ColorLight);
 		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further4);
 		itemChanger.ChangeFirework(itemData4);
 		itemChanger.ChangeFirework(itemDataTexture4);
+		itemChanger.ChangeSize(UserSaveDataManager.Instance.UserSaveData.further4Size);
 
 	}
 
