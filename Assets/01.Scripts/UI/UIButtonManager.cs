@@ -54,6 +54,7 @@ public class UIButtonManager : MonoBehaviour
             _gameScreen.style.display = _gameScreen.style.display == DisplayStyle.Flex ? DisplayStyle.None : DisplayStyle.Flex;
             //_gameScreen.visible = _gameScreen.visible == false ? true : false; 
         }
+        UpdateMoneyText(); 
     }
 
     /// <summary>
@@ -75,8 +76,8 @@ public class UIButtonManager : MonoBehaviour
 
 
         //// 라벨 캐싱 
-        //_happyMoneyLabel = _rootElement.Q<Label>("HappyMoneyLabel");
-        //_moneyLabel = _rootElement.Q<Label>("MoneyLabel");
+        _happyMoneyLabel = _rootElement.Q<Label>("happyMoney-label");
+        _moneyLabel = _rootElement.Q<Label>("money-label");
 
         // 업그레이드 버튼 생성
         _upgradeButtonConstructor = new UpgradeButtonConstructor(_fireWorkController,_rootElement);
@@ -102,7 +103,9 @@ public class UIButtonManager : MonoBehaviour
     {
 
     }
-
-    // 생성 - 리스트 - further값에 따라 잠금 
-    // 체크 
+    public void UpdateMoneyText()
+    {
+        _happyMoneyLabel.text = string.Format("행복 재화 : {0}",UserSaveDataManager.Instance.UserSaveData.happy.ToString());
+        _moneyLabel.text = string.Format("돈 재화 : {0}",UserSaveDataManager.Instance.UserSaveData.money.ToString()); 
+    }
 }
