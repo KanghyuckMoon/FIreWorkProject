@@ -52,6 +52,8 @@ public class GrapicSetting
 	public void ChangeGrapicSetting(int index)
 	{
 		QualitySettings.SetQualityLevel(index, true);
+		UserSaveDataManager.Instance.UserSaveData.grapicQulityIndex = index;
+		UserSaveDataManager.Save();
 	}
 
 	/// <summary>
@@ -79,5 +81,9 @@ public class GrapicSetting
 	public void ApplySettingScreen()
 	{
 		Screen.SetResolution(Width, Height, IsFoolScreen);
+		UserSaveDataManager.Instance.UserSaveData.width = Width;
+		UserSaveDataManager.Instance.UserSaveData.height = Height;
+		UserSaveDataManager.Instance.UserSaveData.isFullScreen = IsFoolScreen;
+		UserSaveDataManager.Save();
 	}
 }

@@ -19,5 +19,16 @@ public class SoundSetting : MonoBehaviour
 	{
 		_audioMixer.SetFloat("BGMVolume", _bgmAudioSlider.value);
 		_audioMixer.SetFloat("EFFVolume", _effAudioSlider.value);
+		UserSaveDataManager.Instance.UserSaveData.bgmVoulume = _bgmAudioSlider.value;
+		UserSaveDataManager.Instance.UserSaveData.bgmVoulume = _effAudioSlider.value;
+		UserSaveDataManager.Save();
+	}
+
+	public void ApplySettingSound(float bgmvalue, float effvlaue)
+	{
+		_bgmAudioSlider.value = bgmvalue;
+		_effAudioSlider.value = effvlaue;
+		_audioMixer.SetFloat("BGMVolume", bgmvalue);
+		_audioMixer.SetFloat("EFFVolume", effvlaue);
 	}
 }
