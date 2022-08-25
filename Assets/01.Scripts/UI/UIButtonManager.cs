@@ -31,7 +31,9 @@ public class UIButtonManager : MonoBehaviour
     private Label _moneyLabel; // 돈 재화 표시 
 
     private FireWorkController _fireWorkController;
-
+    private GrapicSetting _graphicSetting;
+    private SoundSetting _soundSetting;
+    private Exit _exit; 
     // 프로퍼티 
     public VisualElement RootElement => _rootElement; 
 
@@ -44,7 +46,7 @@ public class UIButtonManager : MonoBehaviour
     private void Start()
     {
         _settingPanelComponent = new SettingPanelComponent(); 
-        _settingPanelComponent.Init(this); // 설정 버튼, 패널 캐싱 
+        _settingPanelComponent.Init(this, _graphicSetting, _soundSetting,_exit); // 설정 버튼, 패널 캐싱 
     }
     private void Update()
     {
@@ -62,7 +64,10 @@ public class UIButtonManager : MonoBehaviour
     /// </summary>
     private void CashingElements()
     {
-          _fireWorkController = FindObjectOfType<FireWorkController>(); 
+         _fireWorkController = FindObjectOfType<FireWorkController>();
+        _graphicSetting = FindObjectOfType<GrapicSetting>();
+        _soundSetting = FindObjectOfType<SoundSetting>();
+        _exit = FindObjectOfType<Exit>(); 
 
         _mainUIDoc = GetComponent<UIDocument>();
         _rootElement = _mainUIDoc.rootVisualElement;

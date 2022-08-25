@@ -7,5 +7,5 @@
         <ui:Button text="그래픽 설정" display-tooltip-when-elided="true" name="graphic-button" class="button button1" style="bottom: 5%; width: 60%; height: 13%;" />
         <ui:Button text="게임 종료" display-tooltip-when-elided="true" name="end-button" class="button button1" style="flex-direction: column; bottom: 15%; width: 60%; align-items: auto; height: 13%;" />
     </ui:VisualElement>
-    <ui:Instance template="GraphicSettingUI" name="GraphicSettingTemplate" />
+    <ui:Instance template="GraphicSettingUI" name="GraphicSettingTemplate" style="position: absolute; left: 14%; top: 18%; display: none;" />
 </ui:UXML>

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 using UnityEngine.Audio;
 
 public class SoundSetting : MonoBehaviour
@@ -11,6 +11,29 @@ public class SoundSetting : MonoBehaviour
 	[SerializeField] Slider _bgmAudioSlider;
 	[SerializeField] Slider _effAudioSlider;
 
+	/// <summary>
+	/// 슬라이더 받아오오기 
+	/// </summary>
+	/// <param name="bgmAudioSlider"></param>
+	/// <param name="effAudioSlider"></param>
+	public void InitSlider(Slider bgmAudioSlider, Slider effAudioSlider)
+    {
+		this._bgmAudioSlider = bgmAudioSlider;
+		this._effAudioSlider = effAudioSlider; 
+    }
+	public void SetBgmAudio(float bgmValue)
+    {
+		_audioMixer.SetFloat("BGMVolume",bgmValue);
+		UserSaveDataManager.Instance.UserSaveData.bgmVoulume = _bgmAudioSlider.value;
+		UserSaveDataManager.Save();
+	}
+
+	public void SetEffAudio(float effValue)
+    {
+		_audioMixer.SetFloat("BGMVolume", effValue);
+		UserSaveDataManager.Instance.UserSaveData.effVoulume = _effAudioSlider.value;
+		UserSaveDataManager.Save();
+	}
 
 	/// <summary>
 	/// 소리 설정 적용
