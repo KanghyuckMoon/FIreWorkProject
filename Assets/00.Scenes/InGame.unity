@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7515811, g: 1.982604, b: 3.396531, a: 1}
+  m_IndirectSpecularColor: {r: 0.7516173, g: 1.9799595, b: 3.3909707, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -28508,10 +28508,10 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 3
-  _furtherTexture1: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
-  _furtherTexture2: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
-  _furtherTexture3: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
-  _furtherTexture4: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+  _furtherTexture1: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 3}
+  _furtherTexture2: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 3}
+  _furtherTexture3: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 3}
+  _furtherTexture4: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 3}
   corotin: 1
 --- !u!114 &1971074906
 MonoBehaviour:

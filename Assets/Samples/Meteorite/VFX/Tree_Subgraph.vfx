@@ -6,7 +6,7 @@ VisualEffectResource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Tree_Subgraph
+  m_Name: VFX_Tree_Subgraph
   m_Graph: {fileID: 2}
   m_Infos:
     m_RendererSettings:
@@ -30,7 +30,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4c867f6b72b714dbb5fd1780afe208, type: 3}
-  m_Name: Tree_Subgraph
+  m_Name: VFX_Tree_Subgraph
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 0}
@@ -139,8 +139,9 @@ MonoBehaviour:
     enumValues: []
     descendantCount: 0
   m_ImportDependencies: []
-  m_GraphVersion: 9
+  m_GraphVersion: 6
   m_ResourceVersion: 1
+  m_saved: 1
   m_SubgraphDependencies: []
   m_CategoryPath: 
 --- !u!114 &3
@@ -211,7 +212,7 @@ MonoBehaviour:
   - link: []
   m_OutputFlowSlot:
   - link: []
-  vfxSystemSortPriority: 0
+  sortPriority: 0
   castShadows: 1
 --- !u!114 &5
 MonoBehaviour:
@@ -884,7 +885,8 @@ MonoBehaviour:
   title: 
   m_Owners:
   - {fileID: 4}
-  m_Shader: {fileID: -6465566751694194690, guid: 9c61f14dd9141344989a50f3390b852c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 9c61f14dd9141344989a50f3390b852c,
+    type: 3}
   m_ShaderName: Shader Graphs/Tree
 --- !u!114 &25
 MonoBehaviour:
@@ -919,7 +921,7 @@ MonoBehaviour:
   - link: []
   m_OutputFlowSlot:
   - link: []
-  vfxSystemSortPriority: 0
+  sortPriority: 0
   castShadows: 1
 --- !u!114 &26
 MonoBehaviour:
@@ -1454,7 +1456,8 @@ MonoBehaviour:
   title: 
   m_Owners:
   - {fileID: 25}
-  m_Shader: {fileID: -6465566751694194690, guid: 76b87eff1d9202f44bd3e662b24f842e, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 76b87eff1d9202f44bd3e662b24f842e,
+    type: 3}
   m_ShaderName: Shader Graphs/BrownVertexOffset
 --- !u!114 &50
 MonoBehaviour:
@@ -1856,7 +1859,7 @@ MonoBehaviour:
   - link: []
   m_OutputFlowSlot:
   - link: []
-  vfxSystemSortPriority: 0
+  sortPriority: 0
   castShadows: 1
 --- !u!114 &123
 MonoBehaviour:
@@ -2529,7 +2532,8 @@ MonoBehaviour:
   title: 
   m_Owners:
   - {fileID: 122}
-  m_Shader: {fileID: -6465566751694194690, guid: 9c61f14dd9141344989a50f3390b852c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 9c61f14dd9141344989a50f3390b852c,
+    type: 3}
   m_ShaderName: Shader Graphs/Tree
 --- !u!114 &143
 MonoBehaviour:
@@ -3470,7 +3474,7 @@ MonoBehaviour:
   - link: []
   m_OutputFlowSlot:
   - link: []
-  vfxSystemSortPriority: 0
+  sortPriority: 0
   castShadows: 1
 --- !u!114 &242
 MonoBehaviour:
@@ -4143,7 +4147,8 @@ MonoBehaviour:
   title: 
   m_Owners:
   - {fileID: 241}
-  m_Shader: {fileID: -6465566751694194690, guid: 9c61f14dd9141344989a50f3390b852c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 9c61f14dd9141344989a50f3390b852c,
+    type: 3}
   m_ShaderName: Shader Graphs/Tree
 --- !u!114 &283
 MonoBehaviour:
@@ -5187,7 +5192,7 @@ MonoBehaviour:
   m_Parent: {fileID: 2}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
@@ -5409,7 +5414,7 @@ MonoBehaviour:
   m_Parent: {fileID: 2}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:

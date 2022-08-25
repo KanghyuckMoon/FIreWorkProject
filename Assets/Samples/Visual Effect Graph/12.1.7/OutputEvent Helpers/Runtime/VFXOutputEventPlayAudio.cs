@@ -7,7 +7,6 @@ namespace UnityEngine.VFX.Utility
     [RequireComponent(typeof(VisualEffect))]
     class VFXOutputEventPlayAudio : VFXOutputEventAbstractHandler
     {
-        new public ExposedProperty outputEvent = "On Received Event";
         public override bool canExecuteInEditor => true;
 
         public AudioSource audioSource;
@@ -15,9 +14,7 @@ namespace UnityEngine.VFX.Utility
         public override void OnVFXOutputEvent(VFXEventAttribute eventAttribute)
         {
             if (audioSource != null)
-			{
                 audioSource.Play();
-			}
         }
     }
 }
