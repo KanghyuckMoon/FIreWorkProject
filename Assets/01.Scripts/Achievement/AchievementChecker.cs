@@ -35,7 +35,7 @@ public class AchievementChecker
 		_achievements.Add(new Achievement(10, x => x.happy >= 1100)); //집4
 		_achievements.Add(new Achievement(11, x => x.happy >= 1200)); //집5
 		_achievements.Add(new Achievement(12, x => x.happy >= 1200)); //집6
-		_achievements.Add(new Achievement(13, x => x.happy >= 1200)); //하트 구름
+		_achievements.Add(new Achievement(13, x => x.further1ColorItemCode == x.further2ColorItemCode && x.further2ColorItemCode == x.further3ColorItemCode && x.further3ColorItemCode == x.further4ColorItemCode)); //하트 구름
 		_achievements.Add(new Achievement(14, x => x.happy >= 1200)); //램프1
 		_achievements.Add(new Achievement(15, x => x.happy >= 1200)); //램프2
 		_achievements.Add(new Achievement(16, x => x.happy >= 1200)); //램프3
