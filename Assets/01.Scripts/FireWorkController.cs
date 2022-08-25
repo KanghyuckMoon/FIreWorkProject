@@ -65,14 +65,20 @@ public class FireWorkController : MonoBehaviour
 	[SerializeField] private Texture2D _furtherTexture2;
 	[SerializeField] private Texture2D _furtherTexture3;
 	[SerializeField] private Texture2D _furtherTexture4;
+	[SerializeField] private ItemDataSO _itemDataSO;
 
 
 	private List<float> _explosiontime = new List<float>();
 	public bool corotin;
-
+	public bool saveDatasetting;
 
 	private void Start()
 	{
+		if(saveDatasetting)
+		{
+			SaveDataSetting();
+		}
+
 		UpdateRate();
 		StartCoroutine(FireworkStart());
 	}
@@ -80,6 +86,45 @@ public class FireWorkController : MonoBehaviour
 	private void Update()
 	{
 		Explosion();
+	}
+
+	/// <summary>
+	/// ÀúÀå µ¥ÀÌÅÍ±â¹Ý ¼³Á¤
+	/// </summary>
+	public void SaveDataSetting()
+	{
+		var itemChanger = FindObjectOfType<ItemChangeManager>();
+
+		//1Â÷ ¼³Á¤
+		var itemData1 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further1ColorItemCode);
+		var itemData2 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further2ColorItemCode);
+		var itemData3 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further3ColorItemCode);
+		var itemData4 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further4ColorItemCode);
+		var itemDataTexture1 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further1TextureItemCode);
+		var itemDataTexture2 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further2TextureItemCode);
+		var itemDataTexture3 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further3TextureItemCode);
+		var itemDataTexture4 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further4TextureItemCode);
+
+		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further1ColorLight);
+		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further1);
+		itemChanger.ChangeFirework(itemData1);
+		itemChanger.ChangeFirework(itemDataTexture1);
+
+		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further2ColorLight);
+		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further2);
+		itemChanger.ChangeFirework(itemData2);
+		itemChanger.ChangeFirework(itemDataTexture2);
+
+		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further3ColorLight);
+		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further3);
+		itemChanger.ChangeFirework(itemData3);
+		itemChanger.ChangeFirework(itemDataTexture3);
+
+		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further4ColorLight);
+		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further4);
+		itemChanger.ChangeFirework(itemData4);
+		itemChanger.ChangeFirework(itemDataTexture4);
+
 	}
 
 	[ContextMenu("Play")]
@@ -422,5 +467,38 @@ public class FireWorkController : MonoBehaviour
 		UpdateFurtherTexture2();
 		UpdateFurtherTexture3();
 		UpdateFurtherTexture4();
+	}
+
+	/// <summary>
+	/// ºÒ²É³îÀÌ1 Å©±â Á¶Àý
+	/// </summary>
+	/// <param name="value"></param>
+	public void ChangeSizeFurther1(float value)
+	{
+		VFXSetFloat(_visualEffect, "FurtherSize1", value);
+	}
+	/// <summary>
+	/// ºÒ²É³îÀÌ2 Å©±â Á¶Àý
+	/// </summary>
+	/// <param name="value"></param>
+	public void ChangeSizeFurther2(float value)
+	{
+		VFXSetFloat(_visualEffect, "FurtherSize2", value);
+	}
+	/// <summary>
+	/// ºÒ²É³îÀÌ3 Å©±â Á¶Àý
+	/// </summary>
+	/// <param name="value"></param>
+	public void ChangeSizeFurther3(float value)
+	{
+		VFXSetFloat(_visualEffect, "FurtherSize3", value);
+	}
+	/// <summary>
+	/// ºÒ²É³îÀÌ4 Å©±â Á¶Àý
+	/// </summary>
+	/// <param name="value"></param>
+	public void ChangeSizeFurther4(float value)
+	{
+		VFXSetFloat(_visualEffect, "FurtherSize4", value);
 	}
 }

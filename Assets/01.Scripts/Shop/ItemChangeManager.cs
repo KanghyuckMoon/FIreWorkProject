@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemChangeManager : MonoBehaviour
 {
-	private enum CurrentSettingMode
+	public enum CurrentSettingMode
 	{
 		Further1,
 		Further2,
@@ -71,6 +71,48 @@ public class ItemChangeManager : MonoBehaviour
 				break;
 		}
 	}
+
+	/// <summary>
+	/// ∫“≤…≥Ó¿Ã¿« ∫˚ ºº±‚ ∫Ø∞Ê
+	/// </summary>
+	/// <param name="value"></param>
+	public void ChangeItensity(float value)
+	{
+		_intensity = value;
+	}
+
+	/// <summary>
+	/// ∫“≤…≥Ó¿Ã º¯º≠ ∫Ø∞Ê
+	/// </summary>
+	/// <param name="value"></param>
+	public void ChangeFurther(CurrentSettingMode currentSettingMode)
+	{
+		_currentSettingMode = currentSettingMode;
+	}
+
+	/// <summary>
+	/// ∫“≤…≥Ó¿Ã¿« ≈©±‚ ∫Ø∞Ê
+	/// </summary>
+	/// <param name="value"></param>
+	public void ChangeSize(float value)
+	{
+		switch (_currentSettingMode)
+		{
+			case CurrentSettingMode.Further1:
+				FireWorkController.ChangeSizeFurther1(value);
+				break;
+			case CurrentSettingMode.Further2:
+				FireWorkController.ChangeSizeFurther2(value);
+				break;
+			case CurrentSettingMode.Further3:
+				FireWorkController.ChangeSizeFurther3(value);
+				break;
+			case CurrentSettingMode.Further4:
+				FireWorkController.ChangeSizeFurther4(value);
+				break;
+		}
+	}
+
 
 	private Gradient IntensityChangeGradient(Gradient gradient)
 	{
