@@ -1,10 +1,17 @@
 using System;
+using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AchievementChecker
 {
+	public AchievementChecker(AchievementDataSO achievementDataSO)
+	{
+		_achievementDataSO = achievementDataSO;
+	}
+
+	private AchievementDataSO _achievementDataSO = null;
 	private List<Achievement> _achievements = new List<Achievement>();
 	public static int Click
 	{
@@ -88,9 +95,22 @@ public class AchievementChecker
 				{
 					UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(achievement.itemCode);
 					AchievementManager.Instance.SendMessageToObsevers();
+					FunctionInvoke(achievement.itemCode);
 				}
 			}
 		}
+	}
+
+	/// <summary>
+	/// 함수 실행
+	/// </summary>
+	public void FunctionInvoke(int itemCode)
+	{
+		var achievementData = _achievementDataSO._achievementDatas.Find(x => x._achievementCode == itemCode);
+
+		Type type = typeof(AchievementMethod);
+		MethodInfo myClass_FunCallme = type.GetMethod(achievementData._functionName, BindingFlags.Static | BindingFlags.Public);
+		myClass_FunCallme.Invoke(null, new object[] { achievementData._functionParameter });
 	}
 }
 

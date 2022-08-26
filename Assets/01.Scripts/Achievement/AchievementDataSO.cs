@@ -16,5 +16,7 @@ public class AchievementData
 	public int _achievementCode;
 	public string _achievementName;
 	public string _content;
+	public string _functionName;
+	public string _functionParameter;
 }
 
