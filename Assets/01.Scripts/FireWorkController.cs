@@ -42,6 +42,15 @@ public class FireWorkController : MonoBehaviour
 		}
 	}
 
+	public HappyMoneyManager HappyMoneyManager
+	{
+		get
+		{
+			_happyMoneyManager ??= FindObjectOfType<HappyMoneyManager>();
+			return _happyMoneyManager;
+		}
+	}
+
 	[SerializeField] private VisualEffect _visualEffect = null;
 	[SerializeField] private float _rate = 5f;
 	[SerializeField] private int _count = 0;
@@ -66,9 +75,12 @@ public class FireWorkController : MonoBehaviour
 	[SerializeField] private Texture2D _furtherTexture3;
 	[SerializeField] private Texture2D _furtherTexture4;
 	[SerializeField] private ItemDataSO _itemDataSO;
+	[SerializeField] private HappyMoneyManager _happyMoneyManager;
 
-
-	private List<float> _explosiontime = new List<float>();
+	private List<float> _explosiontime1 = new List<float>();
+	private List<float> _explosiontime2 = new List<float>();
+	private List<float> _explosiontime3 = new List<float>();
+	private List<float> _explosiontime4 = new List<float>();
 	public bool corotin;
 	public bool saveDatasetting;
 
@@ -154,24 +166,24 @@ public class FireWorkController : MonoBehaviour
 				float further2lifeTime = 0f;
 				float further3lifeTime = 0f;
 				_visualEffect.SetFloat("lifeTime", lifeTime);
-				_explosiontime.Add(lifeTime);
+				_explosiontime1.Add(lifeTime);
 				if(IsCanFurther2)
 				{
 					further1lifeTime = Random.Range(1f, 1.2f);
 					_visualEffect.SetFloat("FurtherLifeTime1", further1lifeTime);
-					_explosiontime.Add(further1lifeTime + lifeTime);
+					_explosiontime1.Add(further1lifeTime + lifeTime);
 				}
 				if(IsCanFurther3)
 				{
 					further2lifeTime = Random.Range(0.8f, 1f);
 					_visualEffect.SetFloat("FurtherLifeTime2", further2lifeTime);
-					_explosiontime.Add(further2lifeTime + further1lifeTime + lifeTime);
+					_explosiontime1.Add(further2lifeTime + further1lifeTime + lifeTime);
 				}
 				if (IsCanFurther4)
 				{
 					further3lifeTime = Random.Range(0.8f, 1f);
 					_visualEffect.SetFloat("FurtherLifeTime3", further3lifeTime);
-					_explosiontime.Add(further3lifeTime + further2lifeTime + further1lifeTime + lifeTime);
+					_explosiontime1.Add(further3lifeTime + further2lifeTime + further1lifeTime + lifeTime);
 				}
 
 				_visualEffect.SendEvent("Play");
@@ -186,13 +198,36 @@ public class FireWorkController : MonoBehaviour
 
 	public void Explosion()
 	{
-		for(int i = 0; i < _explosiontime.Count; ++i)
+		TimeCheckList(_explosiontime1, 1);
+		TimeCheckList(_explosiontime2, 2);
+		TimeCheckList(_explosiontime3, 3);
+		TimeCheckList(_explosiontime4, 4);
+	}
+
+	private void TimeCheckList(List<float> explosionList, int further = 1)
+	{
+		for (int i = 0; i < explosionList.Count; ++i)
 		{
-			_explosiontime[i] -= Time.deltaTime;
-			if(_explosiontime[i] <= 0f)
+			explosionList[i] -= Time.deltaTime;
+			if (explosionList[i] <= 0f)
 			{
 				_visualEffect.SendEvent("Explosion");
-				_explosiontime.RemoveAt(i--);
+				switch (further)
+				{
+					case 1:
+						_happyMoneyManager.AddHappy(_further1);
+						break;
+					case 2:
+						_happyMoneyManager.AddHappy(_further2);
+						break;
+					case 3:
+						_happyMoneyManager.AddHappy(_further3);
+						break;
+					case 4:
+						_happyMoneyManager.AddHappy(_further4);
+						break;
+				}
+				explosionList.RemoveAt(i--);
 			}
 		}
 	}
