@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.VFX;
 using static Utill.VFX;
 
@@ -42,6 +43,15 @@ public class FireWorkController : MonoBehaviour
 		}
 	}
 
+	public HappyMoneyManager HappyMoneyManager
+	{
+		get
+		{
+			_happyMoneyManager ??= FindObjectOfType<HappyMoneyManager>();
+			return _happyMoneyManager;
+		}
+	}
+
 	[SerializeField] private VisualEffect _visualEffect = null;
 	[SerializeField] private float _rate = 5f;
 	[SerializeField] private int _count = 0;
@@ -65,14 +75,23 @@ public class FireWorkController : MonoBehaviour
 	[SerializeField] private Texture2D _furtherTexture2;
 	[SerializeField] private Texture2D _furtherTexture3;
 	[SerializeField] private Texture2D _furtherTexture4;
+	[SerializeField] private ItemDataSO _itemDataSO;
+	[SerializeField] private HappyMoneyManager _happyMoneyManager;
 
-
-	private List<float> _explosiontime = new List<float>();
+	private List<float> _explosiontime1 = new List<float>();
+	private List<float> _explosiontime2 = new List<float>();
+	private List<float> _explosiontime3 = new List<float>();
+	private List<float> _explosiontime4 = new List<float>();
 	public bool corotin;
-
+	public bool saveDatasetting;
 
 	private void Start()
 	{
+		if(saveDatasetting)
+		{
+			SaveDataSetting();
+		}
+
 		UpdateRate();
 		StartCoroutine(FireworkStart());
 	}
@@ -80,6 +99,49 @@ public class FireWorkController : MonoBehaviour
 	private void Update()
 	{
 		Explosion();
+	}
+
+	/// <summary>
+	/// ÀúÀå µ¥ÀÌÅÍ±â¹Ý ¼³Á¤
+	/// </summary>
+	public void SaveDataSetting()
+	{
+		var itemChanger = FindObjectOfType<ItemChangeManager>();
+
+		//1Â÷ ¼³Á¤
+		var itemData1 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further1ColorItemCode);
+		var itemData2 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further2ColorItemCode);
+		var itemData3 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further3ColorItemCode);
+		var itemData4 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further4ColorItemCode);
+		var itemDataTexture1 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further1TextureItemCode);
+		var itemDataTexture2 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further2TextureItemCode);
+		var itemDataTexture3 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further3TextureItemCode);
+		var itemDataTexture4 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further4TextureItemCode);
+
+		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further1ColorLight);
+		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further1);
+		itemChanger.ChangeFirework(itemData1);
+		itemChanger.ChangeFirework(itemDataTexture1);
+		itemChanger.ChangeSize(UserSaveDataManager.Instance.UserSaveData.further1Size);
+
+		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further2ColorLight);
+		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further2);
+		itemChanger.ChangeFirework(itemData2);
+		itemChanger.ChangeFirework(itemDataTexture2);
+		itemChanger.ChangeSize(UserSaveDataManager.Instance.UserSaveData.further2Size);
+
+		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further3ColorLight);
+		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further3);
+		itemChanger.ChangeFirework(itemData3);
+		itemChanger.ChangeFirework(itemDataTexture3);
+		itemChanger.ChangeSize(UserSaveDataManager.Instance.UserSaveData.further3Size);
+
+		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further4ColorLight);
+		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further4);
+		itemChanger.ChangeFirework(itemData4);
+		itemChanger.ChangeFirework(itemDataTexture4);
+		itemChanger.ChangeSize(UserSaveDataManager.Instance.UserSaveData.further4Size);
+
 	}
 
 	[ContextMenu("Play")]
@@ -105,24 +167,24 @@ public class FireWorkController : MonoBehaviour
 				float further2lifeTime = 0f;
 				float further3lifeTime = 0f;
 				_visualEffect.SetFloat("lifeTime", lifeTime);
-				_explosiontime.Add(lifeTime);
+				_explosiontime1.Add(lifeTime);
 				if(IsCanFurther2)
 				{
 					further1lifeTime = Random.Range(1f, 1.2f);
 					_visualEffect.SetFloat("FurtherLifeTime1", further1lifeTime);
-					_explosiontime.Add(further1lifeTime + lifeTime);
+					_explosiontime1.Add(further1lifeTime + lifeTime);
 				}
 				if(IsCanFurther3)
 				{
 					further2lifeTime = Random.Range(0.8f, 1f);
 					_visualEffect.SetFloat("FurtherLifeTime2", further2lifeTime);
-					_explosiontime.Add(further2lifeTime + further1lifeTime + lifeTime);
+					_explosiontime1.Add(further2lifeTime + further1lifeTime + lifeTime);
 				}
 				if (IsCanFurther4)
 				{
 					further3lifeTime = Random.Range(0.8f, 1f);
 					_visualEffect.SetFloat("FurtherLifeTime3", further3lifeTime);
-					_explosiontime.Add(further3lifeTime + further2lifeTime + further1lifeTime + lifeTime);
+					_explosiontime1.Add(further3lifeTime + further2lifeTime + further1lifeTime + lifeTime);
 				}
 
 				_visualEffect.SendEvent("Play");
@@ -137,13 +199,36 @@ public class FireWorkController : MonoBehaviour
 
 	public void Explosion()
 	{
-		for(int i = 0; i < _explosiontime.Count; ++i)
+		TimeCheckList(_explosiontime1, 1);
+		TimeCheckList(_explosiontime2, 2);
+		TimeCheckList(_explosiontime3, 3);
+		TimeCheckList(_explosiontime4, 4);
+	}
+
+	private void TimeCheckList(List<float> explosionList, int further = 1)
+	{
+		for (int i = 0; i < explosionList.Count; ++i)
 		{
-			_explosiontime[i] -= Time.deltaTime;
-			if(_explosiontime[i] <= 0f)
+			explosionList[i] -= Time.deltaTime;
+			if (explosionList[i] <= 0f)
 			{
 				_visualEffect.SendEvent("Explosion");
-				_explosiontime.RemoveAt(i--);
+				switch (further)
+				{
+					case 1:
+						_happyMoneyManager.AddHappy(_further1);
+						break;
+					case 2:
+						_happyMoneyManager.AddHappy(_further2);
+						break;
+					case 3:
+						_happyMoneyManager.AddHappy(_further3);
+						break;
+					case 4:
+						_happyMoneyManager.AddHappy(_further4);
+						break;
+				}
+				explosionList.RemoveAt(i--);
 			}
 		}
 	}
@@ -422,5 +507,49 @@ public class FireWorkController : MonoBehaviour
 		UpdateFurtherTexture2();
 		UpdateFurtherTexture3();
 		UpdateFurtherTexture4();
+	}
+
+	/// <summary>
+	/// ºÒ²É³îÀÌ1 Å©±â Á¶Àý
+	/// </summary>
+	/// <param name="value"></param>
+	public void ChangeSizeFurther1(float value)
+	{
+		VFXSetFloat(_visualEffect, "FurtherSize1", value);
+	}
+	/// <summary>
+	/// ºÒ²É³îÀÌ2 Å©±â Á¶Àý
+	/// </summary>
+	/// <param name="value"></param>
+	public void ChangeSizeFurther2(float value)
+	{
+		VFXSetFloat(_visualEffect, "FurtherSize2", value);
+	}
+	/// <summary>
+	/// ºÒ²É³îÀÌ3 Å©±â Á¶Àý
+	/// </summary>
+	/// <param name="value"></param>
+	public void ChangeSizeFurther3(float value)
+	{
+		VFXSetFloat(_visualEffect, "FurtherSize3", value);
+	}
+	/// <summary>
+	/// ºÒ²É³îÀÌ4 Å©±â Á¶Àý
+	/// </summary>
+	/// <param name="value"></param>
+	public void ChangeSizeFurther4(float value)
+	{
+		VFXSetFloat(_visualEffect, "FurtherSize4", value);
+	}
+
+	/// <summary>
+	/// ¸®´º¾ó
+	/// </summary>
+	public void Renewal()
+	{
+		HappyMoneyManager.Instance.Happy = 0;
+		HappyMoneyManager.Instance.AddMoney((int)Mathf.Abs(_count - _rate / 2) * (_further1 + 1) * (_further2 + 1) * (_further3 + 1) * (_further4 + 1 ));
+		UserSaveDataManager.Instance.UserSaveData.haveAchievement.Clear();
+		SceneManager.LoadScene("InGame");
 	}
 }

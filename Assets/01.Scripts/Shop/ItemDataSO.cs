@@ -17,6 +17,7 @@ public class ItemDataSO : ScriptableObject
 public class ItemData
 {
 	public int itemCode;
+	public int money;
 	public EItem itemType;
 	[GradientUsage(true)] public Gradient gradient_1;
 	[GradientUsage(true)] public Gradient gradient_2;

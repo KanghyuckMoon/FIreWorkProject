@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDataList:
   - itemCode: 0
+    money: 5000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -104,6 +105,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 1
+    money: 5000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -194,6 +196,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 2
+    money: 5000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -284,6 +287,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 3
+    money: 5000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -374,6 +378,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 4
+    money: 5000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -464,6 +469,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 5
+    money: 50000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -554,6 +560,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 6
+    money: 50000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -644,6 +651,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 7
+    money: 50000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -734,6 +742,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 8
+    money: 50000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -824,6 +833,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 9
+    money: 50000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -914,6 +924,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 10
+    money: 150000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -1004,6 +1015,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 11
+    money: 150000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -1094,6 +1106,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 12
+    money: 150000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -1184,6 +1197,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 13
+    money: 150000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -1274,6 +1288,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 14
+    money: 150000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -1364,6 +1379,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 15
+    money: 150000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -1454,6 +1470,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 16
+    money: 150000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -1544,6 +1561,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 17
+    money: 150000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -1634,6 +1652,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 18
+    money: 150000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -1724,6 +1743,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 19
+    money: 150000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -1814,6 +1834,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 150000
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -1904,6 +1925,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -1994,6 +2016,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -2084,6 +2107,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -2174,6 +2198,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -2264,6 +2289,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -2354,6 +2380,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -2444,6 +2471,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -2534,6 +2562,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -2624,6 +2653,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -2714,6 +2744,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -2804,6 +2835,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -2894,6 +2926,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -2984,6 +3017,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -3074,6 +3108,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -3164,6 +3199,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -3254,6 +3290,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -3344,6 +3381,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -3434,6 +3472,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -3524,6 +3563,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -3614,6 +3654,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -3704,6 +3745,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -3794,6 +3836,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -3884,6 +3927,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -3974,6 +4018,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -4064,6 +4109,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -4154,6 +4200,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -4244,6 +4291,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -4334,6 +4382,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -4424,6 +4473,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -4514,6 +4564,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -4604,6 +4655,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -4694,6 +4746,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -4784,6 +4837,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -4874,6 +4928,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -4964,6 +5019,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -5054,6 +5110,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -5144,6 +5201,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -5234,6 +5292,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -5324,6 +5383,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -5414,6 +5474,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -5504,6 +5565,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -5594,6 +5656,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -5684,6 +5747,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -5774,6 +5838,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -5864,6 +5929,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -5954,6 +6020,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -6044,6 +6111,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -6134,6 +6202,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -6224,6 +6293,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -6314,6 +6384,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -6404,6 +6475,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -6494,6 +6566,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -6584,6 +6657,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -6674,6 +6748,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -6764,6 +6839,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -6854,6 +6930,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -6944,6 +7021,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -7034,6 +7112,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -7124,6 +7203,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -7214,6 +7294,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -7304,6 +7385,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -7394,6 +7476,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -7484,6 +7567,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -7574,6 +7658,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -7664,6 +7749,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -7754,6 +7840,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -7844,6 +7931,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -7934,6 +8022,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -8024,6 +8113,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -8114,6 +8204,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -8204,6 +8295,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -8294,6 +8386,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -8384,6 +8477,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -8474,6 +8568,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -8564,6 +8659,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -8654,6 +8750,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -8744,6 +8841,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -8834,6 +8932,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -8924,6 +9023,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 20
+    money: 0
     itemType: 1
     gradient_1:
       serializedVersion: 2
@@ -9014,6 +9114,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     texture2D: {fileID: 0}
   - itemCode: 100
+    money: 5000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -9104,6 +9205,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
   - itemCode: 101
+    money: 5000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -9194,6 +9296,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: ca733f4f0d9496d46846514dc855106c, type: 3}
   - itemCode: 102
+    money: 5000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -9284,6 +9387,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: 6701c32d35546ad4e961e805310dd982, type: 3}
   - itemCode: 103
+    money: 5000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -9374,6 +9478,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: cb48bac64cf7fb641b2c3d6f54a49656, type: 3}
   - itemCode: 104
+    money: 5000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -9464,6 +9569,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: 187f860dffb1ab24197e6d7cfdf16a3f, type: 3}
   - itemCode: 105
+    money: 50000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -9554,6 +9660,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: 3e1f945d90fbb5541b9311bee491ff72, type: 3}
   - itemCode: 106
+    money: 50000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -9644,6 +9751,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: f1e67f4c506014f44937483a33308100, type: 3}
   - itemCode: 107
+    money: 50000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -9734,6 +9842,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: 42db1df37ecfb5045ae0a42a0eefad08, type: 3}
   - itemCode: 108
+    money: 50000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -9824,6 +9933,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: 872d835a33146f14eb57cad0b63f081a, type: 3}
   - itemCode: 109
+    money: 50000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -9914,6 +10024,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: 3e24c2bcfced6ae45babf46de9cbc02d, type: 3}
   - itemCode: 110
+    money: 150000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -10004,6 +10115,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: a7b3fa29f55e25241baaab6e8ed2b6c7, type: 3}
   - itemCode: 111
+    money: 150000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -10094,6 +10206,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: cd88e0658b72a6f4f95337a92548491d, type: 3}
   - itemCode: 112
+    money: 150000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -10184,6 +10297,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: 8ff1d051cab451b408540f96cc972214, type: 3}
   - itemCode: 113
+    money: 150000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -10274,6 +10388,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: 75d77b6e5caa2d34992dd75850d1fba3, type: 3}
   - itemCode: 114
+    money: 150000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -10364,6 +10479,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: b680bb96868856940adbe445df7e9913, type: 3}
   - itemCode: 115
+    money: 150000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -10454,6 +10570,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: fca99727c3ee7e34eaf23e57bccd9249, type: 3}
   - itemCode: 116
+    money: 150000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -10544,6 +10661,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: 61c1b77584cf96549b0201c6b444c41e, type: 3}
   - itemCode: 117
+    money: 150000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -10634,6 +10752,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: 714336432d6519441930b3c0ed27ca52, type: 3}
   - itemCode: 118
+    money: 150000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -10724,6 +10843,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: 2d578c9d998e14b4caab97679d84b5a9, type: 3}
   - itemCode: 119
+    money: 150000
     itemType: 2
     gradient_1:
       serializedVersion: 2
@@ -10814,6 +10934,7 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     texture2D: {fileID: 2800000, guid: fcb07a52c8e40414c8e0b7368104ce81, type: 3}
   - itemCode: 119
+    money: 150000
     itemType: 2
     gradient_1:
       serializedVersion: 2
