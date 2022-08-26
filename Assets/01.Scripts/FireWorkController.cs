@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.VFX;
 using static Utill.VFX;
 
@@ -539,5 +540,16 @@ public class FireWorkController : MonoBehaviour
 	public void ChangeSizeFurther4(float value)
 	{
 		VFXSetFloat(_visualEffect, "FurtherSize4", value);
+	}
+
+	/// <summary>
+	/// ¸®´º¾ó
+	/// </summary>
+	public void Renewal()
+	{
+		HappyMoneyManager.Instance.Happy = 0;
+		HappyMoneyManager.Instance.AddMoney((int)Mathf.Abs(_count - _rate / 2) * (_further1 + 1) * (_further2 + 1) * (_further3 + 1) * (_further4 + 1 ));
+		UserSaveDataManager.Instance.UserSaveData.haveAchievement.Clear();
+		SceneManager.LoadScene("InGame");
 	}
 }

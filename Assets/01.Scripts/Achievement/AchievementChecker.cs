@@ -78,7 +78,7 @@ public class AchievementChecker
 	{
 		foreach(var achievement in _achievements)
 		{
-			if(achievement.isAchieve)
+			if(UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(achievement.itemCode))
 			{
 				continue;
 			}
@@ -87,7 +87,6 @@ public class AchievementChecker
 				if(achievement.requirement.Invoke(UserSaveDataManager.Instance.UserSaveData) == true)
 				{
 					UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(achievement.itemCode);
-					achievement.isAchieve = true;
 					AchievementManager.Instance.SendMessageToObsevers();
 				}
 			}
@@ -105,5 +104,4 @@ public class Achievement
 
 	public int itemCode;
 	public Predicate<UserSaveData> requirement;
-	public bool isAchieve;
 }
