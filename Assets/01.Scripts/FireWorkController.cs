@@ -172,19 +172,19 @@ public class FireWorkController : MonoBehaviour
 				{
 					further1lifeTime = Random.Range(1f, 1.2f);
 					_visualEffect.SetFloat("FurtherLifeTime1", further1lifeTime);
-					_explosiontime1.Add(further1lifeTime + lifeTime);
+					_explosiontime2.Add(further1lifeTime + lifeTime);
 				}
 				if(IsCanFurther3)
 				{
 					further2lifeTime = Random.Range(0.8f, 1f);
 					_visualEffect.SetFloat("FurtherLifeTime2", further2lifeTime);
-					_explosiontime1.Add(further2lifeTime + further1lifeTime + lifeTime);
+					_explosiontime3.Add(further2lifeTime + further1lifeTime + lifeTime);
 				}
 				if (IsCanFurther4)
 				{
 					further3lifeTime = Random.Range(0.8f, 1f);
 					_visualEffect.SetFloat("FurtherLifeTime3", further3lifeTime);
-					_explosiontime1.Add(further3lifeTime + further2lifeTime + further1lifeTime + lifeTime);
+					_explosiontime4.Add(further3lifeTime + further2lifeTime + further1lifeTime + lifeTime);
 				}
 
 				_visualEffect.SendEvent("Play");
@@ -216,16 +216,16 @@ public class FireWorkController : MonoBehaviour
 				switch (further)
 				{
 					case 1:
-						_happyMoneyManager.AddHappy(_further1);
+						HappyMoneyManager.AddHappy(_further1);
 						break;
 					case 2:
-						_happyMoneyManager.AddHappy(_further2);
+						HappyMoneyManager.AddHappy(_further2);
 						break;
 					case 3:
-						_happyMoneyManager.AddHappy(_further3);
+						HappyMoneyManager.AddHappy(_further3);
 						break;
 					case 4:
-						_happyMoneyManager.AddHappy(_further4);
+						HappyMoneyManager.AddHappy(_further4);
 						break;
 				}
 				explosionList.RemoveAt(i--);
