@@ -47,8 +47,12 @@ public class SoundSetting : MonoBehaviour
 		UserSaveDataManager.Save();
 	}
 
-	public void ApplySettingSound(float bgmvalue, float effvlaue)
+	public IEnumerator ApplySettingSound(float bgmvalue, float effvlaue)
 	{
+		while(_bgmAudioSlider == null || _effAudioSlider == null)
+        {
+			yield return null; 
+        }
 		_bgmAudioSlider.value = bgmvalue;
 		_effAudioSlider.value = effvlaue;
 		_audioMixer.SetFloat("BGMVolume", bgmvalue);

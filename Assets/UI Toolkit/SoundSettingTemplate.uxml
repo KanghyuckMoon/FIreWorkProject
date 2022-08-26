@@ -8,7 +8,6 @@
         </ui:VisualElement>
         <ui:VisualElement name="bottom-panel" style="align-items: center; margin-top: -3px; height: 15%; padding-bottom: 1%; justify-content: space-between; flex-direction: row;">
             <ui:Button text="뒤로가기" display-tooltip-when-elided="true" name="back-button" class="button" style="height: 100%; width: 20%; font-size: 35%; -unity-font-style: normal; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px;" />
-            <ui:Button text="적용" display-tooltip-when-elided="true" name="apply-button" class="button" style="height: 100%; -unity-font-style: normal; font-size: 35%; width: 13%; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

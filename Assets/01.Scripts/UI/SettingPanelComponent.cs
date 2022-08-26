@@ -50,6 +50,7 @@ public class SettingPanelComponent : UIComponent
         _soundSeting.InitSlider(_bgmSlider, _effSlider); 
 
         _settingButton = uiButtonManager.RootElement.Q<Button>("setting-button");
+
         _settingPanel = uiButtonManager.RootElement.Q<TemplateContainer>("SettingTemplate");
         _graphicSettingPanel = _settingPanel.Q<TemplateContainer>("GraphicSettingTemplate");
         _soundSettingPanel = _settingPanel.Q<TemplateContainer>("SoundSettingTemplate");
@@ -71,39 +72,28 @@ public class SettingPanelComponent : UIComponent
         _settingBackButton = _soundSettingPanel.Q<Button>("back-button");
 
         // 버튼 이벤트 등록 
-        _settingButton.clicked += () => OpenCloseSetting(_settingPanel);
-        _backButton.clicked += () => OpenCloseSetting(_settingPanel);
+        _settingButton.clicked += () => OpenClosePanel(_settingPanel);
+        _backButton.clicked += () => OpenClosePanel(_settingPanel);
 
 
         // 그래픽 세팅 
         _fullScreenToggle.RegisterValueChangedCallback((x) => FullScreen());
         _applyButton.clicked += () => ApplySetting();
-        _graphicBackButton.clicked += () => OpenCloseSetting(_graphicSettingPanel);
-        _graphicButton.clicked += () => OpenCloseSetting(_graphicSettingPanel);
+        _graphicBackButton.clicked += () => OpenClosePanel(_graphicSettingPanel);
+        _graphicButton.clicked += () => OpenClosePanel(_graphicSettingPanel);
 
         // 사운드 세팅 
         _bgmSlider.RegisterValueChangedCallback((x) => _soundSeting.SetBgmAudio(x.newValue) );
         _effSlider.RegisterValueChangedCallback((x) => _soundSeting.SetEffAudio(x.newValue));
-        _settingBackButton.clicked += () => OpenCloseSetting(_settingPanel);
-
+        _settingBackButton.clicked += () => OpenClosePanel(_soundSettingPanel);
+        _soundButton.clicked += () => OpenClosePanel(_soundSettingPanel);
     }
 
     public override void UpdateSometing()
     {
     }
 
-    /// <summary>
-    /// 설정 패널 열고 닫기 
-    /// </summary>
-    public void OpenCloseSetting(TemplateContainer settingPanel)
-    {
-        if(settingPanel.style.display.value == DisplayStyle.Flex)
-        {
-            settingPanel.style.display = DisplayStyle.None;
-            return;
-        }
-        settingPanel.style.display = DisplayStyle.Flex;
-    }
+
 
     /// <summary>
     /// 화면 최대 
