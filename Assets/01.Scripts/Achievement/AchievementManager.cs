@@ -17,7 +17,7 @@ public class AchievementManager : Singleton<AchievementManager>, ObservationObje
 
 	private void Start()
 	{
-		_achievementChecker = new AchievementChecker();
+		_achievementChecker = new AchievementChecker(_achievementDataSO);
 		SendMessageToObsevers();
 	}
 

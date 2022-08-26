@@ -107,6 +107,10 @@ public class AchievementChecker
 	public void FunctionInvoke(int itemCode)
 	{
 		var achievementData = _achievementDataSO._achievementDatas.Find(x => x._achievementCode == itemCode);
+		if(achievementData._functionName == null)
+		{
+			return;
+		}
 
 		Type type = typeof(AchievementMethod);
 		MethodInfo myClass_FunCallme = type.GetMethod(achievementData._functionName, BindingFlags.Static | BindingFlags.Public);
