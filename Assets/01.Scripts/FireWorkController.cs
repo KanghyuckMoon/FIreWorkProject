@@ -351,6 +351,11 @@ public class FireWorkController : MonoBehaviour
 	/// <param name="add"></param>
 	public void UpdateRate(float add)
 	{
+		if(!HappyMoneyManager.Instance.RemoveHappy((int)((600 - _rate) * 100 * (60 - _rate * 0.1f))))
+		{
+			return;
+		}
+
 		_rate -= add;
 		if(_rate < 0.3f)
 		{
@@ -366,6 +371,11 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount1(int add)
 	{
+		if (!HappyMoneyManager.Instance.RemoveHappy(_further1 * _further1 * 1000))
+		{
+			return;
+		}
+
 		_further1 += add;
 		UpdateFurtherCount1();
 	}
@@ -375,6 +385,11 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount2(int add)
 	{
+		if (!HappyMoneyManager.Instance.RemoveHappy(_further2 * _further2 * 900))
+		{
+			return;
+		}
+
 		_further2 += add;
 		UpdateFurtherCount2();
 	}
@@ -384,6 +399,11 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount3(int add)
 	{
+		if (!HappyMoneyManager.Instance.RemoveHappy(_further3 * _further3 * 800))
+		{
+			return;
+		}
+
 		_further3 += add;
 		UpdateFurtherCount3();
 	}
@@ -393,6 +413,11 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount4(int add)
 	{
+		if (!HappyMoneyManager.Instance.RemoveHappy(_further4 * _further4 * 700))
+		{
+			return;
+		}
+
 		_further4 += add;
 		UpdateFurtherCount4();
 	}
@@ -402,6 +427,11 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateCount(int add)
 	{
+		if (!HappyMoneyManager.Instance.RemoveHappy(_count * _count * 5000))
+		{
+			return;
+		}
+
 		_count += add;
 	}
 

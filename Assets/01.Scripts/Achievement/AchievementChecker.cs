@@ -9,26 +9,6 @@ public class AchievementChecker
 	public AchievementChecker(AchievementDataSO achievementDataSO)
 	{
 		_achievementDataSO = achievementDataSO;
-	}
-
-	private AchievementDataSO _achievementDataSO = null;
-	private List<Achievement> _achievements = new List<Achievement>();
-	public static int Click
-	{
-		get
-		{
-			return _click;
-		}
-		set
-		{
-			_click = value;
-		}
-	}
-	private static int _click = 0;
-
-
-	public AchievementChecker()
-	{
 		_achievements.Add(new Achievement(0, x => x.happy >= 100)); //나무
 		_achievements.Add(new Achievement(1, x => x.happy >= 300)); //돌
 		_achievements.Add(new Achievement(2, x => x.happy >= 700)); //잔디
@@ -81,6 +61,21 @@ public class AchievementChecker
 		_achievements.Add(new Achievement(49, x => x.haveAchievement.Count >= 49)); //엔딩
 	}
 
+	private AchievementDataSO _achievementDataSO = null;
+	private List<Achievement> _achievements = new List<Achievement>();
+	public static int Click
+	{
+		get
+		{
+			return _click;
+		}
+		set
+		{
+			_click = value;
+		}
+	}
+	private static int _click = 0;
+
 	public void CheckAchievement()
 	{
 		foreach(var achievement in _achievements)
@@ -107,7 +102,7 @@ public class AchievementChecker
 	public void FunctionInvoke(int itemCode)
 	{
 		var achievementData = _achievementDataSO._achievementDatas.Find(x => x._achievementCode == itemCode);
-		if(achievementData._functionName == null)
+		if(achievementData._functionName == "")
 		{
 			return;
 		}

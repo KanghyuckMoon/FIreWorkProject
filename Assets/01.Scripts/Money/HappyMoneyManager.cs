@@ -79,7 +79,7 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 		{ 
 			return false;
 		}
-		UserSaveDataManager.Instance.UserSaveData.money += money;
+		UserSaveDataManager.Instance.UserSaveData.money -= money;
 		return true;
 	}
 	/// <summary>
