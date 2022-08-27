@@ -16,6 +16,7 @@ public class AchievementObject : MonoBehaviour, Observer
 
 	[SerializeField] private int _achievementCode = 0;
 	[SerializeField] private GameObject _effectObject;
+	[SerializeField] private bool _isEffectOff = false;
 	private bool _isPlayingAnimation = false;
 
 	private void Awake()
@@ -48,6 +49,10 @@ public class AchievementObject : MonoBehaviour, Observer
 
 	private void ActiveAnimation()
 	{
+		if(_isEffectOff)
+		{
+			return;
+		}
 		if(_effectObject != null)
 		{
 			_effectObject.SetActive(true);

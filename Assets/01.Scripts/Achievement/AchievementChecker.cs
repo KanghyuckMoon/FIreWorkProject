@@ -102,7 +102,7 @@ public class AchievementChecker
 	public void FunctionInvoke(int itemCode)
 	{
 		var achievementData = _achievementDataSO._achievementDatas.Find(x => x._achievementCode == itemCode);
-		if(achievementData._functionName == null)
+		if(achievementData._functionName == "")
 		{
 			return;
 		}

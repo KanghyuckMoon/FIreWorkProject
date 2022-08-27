@@ -409,6 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 28
   _effectObject: {fileID: 1664737851}
+  _isEffectOff: 0
 --- !u!65 &4870888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -645,6 +646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1001 &5948766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1415,6 +1417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 1
   _effectObject: {fileID: 1231151401}
+  _isEffectOff: 0
 --- !u!4 &22817453
 Transform:
   m_ObjectHideFlags: 0
@@ -1759,6 +1762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 1
   _effectObject: {fileID: 935139598}
+  _isEffectOff: 0
 --- !u!1001 &32079980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3685,6 +3689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 23
   _effectObject: {fileID: 407950074}
+  _isEffectOff: 0
 --- !u!64 &99352818
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3995,6 +4000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &108455697
 GameObject:
   m_ObjectHideFlags: 0
@@ -5191,6 +5197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 23
   _effectObject: {fileID: 223940221}
+  _isEffectOff: 0
 --- !u!64 &137425742
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5445,6 +5452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 1
   _effectObject: {fileID: 1102064489}
+  _isEffectOff: 0
 --- !u!1 &142623974
 GameObject:
   m_ObjectHideFlags: 0
@@ -7100,6 +7108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 5
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1001 &195144079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8145,6 +8154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 10
   _effectObject: {fileID: 1517393907}
+  _isEffectOff: 0
 --- !u!1001 &232968834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9361,6 +9371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &257536942
 GameObject:
   m_ObjectHideFlags: 0
@@ -9634,6 +9645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1001 &263328604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15352,6 +15364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &414993839
 GameObject:
   m_ObjectHideFlags: 0
@@ -16341,6 +16354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 22
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!73398921 &441026669
 VFXRenderer:
   serializedVersion: 1
@@ -16469,6 +16483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 15
   _effectObject: {fileID: 2073347393}
+  _isEffectOff: 0
 --- !u!95 &441489449
 Animator:
   serializedVersion: 4
@@ -17071,6 +17086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 22
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!73398921 &459806345
 VFXRenderer:
   serializedVersion: 1
@@ -17782,6 +17798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 2
   _effectObject: {fileID: 0}
+  _isEffectOff: 1
 --- !u!1 &469062239
 GameObject:
   m_ObjectHideFlags: 0
@@ -18438,6 +18455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &484510533
 GameObject:
   m_ObjectHideFlags: 0
@@ -18657,6 +18675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 1
   _effectObject: {fileID: 750898290}
+  _isEffectOff: 0
 --- !u!1 &491247022
 GameObject:
   m_ObjectHideFlags: 0
@@ -20798,6 +20817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 19
   _effectObject: {fileID: 2031885441}
+  _isEffectOff: 0
 --- !u!65 &561819963
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21235,6 +21255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 16
   _effectObject: {fileID: 786640809}
+  _isEffectOff: 0
 --- !u!95 &574066979
 Animator:
   serializedVersion: 4
@@ -21492,6 +21513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &577643902
 GameObject:
   m_ObjectHideFlags: 0
@@ -22043,6 +22065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &593618016
 GameObject:
   m_ObjectHideFlags: 0
@@ -24242,6 +24265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 18
   _effectObject: {fileID: 243620254}
+  _isEffectOff: 0
 --- !u!95 &657658718
 Animator:
   serializedVersion: 4
@@ -24996,6 +25020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 26
   _effectObject: {fileID: 1924842783}
+  _isEffectOff: 0
 --- !u!64 &675850441
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26096,6 +26121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &694848056
 GameObject:
   m_ObjectHideFlags: 0
@@ -26250,6 +26276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 13
   _effectObject: {fileID: 683882775}
+  _isEffectOff: 0
 --- !u!23 &697829642
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27096,6 +27123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 22
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!73398921 &722092751
 VFXRenderer:
   serializedVersion: 1
@@ -28661,6 +28689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 24
   _effectObject: {fileID: 1125663527}
+  _isEffectOff: 0
 --- !u!64 &779869469
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29318,6 +29347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &800483009
 GameObject:
   m_ObjectHideFlags: 0
@@ -29568,6 +29598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 14
   _effectObject: {fileID: 1973057221}
+  _isEffectOff: 0
 --- !u!1 &808557994
 GameObject:
   m_ObjectHideFlags: 0
@@ -32125,6 +32156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &880128139
 GameObject:
   m_ObjectHideFlags: 0
@@ -33651,6 +33683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 4
   _effectObject: {fileID: 2080289410}
+  _isEffectOff: 0
 --- !u!1 &935139598 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: c41bda6732535c8428301ed95c011287, type: 3}
@@ -34664,6 +34697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 23
   _effectObject: {fileID: 914912264}
+  _isEffectOff: 0
 --- !u!64 &959279932
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35476,6 +35510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 1
   _effectObject: {fileID: 1752416528}
+  _isEffectOff: 0
 --- !u!1 &976185217
 GameObject:
   m_ObjectHideFlags: 0
@@ -37814,6 +37849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 29
   _effectObject: {fileID: 1545131692}
+  _isEffectOff: 0
 --- !u!65 &1038515085
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39343,6 +39379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 22
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!73398921 &1077484826
 VFXRenderer:
   serializedVersion: 1
@@ -40153,6 +40190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 22
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!73398921 &1094971435
 VFXRenderer:
   serializedVersion: 1
@@ -41057,6 +41095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &1120106243
 GameObject:
   m_ObjectHideFlags: 0
@@ -42121,6 +42160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 38
   _effectObject: {fileID: 1703971213}
+  _isEffectOff: 0
 --- !u!65 &1152197395
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43984,6 +44024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 9
   _effectObject: {fileID: 433221597}
+  _isEffectOff: 0
 --- !u!1 &1199139959
 GameObject:
   m_ObjectHideFlags: 0
@@ -44591,6 +44632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 1
   _effectObject: {fileID: 1672530225}
+  _isEffectOff: 0
 --- !u!114 &1209981607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44605,6 +44647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 11
   _effectObject: {fileID: 1920702424}
+  _isEffectOff: 0
 --- !u!1001 &1211063951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46268,6 +46311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 3
   _effectObject: {fileID: 0}
+  _isEffectOff: 1
 --- !u!1 &1252632904
 GameObject:
   m_ObjectHideFlags: 0
@@ -48876,6 +48920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 5
   _effectObject: {fileID: 244083340}
+  _isEffectOff: 0
 --- !u!95 &1310168231
 Animator:
   serializedVersion: 4
@@ -51890,6 +51935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 21
   _effectObject: {fileID: 0}
+  _isEffectOff: 1
 --- !u!114 &1403213461
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -52454,6 +52500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 1
   _effectObject: {fileID: 155869199}
+  _isEffectOff: 0
 --- !u!1001 &1409379691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52671,6 +52718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 27
   _effectObject: {fileID: 1516152397}
+  _isEffectOff: 0
 --- !u!64 &1414959738
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54026,6 +54074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 13
   _effectObject: {fileID: 1899805985}
+  _isEffectOff: 0
 --- !u!23 &1437626880
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55090,6 +55139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 15
   _effectObject: {fileID: 1068115330}
+  _isEffectOff: 0
 --- !u!1 &1467782007
 GameObject:
   m_ObjectHideFlags: 0
@@ -57778,6 +57828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 18
   _effectObject: {fileID: 1270856284}
+  _isEffectOff: 0
 --- !u!1 &1543805317
 GameObject:
   m_ObjectHideFlags: 0
@@ -58557,6 +58608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &1561983759
 GameObject:
   m_ObjectHideFlags: 0
@@ -59375,6 +59427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 7
   _effectObject: {fileID: 1946786278}
+  _isEffectOff: 0
 --- !u!1001 &1584994730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61207,6 +61260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 20
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1001 &1626224463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61605,6 +61659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 1
   _effectObject: {fileID: 754801862}
+  _isEffectOff: 0
 --- !u!1 &1634468300
 GameObject:
   m_ObjectHideFlags: 0
@@ -62490,6 +62545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &1652233218
 GameObject:
   m_ObjectHideFlags: 0
@@ -63910,6 +63966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1001 &1680990177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65118,6 +65175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 17
   _effectObject: {fileID: 2057750802}
+  _isEffectOff: 0
 --- !u!95 &1704625706
 Animator:
   serializedVersion: 4
@@ -66682,6 +66740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 25
   _effectObject: {fileID: 126553932}
+  _isEffectOff: 0
 --- !u!64 &1731129571
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -66988,6 +67047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 6
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1001 &1735195477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67337,6 +67397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 1
   _effectObject: {fileID: 1457548609}
+  _isEffectOff: 0
 --- !u!1 &1741615792
 GameObject:
   m_ObjectHideFlags: 0
@@ -69296,6 +69357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &1791008897
 GameObject:
   m_ObjectHideFlags: 0
@@ -71690,6 +71752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 8
   _effectObject: {fileID: 1833055593}
+  _isEffectOff: 0
 --- !u!1 &1850371403
 GameObject:
   m_ObjectHideFlags: 0
@@ -73080,6 +73143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1001 &1886167930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75106,6 +75170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1 &1924815869
 GameObject:
   m_ObjectHideFlags: 0
@@ -75503,6 +75568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 23
   _effectObject: {fileID: 384378805}
+  _isEffectOff: 0
 --- !u!64 &1936172802
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -77538,6 +77604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 17
   _effectObject: {fileID: 1724946427}
+  _isEffectOff: 0
 --- !u!1 &1996560063
 GameObject:
   m_ObjectHideFlags: 0
@@ -77759,6 +77826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 16
   _effectObject: {fileID: 325701414}
+  _isEffectOff: 0
 --- !u!1001 &2000046024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78047,6 +78115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 22
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!73398921 &2006823105
 VFXRenderer:
   serializedVersion: 1
@@ -79213,6 +79282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 0
   _effectObject: {fileID: 0}
+  _isEffectOff: 0
 --- !u!1001 &2037594185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81385,6 +81455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 14
   _effectObject: {fileID: 1652793313}
+  _isEffectOff: 0
 --- !u!95 &2101674275
 Animator:
   serializedVersion: 4
@@ -81645,6 +81716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 12
   _effectObject: {fileID: 815533890}
+  _isEffectOff: 0
 --- !u!1 &2111586542
 GameObject:
   m_ObjectHideFlags: 0
@@ -82182,6 +82254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 1
   _effectObject: {fileID: 1247420455}
+  _isEffectOff: 0
 --- !u!1 &2130221996
 GameObject:
   m_ObjectHideFlags: 0
@@ -86836,6 +86909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementCode: 4
   _effectObject: {fileID: 1889725609}
+  _isEffectOff: 0
 --- !u!1 &4231618175031885665
 GameObject:
   m_ObjectHideFlags: 0
