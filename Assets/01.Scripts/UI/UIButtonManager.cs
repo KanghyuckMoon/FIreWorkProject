@@ -6,8 +6,8 @@ using UnityEngine.UIElements;
 public class UIButtonManager : MonoBehaviour
 {
     private UpgradeButtonConstructor _upgradeButtonConstructor; // 업그레이드 버튼 생성, 관리자 
-    private SettingPanelComponent _settingPanelComponent; // 설정 패널 관리자ㅣ
-
+    private SettingPanelComponent _settingPanelComponent; // 설정 패널 관리자
+    private ShopPanelComponent _shopPanelComponent; // 상점 패널 관리자 
 
     [SerializeField]
     private VisualTreeAsset _settingTemplate; // 설정 템플릿 
@@ -50,7 +50,9 @@ public class UIButtonManager : MonoBehaviour
     private void Start()
     {
         _settingPanelComponent = new SettingPanelComponent();
+        _shopPanelComponent = new ShopPanelComponent(); 
         _settingPanelComponent.Init(this, _graphicSetting, _soundSetting, _exit); // 설정 버튼, 패널 캐싱 
+        _shopPanelComponent.Init(this);
     }
     private void Update()
     {

@@ -74,7 +74,7 @@ public class SettingPanelComponent : UIComponent
         // 버튼 이벤트 등록 
         _settingButton.clicked += () => OpenClosePanel(_settingPanel);
         _backButton.clicked += () => OpenClosePanel(_settingPanel);
-
+        _exitButton.clicked += () => _exit.QuitGame(); 
 
         // 그래픽 세팅 
         _fullScreenToggle.RegisterValueChangedCallback((x) => FullScreen());

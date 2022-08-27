@@ -75,7 +75,7 @@
 
 .offsetDown {
     transform-origin: center;
-    translate: 0 160px;
+    translate: 0 165px;
     transition-duration: 1s;
 }
 
