@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <ui:Template name="SettingTemplate" src="project://database/Assets/UI%20Toolkit/SettingTemplate.uxml?fileID=9197481963319205126&amp;guid=5b0175f313bd4aa4598c5970d9a6e697&amp;type=3#SettingTemplate" />
+    <ui:Template name="ShopUI" src="project://database/Assets/UI%20Toolkit/ShopUI.uxml?fileID=9197481963319205126&amp;guid=edc07c5a61f490647b6aa6a7d4db78c1&amp;type=3#ShopUI" />
     <Style src="project://database/Assets/UI%20Toolkit/MainUI.uss?fileID=7433441132597879392&amp;guid=dd05040a117160447bb194c19628c36f&amp;type=3#MainUI" />
     <ui:VisualElement name="game_screen" style="height: 100%; width: 100%; flex-direction: column; align-items: stretch; justify-content: space-between; transform-origin: center; flex-grow: 1; display: flex;">
         <ui:VisualElement name="top_panel" style="flex-direction: row; flex-grow: 0; flex-shrink: 1;">
@@ -75,4 +76,5 @@
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:Instance template="SettingTemplate" name="SettingTemplate" style="width: 100%; height: 100%; position: absolute; display: none; transform-origin: center;" />
+    <ui:Instance template="ShopUI" name="ShopTemplate" style="position: absolute; width: 100%; height: 100%;" />
 </ui:UXML>

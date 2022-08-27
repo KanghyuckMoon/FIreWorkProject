@@ -34,6 +34,7 @@ public class UIButtonManager : MonoBehaviour
 
     // 외부 캐싱 변수 
     private FireWorkController _fireWorkController;
+    private HaveItemManager _haveItemManager;
     private GrapicSetting _graphicSetting;
     private SoundSetting _soundSetting;
     private Exit _exit;
@@ -52,7 +53,7 @@ public class UIButtonManager : MonoBehaviour
         _settingPanelComponent = new SettingPanelComponent();
         _shopPanelComponent = new ShopPanelComponent(); 
         _settingPanelComponent.Init(this, _graphicSetting, _soundSetting, _exit); // 설정 버튼, 패널 캐싱 
-        _shopPanelComponent.Init(this);
+        _shopPanelComponent.Init(this, _haveItemManager);
     }
     private void Update()
     {
@@ -70,6 +71,7 @@ public class UIButtonManager : MonoBehaviour
     /// </summary>
     private void CashingElements()
     {
+        _haveItemManager = FindObjectOfType<HaveItemManager>(); 
         _fireWorkController = FindObjectOfType<FireWorkController>();
         _graphicSetting = FindObjectOfType<GrapicSetting>();
         _soundSetting = FindObjectOfType<SoundSetting>();
