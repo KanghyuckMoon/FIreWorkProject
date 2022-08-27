@@ -6,11 +6,13 @@ using UnityEngine.UIElements;
 public class UIButtonManager : MonoBehaviour
 {
     private UpgradeButtonConstructor _upgradeButtonConstructor; // 업그레이드 버튼 생성, 관리자 
-    private SettingPanelComponent _settingPanelComponent; // 설정 패널 관리자ㅣ
+    private SettingPanelComponent _settingPanelComponent; // 설정 패널 관리자
+    private ShopPanelComponent _shopPanelComponent; // 상점 패널 관리자 
 
     [SerializeField]
     private VisualTreeAsset _settingTemplate; // 설정 템플릿 
     private VisualElement _settingPanel; // 설정 패널 
+
 
     private UIDocument _mainUIDoc; // 메인 UIDocument 
     private VisualElement _rootElement; // 최상위 오브젝트 
@@ -21,7 +23,7 @@ public class UIButtonManager : MonoBehaviour
     private Button _settingButton; // 설정 버튼
     private Button _shopButton; // 상점버튼 
     private Button _libraryButton; // 라이브러리 버튼
-    private Button _closeOpenButton; // UI 열고 닫기 버튼 
+    private Button _closeOpenButton; // 업그레이드UI 열고 닫기 버튼 
 
     // 하단 UI버튼들 
 
@@ -30,10 +32,14 @@ public class UIButtonManager : MonoBehaviour
     private Label _happyMoneyLabel; // 행복 재화 표시
     private Label _moneyLabel; // 돈 재화 표시 
 
+    // 외부 캐싱 변수 
     private FireWorkController _fireWorkController;
+    private GrapicSetting _graphicSetting;
+    private SoundSetting _soundSetting;
+    private Exit _exit;
 
     // 프로퍼티 
-    public VisualElement RootElement => _rootElement; 
+    public VisualElement RootElement => _rootElement;
 
     private void Awake()
     {
@@ -43,8 +49,10 @@ public class UIButtonManager : MonoBehaviour
 
     private void Start()
     {
-        _settingPanelComponent = new SettingPanelComponent(); 
-        _settingPanelComponent.Init(this); // 설정 버튼, 패널 캐싱 
+        _settingPanelComponent = new SettingPanelComponent();
+        _shopPanelComponent = new ShopPanelComponent(); 
+        _settingPanelComponent.Init(this, _graphicSetting, _soundSetting, _exit); // 설정 버튼, 패널 캐싱 
+        _shopPanelComponent.Init(this);
     }
     private void Update()
     {
@@ -54,6 +62,7 @@ public class UIButtonManager : MonoBehaviour
             _gameScreen.style.display = _gameScreen.style.display == DisplayStyle.Flex ? DisplayStyle.None : DisplayStyle.Flex;
             //_gameScreen.visible = _gameScreen.visible == false ? true : false; 
         }
+        UpdateMoneyText();
     }
 
     /// <summary>
@@ -61,25 +70,28 @@ public class UIButtonManager : MonoBehaviour
     /// </summary>
     private void CashingElements()
     {
-          _fireWorkController = FindObjectOfType<FireWorkController>(); 
+        _fireWorkController = FindObjectOfType<FireWorkController>();
+        _graphicSetting = FindObjectOfType<GrapicSetting>();
+        _soundSetting = FindObjectOfType<SoundSetting>();
+        _exit = FindObjectOfType<Exit>();
 
         _mainUIDoc = GetComponent<UIDocument>();
         _rootElement = _mainUIDoc.rootVisualElement;
         _gameScreen = _rootElement.Q<VisualElement>("game_screen");
-        _bottomPanel = _rootElement.Q<VisualElement>("bottomLeft_panel"); 
+        _bottomPanel = _rootElement.Q<VisualElement>("bottom-panel");
         // 버튼 캐싱 
         _settingButton = _rootElement.Q<Button>("setting-button");
-        //_shopButton = _rootElement.Q<Button>("ShopButton");
-        //_libraryButton = _rootElement.Q<Button>("LibraryButton");
+        _shopButton = _rootElement.Q<Button>("shop-button");
+        _libraryButton = _rootElement.Q<Button>("library-button");
         _closeOpenButton = _rootElement.Q<Button>("close-open-button");
 
 
         //// 라벨 캐싱 
-        //_happyMoneyLabel = _rootElement.Q<Label>("HappyMoneyLabel");
-        //_moneyLabel = _rootElement.Q<Label>("MoneyLabel");
+        _happyMoneyLabel = _rootElement.Q<Label>("happyMoney-label");
+        _moneyLabel = _rootElement.Q<Label>("money-label");
 
         // 업그레이드 버튼 생성
-        _upgradeButtonConstructor = new UpgradeButtonConstructor(_fireWorkController,_rootElement);
+        _upgradeButtonConstructor = new UpgradeButtonConstructor(_fireWorkController, _rootElement);
     }
 
     /// <summary>
@@ -87,22 +99,32 @@ public class UIButtonManager : MonoBehaviour
     /// </summary>
     private void SetButtons()
     {
-        /*
-        _settingButton.clicked +=
-            _shopButton.clicked += 
-        _libraryButton.clicked += 
+        /*  
+        _settingButton.clicked +=   
+            _shopButton.clicked +=       
+        _libraryButton.clicked +=    
         */
-        //  _closeOpenButton.clicked += _bottomPanel.GetClasses
+        _libraryButton.clicked += () => OpenCloseUI();
+        _closeOpenButton.clicked += () =>
+        {
+            OpenCloseUI();
+            Debug.Log("닫거나 열어라");
+        };
     }
+
 
     /// <summary>
     /// 하단 UI 열고 닫기 
     /// </summary>
     private void OpenCloseUI()
     {
-
+        _bottomPanel.ToggleInClassList("offsetUp");
+        _bottomPanel.ToggleInClassList("offsetDown");
     }
 
-    // 생성 - 리스트 - further값에 따라 잠금 
-    // 체크 
+    public void UpdateMoneyText()
+    {
+        _happyMoneyLabel.text = string.Format("행복 재화 : {0}", UserSaveDataManager.Instance.UserSaveData.happy.ToString());
+        _moneyLabel.text = string.Format("돈 재화 : {0}", UserSaveDataManager.Instance.UserSaveData.money.ToString());
+    }
 }

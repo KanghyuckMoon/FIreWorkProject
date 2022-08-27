@@ -14,8 +14,154 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _achievementDatas:
   - _achievementCode: 0
-    _achievementName: "\uC5C5\uC801 \uC774\uB984"
-    _content: "\uBB50\uBB50\uBB50\uB97C \uBB50\uBA38\uBA38\uD55C\uB2E4"
+    _achievementName: "\uB098\uBB34"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
   - _achievementCode: 1
-    _achievementName: "\uC5C5\uC801 \uC774\uB9842"
-    _content: "\uBB50\uBB50\uBB50\uB97C \uBB50\uBA38\uBA38\uD55C\uB2E4"
+    _achievementName: "\uB3CC"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 2
+    _achievementName: "\uC794\uB514"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 3
+    _achievementName: "\uB354 \uB9CE\uC740 \uC794\uB514"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 4
+    _achievementName: "\uAD6C\uB984"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 5
+    _achievementName: "\uB354 \uB9CE\uC740 \uAD6C\uB984"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 6
+    _achievementName: "\uB2EC"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 7
+    _achievementName: "\uC9D1"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 8
+    _achievementName: "\uB2E4\uB978 \uC9D1"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 9
+    _achievementName: "\uB610 \uB2E4\uB978 \uC9D1"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 10
+    _achievementName: "\uB354 \uB9CE\uC740 \uC9D1"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 11
+    _achievementName: "\uB354\uB354 \uB9CE\uC740 \uC9D1"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 12
+    _achievementName: "\uB354\uB354\uB354 \uB9CE\uC740 \uC9D1"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 13
+    _achievementName: "\uD558\uD2B8\uAD6C\uB984"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 14
+    _achievementName: "\uB7A8\uD504"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 15
+    _achievementName: "\uB7A8\uD504 \uCD94\uAC00"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 16
+    _achievementName: "\uB354 \uB9CE\uC740 \uB7A8\uD504"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 17
+    _achievementName: "\uB354\uB354 \uB9CE\uC740 \uB7A8\uD504"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 18
+    _achievementName: "\uB354\uB354\uB354 \uB9CE\uC740 \uB7A8\uD504"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 19
+    _achievementName: "\uC0AC\uB78C"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 20
+    _achievementName: "\uB2E4\uB978 \uC12C"
+    _content: "0000 \uB3C8 \uB2EC\uC131"
+  - _achievementCode: 21
+    _achievementName: "\uB2E4\uB978 \uC12C\uC758 \uC794\uB514"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 22
+    _achievementName: "\uB2E4\uB978 \uC12C\uC758 \uB098\uBB34"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 23
+    _achievementName: "\uB2E4\uB978 \uC12C\uC758 \uAD6C\uB984"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 24
+    _achievementName: "\uB2E4\uB978 \uC12C\uC758 \uC9D1"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 25
+    _achievementName: "\uB2E4\uB978 \uC12C\uC758 \uC9D1 \uCD94\uAC00"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 26
+    _achievementName: "\uB2E4\uB978 \uC12C\uC758 \uC9D1 \uB354 \uCD94\uAC00"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 27
+    _achievementName: "\uB2E4\uB978 \uC12C\uC758 \uC9D1 \uB354\uB354 \uCD94\uAC00"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 28
+    _achievementName: "\uB2E4\uB978 \uC12C\uC758 \uC0AC\uB78C"
+    _content: "0000 \uB3C8 \uB2EC\uC131"
+  - _achievementCode: 29
+    _achievementName: "\uB610 \uB2E4\uB978 \uC0AC\uB78C"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 30
+    _achievementName: "2\uCC28 \uD3ED\uBC1C \uAC1C\uBC29"
+    _content: "1\uCC28 \uC0C1\uC810\uC758 \uBAA8\uB4E0 \uC544\uC774\uD15C \uAD6C\uB9E4\uD558\uAE30"
+  - _achievementCode: 31
+    _achievementName: "3\uCC28 \uD3ED\uBC1C \uAC1C\uBC29"
+    _content: "2\uCC28 \uC0C1\uC810\uC758 \uBAA8\uB4E0 \uC544\uC774\uD15C \uAD6C\uB9E4\uD558\uAE30"
+  - _achievementCode: 32
+    _achievementName: "4\uCC28 \uD3ED\uBC1C \uAC1C\uBC29"
+    _content: "3\uCC28 \uC0C1\uC810\uC758 \uBAA8\uB4E0 \uC544\uC774\uD15C \uAD6C\uB9E4\uD558\uAE30"
+  - _achievementCode: 33
+    _achievementName: "\uC0C1\uC810 \uAC1C\uBC29"
+    _content: "\uC5C5\uC801 10\uAC1C \uC774\uC0C1 \uD574\uAE08\uD558\uAE30"
+  - _achievementCode: 34
+    _achievementName: "\uB77C\uC774\uBE0C\uB7EC\uB9AC \uAC1C\uBC29"
+    _content: "\uC5C5\uC801 15\uAC1C \uC774\uC0C1 \uD574\uAE08\uD558\uAE30"
+  - _achievementCode: 35
+    _achievementName: "\uB9AC\uB274\uC5BC \uAC1C\uBC29"
+    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+  - _achievementCode: 36
+    _achievementName: "\uBE5B \uC870\uC808 \uAE30\uB2A5 \uAC1C\uBC29"
+    _content: "\uB9AC\uB274\uC5BC 1\uBC88 \uC774\uC0C1 \uD558\uAE30"
+  - _achievementCode: 37
+    _achievementName: "\uD06C\uAE30 \uC870\uC808 \uAE30\uB2A5 \uAC1C\uBC29"
+    _content: "\uB9AC\uB274\uC5BC 2\uBC88 \uC774\uC0C1 \uD558\uAE30"
+  - _achievementCode: 38
+    _achievementName: "\uB610 \uB2E4\uB978 \uC0AC\uB78C"
+    _content: "0000 \uB3C8 \uD68D\uB4DD"
+  - _achievementCode: 39
+    _achievementName: "\uC7A5\uC2DD\uAD6C"
+    _content: "0000 \uB3C8 \uD68D\uB4DD"
+  - _achievementCode: 40
+    _achievementName: "\uB354 \uB9CE\uC740 \uC7A5\uC2DD\uAD6C"
+    _content: "0000 \uB3C8 \uD68D\uB4DD"
+  - _achievementCode: 41
+    _achievementName: "\uC0C1\uC810\uC5D0 \uC0C9\uAE54 \uC544\uC774\uD15C \uCD94\uAC001"
+    _content: "0000 \uB3C8 \uD68D\uB4DD"
+  - _achievementCode: 42
+    _achievementName: "\uC0C1\uC810\uC5D0 \uBAA8\uC591 \uC544\uC774\uD15C \uCD94\uAC001"
+    _content: "0000 \uB3C8 \uD68D\uB4DD"
+  - _achievementCode: 43
+    _achievementName: "\uC0C1\uC810\uC5D0 \uBAA8\uC591 \uC544\uC774\uD15C \uCD94\uAC002"
+    _content: "0000 \uB3C8 \uD68D\uB4DD"
+  - _achievementCode: 44
+    _achievementName: "\uC0C1\uC810\uC5D0 \uBAA8\uC591 \uC544\uC774\uD15C \uCD94\uAC002"
+    _content: "0000 \uB3C8 \uD68D\uB4DD"
+  - _achievementCode: 45
+    _achievementName: "\uC0C1\uC810\uC5D0 \uBAA8\uC591 \uC544\uC774\uD15C \uCD94\uAC00
+      \uB9C8\uC9C0"
+    _content: "0000 \uB3C8 \uD68D\uB4DD"
+  - _achievementCode: 46
+    _achievementName: "\uC0C1\uC810\uC5D0 \uBAA8\uC591 \uC544\uC774\uD15C \uCD94\uAC00
+      \uB9C8\uC9C0\uB9C9"
+    _content: "0000 \uB3C8 \uD68D\uB4DD"
+  - _achievementCode: 47
+    _achievementName: "\uD2B9\uBCC4\uD55C \uC0C9\uAE54 \uCD94\uAC00"
+    _content: "\uC720\uB2C8\uD2F0\uC9F1\uC744 50\uBC88 \uC774\uC0C1 \uD074\uB9AD\uD558\uAE30"
+  - _achievementCode: 48
+    _achievementName: "\uD2B9\uBCC4\uD55C \uBAA8\uC591 \uCD94\uAC00"
+    _content: "\uAC8C\uC784\uC744 1\uC2DC\uAC04 \uC774\uC0C1 \uD50C\uB808\uC774\uD558\uAE30"
+  - _achievementCode: 49
+    _achievementName: "\uC5D4\uB529"
+    _content: "\uBAA8\uB4E0 \uC5C5\uC801 \uB2EC\uC131"

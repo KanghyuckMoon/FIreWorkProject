@@ -1,4 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="GraphicSettingUI" src="project://database/Assets/UI%20Toolkit/GraphicSettingTemplate.uxml?fileID=9197481963319205126&amp;guid=4d5407e57135b6a4ba9d40c5043c937e&amp;type=3#GraphicSettingTemplate" />
+    <ui:Template name="SoundSettingTemplate" src="project://database/Assets/UI%20Toolkit/SoundSettingTemplate.uxml?fileID=9197481963319205126&amp;guid=f20079e84f2cba046927735c86c76966&amp;type=3#SoundSettingTemplate" />
     <Style src="project://database/Assets/UI%20Toolkit/SettingUI.uss?fileID=7433441132597879392&amp;guid=edcfd60124c91214e851dd5a482354c2&amp;type=3#SettingUI" />
     <ui:VisualElement name="setting-panel" style="width: 35%; height: 65%; left: 32.5%; top: 17.5%; right: auto; bottom: auto; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); align-items: center; justify-content: space-between; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-left-width: 10px; border-right-width: 10px; border-top-width: 10px; border-bottom-width: 10px; flex-direction: column; flex-wrap: nowrap; flex-grow: 0; overflow: hidden; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; position: absolute; visibility: visible;">
         <ui:Button text="돌아가기" display-tooltip-when-elided="true" name="back-button" class="button1" style="padding-top: 4px; top: 15%; width: 60%; height: 13%;" />
@@ -6,4 +8,6 @@
         <ui:Button text="그래픽 설정" display-tooltip-when-elided="true" name="graphic-button" class="button button1" style="bottom: 5%; width: 60%; height: 13%;" />
         <ui:Button text="게임 종료" display-tooltip-when-elided="true" name="end-button" class="button button1" style="flex-direction: column; bottom: 15%; width: 60%; align-items: auto; height: 13%;" />
     </ui:VisualElement>
+    <ui:Instance template="GraphicSettingUI" name="GraphicSettingTemplate" style="position: absolute; left: 14%; top: 18%; display: none;" />
+    <ui:Instance template="SoundSettingTemplate" name="SoundSettingTemplate" style="position: absolute; left: 14%; top: 18%; display: none;" />
 </ui:UXML>

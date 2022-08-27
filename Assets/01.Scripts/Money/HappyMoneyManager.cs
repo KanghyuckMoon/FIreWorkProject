@@ -6,6 +6,28 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 {
 	private FireWorkController _fireWorkController;
 
+	public int Money
+	{
+		get
+		{
+			return UserSaveDataManager.Instance.UserSaveData.money;
+		}
+		set
+		{
+			UserSaveDataManager.Instance.UserSaveData.money = value;
+		}
+	}
+	public int Happy
+	{
+		get
+		{
+			return UserSaveDataManager.Instance.UserSaveData.happy;
+		}
+		set
+		{
+			UserSaveDataManager.Instance.UserSaveData.happy = value;
+		}
+	}
 	public FireWorkController FireWorkController
 	{
 		get
@@ -57,7 +79,7 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 		{ 
 			return false;
 		}
-		UserSaveDataManager.Instance.UserSaveData.money += money;
+		UserSaveDataManager.Instance.UserSaveData.money -= money;
 		return true;
 	}
 	/// <summary>

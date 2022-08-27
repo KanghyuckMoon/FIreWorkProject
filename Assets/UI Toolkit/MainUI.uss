@@ -69,3 +69,18 @@
     opacity: 0.9;
     scale: 0.95 0.95;
 }
+
+.unity-base-slider {
+}
+
+.offsetDown {
+    transform-origin: center;
+    translate: 0 165px;
+    transition-duration: 1s;
+}
+
+.offsetUp {
+    transform-origin: center;
+    translate: 0 0;
+    transition-duration: 1s;
+}

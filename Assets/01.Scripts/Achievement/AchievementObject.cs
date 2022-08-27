@@ -16,6 +16,7 @@ public class AchievementObject : MonoBehaviour, Observer
 
 	[SerializeField] private int _achievementCode = 0;
 	[SerializeField] private GameObject _effectObject;
+	[SerializeField] private bool _isEffectOff = false;
 	private bool _isPlayingAnimation = false;
 
 	private void Awake()
@@ -48,7 +49,16 @@ public class AchievementObject : MonoBehaviour, Observer
 
 	private void ActiveAnimation()
 	{
-		_effectObject?.SetActive(true);
+		if(_isEffectOff)
+		{
+			return;
+		}
+		if(_effectObject != null)
+		{
+			_effectObject.SetActive(true);
+		}		
+
+
 		Vector3 originPosition = transform.position;
 		Vector3 changePosition = originPosition + new Vector3(0, 3, 0);
 		Vector3 originSize = transform.localScale;
@@ -56,6 +66,14 @@ public class AchievementObject : MonoBehaviour, Observer
 		transform.localScale = originSize * 0.001f;
 		transform.position = changePosition;
 		transform.DOScale(changeSize, 0.5f).SetEase(Ease.OutQuart).OnComplete(() => transform.DOScale(originSize, 1).SetEase(Ease.InExpo));
-		transform.DOMoveY(originPosition.y, 1).SetDelay(0.5f).OnComplete(() => _effectObject?.SetActive(false)).SetEase(Ease.InExpo);
+
+		if(_effectObject == null)
+		{
+			transform.DOMoveY(originPosition.y, 1).SetDelay(0.5f).SetEase(Ease.InExpo);
+		}
+		else
+		{
+			transform.DOMoveY(originPosition.y, 1).SetDelay(0.5f).OnComplete(() => _effectObject.SetActive(false)).SetEase(Ease.InExpo);
+		}
 	}
 }

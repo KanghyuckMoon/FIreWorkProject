@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainUI.uss?fileID=7433441132597879392&amp;guid=dd05040a117160447bb194c19628c36f&amp;type=3#MainUI" />
+    <ui:VisualElement name="GraphicSettingTemplate" style="position: absolute; left: auto; top: auto; width: 1400px; height: 700px; background-color: rgb(75, 75, 75); padding-top: 20px; padding-left: 10px; padding-right: 10px; justify-content: space-between; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-left-width: 4px; border-right-width: 4px; border-top-width: 4px; border-bottom-width: 4px; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;">
+        <ui:VisualElement name="top-panel" style="height: 100%; margin-left: 5%; margin-right: 10%; margin-top: 3%;">
+            <ui:Label text="그래픽 설정" display-tooltip-when-elided="true" style="font-size: 50px; -unity-font-style: normal; padding-bottom: 25px;" />
+            <ui:Toggle label="전체화면" name="fullscreen-toggle" style="height: 10%; font-size: 12px; -unity-text-align: middle-left; white-space: normal; scale: 3 3; transform-origin: left; margin-bottom: 54px;" />
+            <ui:DropdownField label="해상도 설정" index="2" choices="f" name="graphic-setting" style="height: 10%; align-items: center; font-size: 30px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="bottom-panel" style="align-items: center; margin-top: -3px; height: 15%; padding-bottom: 1%; justify-content: space-between; flex-direction: row;">
+            <ui:Button text="뒤로가기" display-tooltip-when-elided="true" name="back-button" class="button" style="height: 100%; width: 20%; font-size: 35%; -unity-font-style: normal; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px;" />
+            <ui:Button text="적용" display-tooltip-when-elided="true" name="apply-button" class="button" style="height: 100%; -unity-font-style: normal; font-size: 35%; width: 13%; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
