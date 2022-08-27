@@ -13,7 +13,7 @@ public class AchievementManager : Singleton<AchievementManager>, ObservationObje
 	[SerializeField] private AchievementDataSO _achievementDataSO;
 
 	private List<Observer> _obsevers = new List<Observer>();
-	private AchievementChecker _achievementChecker = new AchievementChecker();
+	private AchievementChecker _achievementChecker = null;
 
 	private void Start()
 	{
