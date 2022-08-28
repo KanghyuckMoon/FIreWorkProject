@@ -18,5 +18,6 @@ public class AchievementData
 	public string _content;
 	public string _functionName;
 	public string _functionParameter;
+	public bool _isCantView = false;
 }
 
