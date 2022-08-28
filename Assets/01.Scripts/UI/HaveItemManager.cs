@@ -41,11 +41,11 @@ public class HaveItemManager : MonoBehaviour
 
     private void Awake()
     {
-        _itemChangeManager = FindObjectOfType<ItemChangeManager>(); 
+        _itemChangeManager = FindObjectOfType<ItemChangeManager>();
+        CheckShopItems();
     }
     private void Start()
     {
-        CheckShopItems();
     }
 
     /// <summary>
@@ -88,25 +88,6 @@ public class HaveItemManager : MonoBehaviour
         _colorItemCodeList = _shopItemListSO.colorShopItemList[_currentColorLevel].itemList.ToList();
         _shapeItemCodeList = _shopItemListSO.shapeShopItemList[_currentShapeLevel].itemList.ToList();
     }
-
-    /// <summary>
-    /// 상점에 아이템 리스트 생성 
-    /// </summary>
-    private void CreateItemList()
-    {
-        int itemCode; 
-        for(int i =0; i < _colorItemCodeList.Count; i++)
-        {
-            itemCode = _colorItemCodeList[i]; // 아이템 코드 
-            _itemDataSO.GetItemData(itemCode); // 아이템 데이터 가져오기 
-
-            // 아이템 생성
-            // 아이템 데이터 넣어주기 
-        }
-        
-        for(int i= 0; i < _shapeItemCodeList.Count; i++)
-        {
-
-        }
-    }
 }
+
+

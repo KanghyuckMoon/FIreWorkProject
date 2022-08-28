@@ -7,6 +7,7 @@ public class UIButtonManager : MonoBehaviour
 {
     private UpgradeButtonConstructor _upgradeButtonConstructor; // 업그레이드 버튼 생성, 관리자 
     private SettingPanelComponent _settingPanelComponent; // 설정 패널 관리자
+    [SerializeField]
     private ShopPanelComponent _shopPanelComponent; // 상점 패널 관리자 
 
     [SerializeField]
@@ -35,6 +36,7 @@ public class UIButtonManager : MonoBehaviour
     // 외부 캐싱 변수 
     private FireWorkController _fireWorkController;
     private HaveItemManager _haveItemManager;
+    private ShopManager _shopManager;
     private GrapicSetting _graphicSetting;
     private SoundSetting _soundSetting;
     private Exit _exit;
@@ -51,9 +53,9 @@ public class UIButtonManager : MonoBehaviour
     private void Start()
     {
         _settingPanelComponent = new SettingPanelComponent();
-        _shopPanelComponent = new ShopPanelComponent(); 
+        //_shopPanelComponent = new ShopPanelComponent(); 
         _settingPanelComponent.Init(this, _graphicSetting, _soundSetting, _exit); // 설정 버튼, 패널 캐싱 
-        _shopPanelComponent.Init(this, _haveItemManager);
+        _shopPanelComponent.Init(this, _haveItemManager, _shopManager);
     }
     private void Update()
     {
@@ -71,8 +73,10 @@ public class UIButtonManager : MonoBehaviour
     /// </summary>
     private void CashingElements()
     {
+        // 외부 변수 캐싱 
         _haveItemManager = FindObjectOfType<HaveItemManager>(); 
         _fireWorkController = FindObjectOfType<FireWorkController>();
+        _shopManager = FindObjectOfType<ShopManager>(); 
         _graphicSetting = FindObjectOfType<GrapicSetting>();
         _soundSetting = FindObjectOfType<SoundSetting>();
         _exit = FindObjectOfType<Exit>();

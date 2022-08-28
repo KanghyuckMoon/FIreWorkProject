@@ -25,7 +25,7 @@ public class ShopManager : MonoBehaviour
 		{
 			Debug.Log("구매 완료");
 			UserSaveDataManager.Instance.UserSaveData.haveItem.Add(itemCode);
-		}
+		}	
 		else
 		{
 			Debug.Log("구매 실패");
