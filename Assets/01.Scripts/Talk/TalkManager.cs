@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class TalkManager : MonoBehaviour
 {
 	[SerializeField] private Canvas _talkCanvas;
+	[SerializeField] private Image _contentBackground;
+	[SerializeField] private Image _nameBackground;
 	[SerializeField] private TalkFSO _currentTalkSO = null;
 	[SerializeField] private List<TalkFSO> _talkSOList = new List<TalkFSO>();
 	[SerializeField] private Image _playerObject;
@@ -37,10 +40,26 @@ public class TalkManager : MonoBehaviour
 		}
 		else
 		{
+			OpenAnimation();
 			UserSaveDataManager.Instance.UserSaveData.isViewCutScene[index] = true;
 			_currentTalkSO = _talkSOList[index];
 			EneableTalk(_currentTalkSO);
 		}
+	}
+
+	private void OpenAnimation()
+	{
+		_nameBackground.rectTransform.DOKill();
+		_nameBackground.rectTransform.localScale = Vector3.zero;
+		_nameBackground.rectTransform.anchoredPosition = new Vector2(0, -96);
+		_nameBackground.rectTransform.DOAnchorPos(new Vector2(0, 352), 1);
+		_nameBackground.rectTransform.DOScale(1, 1);
+
+		_contentBackground.rectTransform.DOKill();
+		_contentBackground.rectTransform.localScale = Vector3.zero;
+		_contentBackground.rectTransform.anchoredPosition = new Vector2(0, -160);
+		_contentBackground.rectTransform.DOAnchorPos(new Vector2(0, 150), 1);
+		_contentBackground.rectTransform.DOScale(1, 1);
 	}
 
 	/// <summary>
