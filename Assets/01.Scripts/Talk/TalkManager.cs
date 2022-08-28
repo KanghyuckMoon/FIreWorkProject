@@ -83,24 +83,10 @@ public class TalkManager : MonoBehaviour
 		_contentsText.text = "";
 		_optionTransform.gameObject.SetActive(false);
 		SetNameText();
+		_playerObject.rectTransform.anchoredPosition = new Vector2(-100, -100);
+		_npcObject.rectTransform.anchoredPosition = new Vector2(100, -100);
+		SetCharacterImage();
 	}
-
-	[ContextMenu("DebugEnableTalk")]
-	/// <summary>
-	/// 인스펙터로 들어간 TalkSO로 테스트
-	/// </summary>
-	public void DebugEnableTalk()
-	{
-		_talkCanvas.gameObject.SetActive(true);
-		_isTalking = true;
-		_isOptionActive = false;
-		_currentIndex = 0;
-		_stringIndex = 0;
-		_contentsText.text = "";
-		_optionTransform.gameObject.SetActive(false);
-		SetNameText();
-	}
-
 	/// <summary>
 	/// 대화창 끄기
 	/// </summary>
@@ -167,8 +153,24 @@ public class TalkManager : MonoBehaviour
 				_currentIndex += 1;
 				_currentDelay = _originDelay;
 				SetNameText();
+				SetCharacterImage();
+
 			}
 
+		}
+	}
+
+	private void SetCharacterImage()
+	{
+		if (_currentTalkSO.talkDatas[_currentIndex].talkObject == TalkDataF.TalkObject.Player)
+		{
+			EnableCharacter(_playerObject, new Vector2(485, 485));
+			DisableCharacter(_npcObject, new Vector2(-250, 400));
+		}
+		else if (_currentTalkSO.talkDatas[_currentIndex].talkObject == TalkDataF.TalkObject.Other)
+		{
+			DisableCharacter(_playerObject, new Vector2(400, 400));
+			EnableCharacter(_npcObject, new Vector2(-335, 485));
 		}
 	}
 
@@ -209,6 +211,21 @@ public class TalkManager : MonoBehaviour
 		}
 		_optionTransform.gameObject.SetActive(true);
 		_isOptionActive = true;
+	}
+
+	private void EnableCharacter(Image image, Vector2 move)
+	{
+		image.DOKill();
+		image.DOColor(Color.white, 0.3f);
+		image.rectTransform.DOScale(1f, 0.3f);
+		image.rectTransform.DOAnchorPos(move, 0.3f);
+	}
+	private void DisableCharacter(Image image, Vector2 move)
+	{
+		image.DOKill();
+		image.DOColor(new Color(0.7f, 0.7f, 0.7f), 0.3f);
+		image.rectTransform.DOScale(0.8f, 0.3f);
+		image.rectTransform.DOAnchorPos(move, 0.3f);
 	}
 
 	public void Update()
