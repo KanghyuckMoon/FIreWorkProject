@@ -5,7 +5,7 @@
         <ui:VisualElement name="item-lists" style="justify-content: flex-start; flex-direction: column; align-items: stretch; flex-grow: 1; margin-top: 0; padding-bottom: 1%;">
             <ui:VisualElement name="empty" style="flex-grow: 2;" />
             <ui:ScrollView mode="Horizontal" horizontal-page-size="1" focusable="false" elasticity="0.1" scroll-deceleration-rate="0.135" vertical-scroller-visibility="Hidden" vertical-page-size="1" touch-scroll-type="Clamped" horizontal-scroller-visibility="AlwaysVisible" nested-interaction-kind="ForwardScrolling" name="shapeItem-scrollview" style="display: flex; margin-bottom: 50px; margin-left: 40px; margin-right: 40px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 10px; border-left-width: 0; border-right-width: 0; border-bottom-width: 10px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px; padding-top: 20px;">
-                <ui:VisualElement name="shopitem" class="shopItem">
+                <ui:VisualElement name="shopitem" class="shopItem" style="display: none;">
                     <ui:Button text="Button" display-tooltip-when-elided="true" class="item-button">
                         <ui:VisualElement class="item-image" />
                         <ui:Label text="100" display-tooltip-when-elided="true" class="item-label" />

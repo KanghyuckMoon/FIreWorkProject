@@ -9,5 +9,8 @@
         <ui:Button text="게임 종료" display-tooltip-when-elided="true" name="exit-button" class="button button1" style="flex-direction: column; bottom: 15%; width: 60%; align-items: auto; height: 13%;" />
     </ui:VisualElement>
     <ui:Instance template="GraphicSettingUI" name="GraphicSettingTemplate" style="position: absolute; left: 14%; top: 18%; display: none;" />
-    <ui:Instance template="SoundSettingTemplate" name="SoundSettingTemplate" style="position: absolute; left: 14%; top: 18%; display: none;" />
+    <ui:Instance template="SoundSettingTemplate" name="SoundSettingTemplate" style="position: absolute; left: 14%; top: 18%; display: none;">
+        <AttributeOverrides element-name="bgm-slider" high-value="20" value="10" />
+        <AttributeOverrides element-name="eff-slider" high-value="20" value="10" />
+    </ui:Instance>
 </ui:UXML>
