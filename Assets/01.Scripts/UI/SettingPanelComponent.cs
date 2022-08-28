@@ -51,8 +51,11 @@ public class SettingPanelComponent : UIComponent
         _settingButton = uiButtonManager.RootElement.Q<Button>("setting-button");
 
         _settingPanel = uiButtonManager.RootElement.Q<TemplateContainer>("SettingTemplate");
+        _settingPanel.style.display = DisplayStyle.None; 
         _graphicSettingPanel = _settingPanel.Q<TemplateContainer>("GraphicSettingTemplate");
+        _graphicSettingPanel.style.display = DisplayStyle.None; 
         _soundSettingPanel = _settingPanel.Q<TemplateContainer>("SoundSettingTemplate");
+        _soundSettingPanel.style.display = DisplayStyle.None; 
 
         _backButton = _settingPanel.Q<Button>("back-button");
         _soundButton = _settingPanel.Q<Button>("sound-button");

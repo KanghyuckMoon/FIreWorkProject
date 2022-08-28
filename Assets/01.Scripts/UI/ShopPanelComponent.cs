@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System.Linq;
-using System; 
+using System;
+
 [Serializable]
 public class ShopPanelComponent : UIComponent
 {
     // 외부 참조 변수 
     private HaveItemManager _haveItemManager;
-    private ShopManager _shopManager; 
+    private ShopManager _shopManager;
+    private LibraryPanelComponent _libraryPanelComponent;
 
     private Button _shopButton; // 상점 버튼
+    private VisualElement _lockIcon; // 잠금 아이콘 
     private TemplateContainer _shopPanel;
 
     private Button _shopBackButton; // 뒤로가기 버튼 
@@ -23,15 +26,20 @@ public class ShopPanelComponent : UIComponent
 
     [SerializeField]
     private ItemDataSO _itemDataSO;
+    [SerializeField]
+    private int _shopOpenCode = 33; 
 
-    public void Init(UIButtonManager uIButtonManager, HaveItemManager haveItemManager,ShopManager shopManager)
+    public void Init(UIButtonManager uIButtonManager, HaveItemManager haveItemManager,ShopManager shopManager, LibraryPanelComponent libraryPanelComponent)
     {
         _uiButtonManager = uIButtonManager;
         _haveItemManager = haveItemManager;
-        _shopManager = shopManager; 
+        _shopManager = shopManager;
+        _libraryPanelComponent = libraryPanelComponent; 
 
         _shopPanel = _uiButtonManager.RootElement.Q<TemplateContainer>("ShopTemplate");
+        _shopPanel.style.display = DisplayStyle.None;
         _shopButton = _uiButtonManager.RootElement.Q<Button>("shop-button");
+        _lockIcon = _uiButtonManager.RootElement.Q<VisualElement>("shopLock-icon");
 
         _shopBackButton = _shopPanel.Q<Button>("back-button");
         _colorItemParent = _shopPanel.Q<VisualElement>("colorItem-scrollview");
@@ -52,6 +60,13 @@ public class ShopPanelComponent : UIComponent
         throw new System.NotImplementedException();
     }
 
+    public void UnlockShop()
+    {
+        if(AchievementManager.Instance.CheckHaveAchievement(_shopOpenCode) == true)
+        {
+            _lockIcon.style.display = DisplayStyle.Flex;
+        }
+    }
     /// <summary>
     /// ItemType에 따른 상점아이템 생성 
     /// </summary>
@@ -94,7 +109,10 @@ public class ShopPanelComponent : UIComponent
             itemCode = itemCodeList[i];
             itemData = _itemDataSO.GetItemData(itemCode);
 
-            ItemUI item = new ItemUI(itemData,() =>_shopManager.BuyItem(itemCode));
+            ItemUI item = new ItemUI(itemData, isPurchasable:true,
+                buyCheckEvent: () =>_shopManager.BuyItem(itemCode),
+                librartUpdateEvent: () => _libraryPanelComponent.CreateHaveItems());
+            
             if (itemList.Contains(item) == false) // 생성된 아이템이 아니라면 생성 
             {
                 itemList.Add(item);

@@ -16,9 +16,9 @@ public class HaveItemManager : MonoBehaviour
     private List<int> _shapeItemLevelCodeList = new List<int>();  // 모양 아이템단계 업적 코드 리스트 (code : 42 44 46 ) 1단계 2단계 3단계 
 
     [SerializeField]
-    private List<int> _colorItemCodeList = new List<int>(); // 나올 색 아이템 코드 리스트 
+    private List<int> _colorItemCodeList = new List<int>(); // 상점에 나올 색 아이템 코드 리스트 
     [SerializeField]
-    private List<int> _shapeItemCodeList = new List<int>(); // 나올 모양 아이템 코드 리스트 
+    private List<int> _shapeItemCodeList = new List<int>(); // 상점에 나올 모양 아이템 코드 리스트 
 
     [SerializeField] // 임시 직렬화
     private int _currentColorLevel; // 현재 색 아이템 단계 

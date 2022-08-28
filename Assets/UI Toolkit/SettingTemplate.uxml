@@ -10,7 +10,7 @@
     </ui:VisualElement>
     <ui:Instance template="GraphicSettingUI" name="GraphicSettingTemplate" style="position: absolute; left: 14%; top: 18%; display: none;" />
     <ui:Instance template="SoundSettingTemplate" name="SoundSettingTemplate" style="position: absolute; left: 14%; top: 18%; display: none;">
-        <AttributeOverrides element-name="bgm-slider" high-value="20" value="10" />
-        <AttributeOverrides element-name="eff-slider" high-value="20" value="10" />
+        <AttributeOverrides element-name="bgm-slider" high-value="20" value="-40" low-value="-80" />
+        <AttributeOverrides element-name="eff-slider" high-value="20" value="-40" low-value="-80" />
     </ui:Instance>
 </ui:UXML>

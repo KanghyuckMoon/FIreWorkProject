@@ -9,6 +9,8 @@ public class UIButtonManager : MonoBehaviour
     private SettingPanelComponent _settingPanelComponent; // 설정 패널 관리자
     [SerializeField]
     private ShopPanelComponent _shopPanelComponent; // 상점 패널 관리자 
+    [SerializeField]
+    private LibraryPanelComponent _libraryPanelComponent; // 라이브러리 패널 관리자 
 
     [SerializeField]
     private VisualTreeAsset _settingTemplate; // 설정 템플릿 
@@ -21,9 +23,6 @@ public class UIButtonManager : MonoBehaviour
     private VisualElement _bottomPanel; // 하단 UI 
 
     // 버튼
-    private Button _settingButton; // 설정 버튼
-    private Button _shopButton; // 상점버튼 
-    private Button _libraryButton; // 라이브러리 버튼
     private Button _closeOpenButton; // 업그레이드UI 열고 닫기 버튼 
 
     // 하단 UI버튼들 
@@ -55,7 +54,8 @@ public class UIButtonManager : MonoBehaviour
         _settingPanelComponent = new SettingPanelComponent();
         //_shopPanelComponent = new ShopPanelComponent(); 
         _settingPanelComponent.Init(this, _graphicSetting, _soundSetting, _exit); // 설정 버튼, 패널 캐싱 
-        _shopPanelComponent.Init(this, _haveItemManager, _shopManager);
+        _shopPanelComponent.Init(this, _haveItemManager, _shopManager, _libraryPanelComponent);
+        _libraryPanelComponent.Init(this, _haveItemManager);
     }
     private void Update()
     {
@@ -86,9 +86,6 @@ public class UIButtonManager : MonoBehaviour
         _gameScreen = _rootElement.Q<VisualElement>("game_screen");
         _bottomPanel = _rootElement.Q<VisualElement>("bottom-panel");
         // 버튼 캐싱 
-        _settingButton = _rootElement.Q<Button>("setting-button");
-        _shopButton = _rootElement.Q<Button>("shop-button");
-        _libraryButton = _rootElement.Q<Button>("library-button");
         _closeOpenButton = _rootElement.Q<Button>("close-open-button");
 
 
@@ -110,7 +107,6 @@ public class UIButtonManager : MonoBehaviour
             _shopButton.clicked +=       
         _libraryButton.clicked +=    
         */
-        _libraryButton.clicked += () => OpenCloseUI();
         _closeOpenButton.clicked += () =>
         {
             OpenCloseUI();

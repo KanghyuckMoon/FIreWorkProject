@@ -14,7 +14,13 @@ public class ItemUI : VisualElement
     private VisualElement _purchasedImage;
     private Label _purchasedLabel;
 
-    public ItemUI(ItemData itemData, Action clickEvent)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="itemData"></param>
+    /// <param name="isPurchasable">구매 가능한가(상점 아이템인가 라이브러리 아이템인가)</param>
+    /// <param name="buyCheckclickEvent">구매 체크 이벤트</param>
+    public ItemUI(ItemData itemData,bool isPurchasable,Action buyCheckEvent = null, Action librartUpdateEvent =null)
     {
         _itemData = itemData;
 
@@ -27,8 +33,11 @@ public class ItemUI : VisualElement
 
         _itemCost.text = itemData.money.ToString();
         _purchasedLabel.text = "구매 완료";
-        // this.style.backgroundImage = 
-        _button.clicked += clickEvent;
+        this.style.backgroundImage = new StyleBackground(itemData.texture2D);
+        
+        // 버튼 이벤트 등록 
+        _button.clicked += buyCheckEvent;
+        _button.clicked += librartUpdateEvent; 
         _button.clicked += PurchasedItem;
 
         this.AddToClassList("shopItem");
@@ -36,14 +45,11 @@ public class ItemUI : VisualElement
         _itemImage.AddToClassList("item-image");
         _itemCost.AddToClassList("item-label");
 
-        _purchasedImage.AddToClassList("purchased-image");
-        _purchasedLabel.AddToClassList("purchased-label");
-
         this.Add(_button);
         _button.Add(_itemImage);
         _button.Add(_itemCost);
-        this.Add(_purchasedImage);
-        _purchasedImage.Add(_purchasedLabel);
+
+        CheckPurchasable(isPurchasable); // 구매 가능한 아이템인지 체크(라이브러리 아이템이면 구매 불가) 
 
         PurchasedItem();
     }
@@ -62,5 +68,24 @@ public class ItemUI : VisualElement
         }
         _button.style.display = DisplayStyle.Flex;
         _purchasedImage.style.display = DisplayStyle.None;
+    }
+
+    /// <summary>
+    /// 구매 가능한 아이템인지 체크
+    /// </summary>
+    private void CheckPurchasable(bool isPurchasable)
+    {
+        if (isPurchasable == false) // 버튼 클릭 안 되도록 
+        {
+            VisualElement hideElement = new VisualElement();
+            hideElement.AddToClassList("hide-element");
+            this.Add(hideElement);
+            return; 
+        }
+        // 구매 가능하면 구매완료 요소
+        _purchasedImage.AddToClassList("purchased-image");
+        _purchasedLabel.AddToClassList("purchased-label");
+        this.Add(_purchasedImage);
+        _purchasedImage.Add(_purchasedLabel);
     }
 }
