@@ -12,6 +12,9 @@ public class PopUpManager : MonoBehaviour
 	[SerializeField] private Image _achievementPopupObject;
 	[SerializeField] private TextMeshProUGUI _achievementtext;
 
+	private AchievementData _currentAchievementData = null;
+	private Queue<AchievementData> _achievementDatas = new Queue<AchievementData>();
+
 	/// <summary>
 	/// ÆË¾÷Ã¢ ÀÛµ¿
 	/// </summary>
@@ -30,9 +33,29 @@ public class PopUpManager : MonoBehaviour
 	/// <param name="achievementData"></param>
 	public void SetAchievement(AchievementData achievementData)
 	{
-		_achievementtext.text = achievementData._achievementName;
-		_achievementPopupObject.gameObject.SetActive(true);
-		_achievementPopupObject.rectTransform.localScale = Vector3.one;
-		_achievementPopupObject.rectTransform.DOScale(0, 0.3f).SetDelay(1f).SetEase(Ease.InOutExpo).OnComplete(() => _achievementPopupObject.gameObject.SetActive(false));
+		if(_currentAchievementData != null)
+		{
+			_achievementDatas.Enqueue(achievementData);
+		}
+		else
+		{
+			_currentAchievementData = achievementData;
+			_achievementtext.text = achievementData._achievementName;
+			_achievementPopupObject.gameObject.SetActive(true);
+			_achievementPopupObject.rectTransform.localScale = Vector3.one;
+			_achievementPopupObject.rectTransform.DOShakeAnchorPos(0.5f);
+			_achievementPopupObject.rectTransform.DOScale(0, 1f).SetDelay(1f).SetEase(Ease.InOutExpo)
+				.OnComplete(() => _achievementPopupObject.rectTransform.DOScale(0, 1f).SetEase(Ease.InOutElastic)
+				.OnComplete(() => CancleAchievement())) ;
+		}
+	}
+
+	private void CancleAchievement()
+	{
+		_achievementPopupObject.gameObject.SetActive(false);
+		if(_achievementDatas.Count > 0)
+		{
+			SetAchievement(_achievementDatas.Dequeue());
+		}
 	}
 }
