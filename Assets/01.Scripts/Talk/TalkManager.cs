@@ -8,6 +8,7 @@ public class TalkManager : MonoBehaviour
 {
 	[SerializeField] private Canvas _talkCanvas;
 	[SerializeField] private TalkFSO _currentTalkSO = null;
+	[SerializeField] private List<TalkFSO> _talkSOList = new List<TalkFSO>();
 	[SerializeField] private Image _playerObject;
 	[SerializeField] private Image _npcObject;
 	[SerializeField] private TextMeshProUGUI _nameText;
@@ -22,6 +23,25 @@ public class TalkManager : MonoBehaviour
 	private List<OptionButton> _optionButtons = new List<OptionButton>();
 	private bool _isTalking = false;
 	private bool _isOptionActive = false;
+	private Queue<int> _viewCutSceneList = new Queue<int>();
+
+	public void OpenCutScene(int index)
+	{
+		if (UserSaveDataManager.Instance.UserSaveData.isViewCutScene[index])
+		{
+			return;
+		}
+		if(_currentTalkSO != null)
+		{
+			_viewCutSceneList.Enqueue(index);
+		}
+		else
+		{
+			UserSaveDataManager.Instance.UserSaveData.isViewCutScene[index] = true;
+			_currentTalkSO = _talkSOList[index];
+			EneableTalk(_currentTalkSO);
+		}
+	}
 
 	/// <summary>
 	/// TalkSO를 받아서 대화 진행
@@ -69,6 +89,12 @@ public class TalkManager : MonoBehaviour
 	{
 		_isTalking = false;
 		_talkCanvas.gameObject.SetActive(false);
+		_currentTalkSO = null;
+
+		if(_viewCutSceneList.Count > 0)
+		{
+			OpenCutScene(_viewCutSceneList.Dequeue());
+		}
 	}
 
 	private void SetNameText()
