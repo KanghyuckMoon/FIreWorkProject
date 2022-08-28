@@ -5,7 +5,19 @@ using UnityEngine;
 public class HappyMoneyManager : Singleton<HappyMoneyManager>
 {
 	private FireWorkController _fireWorkController;
-
+	private PopUpManager _popUpManager;
+	public PopUpManager PopUpManager
+	{
+		get
+		{
+			_popUpManager ??= FindObjectOfType<PopUpManager>();
+			return _popUpManager;
+		}
+		set
+		{
+			_popUpManager = value;
+		}
+	}
 	public int Money
 	{
 		get
@@ -76,7 +88,8 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 	public bool RemoveMoney(int money)
 	{
 		if (UserSaveDataManager.Instance.UserSaveData.money < money)
-		{ 
+		{
+			PopUpManager.SetPopUp("돈이 부족합니다");
 			return false;
 		}
 		UserSaveDataManager.Instance.UserSaveData.money -= money;
@@ -91,6 +104,7 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 	{
 		if(UserSaveDataManager.Instance.UserSaveData.happy < happy)
 		{
+			PopUpManager.SetPopUp("행복이 부족합니다");
 			return false;
 		}
 		UserSaveDataManager.Instance.UserSaveData.happy -= happy;
