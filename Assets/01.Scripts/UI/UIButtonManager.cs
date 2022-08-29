@@ -28,10 +28,6 @@ public class UIButtonManager : MonoBehaviour
     // 하단 UI버튼들 
 
 
-    // 라벨(텍스트)
-    private Label _happyMoneyLabel; // 행복 재화 표시
-    private Label _moneyLabel; // 돈 재화 표시 
-
     // 외부 캐싱 변수 
     private FireWorkController _fireWorkController;
     private HaveItemManager _haveItemManager;
@@ -65,7 +61,6 @@ public class UIButtonManager : MonoBehaviour
             _gameScreen.style.display = _gameScreen.style.display == DisplayStyle.Flex ? DisplayStyle.None : DisplayStyle.Flex;
             //_gameScreen.visible = _gameScreen.visible == false ? true : false; 
         }
-        UpdateMoneyText();
     }
 
     /// <summary>
@@ -90,8 +85,7 @@ public class UIButtonManager : MonoBehaviour
 
 
         //// 라벨 캐싱 
-        _happyMoneyLabel = _rootElement.Q<Label>("happyMoney-label");
-        _moneyLabel = _rootElement.Q<Label>("money-label");
+
 
         // 업그레이드 버튼 생성
         _upgradeButtonConstructor = new UpgradeButtonConstructor(_fireWorkController, _rootElement);
@@ -124,11 +118,7 @@ public class UIButtonManager : MonoBehaviour
         _bottomPanel.ToggleInClassList("offsetDown");
     }
 
-    public void UpdateMoneyText()
-    {
-        _happyMoneyLabel.text = string.Format("행복 재화 : {0}", UserSaveDataManager.Instance.UserSaveData.happy.ToString());
-        _moneyLabel.text = string.Format("돈 재화 : {0}", UserSaveDataManager.Instance.UserSaveData.money.ToString());
-    }
+
 
     // 테스트용 함수 
     [ContextMenu("라이브러리 아이템 생성 ")]

@@ -39,8 +39,8 @@ public class LibraryPanelComponent : UIComponent
         _libraryBackButton.clicked += () => OpenClosePanel(_libraryPanel);
 
         CreateHaveItems();
-        
     }
+
     public override void UpdateSometing()
     {
         throw new System.NotImplementedException();
@@ -53,7 +53,6 @@ public class LibraryPanelComponent : UIComponent
     public void CreateHaveItems()
     {
         LibraryItemInfo libraryItemInfo;
-        ItemData itemData;
         int itemCode; 
 
         List<int> haveItemList = UserSaveDataManager.Instance.UserSaveData.haveItem; // 보유 아이템 코드 리스트 
@@ -64,11 +63,11 @@ public class LibraryPanelComponent : UIComponent
             libraryItemInfo = CheckItemType(_itemDataSO.itemDataList[haveItemList[i]].itemType);
 
             itemCode = haveItemList[i]; // 아이템 코드 
-            itemData = _itemDataSO.GetItemData(itemCode);
+            ItemData itemData = _itemDataSO.GetItemData(itemCode);
 
-            ItemBox item = new ItemBox(itemData);
+            ItemBox item = new ItemBox(itemData,_itemDataSO);
 
-            if (libraryItemInfo.itemList.Contains(item) == false) // 생성된 아이템이 아니라면 생성 
+            if (IsContainItem(libraryItemInfo.itemList, item.ItemCode) == false) // 생성된 아이템이 아니라면 생성 
             {
                 libraryItemInfo.itemList.Add(item);
                 libraryItemInfo.parent.Add(item);
@@ -78,6 +77,25 @@ public class LibraryPanelComponent : UIComponent
                 item = null;
             }
         }
+    }
+
+    /// <summary>
+    /// 아이템 코드가 존재하면 True 리턴 / 없으면  False 리턴 
+    /// </summary>
+    /// <param name="itemList"></param>
+    /// <param name="itemCode"></param>
+    /// <returns></returns>
+    private bool IsContainItem(List<ItemBox> itemList, int itemCode)
+    {
+        int count = itemList.Count; 
+        for(int i =0;i < count; i++)
+        {
+            if(itemList[i].ItemCode == itemCode)
+            {
+                return true; 
+            }
+        }
+        return false; 
     }
 
     /// <summary>

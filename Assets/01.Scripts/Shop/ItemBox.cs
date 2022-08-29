@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEditor.UIElements; 
 using System;
 
 public class ItemBox : ItemUI
@@ -32,10 +33,12 @@ public class ItemBox : ItemUI
     [SerializeField] private ItemDataSO _itemDataSO;
 	[SerializeField] private float _debugValue;
 
-	public ItemBox(ItemData itemData)
+	public ItemBox(ItemData itemData,ItemDataSO itemDataSO)
 		: base(itemData)
 	{
-		_itemCode = itemData.itemCode; 
+		_itemDataSO = itemDataSO; 
+		_itemCode = itemData.itemCode;
+
 		_button.clicked += ChangeFirework; 
     }
 

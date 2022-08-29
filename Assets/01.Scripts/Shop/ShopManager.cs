@@ -21,7 +21,7 @@ public class ShopManager : MonoBehaviour
 	/// <param name="itemCode"></param>
 	public void BuyItem(int itemCode)
 	{
-		if(HappyMoneyManager.Instance.Happy >= _itemDataSO.GetItemData(itemCode).money)
+		if(HappyMoneyManager.Instance.RemoveHappy(_itemDataSO.GetItemData(itemCode).money))
 		{
 			Debug.Log("구매 완료");
 			UserSaveDataManager.Instance.UserSaveData.haveItem.Add(itemCode);

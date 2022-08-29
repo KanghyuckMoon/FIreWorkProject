@@ -125,3 +125,55 @@
     flex-direction: row;
     align-items: center;
 }
+
+.uiBox {
+    flex-basis: auto;
+    flex-shrink: 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: auto;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    position: relative;
+    top: 0;
+    right: auto;
+    display: flex;
+}
+
+.happyMoney-label {
+    width: auto;
+    height: 74px;
+    font-size: 60px;
+    color: rgb(255, 255, 255);
+    -unity-font-definition: url('project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&guid=f30be4bb3933209499bc20092da7e369&type=2#Maplestory Bold SDF');
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: rgba(0, 0, 0, 255);
+}
+
+.money-label {
+    width: auto;
+    height: auto;
+    font-size: 60px;
+    color: rgb(255, 255, 255);
+    -unity-font-definition: url('project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&guid=f30be4bb3933209499bc20092da7e369&type=2#Maplestory Bold SDF');
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: rgba(0, 0, 0, 255);
+}
+
+.top-panel {
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.topLeft-panel {
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.topRight-panel {
+    flex-direction: row-reverse;
+    flex-grow: 1;
+}
