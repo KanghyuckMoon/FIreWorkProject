@@ -314,13 +314,13 @@ MonoBehaviour:
     _content: "\uBD88\uAF43\uB180\uC774 \uC7A5\uC778\uC774 \uB418\uC790!"
     _functionName: OpenCutScene
     _functionParameter: 0
-    _isCantView: 1
+    _isCantView: 0
   - _achievementCode: 51
     _achievementName: "\uAC15\uD654\uC5D0 \uB300\uD574"
     _content: "\uAC15\uD654\uC5D0 \uB300\uD574 \uC775\uD788\uC790!"
     _functionName: OpenCutScene
     _functionParameter: 1
-    _isCantView: 1
+    _isCantView: 0
   - _achievementCode: 52
     _achievementName: "\uB9CE\uC740 \uC5C5\uC801 \uB2EC\uC131!"
     _content: "20\uAC1C\uB098 \uB2EC\uC131\uD588\uC5B4\uC694!"
