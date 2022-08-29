@@ -7,6 +7,10 @@ public class AchievementDataSO : ScriptableObject
 {
 	public List<AchievementData> _achievementDatas = new List<AchievementData>();
 
+	public AchievementData GetAchievementData(int itemCode)
+	{
+		return _achievementDatas.Find(x => x._achievementCode == itemCode);
+	}
 
 }
 
