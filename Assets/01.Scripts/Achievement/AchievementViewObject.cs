@@ -21,15 +21,16 @@ public class AchievementViewObject : MonoBehaviour
 	{
 		_rectTransform ??= GetComponent<RectTransform>();
 
-		_nameText.text = achievementData._achievementName;
 		_contentText.text = achievementData._content;
 
 		if(isGetAchievement)
 		{
+			_nameText.text = achievementData._achievementName;
 			_clearText.text = "含失!";
 		}
 		else
 		{
+			_nameText.text = "???";
 			_clearText.text = "耕含失!";
 		}
 
