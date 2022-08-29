@@ -64,7 +64,7 @@ public class ShopPanelComponent : UIComponent
     {
         if(AchievementManager.Instance.CheckHaveAchievement(_shopOpenCode) == true)
         {
-            _lockIcon.style.display = DisplayStyle.Flex;
+            _lockIcon.style.display = DisplayStyle.None;
         }
     }
     /// <summary>
