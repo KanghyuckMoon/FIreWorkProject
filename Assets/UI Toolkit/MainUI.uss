@@ -149,7 +149,7 @@
     color: rgb(255, 255, 255);
     -unity-font-definition: url('project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&guid=f30be4bb3933209499bc20092da7e369&type=2#Maplestory Bold SDF');
     -unity-text-outline-width: 2px;
-    -unity-text-outline-color: rgba(0, 0, 0, 255);
+    -unity-text-outline-color: rgb(0, 0, 0);
 }
 
 .money-label {
@@ -159,7 +159,7 @@
     color: rgb(255, 255, 255);
     -unity-font-definition: url('project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&guid=f30be4bb3933209499bc20092da7e369&type=2#Maplestory Bold SDF');
     -unity-text-outline-width: 2px;
-    -unity-text-outline-color: rgba(0, 0, 0, 255);
+    -unity-text-outline-color: rgb(0, 0, 0);
 }
 
 .top-panel {
@@ -176,4 +176,18 @@
 .topRight-panel {
     flex-direction: row-reverse;
     flex-grow: 1;
+}
+
+.line {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    border-bottom-width: 10px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    display: flex;
 }
