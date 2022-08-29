@@ -7,6 +7,7 @@ using System;
 public class ItemUI : VisualElement
 {
     protected ItemData _itemData;
+    protected int _itemCode; 
 
     protected Button _button;
     protected VisualElement _itemImage;
@@ -22,6 +23,7 @@ public class ItemUI : VisualElement
     public ItemUI(ItemData itemData)
     {
         _itemData = itemData;
+        _itemCode = itemData.itemCode; 
 
         _button = new Button();
         _itemImage = new VisualElement();
@@ -29,8 +31,7 @@ public class ItemUI : VisualElement
 
         _itemCost.text = itemData.money.ToString();
 
-        this.style.backgroundImage = new StyleBackground(itemData.texture2D);
-
+        SetColor(itemData); 
         _button.style.display = DisplayStyle.Flex;
 
         // 버튼 이벤트 등록 
@@ -53,7 +54,20 @@ public class ItemUI : VisualElement
 
         //PurchasedItem();
     }
+    
+    private void SetColor(ItemData itemData)
+    {
+        if (itemData.itemType == EItem.Color) // 색 아이템이면 
+        {
+            _itemImage.style.unityBackgroundImageTintColor = new StyleColor(itemData.gradient_1.colorKeys[1].color);
+            return;
+        }
+        // 모양 아이템이면 
+        _itemImage.style.backgroundImage = new StyleBackground(itemData.texture2D);
+        _itemImage.style.unityBackgroundImageTintColor = new StyleColor(Color.white);
 
+    }
+    /*
     /// <summary>
     /// 구매 가능한 아이템인지 체크
     /// </summary>
@@ -74,4 +88,5 @@ public class ItemUI : VisualElement
         this.Add(_purchasedImage);
         _purchasedImage.Add(_purchasedLabel);
     }
+    */
 }

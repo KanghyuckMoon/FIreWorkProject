@@ -68,8 +68,7 @@ public class ShopPanelComponent : UIComponent
         }
     }
     /// <summary>
-    /// ItemType에 따른 상점아이템 생성 
-    /// </summary>
+   /// </summary>
     /// <param name="itemType"></param>
     public void CreateShopItem(ItemType itemType)
     {
@@ -101,15 +100,12 @@ public class ShopPanelComponent : UIComponent
     private void InstantiateItems(List<int> itemCodeList,List<ShopItemUI> itemList,VisualElement parent)
     {
         int count = itemCodeList.Count;
-        int itemCode; 
-        ItemData itemData;
 
         for (int i =0; i < count; i++)
         {
-            itemCode = itemCodeList[i];
-            itemData = _itemDataSO.GetItemData(itemCode);
+            int itemCode = itemCodeList[i];
 
-            ShopItemUI item = new ShopItemUI(itemData,
+            ShopItemUI item = new ShopItemUI(_itemDataSO.GetItemData(itemCode),
                 buyCheckEvent: () =>_shopManager.BuyItem(itemCode),
                 librartUpdateEvent: () => _libraryPanelComponent.CreateHaveItems());
             

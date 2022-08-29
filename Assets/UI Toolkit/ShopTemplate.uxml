@@ -5,14 +5,14 @@
         <ui:VisualElement name="item-lists" style="justify-content: flex-start; flex-direction: column; align-items: stretch; flex-grow: 1; margin-top: 0; padding-bottom: 1%;">
             <ui:VisualElement name="empty" style="flex-grow: 2;" />
             <ui:ScrollView mode="Horizontal" horizontal-page-size="1" focusable="false" elasticity="0.1" scroll-deceleration-rate="0.135" vertical-scroller-visibility="Hidden" vertical-page-size="1" touch-scroll-type="Clamped" horizontal-scroller-visibility="AlwaysVisible" nested-interaction-kind="ForwardScrolling" name="shapeItem-scrollview" style="display: flex; margin-bottom: 50px; margin-left: 40px; margin-right: 40px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 10px; border-left-width: 0; border-right-width: 0; border-bottom-width: 10px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px; padding-top: 20px;">
-                <ui:VisualElement name="shopitem" class="shopItem" style="display: none;">
-                    <ui:Button text="Button" display-tooltip-when-elided="true" class="item-button">
-                        <ui:VisualElement class="item-image" />
+                <ui:VisualElement name="shopitem" class="shopItem" style="display: flex; background-image: url(&apos;project://database/Assets/SD%20Unity-Chan%20Haon%20Custom/Texture/_PSD/(psd)Accessory_01.psd?fileID=2800000&amp;guid=1f07b3051fac06e4baa910d86f41e521&amp;type=3#(psd)Accessory_01&apos;); background-color: rgb(110, 110, 110);">
+                    <ui:Button text="Button" display-tooltip-when-elided="true" class="item-button" style="display: flex; background-image: none;">
+                        <ui:VisualElement class="item-image" style="background-color: rgb(0, 0, 0); display: flex; background-image: url(&apos;project://database/Assets/SampleSceneAssets/Textures/General/Brass_MAODS.png?fileID=2800000&amp;guid=3008d6bc83d360041817752724fa2f4e&amp;type=3#Brass_MAODS&apos;); -unity-background-image-tint-color: rgb(255, 162, 162);" />
                         <ui:Label text="100" display-tooltip-when-elided="true" class="item-label" />
                         <ui:Button display-tooltip-when-elided="true" name="button" class="item-button" style="display: none;" />
                     </ui:Button>
-                    <ui:VisualElement name="purchased-image" class="purchased-image">
-                        <ui:Label name="purchased-label" class="purchased-label" />
+                    <ui:VisualElement name="purchased-image" class="purchased-image" style="display: flex; background-color: rgba(0, 0, 0, 0.65);">
+                        <ui:Label name="purchased-label" text="구매완료" class="purchased-label" style="display: flex;" />
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:ScrollView>

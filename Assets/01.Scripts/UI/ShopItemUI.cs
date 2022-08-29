@@ -19,6 +19,7 @@ public class ShopItemUI : ItemUI
         
         _purchasedLabel.text = "구매 완료";
 
+
         _button.clicked += buyCheckEvent;
         _button.clicked += librartUpdateEvent;
         _button.clicked += PurchasedItem;
@@ -40,9 +41,9 @@ public class ShopItemUI : ItemUI
     private void PurchasedItem()
     {
         // 가지고 있는 아이템이면 구매 완료 표시
-        if (UserSaveDataManager.Instance.UserSaveData.haveItem.Contains(_itemData.itemCode))
+        if (UserSaveDataManager.Instance.UserSaveData.haveItem.Contains(_itemCode))
         {
-            _button.style.display = DisplayStyle.None;
+            //_button.style.display = DisplayStyle.None;
             _purchasedImage.style.display = DisplayStyle.Flex;
             return;
         }
