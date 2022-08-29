@@ -10,5 +10,6 @@ public class UISceneLoader : MonoBehaviour
 		SceneManager.LoadScene("UIScene", LoadSceneMode.Additive);
 		SceneManager.LoadScene("CutScene", LoadSceneMode.Additive);
 		SceneManager.LoadScene("PopUpScene", LoadSceneMode.Additive);
+		SceneManager.LoadScene("AchievementViewScene", LoadSceneMode.Additive);
 	}
 }

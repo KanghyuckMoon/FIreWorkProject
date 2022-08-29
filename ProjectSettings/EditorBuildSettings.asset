@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00.Scenes/UIScene/PopUpScene.unity
     guid: 19d5ed3352237b74cbec68f784f25d05
+  - enabled: 1
+    path: Assets/00.Scenes/UIScene/AchievementViewScene.unity
+    guid: 3dd91e8f514d8c84d8f2805e2fa79ce8
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 5e709ab70fcb4f849b685adba98427e1, type: 2}
