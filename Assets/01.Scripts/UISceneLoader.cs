@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UISceneLoader : MonoBehaviour
 {
-	private void Start()
+	private void Awake()
 	{
 		SceneManager.LoadScene("UIScene", LoadSceneMode.Additive);
 		SceneManager.LoadScene("CutScene", LoadSceneMode.Additive);
