@@ -6,6 +6,19 @@ using UnityEngine;
 
 public class AchievementChecker
 {
+	private PopUpManager _popUpManager;
+
+	public PopUpManager PopUpManager
+	{
+		get
+		{
+			_popUpManager ??= GameObject.FindObjectOfType<PopUpManager>();
+			return _popUpManager;
+		}
+	}
+
+
+
 	public AchievementChecker(AchievementDataSO achievementDataSO)
 	{
 		_achievementDataSO = achievementDataSO;
@@ -91,6 +104,14 @@ public class AchievementChecker
 					UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(achievement.itemCode);
 					AchievementManager.Instance.SendMessageToObsevers();
 					FunctionInvoke(achievement.itemCode);
+
+					var achievementData = _achievementDataSO._achievementDatas.Find(x => x._achievementCode == achievement.itemCode);
+
+					if (!achievementData._isCantView)
+					{
+						PopUpManager.SetAchievement(achievementData);
+					}
+
 				}
 			}
 		}
