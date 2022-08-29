@@ -1,34 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using System;
 
-public class ItemBox : MonoBehaviour
+public class ItemBox : ItemUI
 {
     private ItemChangeManager ItemChangeManager
 	{
         get
 		{
-            _itemChangeManager ??= FindObjectOfType<ItemChangeManager>();
+            _itemChangeManager ??= GameObject.FindObjectOfType<ItemChangeManager>();
             return _itemChangeManager;
 		}
 	}
+
+	public int ItemCode
+    {
+		get
+        {
+			return _itemCode;
+        }
+		set
+        {
+			_itemCode = value;
+        }
+    }
 
     [SerializeField] private int _itemCode;
 	[SerializeField] private ItemChangeManager _itemChangeManager;
     [SerializeField] private ItemDataSO _itemDataSO;
 	[SerializeField] private float _debugValue;
 
-	//private ItemData _itemData;
-
-	void Start()
-    {
-        //_itemData = _itemDataSO.GetItemData(_itemCode);
-    }
-
-    //[ContextMenu("DebugChangeItemData")]
-    public void DebugChangeItemData()
-    {
-        //_itemData = _itemDataSO.GetItemData(_itemCode);
+	public ItemBox(ItemData itemData)
+		: base(itemData)
+	{
+		_itemCode = itemData.itemCode; 
+		_button.clicked += ChangeFirework; 
     }
 
 	[ContextMenu("ChangeFirework")]

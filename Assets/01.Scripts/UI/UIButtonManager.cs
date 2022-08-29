@@ -129,4 +129,20 @@ public class UIButtonManager : MonoBehaviour
         _happyMoneyLabel.text = string.Format("행복 재화 : {0}", UserSaveDataManager.Instance.UserSaveData.happy.ToString());
         _moneyLabel.text = string.Format("돈 재화 : {0}", UserSaveDataManager.Instance.UserSaveData.money.ToString());
     }
+
+    // 테스트용 함수 
+    [ContextMenu("라이브러리 아이템 생성 ")]
+    public void CreateLibraryItems()
+    {
+        _libraryPanelComponent.CreateHaveItems(); 
+    }
+    
+    [ContextMenu("상점 아이템 생성")]
+    public void CreateShopItems()
+    {
+        foreach (ItemType itemType in Enum.GetValues(typeof(ItemType))) // 상점 아이템 생성 
+        {
+            _shopPanelComponent.CreateShopItem(itemType);
+        }
+    }
 }

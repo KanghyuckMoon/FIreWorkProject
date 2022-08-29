@@ -21,8 +21,8 @@ public class ShopPanelComponent : UIComponent
     private VisualElement _colorItemParent; // 색 아이템 부모 오브젝트
     private VisualElement _shapeItemParent; // 모양 아이템 부모 오브젝트 
 
-    private List<ItemUI> _shopColorItemList = new List<ItemUI>();
-    private List<ItemUI> _shopShapeItemList = new List<ItemUI>();
+    private List<ShopItemUI> _shopColorItemList = new List<ShopItemUI>();
+    private List<ShopItemUI> _shopShapeItemList = new List<ShopItemUI>();
 
     [SerializeField]
     private ItemDataSO _itemDataSO;
@@ -74,7 +74,7 @@ public class ShopPanelComponent : UIComponent
     public void CreateShopItem(ItemType itemType)
     {
         List<int> itemCodeList = new List<int>(); // 생성할 아이템 코드 리스트 
-        List<ItemUI> itemList = new List<ItemUI>(); // 생성된 아이템 받아올 리스트 
+        List<ShopItemUI> itemList = new List<ShopItemUI>(); // 생성된 아이템 받아올 리스트 
         VisualElement parent = new VisualElement();  // 아이템 생성 위치 
         switch (itemType)
         {
@@ -98,7 +98,7 @@ public class ShopPanelComponent : UIComponent
     /// <param name="itemCodeList">생성할 아이템</param>
     /// <param name="itemList">생성된 아이템 저장 리스트 </param>
     /// <param name="parent">생성될 아이템 위치</param>
-    private void InstantiateItems(List<int> itemCodeList,List<ItemUI> itemList,VisualElement parent)
+    private void InstantiateItems(List<int> itemCodeList,List<ShopItemUI> itemList,VisualElement parent)
     {
         int count = itemCodeList.Count;
         int itemCode; 
@@ -109,7 +109,7 @@ public class ShopPanelComponent : UIComponent
             itemCode = itemCodeList[i];
             itemData = _itemDataSO.GetItemData(itemCode);
 
-            ItemUI item = new ItemUI(itemData, isPurchasable:true,
+            ShopItemUI item = new ShopItemUI(itemData,
                 buyCheckEvent: () =>_shopManager.BuyItem(itemCode),
                 librartUpdateEvent: () => _libraryPanelComponent.CreateHaveItems());
             

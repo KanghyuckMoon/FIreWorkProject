@@ -16,8 +16,8 @@ public class LibraryPanelComponent : UIComponent
     private VisualElement _colorItemParent; // 색 아이템 부모 오브젝트
     private VisualElement _shapeItemParent; // 모양 아이템 부모 오브젝트 
 
-    private List<ItemUI> _libraryColorItemList = new List<ItemUI>(); // 생성된 색 아이템 리스트 
-    private List<ItemUI> _libraryShapeItemList = new List<ItemUI>(); // 생성된 모양 아이템 리스트 
+    private List<ItemBox> _libraryColorItemList = new List<ItemBox>(); // 생성된 색 아이템 리스트 
+    private List<ItemBox> _libraryShapeItemList = new List<ItemBox>(); // 생성된 모양 아이템 리스트 
 
     [SerializeField]
     private ItemDataSO _itemDataSO;
@@ -66,7 +66,7 @@ public class LibraryPanelComponent : UIComponent
             itemCode = haveItemList[i]; // 아이템 코드 
             itemData = _itemDataSO.GetItemData(itemCode);
 
-            ItemUI item = new ItemUI(itemData,isPurchasable:false);
+            ItemBox item = new ItemBox(itemData);
 
             if (libraryItemInfo.itemList.Contains(item) == false) // 생성된 아이템이 아니라면 생성 
             {
@@ -106,7 +106,7 @@ public class LibraryPanelComponent : UIComponent
     private class LibraryItemInfo
     {
         public VisualElement parent; // 생성될 위치 (부모 오브젝트) 
-        public List<ItemUI> itemList = new List<ItemUI>();  // 생성될 시 저장될 리스트 
+        public List<ItemBox> itemList = new List<ItemBox>();  // 생성될 시 저장될 리스트 
     }
 
 }
