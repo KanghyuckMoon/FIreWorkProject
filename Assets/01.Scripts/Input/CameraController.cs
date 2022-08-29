@@ -19,6 +19,7 @@ public class CameraController : MonoBehaviour
     float _yMoveInput = 0f;
     float _xMoveInput = 0f;
     Vector3 _moveVector = Vector3.zero;
+    Vector3 _upVector = Vector3.zero;
 
     // Update is called once per frame
     void LateUpdate()
@@ -31,6 +32,7 @@ public class CameraController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+
         Vector3 input = context.ReadValue<Vector3>();
         inputVal = input.normalized;
 
@@ -69,9 +71,13 @@ public class CameraController : MonoBehaviour
 
     private void CameraPositionSetting()
     {
-        _moveVector = transform.position + (inputVal * _moveSpeed * Time.deltaTime);// + (transform.forward * _distance * _zoomSpeed * Time.deltaTime); //transform.right * (_xMoveInput * _moveSpeed * Time.deltaTime) + transform.up * (_yMoveInput * _moveSpeed * Time.deltaTime) + (transform.forward* _distance *_zoomSpeed * Time.deltaTime);
+        _moveVector = transform.position + (transform.right * inputVal.x * _moveSpeed * Time.deltaTime) + (transform.forward * inputVal.z * _moveSpeed * Time.deltaTime);// + (transform.forward * _distance * _zoomSpeed * Time.deltaTime); //transform.right * (_xMoveInput * _moveSpeed * Time.deltaTime) + transform.up * (_yMoveInput * _moveSpeed * Time.deltaTime) + (transform.forward* _distance *_zoomSpeed * Time.deltaTime);
         transform.position = Vector3.SmoothDamp(transform.position, _moveVector, ref _velocity, _smoothTime);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(-_yRotationInput, _xRotationInput, 0), _smoothTime);;
+
+        _upVector = transform.position + transform.InverseTransformPoint(transform.position + (transform.up * inputVal.y * _moveSpeed * Time.deltaTime));
+        transform.position = Vector3.SmoothDamp(transform.position, _upVector, ref _velocity, _smoothTime);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(-_yRotationInput, _xRotationInput, 0), _smoothTime);
     }
 
     /// <summary>
