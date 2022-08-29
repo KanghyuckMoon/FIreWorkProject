@@ -133,7 +133,7 @@ public class TalkManager : MonoBehaviour
 
 			if (_currentIndex == _currentTalkSO.talkDatas.Count - 1)
 			{
-				if(_currentTalkSO.talkDatas[_currentIndex]._optionDatas != null)
+				if(_currentTalkSO.talkDatas[_currentIndex]._optionDatas.Count > 0)
 				{
 					if(!_isOptionActive)
 					{
