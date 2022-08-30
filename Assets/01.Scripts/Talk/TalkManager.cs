@@ -162,6 +162,8 @@ public class TalkManager : MonoBehaviour
 
 	private void SetCharacterImage()
 	{
+		_playerObject.sprite = _currentTalkSO.talkDatas[_currentIndex]._playerSprite;
+		_npcObject.sprite = _currentTalkSO.talkDatas[_currentIndex]._otherSprite;
 		if (_currentTalkSO.talkDatas[_currentIndex].talkObject == TalkDataF.TalkObject.Player)
 		{
 			EnableCharacter(_playerObject, new Vector2(485, 485));

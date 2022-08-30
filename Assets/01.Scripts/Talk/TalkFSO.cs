@@ -6,6 +6,21 @@ using UnityEngine;
 public class TalkFSO : ScriptableObject
 {
 	public List<TalkDataF> talkDatas = new List<TalkDataF>();
+	public Sprite _debugPlayerSprite;
+	public Sprite _debugOtherSprite;
+
+	[ContextMenu("ChangeSprite")]
+	/// <summary>
+	/// 스프라이트 모두 변경
+	/// </summary>
+	public void ChangeSprite()
+	{
+		foreach(var data in talkDatas)
+		{
+			data._playerSprite = _debugPlayerSprite;
+			data._otherSprite = _debugOtherSprite;
+		}
+	}
 }
 
 [System.Serializable]
@@ -24,6 +39,8 @@ public class TalkDataF
 	public List<OptionData> _optionDatas = new List<OptionData>();
 	public string _functionName;
 	public string _functionParameters;
+	public Sprite _playerSprite;
+	public Sprite _otherSprite;
 }
 
 [System.Serializable]
