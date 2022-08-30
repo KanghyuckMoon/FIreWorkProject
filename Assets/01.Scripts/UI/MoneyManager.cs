@@ -10,8 +10,9 @@ public class MoneyManager : MonoBehaviour
     private Label _moneyLabel; // µ· ÀçÈ­ Ç¥½Ã 
 
     private VisualElement _rootElement;
-    private UIDocument _moneyUIDoc; 
+    private UIDocument _moneyUIDoc;
 
+    public VisualElement RootElement => _rootElement; 
     public void Start()
     {
         _moneyUIDoc = GetComponent<UIDocument>();
