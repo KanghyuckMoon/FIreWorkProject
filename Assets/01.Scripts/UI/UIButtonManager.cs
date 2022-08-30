@@ -35,6 +35,7 @@ public class UIButtonManager : MonoBehaviour
 
     // 버튼
     private Button _closeOpenButton; // 업그레이드UI 열고 닫기 버튼 
+    private Button _achievementButton; // 업적 버튼 
 
     // 하단 UI버튼들 
 
@@ -99,7 +100,7 @@ public class UIButtonManager : MonoBehaviour
         _bottomPanel = _rootElement.Q<VisualElement>("bottom-panel");
         // 버튼 캐싱 
         _closeOpenButton = _rootElement.Q<Button>("close-open-button");
-
+        _achievementButton = _rootElement.Q<Button>("achievement-button"); 
 
         //// 라벨 캐싱 
 
@@ -123,6 +124,7 @@ public class UIButtonManager : MonoBehaviour
             OpenCloseUI();
             Debug.Log("닫거나 열어라");
         };
+        _achievementButton.clicked += () => _achievementViewManager.OpenAchievementView(); 
     }
 
 

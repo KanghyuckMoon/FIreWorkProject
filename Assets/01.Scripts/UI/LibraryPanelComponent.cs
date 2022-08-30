@@ -17,7 +17,6 @@ public class LibraryPanelComponent : UIComponent
     private TemplateContainer _libraryPanel;
 
     private Button _libraryBackButton; // 뒤로가기 버튼 
-    private Button _achievementButton; // 업적 버튼 
 
     private VisualElement _colorItemParent; // 색 아이템 부모 오브젝트
     private VisualElement _shapeItemParent; // 모양 아이템 부모 오브젝트 
@@ -66,7 +65,6 @@ public class LibraryPanelComponent : UIComponent
         _libraryPanel.style.display = DisplayStyle.None;
 
         _libraryBackButton = _libraryPanel.Q<Button>("back-button");
-        _achievementButton = _libraryPanel.Q<Button>("achievement-button"); 
 
         _colorItemParent = _libraryPanel.Q<VisualElement>("colorItem-scrollview");
         _shapeItemParent = _libraryPanel.Q<VisualElement>("shapeItem-scrollview");
@@ -84,7 +82,6 @@ public class LibraryPanelComponent : UIComponent
         // 버튼 이벤트 등록 
         _libraryButton.clicked += () => OpenClosePanel(_libraryPanel);
         _libraryBackButton.clicked += () => OpenClosePanel(_libraryPanel);
-        _achievementButton.clicked += () => _achievementViewManager.OpenAchievementView(); 
 
         _intensitySlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeItensity(x.newValue));
         _sizeSlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeSize(x.newValue));
@@ -92,11 +89,11 @@ public class LibraryPanelComponent : UIComponent
 
         _sizeSlider.Q<Label>().style.color = Color.white;
         _intensitySlider.Q<Label>().style.color = Color.white;
-        _sizeSlider.Q<Label>().style.color = Color.white; 
+        _heightSlider.Q<Label>().style.color = Color.black; 
 
         _sizeSlider.style.display = DisplayStyle.None; 
         _intensitySlider.style.display = DisplayStyle.None;
-        _intensitySlider.style.display = DisplayStyle.Flex; 
+        _heightSlider.style.display = DisplayStyle.Flex; 
 
         _libraryButtonConstructor = new LibraryButtonConstructor(fireWorkController, itemChangeManager, _buttonParent);
 
@@ -109,19 +106,22 @@ public class LibraryPanelComponent : UIComponent
         _libraryButtonConstructor.UpdateSometing();
         LockOrUnlockSlider(); 
 
-        if(AchievementManager.Instance.CheckHaveAchievement(_libraryOpenCode) == true)
+        if(_isShopOpen == false)
         {
-            UnlockShopButton(); 
+            UnlockShopButton();
         }
-    }
+           }
     
     /// <summary>
     /// 상점 버튼 해제 
     /// </summary>
     private void UnlockShopButton()
     {
-        _libraryLockIcon.style.display = DisplayStyle.None; 
-        _isShopOpen = true; 
+        if (AchievementManager.Instance.CheckHaveAchievement(_libraryOpenCode) == true)
+        {
+            _libraryLockIcon.style.display = DisplayStyle.None;
+            _isShopOpen = true;
+        }
     }
 
     public void LockOrUnlockSlider()
