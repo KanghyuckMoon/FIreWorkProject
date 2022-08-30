@@ -33,6 +33,15 @@ public class LibraryPanelComponent : UIComponent
 
     [SerializeField]
     private ItemDataSO _itemDataSO;
+
+
+    private int _intensitySliderOpenCode = 35;
+    private int _sizeSliderOpenCode = 36;
+
+    private bool _isOpenIntensitySlider;
+    private bool _isOpenSizeSlider;
+
+
     public void Init(UIButtonManager uIButtonManager, HaveItemManager haveItemManager, ItemChangeManager itemChangeManager, FireWorkController fireWorkController)
     {
         _uiButtonManager = uIButtonManager;
@@ -64,17 +73,39 @@ public class LibraryPanelComponent : UIComponent
         _intensitySlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeItensity(x.newValue));
         _sizeSlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeSize(x.newValue));
 
-        _sizeSlider.Q<Label>().style.color = Color.black; 
+        _sizeSlider.Q<Label>().style.color = Color.black;
+        _intensitySlider.Q<Label>().style.color = Color.black;
+
+        _sizeSlider.style.display = DisplayStyle.None; 
+        _intensitySlider.style.display = DisplayStyle.None; 
+
         _libraryButtonConstructor = new LibraryButtonConstructor(fireWorkController, itemChangeManager, _buttonParent);
 
         CreateHaveItems();
+        LockOrUnlockSlider(); 
     }
 
     public override void UpdateSometing()
     {
-        _libraryButtonConstructor.UpdateSometing(); 
+        _libraryButtonConstructor.UpdateSometing();
+        LockOrUnlockSlider(); 
     }
 
+
+    public void LockOrUnlockSlider()
+    {
+        if(_isOpenSizeSlider == false && AchievementManager.Instance.CheckHaveAchievement(_sizeSliderOpenCode) == true)
+        {
+            _sizeSlider.style.display = DisplayStyle.Flex;
+            _isOpenSizeSlider = true;
+        }
+        if (_isOpenIntensitySlider == false && AchievementManager.Instance.CheckHaveAchievement(_intensitySliderOpenCode) == true)
+        {
+            _intensitySlider.style.display = DisplayStyle.Flex;
+            _isOpenIntensitySlider = true;
+        }
+
+    }
 
     /// <summary>
     /// 보유 중인 아이템 생성 
