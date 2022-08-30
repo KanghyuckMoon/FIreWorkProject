@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class UIButtonManager : MonoBehaviour
 {
-    private UpgradeButtonConstructor _upgradeButtonConstructor; // 업그레이드 버튼 생성, 관리자 
+    public UpgradeButtonConstructor upgradeButtonConstructor; // 업그레이드 버튼 생성, 관리자 
 
     private SettingPanelComponent _settingPanelComponent; // 설정 패널 관리자
     [SerializeField]
@@ -42,7 +42,7 @@ public class UIButtonManager : MonoBehaviour
 
     // 프로퍼티 
     public VisualElement RootElement => _rootElement;
-
+//    public UpgradeButtonConstructor UpgradeButtonConstructor => _upgradeButtonConstructor; 
     private void Awake()
     {
         CashingElements();
@@ -93,7 +93,7 @@ public class UIButtonManager : MonoBehaviour
 
 
         // 업그레이드 버튼 생성
-        _upgradeButtonConstructor = new UpgradeButtonConstructor(_fireWorkController, _rootElement);
+        upgradeButtonConstructor = new UpgradeButtonConstructor(_fireWorkController, _rootElement);
     }
 
     /// <summary>

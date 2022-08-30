@@ -120,6 +120,7 @@ public class FireWorkController : MonoBehaviour
 	[SerializeField] private Texture2D _furtherTexture4;
 	[SerializeField] private ItemDataSO _itemDataSO;
 	[SerializeField] private HappyMoneyManager _happyMoneyManager;
+	private UpgradeButtonConstructor _upgradeButtonConstructor; //
 
 	private List<float> _explosiontime1 = new List<float>();
 	private List<float> _explosiontime2 = new List<float>();
@@ -128,7 +129,8 @@ public class FireWorkController : MonoBehaviour
 	public bool corotin;
 	public bool saveDatasetting;
 
-	private void Start()
+
+    private void Start()
 	{
 		if(saveDatasetting)
 		{
@@ -137,12 +139,26 @@ public class FireWorkController : MonoBehaviour
 
 		UpdateRate();
 		StartCoroutine(FireworkStart());
+		_upgradeButtonConstructor = FindObjectOfType<UIButtonManager>().upgradeButtonConstructor;
 	}
 
 	private void Update()
 	{
 		Explosion();
 	}
+
+	/// <summary>
+	/// 외부 변수 캐싱 
+	/// </summary>
+	/// <returns></returns>
+	//private IEnumerator Cashing()//
+	//{
+	//	while (_uIButtonManager.UpgradeButtonConstructor == null)
+	//	{
+	//		yield return null;
+	//	}
+	//	_upgradeButtonConstructor = _uIButtonManager.UpgradeButtonConstructor;
+	//}
 
 	/// <summary>
 	/// 저장 데이터기반 설정
@@ -407,6 +423,7 @@ public class FireWorkController : MonoBehaviour
 		}
 
 		UpdateRate();
+		_upgradeButtonConstructor.UpdateCostText(); 
 	}
 
 	/// <summary>
@@ -421,6 +438,7 @@ public class FireWorkController : MonoBehaviour
 
 		_further1 += add;
 		UpdateFurtherCount1();
+		_upgradeButtonConstructor.UpdateCostText();
 	}
 
 	/// <summary>
@@ -435,6 +453,7 @@ public class FireWorkController : MonoBehaviour
 
 		_further2 += add;
 		UpdateFurtherCount2();
+		_upgradeButtonConstructor.UpdateCostText();
 	}
 
 	/// <summary>
@@ -449,6 +468,7 @@ public class FireWorkController : MonoBehaviour
 
 		_further3 += add;
 		UpdateFurtherCount3();
+		_upgradeButtonConstructor.UpdateCostText();
 	}
 
 	/// <summary>
@@ -463,6 +483,7 @@ public class FireWorkController : MonoBehaviour
 
 		_further4 += add;
 		UpdateFurtherCount4();
+		_upgradeButtonConstructor.UpdateCostText();
 	}
 
 	/// <summary>
@@ -476,6 +497,7 @@ public class FireWorkController : MonoBehaviour
 		}
 
 		_count += add;
+		_upgradeButtonConstructor.UpdateCostText();
 	}
 
 	/// <summary>
