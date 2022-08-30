@@ -52,6 +52,49 @@ public class FireWorkController : MonoBehaviour
 		}
 	}
 
+	public int RateCost
+	{
+		get
+		{
+			return (int)((600 - _rate) * 100 * (60 - _rate * 0.1f));
+		}
+	}
+	public int CountCost
+	{
+		get
+		{
+			return _count * _count * 5000;
+		}
+	}
+	public int Further1Cost
+	{
+		get
+		{
+			return _further1 * _further1 * 1000;
+		}
+	}
+	public int Further2Cost
+	{
+		get
+		{
+			return _further2 * _further2 * 1000;
+		}
+	}
+	public int Further3Cost
+	{
+		get
+		{
+			return _further3 * _further3 * 1000;
+		}
+	}
+	public int Further4Cost
+	{
+		get
+		{
+			return _further4 * _further4 * 1000;
+		}
+	}
+
 	[SerializeField] private VisualEffect _visualEffect = null;
 	[SerializeField] private float _rate = 5f;
 	[SerializeField] private int _count = 0;
@@ -351,7 +394,7 @@ public class FireWorkController : MonoBehaviour
 	/// <param name="add"></param>
 	public void UpdateRate(float add)
 	{
-		if(!HappyMoneyManager.Instance.RemoveHappy((int)((600 - _rate) * 100 * (60 - _rate * 0.1f))))
+		if(!HappyMoneyManager.Instance.RemoveHappy(RateCost))
 		{
 			return;
 		}
@@ -371,7 +414,7 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount1(int add)
 	{
-		if (!HappyMoneyManager.Instance.RemoveHappy(_further1 * _further1 * 1000))
+		if (!HappyMoneyManager.Instance.RemoveHappy(Further1Cost))
 		{
 			return;
 		}
@@ -385,7 +428,7 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount2(int add)
 	{
-		if (!HappyMoneyManager.Instance.RemoveHappy(_further2 * _further2 * 900))
+		if (!HappyMoneyManager.Instance.RemoveHappy(Further2Cost))
 		{
 			return;
 		}
@@ -399,7 +442,7 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount3(int add)
 	{
-		if (!HappyMoneyManager.Instance.RemoveHappy(_further3 * _further3 * 800))
+		if (!HappyMoneyManager.Instance.RemoveHappy(Further3Cost))
 		{
 			return;
 		}
@@ -413,7 +456,7 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount4(int add)
 	{
-		if (!HappyMoneyManager.Instance.RemoveHappy(_further4 * _further4 * 700))
+		if (!HappyMoneyManager.Instance.RemoveHappy(Further4Cost))
 		{
 			return;
 		}
@@ -427,7 +470,7 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateCount(int add)
 	{
-		if (!HappyMoneyManager.Instance.RemoveHappy(_count * _count * 5000))
+		if (!HappyMoneyManager.Instance.RemoveHappy(CountCost))
 		{
 			return;
 		}
