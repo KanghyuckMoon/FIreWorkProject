@@ -8,8 +8,10 @@ public class SoundSetting : MonoBehaviour
 {
 
 	[SerializeField] AudioMixer _audioMixer;
-	[SerializeField] Slider _bgmAudioSlider;
-	[SerializeField] Slider _effAudioSlider;
+//	[SerializeField] 
+	Slider _bgmAudioSlider;
+//	[SerializeField]
+	Slider _effAudioSlider;
 
 	/// <summary>
 	/// 슬라이더 받아오오기 
@@ -30,7 +32,7 @@ public class SoundSetting : MonoBehaviour
 
 	public void SetEffAudio(float effValue)
     {
-		_audioMixer.SetFloat("BGMVolume", effValue);
+		_audioMixer.SetFloat("EFFVolume", effValue);
 		UserSaveDataManager.Instance.UserSaveData.effVoulume = _effAudioSlider.value;
 		UserSaveDataManager.Save();
 	}

@@ -49,6 +49,10 @@ MonoBehaviour:
     m_Address: Fire2
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 1bdcac9a1d9c0bf45bed8e2f730bce38
+    m_Address: Assets/01.Scripts/UI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f40676d7780e8c64fab3433b4f82e49f, type: 2}
   m_SchemaSet:
