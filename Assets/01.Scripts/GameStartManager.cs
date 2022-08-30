@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class GameStartManager : MonoBehaviour
 {
@@ -25,16 +26,24 @@ public class GameStartManager : MonoBehaviour
         Animation();
     }
 
-	private void Update()
-	{
-		if(_isCanStart)
-		{
-            if(Input.GetMouseButtonDown(0))
-			{
-                SceneManager.LoadScene("InGame");
-			}
-		}
-	}
+	//private void Update()
+	//{
+	//	if(_isCanStart)
+	//	{
+ //           if(Input.GetMouseButtonDown(0))
+	//		{
+ //               SceneManager.LoadScene("InGame");
+	//		}
+	//	}
+	//}
+
+    public void OnUI(InputAction.CallbackContext context)
+    {
+        if (_isCanStart)
+        {
+            SceneManager.LoadScene("InGame");
+        }
+    }
 
 	private void Animation()
 	{
