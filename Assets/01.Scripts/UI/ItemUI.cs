@@ -27,9 +27,7 @@ public class ItemUI : VisualElement
 
         _button = new Button();
         _itemImage = new VisualElement();
-        _itemCost = new Label();
 
-        _itemCost.text = itemData.money.ToString();
 
         SetColor(itemData); 
         _button.style.display = DisplayStyle.Flex;
@@ -44,11 +42,9 @@ public class ItemUI : VisualElement
         this.AddToClassList("shopItem");
         _button.AddToClassList("item-button");
         _itemImage.AddToClassList("item-image");
-        _itemCost.AddToClassList("item-label");
 
         this.Add(_button);
         _button.Add(_itemImage);
-        _button.Add(_itemCost);
 
 //        CheckPurchasable(isPurchasable); // 구매 가능한 아이템인지 체크(라이브러리 아이템이면 구매 불가) 
 
