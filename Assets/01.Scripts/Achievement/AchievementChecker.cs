@@ -72,6 +72,10 @@ public class AchievementChecker
 		_achievements.Add(new Achievement(47, x => _click >= 50)); //특별한 색깔 아이템 추가
 		_achievements.Add(new Achievement(48, x => Time.time > 3600)); //특별한 모양 아이템 추가
 		_achievements.Add(new Achievement(49, x => x.haveAchievement.Count >= 49)); //엔딩
+		_achievements.Add(new Achievement(50, x => true)); //게임 시작
+		_achievements.Add(new Achievement(51, x => x.happy >= 1000)); //강화에 대해
+		_achievements.Add(new Achievement(52, x => x.haveAchievement.Count >= 20)); //많은 업적 달성
+		_achievements.Add(new Achievement(53, x => x.haveAchievement.Count >= 20 && x.renewal >= 1)); //다시 한번 많은 업적 달성!
 	}
 
 	private AchievementDataSO _achievementDataSO = null;
@@ -123,7 +127,7 @@ public class AchievementChecker
 	public void FunctionInvoke(int itemCode)
 	{
 		var achievementData = _achievementDataSO._achievementDatas.Find(x => x._achievementCode == itemCode);
-		if(achievementData._functionName == "")
+		if(achievementData._functionName == null || achievementData._functionName == "")
 		{
 			return;
 		}

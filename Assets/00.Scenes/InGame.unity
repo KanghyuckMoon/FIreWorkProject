@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.751629, g: 1.9799516, b: 3.3909564, a: 1}
+  m_IndirectSpecularColor: {r: 0.7516173, g: 1.9799595, b: 3.3909707, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -62138,6 +62138,7 @@ MonoBehaviour:
   _centerTransform: {fileID: 1370094045}
   _moveSpeed: 200
   _zoomSpeed: 5000
+  _viewSpeed: 40
   _distance: 9
   _smoothTime: 0.5
   _velocity: {x: 0, y: 0, z: 0}
@@ -62195,8 +62196,24 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 32f39b9d-09a8-4eea-90e1-1796a73aaadf
     m_ActionName: CameraAction/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Mouse/scroll/down,/Mouse/scroll/up]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1648247245}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: OnView
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f93c844b-4d69-4230-92b9-ab25a9d40368
+    m_ActionName: CameraAction/View[/SwitchProControllerHID/rightStick/up,/SwitchProControllerHID/rightStick/down,/SwitchProControllerHID/rightStick/left,/SwitchProControllerHID/rightStick/right]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: PC
+  m_DefaultControlScheme: Console
   m_DefaultActionMap: CameraAction
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
