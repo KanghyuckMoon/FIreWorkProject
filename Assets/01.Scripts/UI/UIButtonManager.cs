@@ -65,6 +65,8 @@ public class UIButtonManager : MonoBehaviour
             _gameScreen.style.display = _gameScreen.style.display == DisplayStyle.Flex ? DisplayStyle.None : DisplayStyle.Flex;
             //_gameScreen.visible = _gameScreen.visible == false ? true : false; 
         }
+        _libraryPanelComponent.UpdateSometing();
+        upgradeButtonConstructor.UpdateSomething(); 
     }
 
     /// <summary>

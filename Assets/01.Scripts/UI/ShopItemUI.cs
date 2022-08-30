@@ -14,6 +14,11 @@ public class ShopItemUI : ItemUI
         : base(itemData)
     {
 
+        _itemCost = new Label();
+        _itemCost.text = itemData.money.ToString();
+        _itemCost.AddToClassList("item-label");
+        _button.Add(_itemCost);
+
         _purchasedImage = new VisualElement();
         _purchasedLabel = new Label();
         
@@ -24,8 +29,6 @@ public class ShopItemUI : ItemUI
         _button.clicked += librartUpdateEvent;
         _button.clicked += PurchasedItem;
 
-        PurchasedItem();
-
         _purchasedImage.AddToClassList("purchased-image");
         _purchasedLabel.AddToClassList("purchased-label");
 
@@ -33,6 +36,8 @@ public class ShopItemUI : ItemUI
 
         this.Add(_purchasedImage);
         _purchasedImage.Add(_purchasedLabel);
+
+        PurchasedItem();
     }
 
     /// <summary>

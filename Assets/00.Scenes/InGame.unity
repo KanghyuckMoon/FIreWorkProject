@@ -36080,10 +36080,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340548c1ac8f5c743991ad55fcfe2be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemCode: 9
-  _itemChangeManager: {fileID: 1544572493}
-  _itemDataSO: {fileID: 11400000, guid: 2fe665e60a56e774a9dc9dbb56f4a1d4, type: 2}
-  _debugValue: -14.5
 --- !u!1 &1202900244
 GameObject:
   m_ObjectHideFlags: 0
@@ -62043,10 +62039,10 @@ MonoBehaviour:
   _visualEffect: {fileID: 1415232267}
   _rate: 3
   _count: 1
-  _further1: 80
-  _further2: 20
-  _further3: 20
-  _further4: 20
+  _further1: 0
+  _further2: 0
+  _further3: 0
+  _further4: 0
   _furtherColor1_1:
     serializedVersion: 2
     key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
