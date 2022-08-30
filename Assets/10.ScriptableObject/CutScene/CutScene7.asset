@@ -17,34 +17,86 @@ MonoBehaviour:
     othername: "\uAE40\uBE44\uC11C"
     content: "\uCC98\uC74C \uBD88\uAF43\uB180\uC774 \uC12C\uC744 \uC6B4\uC601\uD588\uC744
       \uB54C\uC640\uB294 \uB9CE\uC774 \uB2EC\uB77C\uC84C\uB124\uC694!"
+    _optionDatas: []
+    _functionName: 
+    _functionParameters: 
+    _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
+    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 1
     othername: "\uC8FC\uC778\uACF5"
     content: "\uADF8\uB7EC\uAC8C. \uC774 \uACF3\uC774 \uB0B4\uAC00 \uC6B4\uC601\uD558\uB294
       \uBD88\uAF43\uB180\uC774 \uC12C\uC774\uB77C\uB2C8"
+    _optionDatas: []
+    _functionName: 
+    _functionParameters: 
+    _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
+    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 2
     othername: "\uAE40\uBE44\uC11C"
     content: "\uB2E4 \uB2F9\uC2E0 \uB355\uBD84\uC774\uC8E0! \uC81C \uAD50\uC721 \uB355\uBD84\uC778
       \uAC83\uB3C4 \uC788\uC9C0\uB9CC.."
+    _optionDatas: []
+    _functionName: 
+    _functionParameters: 
+    _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
+    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 1
     othername: "\uC8FC\uC778\uACF5"
     content: "\uC544\uBE60\uB294 \uC774\uB7F0 \uC77C\uC744 \uD574\uC624\uC168\uB358\uAC70\uAD6C\uB098"
+    _optionDatas: []
+    _functionName: 
+    _functionParameters: 
+    _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
+    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 2
     othername: "\uAE40\uBE44\uC11C"
     content: "\uC5B4\uB54C\uC694? \uC774\uC81C\uB294 \uBD88\uAF43\uB180\uC774 \uC77C\uC774
       \uB9C8\uC74C\uC5D0 \uB4DC\uC168\uB098\uC694?"
+    _optionDatas: []
+    _functionName: 
+    _functionParameters: 
+    _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
+    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 1
     othername: "\uC8FC\uC778\uACF5"
     content: "\uB9C8\uC74C\uC5D0 \uB4E0\uAC8C \uC544\uB2C8\uB77C \uC5B4\uB5A4 \uC77C\uC774\uC9C0
       \uC774\uC81C \uC54C\uAC8C\uB41C\uAC70 \uBFD0\uC774\uAC70\uB4E0"
+    _optionDatas: []
+    _functionName: 
+    _functionParameters: 
+    _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
+    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 1
     othername: "\uC8FC\uC778\uACF5"
     content: "\uADF8\uB798\uB3C4 \uC0AC\uB78C\uB4E4\uB3C4 \uB9CE\uC774 \uC788\uACE0"
+    _optionDatas: []
+    _functionName: 
+    _functionParameters: 
+    _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
+    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 1
     othername: "\uC8FC\uC778\uACF5"
     content: "\uC9D1\uB4E4\uC774\uB098 \uAC74\uBB3C\uB4E4\uB3C4 \uC788\uACE0"
+    _optionDatas: []
+    _functionName: 
+    _functionParameters: 
+    _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
+    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 1
     othername: "\uC8FC\uC778\uACF5"
     content: "\uD654\uB824\uD55C \uBD88\uAF43\uB180\uC774\uB4E4\uB3C4 \uC788\uC73C\uB2C8\uAE4C"
+    _optionDatas: []
+    _functionName: 
+    _functionParameters: 
+    _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
+    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 1
     othername: "\uC8FC\uC778\uACF5"
     content: "\uC608\uC058\uAE34 \uC608\uC058\uB124..  "
+    _optionDatas: []
+    _functionName: 
+    _functionParameters: 
+    _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
+    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
+  _debugPlayerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
+  _debugOtherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}

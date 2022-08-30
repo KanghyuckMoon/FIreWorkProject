@@ -47,13 +47,15 @@ public class SettingPanelComponent : UIComponent
         _soundSeting = soundSetting;
         _exit = exit; 
 
-        _soundSeting.InitSlider(_bgmSlider, _effSlider); 
 
         _settingButton = uiButtonManager.RootElement.Q<Button>("setting-button");
 
         _settingPanel = uiButtonManager.RootElement.Q<TemplateContainer>("SettingTemplate");
+        _settingPanel.style.display = DisplayStyle.None; 
         _graphicSettingPanel = _settingPanel.Q<TemplateContainer>("GraphicSettingTemplate");
+        _graphicSettingPanel.style.display = DisplayStyle.None; 
         _soundSettingPanel = _settingPanel.Q<TemplateContainer>("SoundSettingTemplate");
+        _soundSettingPanel.style.display = DisplayStyle.None; 
 
         _backButton = _settingPanel.Q<Button>("back-button");
         _soundButton = _settingPanel.Q<Button>("sound-button");
@@ -87,6 +89,9 @@ public class SettingPanelComponent : UIComponent
         _effSlider.RegisterValueChangedCallback((x) => _soundSeting.SetEffAudio(x.newValue));
         _settingBackButton.clicked += () => OpenClosePanel(_soundSettingPanel);
         _soundButton.clicked += () => OpenClosePanel(_soundSettingPanel);
+
+        _soundSeting.InitSlider(_bgmSlider, _effSlider);
+
     }
 
     public override void UpdateSometing()

@@ -23,5 +23,4 @@ public class ItemData
 	[GradientUsage(true)] public Gradient gradient_2;
 	[GradientUsage(true)] public Gradient gradient_3;
 	public Texture2D texture2D;
-
 }
