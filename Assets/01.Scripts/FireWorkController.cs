@@ -128,7 +128,7 @@ public class FireWorkController : MonoBehaviour
 	private List<float> _explosiontime4 = new List<float>();
 	public bool corotin;
 	public bool saveDatasetting;
-
+	private bool _isStop;
 
     private void Start()
 	{
@@ -140,6 +140,16 @@ public class FireWorkController : MonoBehaviour
 		UpdateRate();
 		StartCoroutine(FireworkStart());
 		_upgradeButtonConstructor = FindObjectOfType<UIButtonManager>().upgradeButtonConstructor;
+	}
+
+	public void StopVFX()
+	{
+		_isStop = true;
+	}
+
+	public void PlayVFX()
+	{
+		_isStop = false;
 	}
 
 	private void Update()
@@ -219,37 +229,40 @@ public class FireWorkController : MonoBehaviour
 	{
 		while(true)
 		{
-			for(int i = 0; i < _count; ++i)
+			if(!_isStop)
 			{
-				float lifeTime = Random.Range(3f, 3.5f);
-				float further1lifeTime = 0f;
-				float further2lifeTime = 0f;
-				float further3lifeTime = 0f;
-				_visualEffect.SetFloat("lifeTime", lifeTime);
-				_explosiontime1.Add(lifeTime);
-				if(IsCanFurther2)
+				for (int i = 0; i < _count; ++i)
 				{
-					further1lifeTime = Random.Range(1f, 1.2f);
-					_visualEffect.SetFloat("FurtherLifeTime1", further1lifeTime);
-					_explosiontime2.Add(further1lifeTime + lifeTime);
-				}
-				if(IsCanFurther3)
-				{
-					further2lifeTime = Random.Range(0.8f, 1f);
-					_visualEffect.SetFloat("FurtherLifeTime2", further2lifeTime);
-					_explosiontime3.Add(further2lifeTime + further1lifeTime + lifeTime);
-				}
-				if (IsCanFurther4)
-				{
-					further3lifeTime = Random.Range(0.8f, 1f);
-					_visualEffect.SetFloat("FurtherLifeTime3", further3lifeTime);
-					_explosiontime4.Add(further3lifeTime + further2lifeTime + further1lifeTime + lifeTime);
-				}
+					float lifeTime = Random.Range(3f, 3.5f);
+					float further1lifeTime = 0f;
+					float further2lifeTime = 0f;
+					float further3lifeTime = 0f;
+					_visualEffect.SetFloat("lifeTime", lifeTime);
+					_explosiontime1.Add(lifeTime);
+					if (IsCanFurther2)
+					{
+						further1lifeTime = Random.Range(1f, 1.2f);
+						_visualEffect.SetFloat("FurtherLifeTime1", further1lifeTime);
+						_explosiontime2.Add(further1lifeTime + lifeTime);
+					}
+					if (IsCanFurther3)
+					{
+						further2lifeTime = Random.Range(0.8f, 1f);
+						_visualEffect.SetFloat("FurtherLifeTime2", further2lifeTime);
+						_explosiontime3.Add(further2lifeTime + further1lifeTime + lifeTime);
+					}
+					if (IsCanFurther4)
+					{
+						further3lifeTime = Random.Range(0.8f, 1f);
+						_visualEffect.SetFloat("FurtherLifeTime3", further3lifeTime);
+						_explosiontime4.Add(further3lifeTime + further2lifeTime + further1lifeTime + lifeTime);
+					}
 
-				_visualEffect.SendEvent("Play");
+					_visualEffect.SendEvent("Play");
 
 
-				yield return new WaitForSeconds(0.1f);
+					yield return new WaitForSeconds(0.1f);
+				}
 			}
 
 			yield return new WaitForSeconds(_rate);

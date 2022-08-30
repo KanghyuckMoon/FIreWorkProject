@@ -15,7 +15,7 @@ MonoBehaviour:
   talkDatas:
   - talkObject: 1
     othername: "\uC8FC\uC778\uACF5"
-    content: "\uBB50\uC57C \uC9D1\uC774 \uC0DD\uACBC\uC5B4"
+    content: "\uBB50\uC57C \uB098\uBB34\uAC00 \uC0DD\uACBC\uC5B4"
     _optionDatas: []
     _functionName: 
     _functionParameters: 
@@ -49,7 +49,7 @@ MonoBehaviour:
     _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 2
     othername: "\uAE40\uBE44\uC11C"
-    content: "\uC800 \uC9D1\uAC19\uC740 \uACBD\uC6B0\uB294 \uBD88\uAF43\uB180\uC774\uB85C
+    content: "\uC800 \uB098\uBB34\uAC19\uC740 \uACBD\uC6B0\uB294 \uBD88\uAF43\uB180\uC774\uB85C
       \uC778\uD574 \uBAA8\uC778 \uD589\uBCF5\uC774 1000\uC744 \uB118\uACA8\uC11C
       \uC0DD\uAE34\uAC70\uB124\uC694! \uC798\uD558\uC168\uC5B4\uC694!"
     _optionDatas: []

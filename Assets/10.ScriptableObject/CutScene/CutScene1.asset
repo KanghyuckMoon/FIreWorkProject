@@ -78,7 +78,7 @@ MonoBehaviour:
     _functionName: 
     _functionParameters: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
-    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
+    _otherSprite: {fileID: 0}
   - talkObject: 1
     othername: "\uC8FC\uC778\uACF5"
     content: "\uC544\uBE60? \uC544\uBE60?!"
@@ -86,7 +86,7 @@ MonoBehaviour:
     _functionName: 
     _functionParameters: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
-    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
+    _otherSprite: {fileID: 0}
   - talkObject: 0
     othername: 
     content: "(\uC544\uBE60\uC758 \uC7A5\uB840\uC2DD\uC774 \uC774\uB904\uC9C0\uACE0
@@ -104,7 +104,7 @@ MonoBehaviour:
     _functionName: 
     _functionParameters: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
-    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
+    _otherSprite: {fileID: 0}
   - talkObject: 2
     othername: "\uAE40\uBE44\uC11C"
     content: "\uC544\uBC84\uB2D8\uC758 \uC77C\uC740 \uC548\uD0C0\uAE5D\uAC8C \uB410\uC2B5\uB2C8\uB2E4"
