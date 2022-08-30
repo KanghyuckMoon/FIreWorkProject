@@ -31,6 +31,7 @@ public class UpgradeButtonConstructor
         UpgradeButtonInfo upgradeButtonInfo; // 찾을 버튼 정보(이름, 잠김여부) 
         string lockIconName = "lock-icon";
         string buttonName = "button";
+        string costName = "ItemCost";
         // 업그레이드 버튼 캐싱 후 리스트에 넣기 
         foreach (UpgradeButtonType buttonType in _buttonTypeList)
         {
@@ -38,9 +39,10 @@ public class UpgradeButtonConstructor
 
             VisualElement upgradeButtonParent = rootElement.Q<VisualElement>(upgradeButtonInfo.name); // 업그레이드 버튼 부모 element
             VisualElement lockElement = upgradeButtonParent.Q<VisualElement>(lockIconName); // 잠금 아이콘
+            Label costLabel = upgradeButtonParent.Q<Label>(costName); // 가격 
             Button upgradeButton = upgradeButtonParent.Q<Button>(buttonName); // 버튼 
 
-            UpgradeButtonElement buttonElement = new UpgradeButtonElement(upgradeButton, lockElement, upgradeButtonInfo.isLocked, buttonType); // 생성 
+            UpgradeButtonElement buttonElement = new UpgradeButtonElement(upgradeButton, lockElement, costLabel,upgradeButtonInfo.isLocked, buttonType); // 생성 
 
             upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
 
@@ -159,9 +161,10 @@ public class UpgradeButtonElement
     /// <param name="loackElement">잠금 아이콘이미지</param>
     /// <param name="isLocked">잠금 여부</param>
     /// <param name="code">식별자</param>
-    public UpgradeButtonElement(Button button, VisualElement loackElement, bool isLocked, UpgradeButtonType type)
+    public UpgradeButtonElement(Button button, VisualElement loackElement, Label costLabel, bool isLocked, UpgradeButtonType type)
     {
         this._button = button;
+        this._costLabel = costLabel; 
         this._lockElement = loackElement;
         this._isLocked = isLocked;
         this._type = type;
@@ -169,6 +172,10 @@ public class UpgradeButtonElement
         LockButton();
     }
 
+    public void SetCostText(int cost)
+    {
+        _costLabel.text = cost.ToString(); 
+    }
     public void LockButton()
     {
         if (_isLocked == true) // 잠겨있으면 
