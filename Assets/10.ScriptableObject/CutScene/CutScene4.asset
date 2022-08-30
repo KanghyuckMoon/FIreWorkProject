@@ -30,5 +30,14 @@ MonoBehaviour:
     _functionParameters: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
+  - talkObject: 2
+    othername: "\uAE40\uBE44\uC11C"
+    content: "\uC6B0\uCE21 \uC0C1\uB2E8\uC758 \uB77C\uC774\uBE0C\uB7EC\uB9AC \uBC84\uD2BC\uC744
+      \uB20C\uB7EC \uBD88\uAF43\uB180\uC774\uB97C \uAFB8\uBA70\uBD05\uC2DC\uB2E4!"
+    _optionDatas: []
+    _functionName: 
+    _functionParameters: 
+    _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
+    _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   _debugPlayerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
   _debugOtherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}

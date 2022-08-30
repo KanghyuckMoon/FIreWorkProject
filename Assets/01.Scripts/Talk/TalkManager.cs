@@ -7,6 +7,17 @@ using DG.Tweening;
 
 public class TalkManager : MonoBehaviour
 {
+	public FireWorkController FireWorkController
+	{
+		get
+		{
+			_fireWorkController ??= FindObjectOfType<FireWorkController>();
+			return _fireWorkController;
+		}
+	}
+
+	private FireWorkController _fireWorkController;
+
 	[SerializeField] private Canvas _talkCanvas;
 	[SerializeField] private Image _contentBackground;
 	[SerializeField] private Image _nameBackground;
@@ -73,6 +84,7 @@ public class TalkManager : MonoBehaviour
 			CancleTalk();
 			return;
 		}
+		FireWorkController.StopVFX();
 
 		_currentTalkSO = talkSO;
 		_talkCanvas.gameObject.SetActive(true);
@@ -95,8 +107,9 @@ public class TalkManager : MonoBehaviour
 		_isTalking = false;
 		_talkCanvas.gameObject.SetActive(false);
 		_currentTalkSO = null;
+		FireWorkController.PlayVFX();
 
-		if(_viewCutSceneList.Count > 0)
+		if (_viewCutSceneList.Count > 0)
 		{
 			OpenCutScene(_viewCutSceneList.Dequeue());
 		}
@@ -164,6 +177,10 @@ public class TalkManager : MonoBehaviour
 	{
 		_playerObject.sprite = _currentTalkSO.talkDatas[_currentIndex]._playerSprite;
 		_npcObject.sprite = _currentTalkSO.talkDatas[_currentIndex]._otherSprite;
+
+		_playerObject.gameObject.SetActive(_playerObject.sprite != null);
+		_npcObject.gameObject.SetActive(_npcObject.sprite != null);
+
 		if (_currentTalkSO.talkDatas[_currentIndex].talkObject == TalkDataF.TalkObject.Player)
 		{
 			EnableCharacter(_playerObject, new Vector2(485, 485));

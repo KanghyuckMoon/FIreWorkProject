@@ -44966,7 +44966,7 @@ MonoBehaviour:
     money: 0
     happy: 0
     renewal: 0
-    haveItem: 
+    haveItem: 00000000010000000200000003000000040000006400000065000000660000006700000068000000
     haveAchievement: 
     bgmVoulume: 0
     effVoulume: 0

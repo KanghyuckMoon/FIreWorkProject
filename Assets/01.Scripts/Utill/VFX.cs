@@ -14,6 +14,13 @@ namespace Utill
 		{
 			visualEffect.SetFloat(name, value);
 		}
+		/// <summary>
+		/// VFX 프로퍼티 설정
+		/// </summary>
+		public static void VFXSetVector3(VisualEffect visualEffect, string name, Vector3 vector3)
+		{
+			visualEffect.SetVector3(name, vector3);
+		}
 
 		/// <summary>
 		/// VFX 프로퍼티 설정
