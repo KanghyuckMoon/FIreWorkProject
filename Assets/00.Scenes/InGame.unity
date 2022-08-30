@@ -44022,7 +44022,7 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 1
+      - m_Value: 10
         m_Name: Rate
         m_Overridden: 1
       - m_Value: 1
@@ -44041,10 +44041,10 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: -2, y: 30, z: -2}
+      - m_Value: {x: -2, y: 10, z: -2}
         m_Name: HeightVectorMin
         m_Overridden: 1
-      - m_Value: {x: 2, y: 33, z: 2}
+      - m_Value: {x: 2, y: 13, z: 2}
         m_Name: HeightVectorMax
         m_Overridden: 1
     m_Vector4f:
@@ -44053,7 +44053,7 @@ VisualEffect:
       m_Array: []
     m_Int:
       m_Array:
-      - m_Value: 80
+      - m_Value: 10
         m_Name: FurtherCount1
         m_Overridden: 1
       - m_Value: 1
@@ -44200,16 +44200,16 @@ VisualEffect:
         m_Overridden: 1
       - m_Value:
           serializedVersion: 2
-          key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-          key1: {r: 47.937256, g: 10.541177, b: 30.368628, a: 0.654902}
-          key2: {r: 47.937256, g: 0, b: 33.380394, a: 0}
+          key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+          key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+          key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 2699
+          ctime1: 4819
           ctime2: 65535
           ctime3: 0
           ctime4: 0
@@ -44231,16 +44231,16 @@ VisualEffect:
         m_Overridden: 1
       - m_Value:
           serializedVersion: 2
-          key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-          key1: {r: 47.937256, g: 5.772549, b: 4.7686276, a: 0.654902}
-          key2: {r: 47.937256, g: 28.109804, b: 28.109804, a: 0}
+          key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+          key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+          key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 2699
+          ctime1: 4819
           ctime2: 65535
           ctime3: 0
           ctime4: 0
@@ -44262,16 +44262,16 @@ VisualEffect:
         m_Overridden: 1
       - m_Value:
           serializedVersion: 2
-          key0: {r: 766.99554, g: 766.99554, b: 766.99554, a: 1}
-          key1: {r: 47.937256, g: 10.541177, b: 25.09804, a: 0.654902}
-          key2: {r: 47.937256, g: 0, b: 26.603922, a: 0}
+          key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+          key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+          key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 2120
+          ctime1: 4819
           ctime2: 65535
           ctime3: 0
           ctime4: 0
@@ -44293,16 +44293,16 @@ VisualEffect:
         m_Overridden: 1
       - m_Value:
           serializedVersion: 2
-          key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-          key1: {r: 47.937256, g: 5.772549, b: 4.7686276, a: 0.654902}
-          key2: {r: 47.937256, g: 28.109804, b: 28.109804, a: 0}
+          key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+          key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+          key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 2699
+          ctime1: 4819
           ctime2: 65535
           ctime3: 0
           ctime4: 0
@@ -44324,16 +44324,16 @@ VisualEffect:
         m_Overridden: 1
       - m_Value:
           serializedVersion: 2
-          key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-          key1: {r: 47.937256, g: 21.584314, b: 5.019608, a: 0.654902}
-          key2: {r: 47.937256, g: 36.39216, b: 28.109804, a: 0}
+          key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+          key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+          key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 2699
+          ctime1: 4819
           ctime2: 65535
           ctime3: 0
           ctime4: 0
@@ -44355,16 +44355,16 @@ VisualEffect:
         m_Overridden: 1
       - m_Value:
           serializedVersion: 2
-          key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-          key1: {r: 47.937256, g: 1.254902, b: 12.298039, a: 0.654902}
-          key2: {r: 47.937256, g: 2.509804, b: 13.552941, a: 0}
+          key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+          key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+          key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 2120
+          ctime1: 4819
           ctime2: 65535
           ctime3: 0
           ctime4: 0
@@ -44386,16 +44386,16 @@ VisualEffect:
         m_Overridden: 1
       - m_Value:
           serializedVersion: 2
-          key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-          key1: {r: 1.254902, g: 43.67059, b: 47.937256, a: 0.654902}
-          key2: {r: 2.509804, g: 47.937256, b: 28.611765, a: 0}
+          key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+          key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+          key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 2120
+          ctime1: 4819
           ctime2: 65535
           ctime3: 0
           ctime4: 0
@@ -44417,16 +44417,16 @@ VisualEffect:
         m_Overridden: 1
       - m_Value:
           serializedVersion: 2
-          key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-          key1: {r: 37.1451, g: 47.937256, b: 6.7764707, a: 0.654902}
-          key2: {r: 47.686275, g: 47.937256, b: 11.796079, a: 0}
+          key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+          key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+          key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 3084
+          ctime1: 4819
           ctime2: 65535
           ctime3: 0
           ctime4: 0
@@ -44448,16 +44448,16 @@ VisualEffect:
         m_Overridden: 1
       - m_Value:
           serializedVersion: 2
-          key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-          key1: {r: 14.556863, g: 47.937256, b: 6.7764707, a: 0.654902}
-          key2: {r: 27.858824, g: 47.937256, b: 11.796079, a: 0}
+          key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+          key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+          key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 2120
+          ctime1: 4819
           ctime2: 65535
           ctime3: 0
           ctime4: 0
@@ -44479,16 +44479,16 @@ VisualEffect:
         m_Overridden: 1
       - m_Value:
           serializedVersion: 2
-          key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-          key1: {r: 5.082353, g: 5.992157, b: 5.584314, a: 0.654902}
-          key2: {r: 4.67451, g: 5.2705884, b: 5.992157, a: 0}
+          key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+          key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+          key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 2120
+          ctime1: 4819
           ctime2: 65535
           ctime3: 0
           ctime4: 0
@@ -44510,16 +44510,16 @@ VisualEffect:
         m_Overridden: 1
       - m_Value:
           serializedVersion: 2
-          key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-          key1: {r: 5.082353, g: 5.992157, b: 5.584314, a: 0.654902}
-          key2: {r: 4.67451, g: 5.2705884, b: 5.992157, a: 0}
+          key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+          key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+          key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 2120
+          ctime1: 4819
           ctime2: 65535
           ctime3: 0
           ctime4: 0
@@ -44541,16 +44541,16 @@ VisualEffect:
         m_Overridden: 1
       - m_Value:
           serializedVersion: 2
-          key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-          key1: {r: 5.082353, g: 5.992157, b: 5.584314, a: 0.654902}
-          key2: {r: 4.67451, g: 5.2705884, b: 5.992157, a: 0}
+          key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+          key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+          key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
           key3: {r: 0, g: 0, b: 0, a: 0}
           key4: {r: 0, g: 0, b: 0, a: 0}
           key5: {r: 0, g: 0, b: 0, a: 0}
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 2120
+          ctime1: 4819
           ctime2: 65535
           ctime3: 0
           ctime4: 0
@@ -44575,16 +44575,16 @@ VisualEffect:
       - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Name: New Texture2D
         m_Overridden: 1
-      - m_Value: {fileID: 2800000, guid: ca733f4f0d9496d46846514dc855106c, type: 3}
+      - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Name: FurtherTexture4
         m_Overridden: 1
-      - m_Value: {fileID: 2800000, guid: cb48bac64cf7fb641b2c3d6f54a49656, type: 3}
+      - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Name: FurtherTexture3
         m_Overridden: 1
-      - m_Value: {fileID: 2800000, guid: 6701c32d35546ad4e961e805310dd982, type: 3}
+      - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Name: FurtherTexture1
         m_Overridden: 1
-      - m_Value: {fileID: 2800000, guid: 42db1df37ecfb5045ae0a42a0eefad08, type: 3}
+      - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Name: FurtherTexture2
         m_Overridden: 1
     m_Bool:
@@ -64350,24 +64350,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualEffect: {fileID: 1415232267}
-  _rate: 3
+  _rate: 10
   _count: 1
-  _further1: 0
+  _further1: 10
   _further2: 0
   _further3: 0
   _further4: 0
   _furtherColor1_1:
     serializedVersion: 2
-    key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-    key1: {r: 40.658825, g: 47.937256, b: 44.67451, a: 0.654902}
-    key2: {r: 37.39608, g: 42.164707, b: 47.937256, a: 0}
+    key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+    key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+    key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 2120
+    ctime1: 4819
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -64387,16 +64387,16 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   _furtherColor1_2:
     serializedVersion: 2
-    key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-    key1: {r: 40.658825, g: 47.937256, b: 45.678432, a: 0.654902}
-    key2: {r: 37.64706, g: 40.407845, b: 47.937256, a: 0}
+    key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+    key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+    key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 2120
+    ctime1: 4819
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -64416,16 +64416,16 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   _furtherColor1_3:
     serializedVersion: 2
-    key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-    key1: {r: 40.658825, g: 47.937256, b: 41.913727, a: 0.654902}
-    key2: {r: 37.64706, g: 45.17647, b: 47.937256, a: 0}
+    key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+    key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+    key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 2120
+    ctime1: 4819
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -64445,16 +64445,16 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   _furtherColor2_1:
     serializedVersion: 2
-    key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-    key1: {r: 47.937256, g: 10.541177, b: 30.368628, a: 0.654902}
-    key2: {r: 47.937256, g: 0, b: 33.380394, a: 0}
+    key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+    key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+    key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 2699
+    ctime1: 4819
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -64474,16 +64474,16 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   _furtherColor2_2:
     serializedVersion: 2
-    key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-    key1: {r: 47.937256, g: 5.772549, b: 4.7686276, a: 0.654902}
-    key2: {r: 47.937256, g: 28.109804, b: 28.109804, a: 0}
+    key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+    key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+    key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 2699
+    ctime1: 4819
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -64503,16 +64503,16 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   _furtherColor2_3:
     serializedVersion: 2
-    key0: {r: 766.99554, g: 766.99554, b: 766.99554, a: 1}
-    key1: {r: 47.937256, g: 10.541177, b: 25.09804, a: 0.654902}
-    key2: {r: 47.937256, g: 0, b: 26.603922, a: 0}
+    key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+    key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+    key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 2120
+    ctime1: 4819
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -64532,16 +64532,16 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   _furtherColor3_1:
     serializedVersion: 2
-    key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-    key1: {r: 47.937256, g: 5.772549, b: 4.7686276, a: 0.654902}
-    key2: {r: 47.937256, g: 28.109804, b: 28.109804, a: 0}
+    key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+    key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+    key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 2699
+    ctime1: 4819
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -64561,16 +64561,16 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   _furtherColor3_2:
     serializedVersion: 2
-    key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-    key1: {r: 47.937256, g: 21.584314, b: 5.019608, a: 0.654902}
-    key2: {r: 47.937256, g: 36.39216, b: 28.109804, a: 0}
+    key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+    key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+    key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 2699
+    ctime1: 4819
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -64590,16 +64590,16 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   _furtherColor3_3:
     serializedVersion: 2
-    key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-    key1: {r: 47.937256, g: 1.254902, b: 12.298039, a: 0.654902}
-    key2: {r: 47.937256, g: 2.509804, b: 13.552941, a: 0}
+    key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+    key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+    key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 2120
+    ctime1: 4819
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -64619,16 +64619,16 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   _furtherColor4_1:
     serializedVersion: 2
-    key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-    key1: {r: 1.254902, g: 43.67059, b: 47.937256, a: 0.654902}
-    key2: {r: 2.509804, g: 47.937256, b: 28.611765, a: 0}
+    key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+    key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+    key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 2120
+    ctime1: 4819
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -64648,16 +64648,16 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   _furtherColor4_2:
     serializedVersion: 2
-    key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-    key1: {r: 37.1451, g: 47.937256, b: 6.7764707, a: 0.654902}
-    key2: {r: 47.686275, g: 47.937256, b: 11.796079, a: 0}
+    key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+    key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+    key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 3084
+    ctime1: 4819
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -64677,16 +64677,16 @@ MonoBehaviour:
     m_NumAlphaKeys: 3
   _furtherColor4_3:
     serializedVersion: 2
-    key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}
-    key1: {r: 14.556863, g: 47.937256, b: 6.7764707, a: 0.654902}
-    key2: {r: 27.858824, g: 47.937256, b: 11.796079, a: 0}
+    key0: {r: 181.01933, g: 181.01933, b: 181.01933, a: 1}
+    key1: {r: 7.84086, g: 28.856075, b: 40.741734, a: 0.654902}
+    key2: {r: 36.18174, g: 9.369774, b: 28.397623, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 2120
+    ctime1: 4819
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -64704,12 +64704,12 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 3
-  _furtherTexture1: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 3}
-  _furtherTexture2: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 3}
-  _furtherTexture3: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 3}
-  _furtherTexture4: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 3}
-  _itemDataSO: {fileID: 0}
-  _happyMoneyManager: {fileID: 0}
+  _furtherTexture1: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+  _furtherTexture2: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+  _furtherTexture3: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+  _furtherTexture4: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+  _itemDataSO: {fileID: 11400000, guid: 2fe665e60a56e774a9dc9dbb56f4a1d4, type: 2}
+  _happyMoneyManager: {fileID: 967810136}
   corotin: 1
   saveDatasetting: 0
 --- !u!114 &1971074906

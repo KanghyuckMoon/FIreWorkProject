@@ -22,41 +22,41 @@ public class AchievementChecker
 	public AchievementChecker(AchievementDataSO achievementDataSO)
 	{
 		_achievementDataSO = achievementDataSO;
-		_achievements.Add(new Achievement(0, x => x.happy >= 1000)); //나무
-		_achievements.Add(new Achievement(1, x => x.happy >= 3000)); //돌
-		_achievements.Add(new Achievement(2, x => x.happy >= 6000)); //잔디
-		_achievements.Add(new Achievement(3, x => x.happy >= 12000)); //행성잔디
-		_achievements.Add(new Achievement(4, x => x.happy >= 24000)); //구름1,2
-		_achievements.Add(new Achievement(5, x => x.happy >= 30000)); //구름3,4
-		_achievements.Add(new Achievement(6, x => x.happy >= 50000)); //달
-		_achievements.Add(new Achievement(7, x => x.happy >= 80000)); //집1
-		_achievements.Add(new Achievement(8, x => x.happy >= 85000)); //집2
-		_achievements.Add(new Achievement(9, x => x.happy >= 90000)); //집3
-		_achievements.Add(new Achievement(10, x => x.happy >= 95000)); //집4
-		_achievements.Add(new Achievement(11, x => x.happy >= 100000)); //집5
-		_achievements.Add(new Achievement(12, x => x.happy >= 150000)); //집6
+		_achievements.Add(new Achievement(0, x => x.happy >= 100)); //나무
+		_achievements.Add(new Achievement(1, x => x.happy >= 200)); //돌
+		_achievements.Add(new Achievement(2, x => x.happy >= 450)); //잔디
+		_achievements.Add(new Achievement(3, x => x.happy >= 600)); //행성잔디
+		_achievements.Add(new Achievement(4, x => x.happy >= 800)); //구름1,2
+		_achievements.Add(new Achievement(5, x => x.happy >= 1000)); //구름3,4
+		_achievements.Add(new Achievement(6, x => x.happy >= 2000)); //달
+		_achievements.Add(new Achievement(7, x => x.happy >= 3000)); //집1
+		_achievements.Add(new Achievement(8, x => x.happy >= 4000)); //집2
+		_achievements.Add(new Achievement(9, x => x.happy >= 5000)); //집3
+		_achievements.Add(new Achievement(10, x => x.happy >= 6000)); //집4
+		_achievements.Add(new Achievement(11, x => x.happy >=  7000)); //집5
+		_achievements.Add(new Achievement(12, x => x.happy >= 8000)); //집6
 		_achievements.Add(new Achievement(13, x => x.further1ColorItemCode == x.further2ColorItemCode && x.further2ColorItemCode == x.further3ColorItemCode && x.further3ColorItemCode == x.further4ColorItemCode)); //하트 구름
-		_achievements.Add(new Achievement(14, x => x.happy >= 200000)); //램프1
-		_achievements.Add(new Achievement(15, x => x.happy >= 300000)); //램프2
-		_achievements.Add(new Achievement(16, x => x.happy >= 400000)); //램프3
-		_achievements.Add(new Achievement(17, x => x.happy >= 500000)); //램프4
-		_achievements.Add(new Achievement(18, x => x.happy >= 600000)); //램프5
-		_achievements.Add(new Achievement(19, x => x.happy >= 1000000)); //유니티짱1
+		_achievements.Add(new Achievement(14, x => x.happy >= 11000)); //램프1
+		_achievements.Add(new Achievement(15, x => x.happy >= 12500)); //램프2
+		_achievements.Add(new Achievement(16, x => x.happy >= 14000)); //램프3
+		_achievements.Add(new Achievement(17, x => x.happy >= 15500)); //램프4
+		_achievements.Add(new Achievement(18, x => x.happy >= 17000)); //램프5
+		_achievements.Add(new Achievement(19, x => x.happy >= 20000)); //유니티짱1
 		_achievements.Add(new Achievement(20, x => x.money >= 100)); //또다른행성
-		_achievements.Add(new Achievement(21, x => x.happy >= 1000000 && x.money >= 100)); //또행성의 잔디
-		_achievements.Add(new Achievement(22, x => x.happy >= 2000000 && x.money >= 100)); //또행성의 나무
-		_achievements.Add(new Achievement(23, x => x.happy >= 3000000 && x.money >= 100)); //또행성의 구름
-		_achievements.Add(new Achievement(24, x => x.happy >= 4000000 && x.money >= 100)); //또행성의 집1
-		_achievements.Add(new Achievement(25, x => x.happy >= 5000000 && x.money >= 100)); //또행성의 집2
-		_achievements.Add(new Achievement(26, x => x.happy >= 6000000 && x.money >= 100)); //또행성의 집3
-		_achievements.Add(new Achievement(27, x => x.happy >= 7000000 && x.money >= 100)); //또행성의 집4
-		_achievements.Add(new Achievement(28, x => x.money >= 8000000 && x.money >= 100)); //또행성의 유니티짱
-		_achievements.Add(new Achievement(29, x => x.happy >= 5500000)); //유니티짱2
-		_achievements.Add(new Achievement(30, x => x.happy >= 1500000)); //2차 폭발 개방
-		_achievements.Add(new Achievement(31, x => x.happy >= 6000000)); //3차 폭발 개방
-		_achievements.Add(new Achievement(32, x => x.happy >= 10000000)); //4차 폭발 개방
+		_achievements.Add(new Achievement(21, x => x.happy >= 25000 && x.money >= 100)); //또행성의 잔디
+		_achievements.Add(new Achievement(22, x => x.happy >= 30000 && x.money >= 100)); //또행성의 나무
+		_achievements.Add(new Achievement(23, x => x.happy >= 35000 && x.money >= 100)); //또행성의 구름
+		_achievements.Add(new Achievement(24, x => x.happy >= 40000 && x.money >= 100)); //또행성의 집1
+		_achievements.Add(new Achievement(25, x => x.happy >= 45000 && x.money >= 100)); //또행성의 집2
+		_achievements.Add(new Achievement(26, x => x.happy >= 50000 && x.money >= 100)); //또행성의 집3
+		_achievements.Add(new Achievement(27, x => x.happy >= 55000 && x.money >= 100)); //또행성의 집4
+		_achievements.Add(new Achievement(28, x => x.money >= 70000 && x.money >= 100)); //또행성의 유니티짱
+		_achievements.Add(new Achievement(29, x => x.happy >= 85000)); //유니티짱2
+		_achievements.Add(new Achievement(30, x => x.happy >= 30000)); //2차 폭발 개방
+		_achievements.Add(new Achievement(31, x => x.happy >= 80000)); //3차 폭발 개방
+		_achievements.Add(new Achievement(32, x => x.happy >= 150000)); //4차 폭발 개방
 		_achievements.Add(new Achievement(33, x => x.haveAchievement.Count >= 5)); //라이브러리 개방
-		_achievements.Add(new Achievement(34, x => x.happy >= 30000)); //리뉴얼 개방
+		_achievements.Add(new Achievement(34, x => x.happy >= 50000)); //리뉴얼 개방
 		_achievements.Add(new Achievement(35, x => x.renewal >= 1)); //빛조절 개방
 		_achievements.Add(new Achievement(36, x => x.renewal >= 2)); //크기조절 개방
 		_achievements.Add(new Achievement(37, x => x.money >= 1000)); //유니티짱3 개방
@@ -72,7 +72,7 @@ public class AchievementChecker
 		_achievements.Add(new Achievement(47, x => Time.time > 3600)); //특별한 모양 아이템 추가
 		_achievements.Add(new Achievement(48, x => x.haveAchievement.Count >= 49)); //엔딩
 		_achievements.Add(new Achievement(49, x => true)); //게임 시작
-		_achievements.Add(new Achievement(50, x => x.happy >= 5000)); //강화에 대해
+		_achievements.Add(new Achievement(50, x => x.happy >= 50)); //강화에 대해
 		_achievements.Add(new Achievement(51, x => x.haveAchievement.Count >= 20)); //많은 업적 달성
 		_achievements.Add(new Achievement(52, x => x.haveAchievement.Count >= 20 && x.renewal >= 1)); //다시 한번 많은 업적 달성!
 		_achievements.Add(new Achievement(53, x => x.happy >= 55000 && x.haveAchievement.Count >= 7)); //상점 개방
