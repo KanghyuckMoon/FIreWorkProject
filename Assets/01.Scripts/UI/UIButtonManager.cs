@@ -6,6 +6,15 @@ using UnityEngine.UIElements;
 
 public class UIButtonManager : MonoBehaviour
 {
+    public AchievementViewManager AchievementViewManager
+    {
+        get
+        {
+            _achievementViewManager ??= FindObjectOfType<AchievementViewManager>();
+            return _achievementViewManager;
+        }
+    }
+
     public UpgradeButtonConstructor upgradeButtonConstructor; // 업그레이드 버튼 생성, 관리자 
 
     private SettingPanelComponent _settingPanelComponent; // 설정 패널 관리자
@@ -38,7 +47,7 @@ public class UIButtonManager : MonoBehaviour
     private SoundSetting _soundSetting;
     private Exit _exit;
     private ItemChangeManager _itemChangeManager; // 
-
+    private AchievementViewManager _achievementViewManager;
 
     // 프로퍼티 
     public VisualElement RootElement => _rootElement;
@@ -55,7 +64,7 @@ public class UIButtonManager : MonoBehaviour
         //_shopPanelComponent = new ShopPanelComponent(); 
         _settingPanelComponent.Init(this, _graphicSetting, _soundSetting, _exit); // 설정 버튼, 패널 캐싱 
         _shopPanelComponent.Init(this, _haveItemManager, _shopManager, _libraryPanelComponent);
-        _libraryPanelComponent.Init(this, _haveItemManager, _itemChangeManager, _fireWorkController);
+        _libraryPanelComponent.Init(this, _haveItemManager, _itemChangeManager, _fireWorkController, AchievementViewManager);
     }
     private void Update()
     {

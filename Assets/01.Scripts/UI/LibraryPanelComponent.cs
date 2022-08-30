@@ -7,7 +7,7 @@ using System;
 [Serializable]
 public class LibraryPanelComponent : UIComponent
 {
-
+    private AchievementViewManager _achievementViewManager;
     private ItemChangeManager _itemChangeMnager;
     private LibraryButtonConstructor _libraryButtonConstructor;  // 라이브러리 버튼 생성자 
     private HaveItemManager _haveItemManager;
@@ -16,6 +16,8 @@ public class LibraryPanelComponent : UIComponent
     private TemplateContainer _libraryPanel;
 
     private Button _libraryBackButton; // 뒤로가기 버튼 
+    private Button _achievementButton; // 업적 버튼 
+
     private VisualElement _colorItemParent; // 색 아이템 부모 오브젝트
     private VisualElement _shapeItemParent; // 모양 아이템 부모 오브젝트 
     private VisualElement _buttonParent; // 
@@ -33,11 +35,21 @@ public class LibraryPanelComponent : UIComponent
 
     [SerializeField]
     private ItemDataSO _itemDataSO;
-    public void Init(UIButtonManager uIButtonManager, HaveItemManager haveItemManager, ItemChangeManager itemChangeManager, FireWorkController fireWorkController)
+
+
+    private int _intensitySliderOpenCode = 35;
+    private int _sizeSliderOpenCode = 36;
+
+    private bool _isOpenIntensitySlider;
+    private bool _isOpenSizeSlider;
+
+
+    public void Init(UIButtonManager uIButtonManager, HaveItemManager haveItemManager, ItemChangeManager itemChangeManager, FireWorkController fireWorkController, AchievementViewManager achievementViewManager)
     {
         _uiButtonManager = uIButtonManager;
         _haveItemManager = haveItemManager;
-        _itemChangeMnager = itemChangeManager; 
+        _itemChangeMnager = itemChangeManager;
+        _achievementViewManager = achievementViewManager;
 
         _libraryButton = _uiButtonManager.RootElement.Q<Button>("library-button");
         _libraryPanel = _uiButtonManager.RootElement.Q<TemplateContainer>("LibraryTemplate");
@@ -45,6 +57,8 @@ public class LibraryPanelComponent : UIComponent
         _libraryPanel.style.display = DisplayStyle.None;
 
         _libraryBackButton = _libraryPanel.Q<Button>("back-button");
+        _achievementButton = _libraryPanel.Q<Button>("achievement-button"); 
+
         _colorItemParent = _libraryPanel.Q<VisualElement>("colorItem-scrollview");
         _shapeItemParent = _libraryPanel.Q<VisualElement>("shapeItem-scrollview");
         _buttonParent = _libraryPanel.Q<VisualElement>("buttonParent");
@@ -60,21 +74,44 @@ public class LibraryPanelComponent : UIComponent
         // 버튼 이벤트 등록 
         _libraryButton.clicked += () => OpenClosePanel(_libraryPanel);
         _libraryBackButton.clicked += () => OpenClosePanel(_libraryPanel);
+        _achievementButton.clicked += () => _achievementViewManager.OpenAchievementView(); 
 
         _intensitySlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeItensity(x.newValue));
         _sizeSlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeSize(x.newValue));
 
-        _sizeSlider.Q<Label>().style.color = Color.black; 
+        _sizeSlider.Q<Label>().style.color = Color.black;
+        _intensitySlider.Q<Label>().style.color = Color.black;
+
+        _sizeSlider.style.display = DisplayStyle.None; 
+        _intensitySlider.style.display = DisplayStyle.None; 
+
         _libraryButtonConstructor = new LibraryButtonConstructor(fireWorkController, itemChangeManager, _buttonParent);
 
         CreateHaveItems();
+        LockOrUnlockSlider(); 
     }
 
     public override void UpdateSometing()
     {
-        _libraryButtonConstructor.UpdateSometing(); 
+        _libraryButtonConstructor.UpdateSometing();
+        LockOrUnlockSlider(); 
     }
 
+
+    public void LockOrUnlockSlider()
+    {
+        if(_isOpenSizeSlider == false && AchievementManager.Instance.CheckHaveAchievement(_sizeSliderOpenCode) == true)
+        {
+            _sizeSlider.style.display = DisplayStyle.Flex;
+            _isOpenSizeSlider = true;
+        }
+        if (_isOpenIntensitySlider == false && AchievementManager.Instance.CheckHaveAchievement(_intensitySliderOpenCode) == true)
+        {
+            _intensitySlider.style.display = DisplayStyle.Flex;
+            _isOpenIntensitySlider = true;
+        }
+
+    }
 
     /// <summary>
     /// 보유 중인 아이템 생성 
