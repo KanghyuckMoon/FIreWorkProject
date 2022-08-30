@@ -7,7 +7,15 @@ using static Utill.VFX;
 
 public class FireWorkController : MonoBehaviour
 {
-
+	private PopUpManager PopUpManager
+	{
+		get
+		{
+			_popUpManager ??= FindObjectOfType<PopUpManager>();
+			return _popUpManager; 
+		}
+	}
+	private PopUpManager _popUpManager;
 	public float Rate => _rate;
 	public int Count => _count;
 	public int Further1 => _further1;
@@ -56,7 +64,7 @@ public class FireWorkController : MonoBehaviour
 	{
 		get
 		{
-			return (int)((600 - _rate) * 100 * (60 - _rate * 0.1f));
+			return (int)((1000 - _rate) * 100);
 		}
 	}
 	public int CountCost
@@ -96,7 +104,7 @@ public class FireWorkController : MonoBehaviour
 	}
 
 	[SerializeField] private VisualEffect _visualEffect = null;
-	[SerializeField] private float _rate = 5f;
+	[SerializeField] private float _rate = 20f;
 	[SerializeField] private int _count = 0;
 	[SerializeField] private int _further1 = 0;
 	[SerializeField] private int _further2 = 0;
@@ -423,17 +431,17 @@ public class FireWorkController : MonoBehaviour
 	/// <param name="add"></param>
 	public void UpdateRate(float add)
 	{
-		if(!HappyMoneyManager.Instance.RemoveHappy(RateCost))
+		if (_rate < 5f)
+		{
+			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
+		}
+
+		if (!HappyMoneyManager.Instance.RemoveHappy(RateCost))
 		{
 			return;
 		}
 
 		_rate -= add;
-		if(_rate < 0.3f)
-		{
-			_rate = 0.3f;
-			Debug.Log("Rete is MIN, Can't more Upgrade");
-		}
 
 		UpdateRate();
 		_upgradeButtonConstructor.UpdateCostText(); 
@@ -444,10 +452,17 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount1(int add)
 	{
-		if (!HappyMoneyManager.Instance.RemoveHappy(Further1Cost))
+		if (_further1 >= 80)
+		{
+			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
+			return;
+		}
+
+			if (!HappyMoneyManager.Instance.RemoveHappy(Further1Cost))
 		{
 			return;
 		}
+
 
 		_further1 += add;
 		UpdateFurtherCount1();
@@ -459,6 +474,12 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount2(int add)
 	{
+		if (_further2 >= 80)
+		{
+			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
+			return;
+		}
+
 		if (!HappyMoneyManager.Instance.RemoveHappy(Further2Cost))
 		{
 			return;
@@ -474,6 +495,12 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount3(int add)
 	{
+		if (_further3 >= 80)
+		{
+			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
+			return;
+		}
+
 		if (!HappyMoneyManager.Instance.RemoveHappy(Further3Cost))
 		{
 			return;
@@ -489,6 +516,12 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount4(int add)
 	{
+		if (_further4 >= 80)
+		{
+			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
+			return;
+		}
+
 		if (!HappyMoneyManager.Instance.RemoveHappy(Further4Cost))
 		{
 			return;
@@ -504,6 +537,10 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateCount(int add)
 	{
+		if (_count >= 10)
+		{
+			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
+		}
 		if (!HappyMoneyManager.Instance.RemoveHappy(CountCost))
 		{
 			return;
@@ -657,6 +694,15 @@ public class FireWorkController : MonoBehaviour
 	{
 		HappyMoneyManager.Instance.Happy = 0;
 		HappyMoneyManager.Instance.AddMoney((int)Mathf.Abs(_count - _rate / 2) * (_further1 + 1) * (_further2 + 1) * (_further3 + 1) * (_further4 + 1 ));
+
+		_count = 1;
+		_rate = 20f;
+		_further1 = 1;
+		_further2 = 0;
+		_further3 = 0;
+		_further4 = 0;
+
+
 		UserSaveDataManager.Instance.UserSaveData.haveAchievement.Clear();
 		SceneManager.LoadScene("InGame");
 	}
