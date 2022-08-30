@@ -122,6 +122,26 @@ public class AchievementChecker
 	}
 
 	/// <summary>
+	/// 업적 가지기
+	/// </summary>
+	/// <param name="index"></param>
+	public void GetAchievement(int index)
+	{
+		var achievement = _achievements.Find(x => x.itemCode == index);
+
+		UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(achievement.itemCode);
+		AchievementManager.Instance.SendMessageToObsevers();
+		FunctionInvoke(achievement.itemCode);
+
+		var achievementData = _achievementDataSO._achievementDatas.Find(x => x._achievementCode == achievement.itemCode);
+
+		if (!achievementData._isCantView)
+		{
+			PopUpManager.SetAchievement(achievementData);
+		}
+	}
+
+	/// <summary>
 	/// 함수 실행
 	/// </summary>
 	public void FunctionInvoke(int itemCode)

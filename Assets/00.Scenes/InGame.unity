@@ -10723,6 +10723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _achievementDataSO: {fileID: 11400000, guid: bda4b58d3acb68f4aa93d394a794939d, type: 2}
+  debugIndex: 0
 --- !u!1 &328858582
 GameObject:
   m_ObjectHideFlags: 0
@@ -23938,7 +23939,7 @@ Transform:
   - {fileID: 683882776}
   - {fileID: 1437626877}
   m_Father: {fileID: 1410248420}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -10.4, z: -85.67}
 --- !u!114 &697829640
 MonoBehaviour:
@@ -43774,10 +43775,9 @@ Transform:
   - {fileID: 934469624}
   - {fileID: 1310168229}
   - {fileID: 192330227}
-  - {fileID: 1626109886}
   - {fileID: 697829639}
   m_Father: {fileID: 1697541267}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1410248421
 Animator:
@@ -51705,8 +51705,8 @@ Transform:
   - {fileID: 1094971433}
   - {fileID: 1403213459}
   - {fileID: 2005794048034582041}
-  m_Father: {fileID: 1410248420}
-  m_RootOrder: 4
+  m_Father: {fileID: 1697541267}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1626109887
 MonoBehaviour:
@@ -54741,6 +54741,7 @@ Transform:
   - {fileID: 5310124787872933976}
   - {fileID: 5362025120812336503}
   - {fileID: 2829148428162866432}
+  - {fileID: 1626109886}
   - {fileID: 1410248420}
   m_Father: {fileID: 0}
   m_RootOrder: 21
