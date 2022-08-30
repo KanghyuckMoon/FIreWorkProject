@@ -16,8 +16,8 @@ public class UserSaveData
 	public int renewal;
 
 	//아이템
-	public List<int> haveItem;
-	
+	public List<int> haveItem = new List<int> {0,1,2,3,4,100,101,102,103,104};
+
 	//업적
 	public List<int> haveAchievement;
 
