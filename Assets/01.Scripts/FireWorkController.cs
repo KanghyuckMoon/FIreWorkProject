@@ -50,6 +50,13 @@ public class FireWorkController : MonoBehaviour
 			return UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(32);
 		}
 	}
+	public bool IsCanRenewal
+	{
+		get
+		{
+			return UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(34);
+		}
+	}
 
 	public HappyMoneyManager HappyMoneyManager
 	{
@@ -102,6 +109,7 @@ public class FireWorkController : MonoBehaviour
 			return _further4 * 7;
 		}
 	}
+
 
 	[SerializeField] private VisualEffect _visualEffect = null;
 	[SerializeField] private float _rate = 10f;
@@ -693,6 +701,11 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void Renewal()
 	{
+		if(IsCanRenewal)
+		{
+			return;
+		}
+
 		HappyMoneyManager.Instance.Happy = 0;
 		HappyMoneyManager.Instance.AddMoney((int)Mathf.Abs(_count - _rate / 2) * (_further1 + 1) * (_further2 + 1) * (_further3 + 1) * (_further4 + 1 ));
 
@@ -797,7 +810,7 @@ public class FireWorkController : MonoBehaviour
 			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(48);
 		}
 
-
+		UserSaveDataManager.Instance.UserSaveData.renewal += 1;
 
 		SceneManager.LoadScene("InGame");
 	}
