@@ -706,4 +706,16 @@ public class FireWorkController : MonoBehaviour
 		UserSaveDataManager.Instance.UserSaveData.haveAchievement.Clear();
 		SceneManager.LoadScene("InGame");
 	}
+
+	/// <summary>
+	/// 불꽃놀이 높이 조절 기능
+	/// </summary>
+	/// <param name="value"></param>
+	public void SetHeight(float value)
+	{
+		Vector3 heightVectorMin = new Vector3(-2, 10 + (50 * value), -2);
+		Vector3 heightVectorMax = new Vector3(2, 13 + (50 * value), 2);
+		VFXSetVector3(_visualEffect, "HeightVectorMin", heightVectorMin);
+		VFXSetVector3(_visualEffect, "HeightVectorMax", heightVectorMax);
+	}
 }
