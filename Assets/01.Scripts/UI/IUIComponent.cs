@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 [System.Serializable]
 public abstract class UIComponent
 {
+    public static Queue<VisualElement> _activePanels = new Queue<VisualElement>();  
     protected UIButtonManager _uiButtonManager;
 
     public abstract void UpdateSometing();

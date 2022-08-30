@@ -7,7 +7,15 @@ using static Utill.VFX;
 
 public class FireWorkController : MonoBehaviour
 {
-
+	private PopUpManager PopUpManager
+	{
+		get
+		{
+			_popUpManager ??= FindObjectOfType<PopUpManager>();
+			return _popUpManager; 
+		}
+	}
+	private PopUpManager _popUpManager;
 	public float Rate => _rate;
 	public int Count => _count;
 	public int Further1 => _further1;
@@ -52,8 +60,51 @@ public class FireWorkController : MonoBehaviour
 		}
 	}
 
+	public int RateCost
+	{
+		get
+		{
+			return (int)((1000 - _rate) * 100);
+		}
+	}
+	public int CountCost
+	{
+		get
+		{
+			return _count * _count * 5000;
+		}
+	}
+	public int Further1Cost
+	{
+		get
+		{
+			return _further1 * _further1 * 1000;
+		}
+	}
+	public int Further2Cost
+	{
+		get
+		{
+			return _further2 * _further2 * 1000;
+		}
+	}
+	public int Further3Cost
+	{
+		get
+		{
+			return _further3 * _further3 * 1000;
+		}
+	}
+	public int Further4Cost
+	{
+		get
+		{
+			return _further4 * _further4 * 1000;
+		}
+	}
+
 	[SerializeField] private VisualEffect _visualEffect = null;
-	[SerializeField] private float _rate = 5f;
+	[SerializeField] private float _rate = 20f;
 	[SerializeField] private int _count = 0;
 	[SerializeField] private int _further1 = 0;
 	[SerializeField] private int _further2 = 0;
@@ -77,6 +128,7 @@ public class FireWorkController : MonoBehaviour
 	[SerializeField] private Texture2D _furtherTexture4;
 	[SerializeField] private ItemDataSO _itemDataSO;
 	[SerializeField] private HappyMoneyManager _happyMoneyManager;
+	private UpgradeButtonConstructor _upgradeButtonConstructor; //
 
 	private List<float> _explosiontime1 = new List<float>();
 	private List<float> _explosiontime2 = new List<float>();
@@ -84,8 +136,9 @@ public class FireWorkController : MonoBehaviour
 	private List<float> _explosiontime4 = new List<float>();
 	public bool corotin;
 	public bool saveDatasetting;
+	private bool _isStop;
 
-	private void Start()
+    private void Start()
 	{
 		if(saveDatasetting)
 		{
@@ -94,12 +147,36 @@ public class FireWorkController : MonoBehaviour
 
 		UpdateRate();
 		StartCoroutine(FireworkStart());
+		_upgradeButtonConstructor = FindObjectOfType<UIButtonManager>().upgradeButtonConstructor;
+	}
+
+	public void StopVFX()
+	{
+		_isStop = true;
+	}
+
+	public void PlayVFX()
+	{
+		_isStop = false;
 	}
 
 	private void Update()
 	{
 		Explosion();
 	}
+
+	/// <summary>
+	/// 외부 변수 캐싱 
+	/// </summary>
+	/// <returns></returns>
+	//private IEnumerator Cashing()//
+	//{
+	//	while (_uIButtonManager.UpgradeButtonConstructor == null)
+	//	{
+	//		yield return null;
+	//	}
+	//	_upgradeButtonConstructor = _uIButtonManager.UpgradeButtonConstructor;
+	//}
 
 	/// <summary>
 	/// 저장 데이터기반 설정
@@ -160,37 +237,40 @@ public class FireWorkController : MonoBehaviour
 	{
 		while(true)
 		{
-			for(int i = 0; i < _count; ++i)
+			if(!_isStop)
 			{
-				float lifeTime = Random.Range(3f, 3.5f);
-				float further1lifeTime = 0f;
-				float further2lifeTime = 0f;
-				float further3lifeTime = 0f;
-				_visualEffect.SetFloat("lifeTime", lifeTime);
-				_explosiontime1.Add(lifeTime);
-				if(IsCanFurther2)
+				for (int i = 0; i < _count; ++i)
 				{
-					further1lifeTime = Random.Range(1f, 1.2f);
-					_visualEffect.SetFloat("FurtherLifeTime1", further1lifeTime);
-					_explosiontime2.Add(further1lifeTime + lifeTime);
-				}
-				if(IsCanFurther3)
-				{
-					further2lifeTime = Random.Range(0.8f, 1f);
-					_visualEffect.SetFloat("FurtherLifeTime2", further2lifeTime);
-					_explosiontime3.Add(further2lifeTime + further1lifeTime + lifeTime);
-				}
-				if (IsCanFurther4)
-				{
-					further3lifeTime = Random.Range(0.8f, 1f);
-					_visualEffect.SetFloat("FurtherLifeTime3", further3lifeTime);
-					_explosiontime4.Add(further3lifeTime + further2lifeTime + further1lifeTime + lifeTime);
-				}
+					float lifeTime = Random.Range(3f, 3.5f);
+					float further1lifeTime = 0f;
+					float further2lifeTime = 0f;
+					float further3lifeTime = 0f;
+					_visualEffect.SetFloat("lifeTime", lifeTime);
+					_explosiontime1.Add(lifeTime);
+					if (IsCanFurther2)
+					{
+						further1lifeTime = Random.Range(1f, 1.2f);
+						_visualEffect.SetFloat("FurtherLifeTime1", further1lifeTime);
+						_explosiontime2.Add(further1lifeTime + lifeTime);
+					}
+					if (IsCanFurther3)
+					{
+						further2lifeTime = Random.Range(0.8f, 1f);
+						_visualEffect.SetFloat("FurtherLifeTime2", further2lifeTime);
+						_explosiontime3.Add(further2lifeTime + further1lifeTime + lifeTime);
+					}
+					if (IsCanFurther4)
+					{
+						further3lifeTime = Random.Range(0.8f, 1f);
+						_visualEffect.SetFloat("FurtherLifeTime3", further3lifeTime);
+						_explosiontime4.Add(further3lifeTime + further2lifeTime + further1lifeTime + lifeTime);
+					}
 
-				_visualEffect.SendEvent("Play");
+					_visualEffect.SendEvent("Play");
 
 
-				yield return new WaitForSeconds(0.1f);
+					yield return new WaitForSeconds(0.1f);
+				}
 			}
 
 			yield return new WaitForSeconds(_rate);
@@ -351,19 +431,20 @@ public class FireWorkController : MonoBehaviour
 	/// <param name="add"></param>
 	public void UpdateRate(float add)
 	{
-		if(!HappyMoneyManager.Instance.RemoveHappy((int)((600 - _rate) * 100 * (60 - _rate * 0.1f))))
+		if (_rate < 5f)
+		{
+			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
+		}
+
+		if (!HappyMoneyManager.Instance.RemoveHappy(RateCost))
 		{
 			return;
 		}
 
 		_rate -= add;
-		if(_rate < 0.3f)
-		{
-			_rate = 0.3f;
-			Debug.Log("Rete is MIN, Can't more Upgrade");
-		}
 
 		UpdateRate();
+		_upgradeButtonConstructor.UpdateCostText(); 
 	}
 
 	/// <summary>
@@ -371,13 +452,21 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount1(int add)
 	{
-		if (!HappyMoneyManager.Instance.RemoveHappy(_further1 * _further1 * 1000))
+		if (_further1 >= 80)
+		{
+			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
+			return;
+		}
+
+			if (!HappyMoneyManager.Instance.RemoveHappy(Further1Cost))
 		{
 			return;
 		}
 
+
 		_further1 += add;
 		UpdateFurtherCount1();
+		_upgradeButtonConstructor.UpdateCostText();
 	}
 
 	/// <summary>
@@ -385,13 +474,20 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount2(int add)
 	{
-		if (!HappyMoneyManager.Instance.RemoveHappy(_further2 * _further2 * 900))
+		if (_further2 >= 80)
+		{
+			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
+			return;
+		}
+
+		if (!HappyMoneyManager.Instance.RemoveHappy(Further2Cost))
 		{
 			return;
 		}
 
 		_further2 += add;
 		UpdateFurtherCount2();
+		_upgradeButtonConstructor.UpdateCostText();
 	}
 
 	/// <summary>
@@ -399,13 +495,20 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount3(int add)
 	{
-		if (!HappyMoneyManager.Instance.RemoveHappy(_further3 * _further3 * 800))
+		if (_further3 >= 80)
+		{
+			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
+			return;
+		}
+
+		if (!HappyMoneyManager.Instance.RemoveHappy(Further3Cost))
 		{
 			return;
 		}
 
 		_further3 += add;
 		UpdateFurtherCount3();
+		_upgradeButtonConstructor.UpdateCostText();
 	}
 
 	/// <summary>
@@ -413,13 +516,20 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateFurtherCount4(int add)
 	{
-		if (!HappyMoneyManager.Instance.RemoveHappy(_further4 * _further4 * 700))
+		if (_further4 >= 80)
+		{
+			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
+			return;
+		}
+
+		if (!HappyMoneyManager.Instance.RemoveHappy(Further4Cost))
 		{
 			return;
 		}
 
 		_further4 += add;
 		UpdateFurtherCount4();
+		_upgradeButtonConstructor.UpdateCostText();
 	}
 
 	/// <summary>
@@ -427,12 +537,17 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void UpdateCount(int add)
 	{
-		if (!HappyMoneyManager.Instance.RemoveHappy(_count * _count * 5000))
+		if (_count >= 10)
+		{
+			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
+		}
+		if (!HappyMoneyManager.Instance.RemoveHappy(CountCost))
 		{
 			return;
 		}
 
 		_count += add;
+		_upgradeButtonConstructor.UpdateCostText();
 	}
 
 	/// <summary>
@@ -579,7 +694,28 @@ public class FireWorkController : MonoBehaviour
 	{
 		HappyMoneyManager.Instance.Happy = 0;
 		HappyMoneyManager.Instance.AddMoney((int)Mathf.Abs(_count - _rate / 2) * (_further1 + 1) * (_further2 + 1) * (_further3 + 1) * (_further4 + 1 ));
+
+		_count = 1;
+		_rate = 20f;
+		_further1 = 1;
+		_further2 = 0;
+		_further3 = 0;
+		_further4 = 0;
+
+
 		UserSaveDataManager.Instance.UserSaveData.haveAchievement.Clear();
 		SceneManager.LoadScene("InGame");
+	}
+
+	/// <summary>
+	/// 불꽃놀이 높이 조절 기능
+	/// </summary>
+	/// <param name="value"></param>
+	public void SetHeight(float value)
+	{
+		Vector3 heightVectorMin = new Vector3(-2, 10 + (50 * value), -2);
+		Vector3 heightVectorMax = new Vector3(2, 13 + (50 * value), 2);
+		VFXSetVector3(_visualEffect, "HeightVectorMin", heightVectorMin);
+		VFXSetVector3(_visualEffect, "HeightVectorMax", heightVectorMax);
 	}
 }

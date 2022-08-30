@@ -46738,7 +46738,7 @@ MonoBehaviour:
     money: 0
     happy: 0
     renewal: 0
-    haveItem: 
+    haveItem: 00000000010000000200000003000000040000006400000065000000660000006700000068000000
     haveAchievement: 
     bgmVoulume: 0
     effVoulume: 0
@@ -64352,10 +64352,10 @@ MonoBehaviour:
   _visualEffect: {fileID: 1415232267}
   _rate: 3
   _count: 1
-  _further1: 80
-  _further2: 20
-  _further3: 20
-  _further4: 20
+  _further1: 0
+  _further2: 0
+  _further3: 0
+  _further4: 0
   _furtherColor1_1:
     serializedVersion: 2
     key0: {r: 766.9961, g: 766.9961, b: 766.9961, a: 1}

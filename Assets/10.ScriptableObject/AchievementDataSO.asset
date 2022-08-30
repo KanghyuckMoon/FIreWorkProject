@@ -333,3 +333,9 @@ MonoBehaviour:
     _functionName: OpenCutScene
     _functionParameter: 8
     _isCantView: 0
+  - _achievementCode: 53
+    _achievementName: "\uC0C1\uC810 \uAC1C\uBC29"
+    _content: "\uC5C5\uC801\uC744 7\uAC1C \uB2EC\uC131\uD558\uAE30"
+    _functionName: OpenCutScene
+    _functionParameter: 5
+    _isCantView: 0

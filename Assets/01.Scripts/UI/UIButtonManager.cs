@@ -6,7 +6,16 @@ using UnityEngine.UIElements;
 
 public class UIButtonManager : MonoBehaviour
 {
-    private UpgradeButtonConstructor _upgradeButtonConstructor; // 업그레이드 버튼 생성, 관리자 
+    public AchievementViewManager AchievementViewManager
+    {
+        get
+        {
+            _achievementViewManager ??= FindObjectOfType<AchievementViewManager>();
+            return _achievementViewManager;
+        }
+    }
+
+    public UpgradeButtonConstructor upgradeButtonConstructor; // 업그레이드 버튼 생성, 관리자 
 
     private SettingPanelComponent _settingPanelComponent; // 설정 패널 관리자
     [SerializeField]
@@ -38,11 +47,11 @@ public class UIButtonManager : MonoBehaviour
     private SoundSetting _soundSetting;
     private Exit _exit;
     private ItemChangeManager _itemChangeManager; // 
-
+    private AchievementViewManager _achievementViewManager;
 
     // 프로퍼티 
     public VisualElement RootElement => _rootElement;
-
+//    public UpgradeButtonConstructor UpgradeButtonConstructor => _upgradeButtonConstructor; 
     private void Awake()
     {
         CashingElements();
@@ -55,7 +64,7 @@ public class UIButtonManager : MonoBehaviour
         //_shopPanelComponent = new ShopPanelComponent(); 
         _settingPanelComponent.Init(this, _graphicSetting, _soundSetting, _exit); // 설정 버튼, 패널 캐싱 
         _shopPanelComponent.Init(this, _haveItemManager, _shopManager, _libraryPanelComponent);
-        _libraryPanelComponent.Init(this, _haveItemManager, _itemChangeManager, _fireWorkController);
+        _libraryPanelComponent.Init(this, _haveItemManager, _itemChangeManager, _fireWorkController, AchievementViewManager);
     }
     private void Update()
     {
@@ -65,6 +74,8 @@ public class UIButtonManager : MonoBehaviour
             _gameScreen.style.display = _gameScreen.style.display == DisplayStyle.Flex ? DisplayStyle.None : DisplayStyle.Flex;
             //_gameScreen.visible = _gameScreen.visible == false ? true : false; 
         }
+        _libraryPanelComponent.UpdateSometing();
+        upgradeButtonConstructor.UpdateSomething(); 
     }
 
     /// <summary>
@@ -93,7 +104,7 @@ public class UIButtonManager : MonoBehaviour
 
 
         // 업그레이드 버튼 생성
-        _upgradeButtonConstructor = new UpgradeButtonConstructor(_fireWorkController, _rootElement);
+        upgradeButtonConstructor = new UpgradeButtonConstructor(_fireWorkController, _rootElement);
     }
 
     /// <summary>
