@@ -1,0 +1,46 @@
+{
+    "name": "UIAction",
+    "maps": [
+        {
+            "name": "Action",
+            "id": "59bed4a6-a8fb-4a23-8786-d33215fa3a64",
+            "actions": [
+                {
+                    "name": "UI_View",
+                    "type": "Button",
+                    "id": "2db550d0-7251-4b53-bda7-8c7c0d0c590e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9674f338-3598-406a-98a8-ecc376396405",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC_UI",
+                    "action": "UI_View",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "PC_UI",
+            "bindingGroup": "PC_UI",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

@@ -61925,6 +61925,7 @@ GameObject:
   - component: {fileID: 1648247245}
   - component: {fileID: 1648247246}
   - component: {fileID: 1648247247}
+  - component: {fileID: 1648247248}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -62212,11 +62213,39 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f93c844b-4d69-4230-92b9-ab25a9d40368
     m_ActionName: CameraAction/View[/SwitchProControllerHID/rightStick/up,/SwitchProControllerHID/rightStick/down,/SwitchProControllerHID/rightStick/left,/SwitchProControllerHID/rightStick/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1648247248}
+        m_TargetAssemblyTypeName: UIButton_InputSystem, Assembly-CSharp
+        m_MethodName: OnUI
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ec9b0520-6bdd-439f-bb18-22fcea6913f4
+    m_ActionName: CameraAction/UI[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Console
   m_DefaultActionMap: CameraAction
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1648247242}
+--- !u!114 &1648247248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648247240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0edde10bb578949a235bf11a555aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1648460970
 GameObject:
   m_ObjectHideFlags: 0
