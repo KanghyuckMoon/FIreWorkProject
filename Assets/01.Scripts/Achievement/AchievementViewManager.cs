@@ -26,7 +26,7 @@ public class AchievementViewManager : MonoBehaviour
 
 		if(_achievementBackground.childCount != _achievementDataSO._achievementDatas.Count)
 		{
-			_maxScroll = _achievementDataSO._achievementDatas.Count * 200;
+			_maxScroll = _achievementDataSO._achievementDatas.Count * 250;
 			//»ý¼º
 			for (; _achievementBackground.childCount != _achievementDataSO._achievementDatas.Count;)
 			{
