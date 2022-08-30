@@ -121,14 +121,15 @@ public class UpgradeButtonConstructor
         });
     }
 
-    private struct UpgradeButtonInfo
-    {
-        public string name; // 이름
-        public bool isLocked;  // 잠금 여부 
-        public Action clickEvent;
-    }
+
 }
 
+public struct UpgradeButtonInfo
+{
+    public string name; // 이름
+    public bool isLocked;  // 잠금 여부 
+    public Action clickEvent;
+}
 /// <summary>
 /// 업그레이드 버튼 (SO로 관리할 수도..) 
 /// </summary>

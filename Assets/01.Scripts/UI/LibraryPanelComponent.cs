@@ -7,6 +7,9 @@ using System;
 [Serializable]
 public class LibraryPanelComponent : UIComponent
 {
+
+    private ItemChangeManager _itemChangeMnager; 
+    private LibraryButtonConstructor _libraryButtonConstructor;  // 라이브러리 버튼 생성자 
     private HaveItemManager _haveItemManager;
 
     private Button _libraryButton; // 상점 버튼
@@ -15,41 +18,52 @@ public class LibraryPanelComponent : UIComponent
     private Button _libraryBackButton; // 뒤로가기 버튼 
     private VisualElement _colorItemParent; // 색 아이템 부모 오브젝트
     private VisualElement _shapeItemParent; // 모양 아이템 부모 오브젝트 
+    private VisualElement _buttonParent; // 
 
-    private VisualElement _further1Button;
-    private VisualElement _further2Button;
-    private VisualElement _further3Button;
-    private VisualElement _further4Button;
+    private VisualElement _further1SettingButton;
+    private VisualElement _further2SettingButton;
+    private VisualElement _further3SettingButton;
+    private VisualElement _further4SettingButton;
 
-    private Slider _slider1;
-    private Slider _slider2; 
+    private Slider _intensitySlider;
+    private Slider _sizeSlider; 
 
     private List<ItemBox> _libraryColorItemList = new List<ItemBox>(); // 생성된 색 아이템 리스트 
     private List<ItemBox> _libraryShapeItemList = new List<ItemBox>(); // 생성된 모양 아이템 리스트 
 
     [SerializeField]
     private ItemDataSO _itemDataSO;
-    public void Init(UIButtonManager uIButtonManager, HaveItemManager haveItemManager)
+    public void Init(UIButtonManager uIButtonManager, HaveItemManager haveItemManager,ItemChangeManager itemChangeManager,FireWorkController fireWorkController)
     {
         _uiButtonManager = uIButtonManager;
         _haveItemManager = haveItemManager;
 
         _libraryButton = _uiButtonManager.RootElement.Q<Button>("library-button");
         _libraryPanel = _uiButtonManager.RootElement.Q<TemplateContainer>("LibraryTemplate");
+
         _libraryPanel.style.display = DisplayStyle.None; 
 
         _libraryBackButton = _libraryPanel.Q<Button>("back-button");
         _colorItemParent = _libraryPanel.Q<VisualElement>("colorItem-scrollview");
         _shapeItemParent = _libraryPanel.Q<VisualElement>("shapeItem-scrollview");
+        _buttonParent = _libraryPanel.Q<VisualElement>("buttonParent");
 
-        _further1Button = _libraryPanel.Q<VisualElement>("further1-button");
-        _further2Button = _libraryPanel.Q<VisualElement>("further2-button");
-        _further3Button = _libraryPanel.Q<VisualElement>("further3-button");
-        _further4Button = _libraryPanel.Q<VisualElement>("further4-button");
+        _further1SettingButton = _libraryPanel.Q<VisualElement>("further1-setting- button");
+        _further2SettingButton = _libraryPanel.Q<VisualElement>("further2-setting-button");
+        _further3SettingButton = _libraryPanel.Q<VisualElement>("further3-setting-button");
+        _further4SettingButton = _libraryPanel.Q<VisualElement>("further4-setting-button");
+
+        _intensitySlider = _libraryPanel.Q<Slider>("intensity-slider");
+        _sizeSlider = _libraryPanel.Q<Slider>("size-slider");
 
         // 버튼 이벤트 등록 
         _libraryButton.clicked += () => OpenClosePanel(_libraryPanel);
         _libraryBackButton.clicked += () => OpenClosePanel(_libraryPanel);
+
+        _intensitySlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeItensity(x.newValue));
+        _sizeSlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeSize(x.newValue));
+
+        _libraryButtonConstructor = new LibraryButtonConstructor(fireWorkController,itemChangeManager, _buttonParent); 
 
         CreateHaveItems();
     }
