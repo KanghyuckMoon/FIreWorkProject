@@ -72,7 +72,7 @@ public class LibraryPanelComponent : UIComponent
 
     public override void UpdateSometing()
     {
-        throw new System.NotImplementedException();
+        _libraryButtonConstructor.UpdateSometing(); 
     }
 
 

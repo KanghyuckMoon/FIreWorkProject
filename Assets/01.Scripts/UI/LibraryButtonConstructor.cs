@@ -12,6 +12,9 @@ public class LibraryButtonConstructor
     private List<UpgradeButtonType> _buttonTypeList = new List<UpgradeButtonType>();  // 모든 버튼 타입이 담겨있는 리스트
     private FireWorkController _fireWorkController;
 
+    private bool _isOpenFurther2 =  false;
+    private bool _isOpenFurther3 = false;
+    private bool _isOpenFurther4 = false;
 
     public LibraryButtonConstructor(FireWorkController fireWorkController, ItemChangeManager itemChangeManager, VisualElement rootElement)
     {
@@ -35,7 +38,7 @@ public class LibraryButtonConstructor
             VisualElement lockElement = upgradeButtonParent.Q<VisualElement>(lockIconName); // 잠금 아이콘
             Button upgradeButton = upgradeButtonParent.Q<Button>(buttonName); // 버튼 
 
-            UpgradeButtonElement buttonElement = new UpgradeButtonElement(upgradeButton, lockElement, upgradeButtonInfo.isLocked, buttonType); // 생성 
+            UpgradeButtonElement buttonElement = new UpgradeButtonElement(upgradeButton, lockElement, upgradeButtonInfo.isOpened, buttonType); // 생성 
 
             upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
 
@@ -55,28 +58,48 @@ public class LibraryButtonConstructor
         {
             case UpgradeButtonType.Further1:
                 upgradeButtonInfo.name = "further1-setting-button";
-                upgradeButtonInfo.isLocked = _fireWorkController.IsCanFurther1;
+                upgradeButtonInfo.isOpened = _fireWorkController.IsCanFurther1;
                 upgradeButtonInfo.clickEvent = () => _itemChangeManager.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further1);
                 break;
             case UpgradeButtonType.Further2:
                 upgradeButtonInfo.name = "further2-setting-button";
-                upgradeButtonInfo.isLocked = _fireWorkController.IsCanFurther2;
+                upgradeButtonInfo.isOpened = _fireWorkController.IsCanFurther2;
                 upgradeButtonInfo.clickEvent = () => _itemChangeManager.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further2);
                 break;
             case UpgradeButtonType.Further3:
                 upgradeButtonInfo.name = "further3-setting-button";
-                upgradeButtonInfo.isLocked = _fireWorkController.IsCanFurther3;
+                upgradeButtonInfo.isOpened = _fireWorkController.IsCanFurther3;
                 upgradeButtonInfo.clickEvent = () => _itemChangeManager.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further3);
                 break;
             case UpgradeButtonType.Further4:
                 upgradeButtonInfo.name = "further4-setting-button";
-                upgradeButtonInfo.isLocked = _fireWorkController.IsCanFurther4;
+                upgradeButtonInfo.isOpened = _fireWorkController.IsCanFurther4;
                 upgradeButtonInfo.clickEvent = () => _itemChangeManager.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further4);
                 break;
         }
         return upgradeButtonInfo;
     }
 
+    public void UpdateSometing()
+    {
+        if(_fireWorkController.IsCanFurther2 == true && _isOpenFurther2 == false)
+        {
+            LockOrUnlockButton(UpgradeButtonType.Further2, true);
+            _isOpenFurther2 = true; 
+        }
+        if (_fireWorkController.IsCanFurther3 == true && _isOpenFurther3 == false)
+        {
+            LockOrUnlockButton(UpgradeButtonType.Further3, true);
+            _isOpenFurther3 = true;
+        }
+        if (_fireWorkController.IsCanFurther4 == true && _isOpenFurther4 == false)
+        {
+            LockOrUnlockButton(UpgradeButtonType.Further4, true);
+            _isOpenFurther4 = true; 
+        }
+
+
+    }
     private void InitEnumList()
     {
         _buttonTypeList.Clear();
@@ -85,5 +108,18 @@ public class LibraryButtonConstructor
         {
             _buttonTypeList.Add(buttonType);
         }
+    }
+
+
+    public void LockOrUnlockButton(UpgradeButtonType buttonType, bool isOpened)
+    {
+        _buttonElementList.ForEach((x) =>
+        {
+            if (x._buttonType == buttonType)
+            {
+                x.IsOpened = isOpened;
+                x.LockButton();
+            }
+        });
     }
 }

@@ -7,21 +7,21 @@
             <ui:VisualElement name="UIPanel" style="background-color: rgb(200, 200, 200);">
                 <ui:VisualElement name="buttonParent" class="line" style="border-bottom-width: 0; padding-bottom: 0; flex-direction: row; justify-content: space-around; height: 100px;">
                     <ui:VisualElement style="flex-direction: row; flex-grow: 1;">
-                        <ui:VisualElement name="further2-setting-button" style="flex-direction: row; align-items: stretch; padding-right: 0; width: 101px; margin-right: 20px;">
-                            <ui:Button text="Button" display-tooltip-when-elided="true" name="button" class="button" style="width: 100px; height: 60px; font-size: 25px;" />
-                            <ui:VisualElement name="lock-icon" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/15.UISprite/%EC%9E%90%EB%AC%BC%EC%87%A0.png?fileID=21300000&amp;guid=f0ad086fd824d20479da67a9dde13ff2&amp;type=3#자물쇠&apos;);" />
+                        <ui:VisualElement name="further4-setting-button" style="flex-direction: row; align-items: stretch; padding-right: 0; width: 101px; margin-right: 20px;">
+                            <ui:Button text="further4" display-tooltip-when-elided="true" name="button" class="button" style="width: 100%; height: 100%; font-size: 20%; -unity-font-style: normal;" />
+                            <ui:VisualElement name="lock-icon" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/15.UISprite/%EC%9E%90%EB%AC%BC%EC%87%A0.png?fileID=21300000&amp;guid=f0ad086fd824d20479da67a9dde13ff2&amp;type=3#자물쇠&apos;); display: none;" />
                         </ui:VisualElement>
                         <ui:VisualElement name="further3-setting-button" style="flex-direction: row; align-items: stretch; padding-right: 0; width: 101px; margin-right: 20px;">
-                            <ui:Button text="Button" display-tooltip-when-elided="true" name="button" class="button" style="width: 100px; height: 60px; font-size: 25px;" />
-                            <ui:VisualElement name="lock-icon" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/15.UISprite/%EC%9E%90%EB%AC%BC%EC%87%A0.png?fileID=21300000&amp;guid=f0ad086fd824d20479da67a9dde13ff2&amp;type=3#자물쇠&apos;);" />
+                            <ui:Button text="further3" display-tooltip-when-elided="true" name="button" class="button" style="width: 100px; height: 100%; font-size: 20%; -unity-font-style: normal;" />
+                            <ui:VisualElement name="lock-icon" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/15.UISprite/%EC%9E%90%EB%AC%BC%EC%87%A0.png?fileID=21300000&amp;guid=f0ad086fd824d20479da67a9dde13ff2&amp;type=3#자물쇠&apos;); display: none;" />
                         </ui:VisualElement>
-                        <ui:VisualElement name="further4-setting-button" style="flex-direction: row; align-items: stretch; padding-right: 0; width: 101px; margin-right: 20px;">
-                            <ui:Button text="Button" display-tooltip-when-elided="true" name="button" class="button" style="width: 100px; height: 60px; font-size: 25px;" />
-                            <ui:VisualElement name="lock-icon" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/15.UISprite/%EC%9E%90%EB%AC%BC%EC%87%A0.png?fileID=21300000&amp;guid=f0ad086fd824d20479da67a9dde13ff2&amp;type=3#자물쇠&apos;);" />
+                        <ui:VisualElement name="further2-setting-button" style="flex-direction: row; align-items: stretch; padding-right: 0; width: 101px; margin-right: 20px;">
+                            <ui:Button text="further2" display-tooltip-when-elided="true" name="button" class="button" style="width: 100%; height: 100%; font-size: 20%; -unity-font-style: normal;" />
+                            <ui:VisualElement name="lock-icon" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/15.UISprite/%EC%9E%90%EB%AC%BC%EC%87%A0.png?fileID=21300000&amp;guid=f0ad086fd824d20479da67a9dde13ff2&amp;type=3#자물쇠&apos;); display: none;" />
                         </ui:VisualElement>
                         <ui:VisualElement name="further1-setting-button" style="flex-direction: row; align-items: stretch; padding-right: 0; width: 101px; margin-right: 20px;">
-                            <ui:Button text="Button" display-tooltip-when-elided="true" name="button" class="button" style="width: 100px; height: 60px; font-size: 25px;" />
-                            <ui:VisualElement name="lock-icon" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/15.UISprite/%EC%9E%90%EB%AC%BC%EC%87%A0.png?fileID=21300000&amp;guid=f0ad086fd824d20479da67a9dde13ff2&amp;type=3#자물쇠&apos;);" />
+                            <ui:Button text="Further1" display-tooltip-when-elided="true" name="button" class="button furtherSetting-button" style="width: 100%; height: 100%; font-size: 20%; -unity-font-style: normal; -unity-font-definition: url(&apos;project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&amp;guid=f30be4bb3933209499bc20092da7e369&amp;type=2#Maplestory Bold SDF&apos;);" />
+                            <ui:VisualElement name="lock-icon" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/15.UISprite/%EC%9E%90%EB%AC%BC%EC%87%A0.png?fileID=21300000&amp;guid=f0ad086fd824d20479da67a9dde13ff2&amp;type=3#자물쇠&apos;); display: flex;" />
                         </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement style="flex-grow: 1; flex-direction: column; justify-content: space-between;">
