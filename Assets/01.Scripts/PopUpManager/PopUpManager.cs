@@ -53,7 +53,8 @@ public class PopUpManager : MonoBehaviour
 	private void CancleAchievement()
 	{
 		_achievementPopupObject.gameObject.SetActive(false);
-		if(_achievementDatas.Count > 0)
+		_currentAchievementData = null;
+		if (_achievementDatas.Count > 0)
 		{
 			SetAchievement(_achievementDatas.Dequeue());
 		}
