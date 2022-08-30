@@ -27,7 +27,8 @@ public class ShopPanelComponent : UIComponent
     [SerializeField]
     private ItemDataSO _itemDataSO;
     [SerializeField]
-    private int _shopOpenCode = 33; 
+    private int _shopOpenCode = 53;
+    private bool _isOpenShop = false; 
 
     public void Init(UIButtonManager uIButtonManager, HaveItemManager haveItemManager,ShopManager shopManager, LibraryPanelComponent libraryPanelComponent)
     {
@@ -57,7 +58,10 @@ public class ShopPanelComponent : UIComponent
 
     public override void UpdateSometing()
     {
-        throw new System.NotImplementedException();
+        if(_isOpenShop == false)
+        {
+            UnlockShop();
+        }
     }
 
     public void UnlockShop()
@@ -65,6 +69,7 @@ public class ShopPanelComponent : UIComponent
         if(AchievementManager.Instance.CheckHaveAchievement(_shopOpenCode) == true)
         {
             _lockIcon.style.display = DisplayStyle.None;
+            _isOpenShop = true; 
         }
     }
     /// <summary>

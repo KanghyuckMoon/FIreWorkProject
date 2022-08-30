@@ -75,7 +75,8 @@ public class UIButtonManager : MonoBehaviour
             //_gameScreen.visible = _gameScreen.visible == false ? true : false; 
         }
         _libraryPanelComponent.UpdateSometing();
-        upgradeButtonConstructor.UpdateSomething(); 
+        upgradeButtonConstructor.UpdateSomething();
+        _shopPanelComponent.UpdateSometing(); 
     }
 
     /// <summary>

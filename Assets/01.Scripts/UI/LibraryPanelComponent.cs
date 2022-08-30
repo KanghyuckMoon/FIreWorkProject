@@ -23,6 +23,8 @@ public class LibraryPanelComponent : UIComponent
     private VisualElement _shapeItemParent; // 모양 아이템 부모 오브젝트 
     private VisualElement _buttonParent; // 
 
+    private VisualElement _libraryLockIcon; 
+
     private VisualElement _further1SettingButton;
     private VisualElement _further2SettingButton;
     private VisualElement _further3SettingButton;
@@ -37,7 +39,9 @@ public class LibraryPanelComponent : UIComponent
 
     [SerializeField]
     private ItemDataSO _itemDataSO;
-
+    [SerializeField]
+    private int _libraryOpenCode = 33;
+    private bool _isShopOpen = false; 
 
     private int _intensitySliderOpenCode = 35;
     private int _sizeSliderOpenCode = 36;
@@ -56,6 +60,8 @@ public class LibraryPanelComponent : UIComponent
 
         _libraryButton = _uiButtonManager.RootElement.Q<Button>("library-button");
         _libraryPanel = _uiButtonManager.RootElement.Q<TemplateContainer>("LibraryTemplate");
+
+        _libraryLockIcon = _uiButtonManager.RootElement.Q<VisualElement>("libraryLock-icon");
 
         _libraryPanel.style.display = DisplayStyle.None;
 
@@ -102,8 +108,21 @@ public class LibraryPanelComponent : UIComponent
     {
         _libraryButtonConstructor.UpdateSometing();
         LockOrUnlockSlider(); 
-    }
 
+        if(AchievementManager.Instance.CheckHaveAchievement(_libraryOpenCode) == true)
+        {
+            UnlockShopButton(); 
+        }
+    }
+    
+    /// <summary>
+    /// 상점 버튼 해제 
+    /// </summary>
+    private void UnlockShopButton()
+    {
+        _libraryLockIcon.style.display = DisplayStyle.None; 
+        _isShopOpen = true; 
+    }
 
     public void LockOrUnlockSlider()
     {
