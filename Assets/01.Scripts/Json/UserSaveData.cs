@@ -25,7 +25,7 @@ public class UserSaveData
 	public float bgmVoulume = 0f;
 	public float effVoulume = 0f;
 	public int grapicQulityIndex = 0;
-	public bool isFullScreen;
+	public bool isFullScreen = true;
 	public int width = 1920;
 	public int height = 1080;
 
