@@ -80,6 +80,12 @@ public class UpgradeButtonConstructor
                 upgradeButtonInfo.costPropertyName = "RateCost";
                 upgradeButtonInfo.clickEvent = () => _fireWorkController.UpdateRate(0.5f);
                 break;
+            case UpgradeButtonType.Renewal:
+                upgradeButtonInfo.name = "renewal-button";
+              //  upgradeButtonInfo.isOpened = _fireWorkController.IS;
+                upgradeButtonInfo.costPropertyName = null;
+                upgradeButtonInfo.clickEvent = () => _fireWorkController.Renewal();
+                break; 
             case UpgradeButtonType.Further1:
                 upgradeButtonInfo.name = "further1-upgrade-button";
                 upgradeButtonInfo.costPropertyName = "Further1Cost";
@@ -259,6 +265,7 @@ public enum UpgradeButtonType
 {
     CountUp,
     RateUp,
+    Renewal,
     Further1,
     Further2,
     Further3,
