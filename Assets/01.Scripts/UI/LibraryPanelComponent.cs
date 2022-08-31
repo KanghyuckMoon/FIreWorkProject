@@ -89,7 +89,7 @@ public class LibraryPanelComponent : UIComponent
 
         _sizeSlider.Q<Label>().style.color = Color.white;
         _intensitySlider.Q<Label>().style.color = Color.white;
-        _heightSlider.Q<Label>().style.color = Color.black; 
+        _heightSlider.Q<Label>().style.color = Color.white; 
 
         _sizeSlider.style.display = DisplayStyle.None; 
         _intensitySlider.style.display = DisplayStyle.None;
