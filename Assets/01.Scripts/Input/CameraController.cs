@@ -7,7 +7,10 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform _centerTransform = null;
     [SerializeField] private float _moveSpeed = 1;
-    [Range(0.001f, 1f)] [SerializeField] private float _zoomSpeed = 1;
+    [Range(0.1f, 400f)] [SerializeField] private float _zoomSpeed = 1;
+
+
+    [Range(0.1f, 200f)] [SerializeField] private float limite = 160;
 
     [SerializeField] private float _viewSpeed = 200;
     [SerializeField] private float _distance = 3;
@@ -23,10 +26,16 @@ public class CameraController : MonoBehaviour
     float _xMoveInput = 0f;
     Vector3 _moveVector = Vector3.zero;
     Vector3 _upVector = Vector3.zero;
+    private Rigidbody _rigidbody;
 
-    // Update is called once per frame
+    void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+    }
+
     void LateUpdate()
     {
+        HardHit();
         //ZoomInOut();
         MoveMouseCamera();
         //MoveKeyboardCamera();
@@ -78,20 +87,28 @@ public class CameraController : MonoBehaviour
  //       _distance = Input.GetAxis("Mouse ScrollWheel");
  //   }
 
+    private void HardHit()
+    {
+        _rigidbody.velocity = Vector3.zero;
+    }
+
     private void CameraPositionSetting()
     {
-        _moveVector = transform.position + (transform.right * inputVal.x * _moveSpeed * Time.deltaTime) + (transform.forward * inputVal.z * _moveSpeed * Time.deltaTime);// + (transform.forward * _distance * _zoomSpeed * Time.deltaTime); //transform.right * (_xMoveInput * _moveSpeed * Time.deltaTime) + transform.up * (_yMoveInput * _moveSpeed * Time.deltaTime) + (transform.forward* _distance *_zoomSpeed * Time.deltaTime);
-        //_upVector = transform.position + transform.InverseTransformPoint(transform.position + (transform.up * inputVal.y * _moveSpeed * Time.deltaTime));
-
-        //Vector3 vec = _upVector + _moveVector;
-
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(-_yRotationInput, _xRotationInput, 0), _smoothTime);
+        Vector3 vec = transform.position;
+        
+        
+        _moveVector = transform.position + (transform.right * inputVal.x * _moveSpeed * Time.deltaTime) + (transform.forward * inputVal.z * (_moveSpeed + _zoomSpeed) * Time.deltaTime);// + (transform.forward * _distance * _zoomSpeed * Time.deltaTime); //transform.right * (_xMoveInput * _moveSpeed * Time.deltaTime) + transform.up * (_yMoveInput * _moveSpeed * Time.deltaTime) + (transform.forward* _distance *_zoomSpeed * Time.deltaTime);
+        
         transform.position = Vector3.SmoothDamp(transform.position, _moveVector, ref _velocity, _smoothTime);
 
         _upVector = transform.position + transform.InverseTransformPoint(transform.position + (transform.up * inputVal.y * _moveSpeed * Time.deltaTime));
         transform.position = Vector3.SmoothDamp(transform.position, _upVector, ref _velocity, _smoothTime);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(-_yRotationInput, _xRotationInput, 0), _smoothTime);
-        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(viewVal), _smoothTime);
+        if (Mathf.Abs(transform.position.x) >= limite || Mathf.Abs(transform.position.y) >= limite || Mathf.Abs(transform.position.z) >= limite)
+        {
+            transform.position = vec;
+        }
     }
 
     /// <summary>

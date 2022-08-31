@@ -33,21 +33,28 @@ public class FireWorkController : MonoBehaviour
 	{
 		get
 		{
-			return _further1 > 10;
+			return UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(30);
 		}
 	}
 	public bool IsCanFurther3
 	{
 		get
 		{
-			return _further2 > 10;
+			return UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(31);
 		}
 	}
 	public bool IsCanFurther4
 	{
 		get
 		{
-			return _further3 > 10;
+			return UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(32);
+		}
+	}
+	public bool IsCanRenewal
+	{
+		get
+		{
+			return UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(34);
 		}
 	}
 
@@ -64,49 +71,50 @@ public class FireWorkController : MonoBehaviour
 	{
 		get
 		{
-			return (int)((1000 - _rate) * 100);
+			return (int)((80 - _rate));
 		}
 	}
 	public int CountCost
 	{
 		get
 		{
-			return _count * _count * 5000;
+			return _count * _count * 50;
 		}
 	}
 	public int Further1Cost
 	{
 		get
 		{
-			return _further1 * _further1 * 1000;
+			return _further1 * 2;
 		}
 	}
 	public int Further2Cost
 	{
 		get
 		{
-			return _further2 * _further2 * 1000;
+			return _further2 * 3;
 		}
 	}
 	public int Further3Cost
 	{
 		get
 		{
-			return _further3 * _further3 * 1000;
+			return _further3 * 5;
 		}
 	}
 	public int Further4Cost
 	{
 		get
 		{
-			return _further4 * _further4 * 1000;
+			return _further4 * 7;
 		}
 	}
 
+
 	[SerializeField] private VisualEffect _visualEffect = null;
-	[SerializeField] private float _rate = 20f;
-	[SerializeField] private int _count = 0;
-	[SerializeField] private int _further1 = 0;
+	[SerializeField] private float _rate = 10f;
+	[SerializeField] private int _count = 1;
+	[SerializeField] private int _further1 = 1;
 	[SerializeField] private int _further2 = 0;
 	[SerializeField] private int _further3 = 0;
 	[SerializeField] private int _further4 = 0;
@@ -434,6 +442,7 @@ public class FireWorkController : MonoBehaviour
 		if (_rate < 5f)
 		{
 			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
+			return;
 		}
 
 		if (!HappyMoneyManager.Instance.RemoveHappy(RateCost))
@@ -692,18 +701,117 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void Renewal()
 	{
+		if(IsCanRenewal)
+		{
+			return;
+		}
+
 		HappyMoneyManager.Instance.Happy = 0;
 		HappyMoneyManager.Instance.AddMoney((int)Mathf.Abs(_count - _rate / 2) * (_further1 + 1) * (_further2 + 1) * (_further3 + 1) * (_further4 + 1 ));
 
 		_count = 1;
-		_rate = 20f;
+		_rate = 10f;
 		_further1 = 1;
 		_further2 = 0;
 		_further3 = 0;
 		_further4 = 0;
 
+		bool isFurther2 = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(30);
+		bool isFurther3 = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(31);
+		bool isFurther4 = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(32);
+		bool isShop = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(53);
+		bool isLibrary = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(33);
+		bool isLight = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(35);
+		bool isSize = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(36);
+		bool isShop1Color = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(40);
+		bool isShop1Texture = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(41);
+		bool isShop2Color = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(42);
+		bool isShop2Texture = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(43);
+		bool isShop3Color = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(44);
+		bool isShop3Texture = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(45);
+		bool isGetAchievement20 = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(51);
+		bool isReGetAchievement20 = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(52);
+		bool isUpgrade = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(50);
+		bool isStart = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(49);
+		bool isEnding = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(48);
 
 		UserSaveDataManager.Instance.UserSaveData.haveAchievement.Clear();
+
+		if (isFurther2)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(30);
+		}
+		if (isFurther3)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(31);
+		}
+		if (isFurther4)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(32);
+		}
+		if (isShop)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(53);
+		}
+		if (isLibrary)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(33);
+		}
+		if (isLight)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(35);
+		}
+		if (isSize)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(36);
+		}
+		if (isShop1Color)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(40);
+		}
+		if (isShop1Texture)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(41);
+		}
+		if (isShop2Color)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(42);
+		}
+		if (isShop2Texture)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(43);
+		}
+		if (isShop3Color)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(44);
+		}
+		if (isShop3Texture)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(45);
+		}
+		if (isGetAchievement20)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(51);
+		}
+		if (isReGetAchievement20)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(52);
+		}
+		if (isUpgrade)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(50);
+		}
+		if (isStart)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(49);
+		}
+		if (isEnding)
+		{
+			UserSaveDataManager.Instance.UserSaveData.haveAchievement.Add(48);
+		}
+
+		UserSaveDataManager.Instance.UserSaveData.renewal += 1;
+
 		SceneManager.LoadScene("InGame");
 	}
 

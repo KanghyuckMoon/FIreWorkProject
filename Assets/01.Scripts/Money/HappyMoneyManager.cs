@@ -63,7 +63,20 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 	/// <param name="happy"></param>
 	public void AddHappy(int happy)
 	{
-		UserSaveDataManager.Instance.UserSaveData.happy += happy;
+		int gethappy = happy;
+
+		switch(UserSaveDataManager.Instance.UserSaveData.renewal)
+		{
+			case 0:
+				break;
+			case 1:
+				gethappy = (int)(gethappy * 1.2f);
+				break;
+			default:
+				gethappy = (int)(gethappy * 1.4f);
+				break;
+		}
+		UserSaveDataManager.Instance.UserSaveData.happy += gethappy;
 	}
 
 	/// <summary>

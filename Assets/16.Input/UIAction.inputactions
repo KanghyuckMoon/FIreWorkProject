@@ -1,0 +1,68 @@
+{
+    "name": "UIAction",
+    "maps": [
+        {
+            "name": "Action",
+            "id": "59bed4a6-a8fb-4a23-8786-d33215fa3a64",
+            "actions": [
+                {
+                    "name": "UI_View",
+                    "type": "Button",
+                    "id": "2db550d0-7251-4b53-bda7-8c7c0d0c590e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9dcc8368-efdb-4dd8-aff5-34b337dc8924",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC_UI",
+                    "action": "UI_View",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43d8d7cc-e169-4548-82da-21ca9ce7272c",
+                    "path": "<SwitchProControllerHID>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Console_UI",
+                    "action": "UI_View",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "PC_UI",
+            "bindingGroup": "PC_UI",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Console_UI",
+            "bindingGroup": "Console_UI",
+            "devices": [
+                {
+                    "devicePath": "<SwitchProControllerHID>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
