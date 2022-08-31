@@ -417,8 +417,8 @@ MonoBehaviour:
   _contentsText: {fileID: 1916110614}
   _optionTransform: {fileID: 1038514913}
   _optionObject: {fileID: 3076773167271264095, guid: c81b4fb88b163ca4990b0cb3ce38a9aa, type: 3}
-  _originDelay: 0.05
-  _currentDelay: 0.05
+  _originDelay: 0.001
+  _currentDelay: 0.001
 --- !u!1 &890179371
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,8 +932,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -961,7 +961,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 83.38782, y: 52.25197, z: 82.50293, w: 4.492798}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
