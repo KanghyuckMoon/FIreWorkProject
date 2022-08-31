@@ -78,7 +78,7 @@ public class ItemChangeManager : MonoBehaviour
 	/// <param name="value"></param>
 	public void ChangeItensity(float value)
 	{
-		_intensity = value;
+		_intensity = value * 0.1f;
 	}
 
 	/// <summary>

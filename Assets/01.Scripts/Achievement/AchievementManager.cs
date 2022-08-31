@@ -15,6 +15,8 @@ public class AchievementManager : Singleton<AchievementManager>, ObservationObje
 	private List<Observer> _obsevers = new List<Observer>();
 	private AchievementChecker _achievementChecker = null;
 
+	public int debugIndex;
+
 	private void Start()
 	{
 		_achievementChecker = new AchievementChecker(_achievementDataSO);
@@ -50,5 +52,13 @@ public class AchievementManager : Singleton<AchievementManager>, ObservationObje
 		return UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(code);
 	}
 
+	[ContextMenu("업적획득하기")]
+	/// <summary>
+	/// 업적 가지기
+	/// </summary>
+	public void GetAchievement()
+	{
+		_achievementChecker.GetAchievement(debugIndex);
+	}
 
 }

@@ -11,6 +11,7 @@ public class LibraryPanelComponent : UIComponent
     private ItemChangeManager _itemChangeMnager;
     private LibraryButtonConstructor _libraryButtonConstructor;  // 라이브러리 버튼 생성자 
     private HaveItemManager _haveItemManager;
+    private FireWorkController _fireWorkController; 
 
     private Button _libraryButton; // 상점 버튼
     private TemplateContainer _libraryPanel;
@@ -29,6 +30,7 @@ public class LibraryPanelComponent : UIComponent
 
     private Slider _intensitySlider;
     private Slider _sizeSlider;
+    private Slider _heightSlider; 
 
     private List<ItemBox> _libraryColorItemList = new List<ItemBox>(); // 생성된 색 아이템 리스트 
     private List<ItemBox> _libraryShapeItemList = new List<ItemBox>(); // 생성된 모양 아이템 리스트 
@@ -50,6 +52,7 @@ public class LibraryPanelComponent : UIComponent
         _haveItemManager = haveItemManager;
         _itemChangeMnager = itemChangeManager;
         _achievementViewManager = achievementViewManager;
+        _fireWorkController = fireWorkController; 
 
         _libraryButton = _uiButtonManager.RootElement.Q<Button>("library-button");
         _libraryPanel = _uiButtonManager.RootElement.Q<TemplateContainer>("LibraryTemplate");
@@ -70,6 +73,7 @@ public class LibraryPanelComponent : UIComponent
 
         _intensitySlider = _libraryPanel.Q<Slider>("intensity-slider");
         _sizeSlider = _libraryPanel.Q<Slider>("size-slider");
+        _heightSlider = _libraryPanel.Q<Slider>("height-slider");
 
         // 버튼 이벤트 등록 
         _libraryButton.clicked += () => OpenClosePanel(_libraryPanel);
@@ -78,12 +82,15 @@ public class LibraryPanelComponent : UIComponent
 
         _intensitySlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeItensity(x.newValue));
         _sizeSlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeSize(x.newValue));
+        _heightSlider.RegisterValueChangedCallback((x) => _fireWorkController.SetHeight(x.newValue)); 
 
-        _sizeSlider.Q<Label>().style.color = Color.black;
-        _intensitySlider.Q<Label>().style.color = Color.black;
+        _sizeSlider.Q<Label>().style.color = Color.white;
+        _intensitySlider.Q<Label>().style.color = Color.white;
+        _sizeSlider.Q<Label>().style.color = Color.white; 
 
         _sizeSlider.style.display = DisplayStyle.None; 
-        _intensitySlider.style.display = DisplayStyle.None; 
+        _intensitySlider.style.display = DisplayStyle.None;
+        _intensitySlider.style.display = DisplayStyle.Flex; 
 
         _libraryButtonConstructor = new LibraryButtonConstructor(fireWorkController, itemChangeManager, _buttonParent);
 
