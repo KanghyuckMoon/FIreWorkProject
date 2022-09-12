@@ -706,7 +706,7 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void Renewal()
 	{
-		if(IsCanRenewal)
+		if(!IsCanRenewal)
 		{
 			return;
 		}

@@ -19,6 +19,7 @@ public class GameStartManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _controlTextUI3;
     [SerializeField] private TextMeshProUGUI _gameStartText;
     private bool _isCanStart = false;
+    private bool _isStart = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,13 @@ public class GameStartManager : MonoBehaviour
     {
         if (_isCanStart)
         {
+            if(_isStart)
+			{
+                return;
+			}
+                _isStart = true;
             SceneManager.LoadScene("InGame");
+            return;
         }
     }
 

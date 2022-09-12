@@ -76,4 +76,9 @@ public class AchievementObject : MonoBehaviour, Observer
 			transform.DOMoveY(originPosition.y, 1).SetDelay(0.5f).OnComplete(() => _effectObject.SetActive(false)).SetEase(Ease.InExpo);
 		}
 	}
+
+	private void EmissiveObject()
+	{
+
+	}
 }
