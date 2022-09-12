@@ -474,6 +474,7 @@ public class FireWorkController : MonoBehaviour
 
 
 		_further1 += add;
+		UserSaveDataManager.Save();
 		UpdateFurtherCount1();
 		_upgradeButtonConstructor.UpdateCostText();
 	}
@@ -495,6 +496,7 @@ public class FireWorkController : MonoBehaviour
 		}
 
 		_further2 += add;
+		UserSaveDataManager.Save();
 		UpdateFurtherCount2();
 		_upgradeButtonConstructor.UpdateCostText();
 	}
@@ -516,6 +518,7 @@ public class FireWorkController : MonoBehaviour
 		}
 
 		_further3 += add;
+		UserSaveDataManager.Save();
 		UpdateFurtherCount3();
 		_upgradeButtonConstructor.UpdateCostText();
 	}
@@ -537,6 +540,7 @@ public class FireWorkController : MonoBehaviour
 		}
 
 		_further4 += add;
+		UserSaveDataManager.Save();
 		UpdateFurtherCount4();
 		_upgradeButtonConstructor.UpdateCostText();
 	}
@@ -556,6 +560,7 @@ public class FireWorkController : MonoBehaviour
 		}
 
 		_count += add;
+		UserSaveDataManager.Save();
 		_upgradeButtonConstructor.UpdateCostText();
 	}
 
@@ -701,7 +706,7 @@ public class FireWorkController : MonoBehaviour
 	/// </summary>
 	public void Renewal()
 	{
-		if(IsCanRenewal)
+		if(!IsCanRenewal)
 		{
 			return;
 		}
@@ -811,7 +816,7 @@ public class FireWorkController : MonoBehaviour
 		}
 
 		UserSaveDataManager.Instance.UserSaveData.renewal += 1;
-
+		UserSaveDataManager.Save();
 		SceneManager.LoadScene("InGame");
 	}
 

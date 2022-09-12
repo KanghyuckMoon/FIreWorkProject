@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using System;
+using System.Reflection;
 
 public class TalkManager : MonoBehaviour
 {
@@ -53,6 +55,7 @@ public class TalkManager : MonoBehaviour
 		{
 			OpenAnimation();
 			UserSaveDataManager.Instance.UserSaveData.isViewCutScene[index] = true;
+			UserSaveDataManager.Save();
 			_currentTalkSO = _talkSOList[index];
 			EneableTalk(_currentTalkSO);
 		}
@@ -140,13 +143,21 @@ public class TalkManager : MonoBehaviour
 			_contentsText.text += _currentTalkSO.talkDatas[_currentIndex].content[_stringIndex];
 			_currentDelay = _originDelay;
 			_stringIndex += 1;
+
+			if (_currentTalkSO.talkDatas[_currentIndex]._functionName != "" && _currentTalkSO.talkDatas[_currentIndex]._functionName != null)
+			{
+				Type type = typeof(TalkMethod);
+				MethodInfo myClass_FunCallme = type.GetMethod(_currentTalkSO.talkDatas[_currentIndex]._functionName, BindingFlags.Static | BindingFlags.Public);
+				myClass_FunCallme.Invoke(null, new object[] { _currentTalkSO.talkDatas[_currentIndex]._functionParameters_1, _currentTalkSO.talkDatas[_currentIndex]._functionParameters_2 });
+			}
 		}
 		else if(Input.GetMouseButtonDown(0))
 		{
 
 			if (_currentIndex == _currentTalkSO.talkDatas.Count - 1)
 			{
-				if(_currentTalkSO.talkDatas[_currentIndex]._optionDatas.Count > 0)
+
+				if (_currentTalkSO.talkDatas[_currentIndex]._optionDatas.Count > 0)
 				{
 					if(!_isOptionActive)
 					{
@@ -161,15 +172,14 @@ public class TalkManager : MonoBehaviour
 			}
 			else
 			{
+				
 				_contentsText.text = "";
 				_stringIndex = 0;
 				_currentIndex += 1;
 				_currentDelay = _originDelay;
 				SetNameText();
 				SetCharacterImage();
-
 			}
-
 		}
 	}
 
