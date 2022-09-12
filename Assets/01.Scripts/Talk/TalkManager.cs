@@ -55,6 +55,7 @@ public class TalkManager : MonoBehaviour
 		{
 			OpenAnimation();
 			UserSaveDataManager.Instance.UserSaveData.isViewCutScene[index] = true;
+			UserSaveDataManager.Save();
 			_currentTalkSO = _talkSOList[index];
 			EneableTalk(_currentTalkSO);
 		}

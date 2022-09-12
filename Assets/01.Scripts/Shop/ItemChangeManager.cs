@@ -39,15 +39,23 @@ public class ItemChangeManager : MonoBehaviour
 				switch (_currentSettingMode)
 				{
 					case CurrentSettingMode.Further1:
+						UserSaveDataManager.Instance.UserSaveData.further1ColorLight = _intensity;
+						UserSaveDataManager.Instance.UserSaveData.further1ColorItemCode = itemData.itemCode;
 						FireWorkController.ChangeFurtherColor1(IntensityChangeGradient(itemData.gradient_1), IntensityChangeGradient(itemData.gradient_2), IntensityChangeGradient(itemData.gradient_3));
 						break;
 					case CurrentSettingMode.Further2:
+						UserSaveDataManager.Instance.UserSaveData.further2ColorLight = _intensity;
+						UserSaveDataManager.Instance.UserSaveData.further2ColorItemCode = itemData.itemCode;
 						FireWorkController.ChangeFurtherColor2(IntensityChangeGradient(itemData.gradient_1), IntensityChangeGradient(itemData.gradient_2), IntensityChangeGradient(itemData.gradient_3));
 						break;
 					case CurrentSettingMode.Further3:
+						UserSaveDataManager.Instance.UserSaveData.further3ColorLight = _intensity;
+						UserSaveDataManager.Instance.UserSaveData.further3ColorItemCode = itemData.itemCode;
 						FireWorkController.ChangeFurtherColor3(IntensityChangeGradient(itemData.gradient_1), IntensityChangeGradient(itemData.gradient_2), IntensityChangeGradient(itemData.gradient_3));
 						break;
 					case CurrentSettingMode.Further4:
+						UserSaveDataManager.Instance.UserSaveData.further4ColorLight = _intensity;
+						UserSaveDataManager.Instance.UserSaveData.further4ColorItemCode = itemData.itemCode;
 						FireWorkController.ChangeFurtherColor4(IntensityChangeGradient(itemData.gradient_1), IntensityChangeGradient(itemData.gradient_2), IntensityChangeGradient(itemData.gradient_3));
 						break;
 				}
@@ -56,15 +64,19 @@ public class ItemChangeManager : MonoBehaviour
 				switch (_currentSettingMode)
 				{
 					case CurrentSettingMode.Further1:
+						UserSaveDataManager.Instance.UserSaveData.further1TextureItemCode = itemData.itemCode;
 						FireWorkController.ChangeFurtherTexture1(itemData.texture2D);
 						break;
 					case CurrentSettingMode.Further2:
+						UserSaveDataManager.Instance.UserSaveData.further2TextureItemCode = itemData.itemCode;
 						FireWorkController.ChangeFurtherTexture2(itemData.texture2D);
 						break;
 					case CurrentSettingMode.Further3:
+						UserSaveDataManager.Instance.UserSaveData.further3TextureItemCode = itemData.itemCode;
 						FireWorkController.ChangeFurtherTexture3(itemData.texture2D);
 						break;
 					case CurrentSettingMode.Further4:
+						UserSaveDataManager.Instance.UserSaveData.further4TextureItemCode = itemData.itemCode;
 						FireWorkController.ChangeFurtherTexture4(itemData.texture2D);
 						break;
 				}
@@ -99,15 +111,19 @@ public class ItemChangeManager : MonoBehaviour
 		switch (_currentSettingMode)
 		{
 			case CurrentSettingMode.Further1:
+				UserSaveDataManager.Instance.UserSaveData.further1Size = value;
 				FireWorkController.ChangeSizeFurther1(value);
 				break;
 			case CurrentSettingMode.Further2:
+				UserSaveDataManager.Instance.UserSaveData.further2Size = value;
 				FireWorkController.ChangeSizeFurther2(value);
 				break;
 			case CurrentSettingMode.Further3:
+				UserSaveDataManager.Instance.UserSaveData.further3Size = value;
 				FireWorkController.ChangeSizeFurther3(value);
 				break;
 			case CurrentSettingMode.Further4:
+				UserSaveDataManager.Instance.UserSaveData.further4Size = value;
 				FireWorkController.ChangeSizeFurther4(value);
 				break;
 		}

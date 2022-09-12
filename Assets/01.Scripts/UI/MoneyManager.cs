@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements; 
+using UnityEngine.UIElements;
 
 public class MoneyManager : MonoBehaviour
 {
@@ -10,12 +10,31 @@ public class MoneyManager : MonoBehaviour
     private Label _moneyLabel; // µ∑ ¿Á»≠ «•Ω√ 
 
     private VisualElement _rootElement;
-    private UIDocument _moneyUIDoc; 
+    private UIDocument _moneyUIDoc;
 
-    public void Start()
+    public UIDocument MoneyUIDoc
     {
-        _moneyUIDoc = GetComponent<UIDocument>();
-        _rootElement = _moneyUIDoc.rootVisualElement;
+        get
+        {
+            if(_moneyUIDoc == null)
+            {
+                _moneyUIDoc = GetComponent<UIDocument>(); 
+            }
+            return _moneyUIDoc;
+        }
+    }
+
+    public VisualElement RootElement
+    {
+        get
+        {
+            _rootElement ??= MoneyUIDoc.rootVisualElement; 
+            return _rootElement; ; 
+        }  
+    }
+    public void Awake()
+    {
+        _rootElement = MoneyUIDoc.rootVisualElement;
 
         _happyMoneyLabel = _rootElement.Q<Label>("happyMoney-label");
         _moneyLabel = _rootElement.Q<Label>("money-label");

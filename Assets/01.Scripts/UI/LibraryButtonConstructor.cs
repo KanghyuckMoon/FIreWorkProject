@@ -30,7 +30,7 @@ public class LibraryButtonConstructor
         // 업그레이드 버튼 캐싱 후 리스트에 넣기 
         foreach (UpgradeButtonType buttonType in _buttonTypeList)
         {
-            if (buttonType == UpgradeButtonType.CountUp || buttonType == UpgradeButtonType.RateUp) continue;
+            if (buttonType == UpgradeButtonType.CountUp || buttonType == UpgradeButtonType.RateUp || buttonType == UpgradeButtonType.Renewal) continue;
 
             upgradeButtonInfo = CheckElement(buttonType); // 업그레이드 버튼 정보 찾기 
 

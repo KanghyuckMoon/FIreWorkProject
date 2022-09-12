@@ -31,10 +31,12 @@ public class UIButtonManager : MonoBehaviour
     private UIDocument _mainUIDoc; // 메인 UIDocument 
     private VisualElement _rootElement; // 최상위 오브젝트 
     private VisualElement _gameScreen; // mainUI 화면 
+    private VisualElement _moneyElement; // 우측 상단 돈 텍스트 
     private VisualElement _bottomPanel; // 하단 UI 
 
     // 버튼
     private Button _closeOpenButton; // 업그레이드UI 열고 닫기 버튼 
+    private Button _achievementButton; // 업적 버튼 
 
     // 하단 UI버튼들 
 
@@ -72,10 +74,12 @@ public class UIButtonManager : MonoBehaviour
         {
             // 게임 화면 UI 활성화 비활성화 
             _gameScreen.style.display = _gameScreen.style.display == DisplayStyle.Flex ? DisplayStyle.None : DisplayStyle.Flex;
+            _moneyElement.style.display = _moneyElement.style.display == DisplayStyle.Flex ? DisplayStyle.None : DisplayStyle.Flex; 
             //_gameScreen.visible = _gameScreen.visible == false ? true : false; 
         }
         _libraryPanelComponent.UpdateSometing();
-        upgradeButtonConstructor.UpdateSomething(); 
+        upgradeButtonConstructor.UpdateSomething();
+        _shopPanelComponent.UpdateSometing(); 
     }
 
     /// <summary>
@@ -92,13 +96,16 @@ public class UIButtonManager : MonoBehaviour
         _soundSetting = FindObjectOfType<SoundSetting>();
         _exit = FindObjectOfType<Exit>();
 
+        _moneyElement = FindObjectOfType<MoneyManager>().RootElement; 
+
         _mainUIDoc = GetComponent<UIDocument>();
         _rootElement = _mainUIDoc.rootVisualElement;
         _gameScreen = _rootElement.Q<VisualElement>("game_screen");
         _bottomPanel = _rootElement.Q<VisualElement>("bottom-panel");
+        
         // 버튼 캐싱 
         _closeOpenButton = _rootElement.Q<Button>("close-open-button");
-
+        _achievementButton = _rootElement.Q<Button>("achievement-button"); 
 
         //// 라벨 캐싱 
 
@@ -122,6 +129,7 @@ public class UIButtonManager : MonoBehaviour
             OpenCloseUI();
             Debug.Log("닫거나 열어라");
         };
+        _achievementButton.clicked += () => _achievementViewManager.OpenAchievementView(); 
     }
 
 

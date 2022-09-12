@@ -38,12 +38,12 @@ public class UserSaveDataManager : Singleton<UserSaveDataManager>
 	/// </summary>
 	public static void Save()
 	{
-		//if (!File.Exists(_dataPath + _SaveFileName))
-		//{
-		//	Directory.CreateDirectory(_dataPath);
-		//}
-		//string jsonData = JsonUtility.ToJson(Instance.UserSaveData);
-		//File.WriteAllText(_dataPath + _SaveFileName, jsonData);
+		if (!File.Exists(_dataPath + _SaveFileName))
+		{
+			Directory.CreateDirectory(_dataPath);
+		}
+		string jsonData = JsonUtility.ToJson(Instance.UserSaveData);
+		File.WriteAllText(_dataPath + _SaveFileName, jsonData);
 	}
 
 	/// <summary>

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-using System.Reflection; 
+using System.Reflection;
 
 /// <summary>
 /// 업그레이버튼 중간 관리자(생성 및 관리 ) 
@@ -19,6 +19,7 @@ public class UpgradeButtonConstructor
     private bool _isOpenFurther2 = false;
     private bool _isOpenFurther3 = false;
     private bool _isOpenFurther4 = false;
+    private bool _isOpenRenewal = false;
 
     /// <summary>
     /// 
@@ -47,8 +48,8 @@ public class UpgradeButtonConstructor
             Button upgradeButton = upgradeButtonParent.Q<Button>(buttonName); // 버튼 
             Label costLabel = upgradeButton.Q<Label>(costName); // 가격 
 
-            UpgradeButtonElement buttonElement = new UpgradeButtonElement(upgradeButton, lockElement, upgradeButtonInfo.isOpened, buttonType, 
-                                                                                                                            _fireWorkController,costLabel, upgradeButtonInfo.costPropertyName); // 생성 
+            UpgradeButtonElement buttonElement = new UpgradeButtonElement(upgradeButton, lockElement, upgradeButtonInfo.isOpened, buttonType,
+                                                                                                                            _fireWorkController, costLabel, upgradeButtonInfo.costPropertyName); // 생성 
 
             upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
 
@@ -56,7 +57,6 @@ public class UpgradeButtonConstructor
             _buttonElementList.Add(buttonElement);
         }
     }
-
 
     /// <summary>
     /// 버튼마다 이름, 잠금여부, 클릭이벤트 반환  
@@ -80,6 +80,12 @@ public class UpgradeButtonConstructor
                 upgradeButtonInfo.costPropertyName = "RateCost";
                 upgradeButtonInfo.clickEvent = () => _fireWorkController.UpdateRate(0.5f);
                 break;
+            case UpgradeButtonType.Renewal:
+                upgradeButtonInfo.name = "renewal-button";
+                upgradeButtonInfo.isOpened = _fireWorkController.IsCanRenewal;
+                upgradeButtonInfo.costPropertyName = null;
+                upgradeButtonInfo.clickEvent = () => _fireWorkController.Renewal();
+                break;
             case UpgradeButtonType.Further1:
                 upgradeButtonInfo.name = "further1-upgrade-button";
                 upgradeButtonInfo.costPropertyName = "Further1Cost";
@@ -88,7 +94,7 @@ public class UpgradeButtonConstructor
                 break;
             case UpgradeButtonType.Further2:
                 upgradeButtonInfo.name = "further2-upgrade-button";
-                upgradeButtonInfo.costPropertyName = "Further2Cost"; 
+                upgradeButtonInfo.costPropertyName = "Further2Cost";
                 upgradeButtonInfo.isOpened = _fireWorkController.IsCanFurther2;
                 upgradeButtonInfo.clickEvent = () => _fireWorkController.UpdateFurtherCount2(1);
                 break;
@@ -100,7 +106,7 @@ public class UpgradeButtonConstructor
                 break;
             case UpgradeButtonType.Further4:
                 upgradeButtonInfo.name = "further4-upgrade-button";
-                upgradeButtonInfo.costPropertyName = "Further4Cost"; 
+                upgradeButtonInfo.costPropertyName = "Further4Cost";
                 upgradeButtonInfo.isOpened = _fireWorkController.IsCanFurther4;
                 upgradeButtonInfo.clickEvent = () => _fireWorkController.UpdateFurtherCount4(1);
                 break;
@@ -120,20 +126,26 @@ public class UpgradeButtonConstructor
 
     public void UpdateSomething()
     {
-        if (_fireWorkController.IsCanFurther2 == true && _isOpenFurther2 == false)
+        if (_isOpenFurther2 == false && _fireWorkController.IsCanFurther2 == true )
         {
             LockOrUnlockButton(UpgradeButtonType.Further2, true);
             _isOpenFurther2 = true;
         }
-        if (_fireWorkController.IsCanFurther3 == true && _isOpenFurther3 == false)
+        if (_isOpenFurther3 == false && _fireWorkController.IsCanFurther3 == true)
         {
             LockOrUnlockButton(UpgradeButtonType.Further3, true);
             _isOpenFurther3 = true;
         }
-        if (_fireWorkController.IsCanFurther4 == true && _isOpenFurther4 == false)
+        if (_isOpenFurther4 == false && _fireWorkController.IsCanFurther4 == true)
         {
             LockOrUnlockButton(UpgradeButtonType.Further4, true);
             _isOpenFurther4 = true;
+        }
+        if (_isOpenRenewal == false && _fireWorkController.IsCanRenewal == true)
+        {
+            LockOrUnlockButton(UpgradeButtonType.Renewal, true);
+            _isOpenRenewal = true;
+
         }
     }
     /// <summary>
@@ -141,9 +153,9 @@ public class UpgradeButtonConstructor
     /// </summary>
     public void UpdateCostText()
     {
-        foreach(var buttonElement in _buttonElementList)
+        foreach (var buttonElement in _buttonElementList)
         {
-            buttonElement.SetCostText(); 
+            buttonElement.SetCostText();
         }
     }
 
@@ -172,7 +184,7 @@ public struct UpgradeButtonInfo
     public bool isOpened;  // 잠금 여부 
     public string costPropertyName; // 가격 속성 이름 
     public Action clickEvent;
-     
+
 }
 /// <summary>
 /// 업그레이드 버튼 (SO로 관리할 수도..) 
@@ -209,12 +221,10 @@ public class UpgradeButtonElement
     /// <param name="loackElement">잠금 아이콘이미지</param>
     /// <param name="isLocked">잠금 여부</param>
     /// <param name="code">식별자</param>
-    public UpgradeButtonElement(Button button, VisualElement loackElement,  bool isLocked, UpgradeButtonType buttonType, FireWorkController fireworkController = null, Label costLabel = null,string propertyName = null )
+    public UpgradeButtonElement(Button button, VisualElement loackElement, bool isLocked, UpgradeButtonType buttonType, FireWorkController fireworkController = null, Label costLabel = null, string propertyName = null)
     {
-
-
         this._button = button;
-        this._costLabel = costLabel; 
+        this._costLabel = costLabel;
         this._lockElement = loackElement;
         this._isOpened = isLocked;
         this._buttonType = buttonType;
@@ -236,7 +246,7 @@ public class UpgradeButtonElement
     {
         _cost = (int)_propertyInfo.GetValue(_fireWorkController);
         Debug.Log(_cost);
-        _costLabel.text = _cost.ToString(); 
+        _costLabel.text = _cost.ToString();
     }
 
     public void LockButton()
@@ -259,6 +269,7 @@ public enum UpgradeButtonType
 {
     CountUp,
     RateUp,
+    Renewal,
     Further1,
     Further2,
     Further3,
