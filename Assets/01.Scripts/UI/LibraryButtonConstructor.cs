@@ -66,16 +66,6 @@ public class LibraryButtonConstructor
                 upgradeButtonInfo.isOpened = _fireWorkController.IsCanFurther2;
                 upgradeButtonInfo.clickEvent = () => _itemChangeManager.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further2);
                 break;
-            case UpgradeButtonType.Further3:
-                upgradeButtonInfo.name = "further3-setting-button";
-                upgradeButtonInfo.isOpened = _fireWorkController.IsCanFurther3;
-                upgradeButtonInfo.clickEvent = () => _itemChangeManager.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further3);
-                break;
-            case UpgradeButtonType.Further4:
-                upgradeButtonInfo.name = "further4-setting-button";
-                upgradeButtonInfo.isOpened = _fireWorkController.IsCanFurther4;
-                upgradeButtonInfo.clickEvent = () => _itemChangeManager.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further4);
-                break;
         }
         return upgradeButtonInfo;
     }
@@ -87,18 +77,6 @@ public class LibraryButtonConstructor
             LockOrUnlockButton(UpgradeButtonType.Further2, true);
             _isOpenFurther2 = true; 
         }
-        if (_fireWorkController.IsCanFurther3 == true && _isOpenFurther3 == false)
-        {
-            LockOrUnlockButton(UpgradeButtonType.Further3, true);
-            _isOpenFurther3 = true;
-        }
-        if (_fireWorkController.IsCanFurther4 == true && _isOpenFurther4 == false)
-        {
-            LockOrUnlockButton(UpgradeButtonType.Further4, true);
-            _isOpenFurther4 = true; 
-        }
-
-
     }
     private void InitEnumList()
     {

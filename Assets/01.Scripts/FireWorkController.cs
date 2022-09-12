@@ -20,8 +20,6 @@ public class FireWorkController : MonoBehaviour
 	public int Count => _count;
 	public int Further1 => _further1;
 	public int Further2 => _further2;
-	public int Further3 => _further3;
-	public int Further4 => _further4;
 	public bool IsCanFurther1
 	{
 		get
@@ -34,20 +32,6 @@ public class FireWorkController : MonoBehaviour
 		get
 		{
 			return UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(30);
-		}
-	}
-	public bool IsCanFurther3
-	{
-		get
-		{
-			return UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(31);
-		}
-	}
-	public bool IsCanFurther4
-	{
-		get
-		{
-			return UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(32);
 		}
 	}
 	public bool IsCanRenewal
@@ -95,20 +79,6 @@ public class FireWorkController : MonoBehaviour
 			return _further2 * 3;
 		}
 	}
-	public int Further3Cost
-	{
-		get
-		{
-			return _further3 * 5;
-		}
-	}
-	public int Further4Cost
-	{
-		get
-		{
-			return _further4 * 7;
-		}
-	}
 
 
 	[SerializeField] private VisualEffect _visualEffect = null;
@@ -116,32 +86,20 @@ public class FireWorkController : MonoBehaviour
 	[SerializeField] private int _count = 1;
 	[SerializeField] private int _further1 = 1;
 	[SerializeField] private int _further2 = 0;
-	[SerializeField] private int _further3 = 0;
-	[SerializeField] private int _further4 = 0;
 	[SerializeField] private Gradient _furtherColor1_1;
 	[SerializeField] private Gradient _furtherColor1_2;
 	[SerializeField] private Gradient _furtherColor1_3;
 	[SerializeField] private Gradient _furtherColor2_1;
 	[SerializeField] private Gradient _furtherColor2_2;
 	[SerializeField] private Gradient _furtherColor2_3;
-	[SerializeField] private Gradient _furtherColor3_1;
-	[SerializeField] private Gradient _furtherColor3_2;
-	[SerializeField] private Gradient _furtherColor3_3;
-	[SerializeField] private Gradient _furtherColor4_1;
-	[SerializeField] private Gradient _furtherColor4_2;
-	[SerializeField] private Gradient _furtherColor4_3;
 	[SerializeField] private Texture2D _furtherTexture1;
 	[SerializeField] private Texture2D _furtherTexture2;
-	[SerializeField] private Texture2D _furtherTexture3;
-	[SerializeField] private Texture2D _furtherTexture4;
 	[SerializeField] private ItemDataSO _itemDataSO;
 	[SerializeField] private HappyMoneyManager _happyMoneyManager;
 	private UpgradeButtonConstructor _upgradeButtonConstructor; //
 
 	private List<float> _explosiontime1 = new List<float>();
 	private List<float> _explosiontime2 = new List<float>();
-	private List<float> _explosiontime3 = new List<float>();
-	private List<float> _explosiontime4 = new List<float>();
 	public bool corotin;
 	public bool saveDatasetting;
 	private bool _isStop;
@@ -196,12 +154,8 @@ public class FireWorkController : MonoBehaviour
 		//1차 설정
 		var itemData1 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further1ColorItemCode);
 		var itemData2 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further2ColorItemCode);
-		var itemData3 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further3ColorItemCode);
-		var itemData4 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further4ColorItemCode);
 		var itemDataTexture1 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further1TextureItemCode);
 		var itemDataTexture2 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further2TextureItemCode);
-		var itemDataTexture3 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further3TextureItemCode);
-		var itemDataTexture4 = _itemDataSO.GetItemData(UserSaveDataManager.Instance.UserSaveData.further4TextureItemCode);
 
 		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further1ColorLight);
 		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further1);
@@ -214,18 +168,6 @@ public class FireWorkController : MonoBehaviour
 		itemChanger.ChangeFirework(itemData2);
 		itemChanger.ChangeFirework(itemDataTexture2);
 		itemChanger.ChangeSize(UserSaveDataManager.Instance.UserSaveData.further2Size);
-
-		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further3ColorLight);
-		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further3);
-		itemChanger.ChangeFirework(itemData3);
-		itemChanger.ChangeFirework(itemDataTexture3);
-		itemChanger.ChangeSize(UserSaveDataManager.Instance.UserSaveData.further3Size);
-
-		itemChanger.ChangeItensity(UserSaveDataManager.Instance.UserSaveData.further4ColorLight);
-		itemChanger.ChangeFurther(ItemChangeManager.CurrentSettingMode.Further4);
-		itemChanger.ChangeFirework(itemData4);
-		itemChanger.ChangeFirework(itemDataTexture4);
-		itemChanger.ChangeSize(UserSaveDataManager.Instance.UserSaveData.further4Size);
 
 	}
 
@@ -251,8 +193,6 @@ public class FireWorkController : MonoBehaviour
 				{
 					float lifeTime = Random.Range(3f, 3.5f);
 					float further1lifeTime = 0f;
-					float further2lifeTime = 0f;
-					float further3lifeTime = 0f;
 					_visualEffect.SetFloat("lifeTime", lifeTime);
 					_explosiontime1.Add(lifeTime);
 					if (IsCanFurther2)
@@ -261,19 +201,6 @@ public class FireWorkController : MonoBehaviour
 						_visualEffect.SetFloat("FurtherLifeTime1", further1lifeTime);
 						_explosiontime2.Add(further1lifeTime + lifeTime);
 					}
-					if (IsCanFurther3)
-					{
-						further2lifeTime = Random.Range(0.8f, 1f);
-						_visualEffect.SetFloat("FurtherLifeTime2", further2lifeTime);
-						_explosiontime3.Add(further2lifeTime + further1lifeTime + lifeTime);
-					}
-					if (IsCanFurther4)
-					{
-						further3lifeTime = Random.Range(0.8f, 1f);
-						_visualEffect.SetFloat("FurtherLifeTime3", further3lifeTime);
-						_explosiontime4.Add(further3lifeTime + further2lifeTime + further1lifeTime + lifeTime);
-					}
-
 					_visualEffect.SendEvent("Play");
 
 
@@ -289,8 +216,6 @@ public class FireWorkController : MonoBehaviour
 	{
 		TimeCheckList(_explosiontime1, 1);
 		TimeCheckList(_explosiontime2, 2);
-		TimeCheckList(_explosiontime3, 3);
-		TimeCheckList(_explosiontime4, 4);
 	}
 
 	private void TimeCheckList(List<float> explosionList, int further = 1)
@@ -308,12 +233,6 @@ public class FireWorkController : MonoBehaviour
 						break;
 					case 2:
 						HappyMoneyManager.AddHappy(_further2);
-						break;
-					case 3:
-						HappyMoneyManager.AddHappy(_further3);
-						break;
-					case 4:
-						HappyMoneyManager.AddHappy(_further4);
 						break;
 				}
 				explosionList.RemoveAt(i--);
@@ -346,22 +265,6 @@ public class FireWorkController : MonoBehaviour
 	}
 
 	/// <summary>
-	/// 추가폭발3 설정
-	/// </summary>
-	public void UpdateFurtherCount3()
-	{
-		VFXSetInt(_visualEffect, "FurtherCount3", _further3);
-	}
-
-	/// <summary>
-	/// 추가폭발4 설정
-	/// </summary>
-	public void UpdateFurtherCount4()
-	{
-		VFXSetInt(_visualEffect, "FurtherCount4", _further4);
-	}
-
-	/// <summary>
 	/// 추가폭발1 색상 지정
 	/// </summary>
 	public void UpdateFurtherColor1()
@@ -382,26 +285,6 @@ public class FireWorkController : MonoBehaviour
 	}
 
 	/// <summary>
-	/// 추가폭발3 색상 지정
-	/// </summary>
-	public void UpdateFurtherColor3()
-	{
-		VFXSetGradient(_visualEffect, "FurtherColor3_1", _furtherColor3_1);
-		VFXSetGradient(_visualEffect, "FurtherColor3_2", _furtherColor3_2);
-		VFXSetGradient(_visualEffect, "FurtherColor3_3", _furtherColor3_3);
-	}
-
-	/// <summary>
-	/// 추가폭발4 색상 지정
-	/// </summary>
-	public void UpdateFurtherColor4()
-	{
-		VFXSetGradient(_visualEffect, "FurtherColor4_1", _furtherColor4_1);
-		VFXSetGradient(_visualEffect, "FurtherColor4_2", _furtherColor4_2);
-		VFXSetGradient(_visualEffect, "FurtherColor4_3", _furtherColor4_3);
-	}
-
-	/// <summary>
 	/// 추가폭발1 색상 지정
 	/// </summary>
 	public void UpdateFurtherTexture1()
@@ -415,22 +298,6 @@ public class FireWorkController : MonoBehaviour
 	public void UpdateFurtherTexture2()
 	{
 		VFXSetTexture(_visualEffect, "FurtherTexture2", _furtherTexture2);
-	}
-
-	/// <summary>
-	/// 추가폭발3 색상 지정
-	/// </summary>
-	public void UpdateFurtherTexture3()
-	{
-		VFXSetTexture(_visualEffect, "FurtherTexture3", _furtherTexture3);
-	}
-
-	/// <summary>
-	/// 추가폭발4 색상 지정
-	/// </summary>
-	public void UpdateFurtherTexture4()
-	{
-		VFXSetTexture(_visualEffect, "FurtherTexture4", _furtherTexture4);
 	}
 
 	/// <summary>
@@ -502,50 +369,6 @@ public class FireWorkController : MonoBehaviour
 	}
 
 	/// <summary>
-	/// 추가폭발3 설정
-	/// </summary>
-	public void UpdateFurtherCount3(int add)
-	{
-		if (_further3 >= 80)
-		{
-			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
-			return;
-		}
-
-		if (!HappyMoneyManager.Instance.RemoveHappy(Further3Cost))
-		{
-			return;
-		}
-
-		_further3 += add;
-		UserSaveDataManager.Save();
-		UpdateFurtherCount3();
-		_upgradeButtonConstructor.UpdateCostText();
-	}
-
-	/// <summary>
-	/// 추가폭발4 설정
-	/// </summary>
-	public void UpdateFurtherCount4(int add)
-	{
-		if (_further4 >= 80)
-		{
-			PopUpManager.SetPopUp("더 이상 강화할 수 없습니다");
-			return;
-		}
-
-		if (!HappyMoneyManager.Instance.RemoveHappy(Further4Cost))
-		{
-			return;
-		}
-
-		_further4 += add;
-		UserSaveDataManager.Save();
-		UpdateFurtherCount4();
-		_upgradeButtonConstructor.UpdateCostText();
-	}
-
-	/// <summary>
 	/// 갯수 설정
 	/// </summary>
 	public void UpdateCount(int add)
@@ -586,28 +409,6 @@ public class FireWorkController : MonoBehaviour
 		_furtherColor2_3 = gradient3;
 		UpdateFurtherColor2();
 	}
-	/// <summary>
-	/// 추가폭발 색상 3변경
-	/// </summary>
-	/// <param name="gradient"></param>
-	public void ChangeFurtherColor3(Gradient gradient1, Gradient gradient2, Gradient gradient3)
-	{
-		_furtherColor3_1 = gradient1;
-		_furtherColor3_2 = gradient2;
-		_furtherColor3_3 = gradient3;
-		UpdateFurtherColor3();
-	}
-	/// <summary>
-	/// 추가폭발 색상 4변경
-	/// </summary>
-	/// <param name="gradient"></param>
-	public void ChangeFurtherColor4(Gradient gradient1, Gradient gradient2, Gradient gradient3)
-	{
-		_furtherColor4_1 = gradient1;
-		_furtherColor4_2 = gradient2;
-		_furtherColor4_3 = gradient3;
-		UpdateFurtherColor4();
-	}
 
 	/// <summary>
 	/// 추가폭발 색상 1변경
@@ -627,24 +428,6 @@ public class FireWorkController : MonoBehaviour
 		_furtherTexture2 = texture;
 		UpdateFurtherTexture2();
 	}
-	/// <summary>
-	/// 추가폭발 색상 3변경
-	/// </summary>
-	/// <param name="gradient"></param>
-	public void ChangeFurtherTexture3(Texture2D texture)
-	{
-		_furtherTexture3 = texture;
-		UpdateFurtherTexture3();
-	}
-	/// <summary>
-	/// 추가폭발 색상 4변경
-	/// </summary>
-	/// <param name="gradient"></param>
-	public void ChangeFurtherTexture4(Texture2D texture)
-	{
-		_furtherTexture4 = texture;
-		UpdateFurtherTexture4();
-	}
 
 	[ContextMenu("RefreshUpdateFurtherColor")]
 	/// <summary>
@@ -654,8 +437,6 @@ public class FireWorkController : MonoBehaviour
 	{
 		UpdateFurtherColor1();
 		UpdateFurtherColor2();
-		UpdateFurtherColor3();
-		UpdateFurtherColor4();
 	}
 	/// <summary>
 	/// 현재 텍스쳐 새로고침
@@ -664,8 +445,6 @@ public class FireWorkController : MonoBehaviour
 	{
 		UpdateFurtherTexture1();
 		UpdateFurtherTexture2();
-		UpdateFurtherTexture3();
-		UpdateFurtherTexture4();
 	}
 
 	/// <summary>
@@ -712,14 +491,12 @@ public class FireWorkController : MonoBehaviour
 		}
 
 		HappyMoneyManager.Instance.Happy = 0;
-		HappyMoneyManager.Instance.AddMoney((int)Mathf.Abs(_count - _rate / 2) * (_further1 + 1) * (_further2 + 1) * (_further3 + 1) * (_further4 + 1 ));
+		HappyMoneyManager.Instance.AddMoney((int)Mathf.Abs(_count - _rate / 2) * (_further1 + 1) * (_further2 + 1));
 
 		_count = 1;
 		_rate = 10f;
 		_further1 = 1;
 		_further2 = 0;
-		_further3 = 0;
-		_further4 = 0;
 
 		bool isFurther2 = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(30);
 		bool isFurther3 = UserSaveDataManager.Instance.UserSaveData.haveAchievement.Contains(31);

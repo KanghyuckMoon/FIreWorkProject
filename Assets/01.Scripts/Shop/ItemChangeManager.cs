@@ -8,8 +8,6 @@ public class ItemChangeManager : MonoBehaviour
 	{
 		Further1,
 		Further2,
-		Further3,
-		Further4,
 	}
 
 	public FireWorkController FireWorkController
@@ -48,16 +46,6 @@ public class ItemChangeManager : MonoBehaviour
 						UserSaveDataManager.Instance.UserSaveData.further2ColorItemCode = itemData.itemCode;
 						FireWorkController.ChangeFurtherColor2(IntensityChangeGradient(itemData.gradient_1), IntensityChangeGradient(itemData.gradient_2), IntensityChangeGradient(itemData.gradient_3));
 						break;
-					case CurrentSettingMode.Further3:
-						UserSaveDataManager.Instance.UserSaveData.further3ColorLight = _intensity;
-						UserSaveDataManager.Instance.UserSaveData.further3ColorItemCode = itemData.itemCode;
-						FireWorkController.ChangeFurtherColor3(IntensityChangeGradient(itemData.gradient_1), IntensityChangeGradient(itemData.gradient_2), IntensityChangeGradient(itemData.gradient_3));
-						break;
-					case CurrentSettingMode.Further4:
-						UserSaveDataManager.Instance.UserSaveData.further4ColorLight = _intensity;
-						UserSaveDataManager.Instance.UserSaveData.further4ColorItemCode = itemData.itemCode;
-						FireWorkController.ChangeFurtherColor4(IntensityChangeGradient(itemData.gradient_1), IntensityChangeGradient(itemData.gradient_2), IntensityChangeGradient(itemData.gradient_3));
-						break;
 				}
 				break;
 			case EItem.Texture:
@@ -70,14 +58,6 @@ public class ItemChangeManager : MonoBehaviour
 					case CurrentSettingMode.Further2:
 						UserSaveDataManager.Instance.UserSaveData.further2TextureItemCode = itemData.itemCode;
 						FireWorkController.ChangeFurtherTexture2(itemData.texture2D);
-						break;
-					case CurrentSettingMode.Further3:
-						UserSaveDataManager.Instance.UserSaveData.further3TextureItemCode = itemData.itemCode;
-						FireWorkController.ChangeFurtherTexture3(itemData.texture2D);
-						break;
-					case CurrentSettingMode.Further4:
-						UserSaveDataManager.Instance.UserSaveData.further4TextureItemCode = itemData.itemCode;
-						FireWorkController.ChangeFurtherTexture4(itemData.texture2D);
 						break;
 				}
 				break;
@@ -117,14 +97,6 @@ public class ItemChangeManager : MonoBehaviour
 			case CurrentSettingMode.Further2:
 				UserSaveDataManager.Instance.UserSaveData.further2Size = value;
 				FireWorkController.ChangeSizeFurther2(value);
-				break;
-			case CurrentSettingMode.Further3:
-				UserSaveDataManager.Instance.UserSaveData.further3Size = value;
-				FireWorkController.ChangeSizeFurther3(value);
-				break;
-			case CurrentSettingMode.Further4:
-				UserSaveDataManager.Instance.UserSaveData.further4Size = value;
-				FireWorkController.ChangeSizeFurther4(value);
 				break;
 		}
 	}
