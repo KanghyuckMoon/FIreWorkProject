@@ -111,18 +111,6 @@ public class UpgradeButtonConstructor : MonoBehaviour
                 upgradeButtonInfo.isOpened = _fireWorkController.IsCanFurther2;
                 upgradeButtonInfo.clickEvent = () => _fireWorkController.UpdateFurtherCount2(1);
                 break;
-            case UpgradeButtonType.Further3:
-                upgradeButtonInfo.name = "further3-upgrade-button";
-                upgradeButtonInfo.costPropertyName = "Further3Cost";
-                upgradeButtonInfo.isOpened = _fireWorkController.IsCanFurther3;
-                upgradeButtonInfo.clickEvent = () => _fireWorkController.UpdateFurtherCount3(1);
-                break;
-            case UpgradeButtonType.Further4:
-                upgradeButtonInfo.name = "further4-upgrade-button";
-                upgradeButtonInfo.costPropertyName = "Further4Cost";
-                upgradeButtonInfo.isOpened = _fireWorkController.IsCanFurther4;
-                upgradeButtonInfo.clickEvent = () => _fireWorkController.UpdateFurtherCount4(1);
-                break;
         }
         return upgradeButtonInfo;
     }
@@ -143,16 +131,6 @@ public class UpgradeButtonConstructor : MonoBehaviour
         {
             LockOrUnlockButton(UpgradeButtonType.Further2, true);
             _isOpenFurther2 = true;
-        }
-        if (_isOpenFurther3 == false && _fireWorkController.IsCanFurther3 == true)
-        {
-            LockOrUnlockButton(UpgradeButtonType.Further3, true);
-            _isOpenFurther3 = true;
-        }
-        if (_isOpenFurther4 == false && _fireWorkController.IsCanFurther4 == true)
-        {
-            LockOrUnlockButton(UpgradeButtonType.Further4, true);
-            _isOpenFurther4 = true;
         }
         if (_isOpenRenewal == false && _fireWorkController.IsCanRenewal == true)
         {

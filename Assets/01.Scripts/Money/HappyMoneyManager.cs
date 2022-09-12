@@ -87,8 +87,6 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 		int happy = 0;
 		happy += FireWorkController.Further1;
 		happy *= FireWorkController.Further2 > 0 ? FireWorkController.Further2 : 1;
-		happy *= FireWorkController.Further3 > 0 ? FireWorkController.Further3 : 1;
-		happy *= FireWorkController.Further4 > 0 ? FireWorkController.Further4 : 1;
 
 		AddHappy(happy);
 	}
