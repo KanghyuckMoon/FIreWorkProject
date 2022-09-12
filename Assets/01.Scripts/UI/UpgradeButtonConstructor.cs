@@ -9,17 +9,30 @@ using System.Reflection;
 /// 업그레이버튼 중간 관리자(생성 및 관리 ) 
 /// </summary>
 [Serializable]
-public class UpgradeButtonConstructor
+public class UpgradeButtonConstructor : MonoBehaviour
 {
+    private FireWorkController _fireWorkController;
+    private VisualElement _rootElement; 
+
     private List<UpgradeButtonElement> _buttonElementList = new List<UpgradeButtonElement>(); // 업그레이든 버튼 리스트
 
     private List<UpgradeButtonType> _buttonTypeList = new List<UpgradeButtonType>();  // 모든 버튼 타입이 담겨있는 리스트
-    private FireWorkController _fireWorkController;
 
     private bool _isOpenFurther2 = false;
     private bool _isOpenFurther3 = false;
     private bool _isOpenFurther4 = false;
     private bool _isOpenRenewal = false;
+
+
+    private void Awake()
+    {
+        
+    }
+
+    private void Start()
+    {
+        
+    }
 
     /// <summary>
     /// 
