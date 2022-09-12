@@ -83,9 +83,9 @@ public class LibraryPanelComponent : UIComponent
         _libraryButton.clicked += () => OpenClosePanel(_libraryPanel);
         _libraryBackButton.clicked += () => OpenClosePanel(_libraryPanel);
 
-        _intensitySlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeItensity(x.newValue));
-        _sizeSlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeSize(x.newValue));
-        _heightSlider.RegisterValueChangedCallback((x) => _fireWorkController.SetHeight(x.newValue)); 
+        //_intensitySlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeItensity(x.newValue));
+        //_sizeSlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeSize(x.newValue));
+        //_heightSlider.RegisterValueChangedCallback((x) => _fireWorkController.SetHeight(x.newValue)); 
 
         _sizeSlider.Q<Label>().style.color = Color.white;
         _intensitySlider.Q<Label>().style.color = Color.white;

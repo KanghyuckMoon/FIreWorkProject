@@ -37,12 +37,12 @@ public class ItemChangeManager : MonoBehaviour
 				switch (_currentSettingMode)
 				{
 					case CurrentSettingMode.Further1:
-						UserSaveDataManager.Instance.UserSaveData.further1ColorLight = _intensity;
+						UserSaveDataManager.Instance.UserSaveData.further1ColorLight = ChangeItensityIndex(_intensity);
 						UserSaveDataManager.Instance.UserSaveData.further1ColorItemCode = itemData.itemCode;
 						FireWorkController.ChangeFurtherColor1(IntensityChangeGradient(itemData.gradient_1), IntensityChangeGradient(itemData.gradient_2), IntensityChangeGradient(itemData.gradient_3));
 						break;
 					case CurrentSettingMode.Further2:
-						UserSaveDataManager.Instance.UserSaveData.further2ColorLight = _intensity;
+						UserSaveDataManager.Instance.UserSaveData.further2ColorLight = ChangeItensityIndex(_intensity);
 						UserSaveDataManager.Instance.UserSaveData.further2ColorItemCode = itemData.itemCode;
 						FireWorkController.ChangeFurtherColor2(IntensityChangeGradient(itemData.gradient_1), IntensityChangeGradient(itemData.gradient_2), IntensityChangeGradient(itemData.gradient_3));
 						break;
@@ -68,9 +68,36 @@ public class ItemChangeManager : MonoBehaviour
 	/// ∫“≤…≥Ó¿Ã¿« ∫˚ ºº±‚ ∫Ø∞Ê
 	/// </summary>
 	/// <param name="value"></param>
-	public void ChangeItensity(float value)
+	public void ChangeItensity(int index)
 	{
-		_intensity = value * 0.1f;
+		switch(index)
+		{
+			case 0:
+				_intensity = 3f;
+				break;
+			case 1:
+				_intensity = 5f;
+				break;
+			case 2:
+				_intensity = 8f;
+				break;
+		}
+	}
+
+	private int ChangeItensityIndex(float value)
+	{
+		if(value < 5f)
+		{
+			return 0;
+		}
+		else if (value < 8f)
+		{
+			return 1;
+		}
+		else
+		{
+			return 2;
+		}
 	}
 
 	/// <summary>
@@ -86,17 +113,39 @@ public class ItemChangeManager : MonoBehaviour
 	/// ∫“≤…≥Ó¿Ã¿« ≈©±‚ ∫Ø∞Ê
 	/// </summary>
 	/// <param name="value"></param>
-	public void ChangeSize(float value)
+	public void ChangeSize(int index)
 	{
 		switch (_currentSettingMode)
 		{
 			case CurrentSettingMode.Further1:
-				UserSaveDataManager.Instance.UserSaveData.further1Size = value;
-				FireWorkController.ChangeSizeFurther1(value);
+				UserSaveDataManager.Instance.UserSaveData.further1Size = index;
+				switch (index)
+				{
+					case 0:
+						FireWorkController.ChangeSizeFurther1(30);
+						break;
+					case 1:
+						FireWorkController.ChangeSizeFurther1(60);
+						break;
+					case 2:
+						FireWorkController.ChangeSizeFurther1(90);
+						break;
+				}
 				break;
 			case CurrentSettingMode.Further2:
-				UserSaveDataManager.Instance.UserSaveData.further2Size = value;
-				FireWorkController.ChangeSizeFurther2(value);
+				UserSaveDataManager.Instance.UserSaveData.further2Size = index;
+				switch (index)
+				{
+					case 0:
+						FireWorkController.ChangeSizeFurther2(30);
+						break;
+					case 1:
+						FireWorkController.ChangeSizeFurther2(60);
+						break;
+					case 2:
+						FireWorkController.ChangeSizeFurther2(90);
+						break;
+				}
 				break;
 		}
 	}

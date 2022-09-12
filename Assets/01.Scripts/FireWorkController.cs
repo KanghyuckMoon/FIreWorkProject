@@ -132,19 +132,6 @@ public class FireWorkController : MonoBehaviour
 	}
 
 	/// <summary>
-	/// 외부 변수 캐싱 
-	/// </summary>
-	/// <returns></returns>
-	//private IEnumerator Cashing()//
-	//{
-	//	while (_uIButtonManager.UpgradeButtonConstructor == null)
-	//	{
-	//		yield return null;
-	//	}
-	//	_upgradeButtonConstructor = _uIButtonManager.UpgradeButtonConstructor;
-	//}
-
-	/// <summary>
 	/// 저장 데이터기반 설정
 	/// </summary>
 	public void SaveDataSetting()
