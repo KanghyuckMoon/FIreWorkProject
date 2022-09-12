@@ -18,7 +18,8 @@ MonoBehaviour:
     content: "\uC774\uBC88 \uBA74\uC811\uB3C4 \uD2C0\uB838\uB124.."
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 0}
   - talkObject: 1
@@ -26,7 +27,8 @@ MonoBehaviour:
     content: "\uC624\uB298\uB3C4 \uC220 \uB561\uAE30\uB7EC \uAC00\uC57C\uC9C0"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 0}
   - talkObject: 2
@@ -34,7 +36,8 @@ MonoBehaviour:
     content: "(\uC804\uD654\uAC00 \uAC78\uB824\uC628\uB2E4)"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 0}
   - talkObject: 1
@@ -43,7 +46,8 @@ MonoBehaviour:
       \uC65C \uAC78\uC9C0"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 0}
   - talkObject: 1
@@ -51,7 +55,8 @@ MonoBehaviour:
     content: 
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 0}
   - talkObject: 1
@@ -59,7 +64,8 @@ MonoBehaviour:
     content: "\uC5EC\uBCF4\uC138\uC694"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 0}
   - talkObject: 2
@@ -68,15 +74,17 @@ MonoBehaviour:
       \uC12C\uC744 \uC6B4\uC601\uD574"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 0}
   - talkObject: 1
     othername: "\uC8FC\uC778\uACF5"
     content: "\uAC11\uC790\uAE30 \uBB34\uC2A8 \uC18C\uB9AC\uC5D0\uC694?"
     _optionDatas: []
-    _functionName: 
-    _functionParameters: 
+    _functionName: ShakeImage
+    _functionParameters_1: ChracterImage1
+    _functionParameters_2: 70
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 0}
   - talkObject: 1
@@ -84,7 +92,8 @@ MonoBehaviour:
     content: "\uC544\uBE60? \uC544\uBE60?!"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 0}
   - talkObject: 0
@@ -93,7 +102,8 @@ MonoBehaviour:
       \uC2DC\uAC04\uC774 \uC9C0\uB0AC\uB2E4)"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 0}
     _otherSprite: {fileID: 0}
   - talkObject: 1
@@ -102,7 +112,8 @@ MonoBehaviour:
       \uC12C\uC778"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 0}
   - talkObject: 2
@@ -110,7 +121,8 @@ MonoBehaviour:
     content: "\uC544\uBC84\uB2D8\uC758 \uC77C\uC740 \uC548\uD0C0\uAE5D\uAC8C \uB410\uC2B5\uB2C8\uB2E4"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 1
@@ -118,7 +130,8 @@ MonoBehaviour:
     content: "\uB2F9\uC2E0\uC740 \uB204\uAD6C\uC57C?"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 2
@@ -128,7 +141,8 @@ MonoBehaviour:
       \uAD50\uC721\uC2DC\uD0AC \uAE40\uBE44\uC11C\uB77C\uACE0 \uD569\uB2C8\uB2E4"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 1
@@ -138,7 +152,8 @@ MonoBehaviour:
       \uBAB0\uB77C\uC694"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 2
@@ -148,7 +163,8 @@ MonoBehaviour:
       \uBD88\uAF43\uB180\uC774 \uC7A5\uC778\uC774\uC168\uC8E0."
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 2
@@ -158,7 +174,8 @@ MonoBehaviour:
       \uD55C\uD0C4\uD558\uC168\uC2B5\uB2C8\uB2E4."
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 1
@@ -167,7 +184,8 @@ MonoBehaviour:
       \uC2F6\uC5B4\uC11C \uC548 \uD588\uC5B4?"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 2
@@ -176,7 +194,8 @@ MonoBehaviour:
       \uC0AC\uB78C\uC774\uB77C\uACE0 \uADF8\uBD84\uC774 \uADF8\uB7EC\uC168\uC8E0."
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 1
@@ -184,7 +203,8 @@ MonoBehaviour:
     content: ...
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 2
@@ -193,7 +213,8 @@ MonoBehaviour:
       \uBD88\uAF43\uB180\uC774 \uC81C\uC791\uC744 \uD574\uBCF4\uC138\uC694"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   - talkObject: 1
@@ -202,7 +223,8 @@ MonoBehaviour:
       \uD558\uB2E4 \uAC08\uAC70\uC57C"
     _optionDatas: []
     _functionName: 
-    _functionParameters: 
+    _functionParameters_1: 
+    _functionParameters_2: 
     _playerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}
     _otherSprite: {fileID: 21300000, guid: f00601b202052ea4faa5f520bea06720, type: 3}
   _debugPlayerSprite: {fileID: 21300000, guid: 19a0d5435ab6f934797d9bf251d7a368, type: 3}

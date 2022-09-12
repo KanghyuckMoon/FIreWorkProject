@@ -38,7 +38,8 @@ public class TalkDataF
 	public string content;
 	public List<OptionData> _optionDatas = new List<OptionData>();
 	public string _functionName;
-	public string _functionParameters;
+	public string _functionParameters_1;
+	public string _functionParameters_2;
 	public Sprite _playerSprite;
 	public Sprite _otherSprite;
 }
