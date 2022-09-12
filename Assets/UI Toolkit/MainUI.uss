@@ -175,6 +175,7 @@
 }
 
 .topRight-panel {
+    color : 
     flex-direction: row-reverse;
     flex-grow: 1;
 }
@@ -271,4 +272,16 @@
     translate: 0 -15px;
     transition-duration: 0.5s;
     transition-timing-function: ease-out-circ;
+}
+
+.neon-label {
+    color: rgb(255,255,255); 
+    text-shadow: 0px 0px 6px rgb(255,255,255), 
+        0px 0px 10px rgb(255,255,255), 
+        0px 0px 21px rgb(255,255,255), 
+        0px 0px 42px rgb(246,226,5,0.9f), 
+        0px 0px 82px rgb(246,226,5,0.7f), 
+        0px 0px 92px rgb(246,226,5,0.4f), 
+        0px 0px 102px rgb(246,226,5,0.2f), 
+        0px 0px 151px rgb(246,226,5,0.1f);
 }
