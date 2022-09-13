@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7516173, g: 977.86865, b: 977.825, a: 1}
+  m_IndirectSpecularColor: {r: 2.2820969, g: 2.5192542, b: 4.067169, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1573,6 +1573,7 @@ MonoBehaviour:
     _itemDataSO: {fileID: 11400000, guid: 2fe665e60a56e774a9dc9dbb56f4a1d4, type: 2}
     _libraryOpenCode: 33
   _settingTemplate: {fileID: 9197481963319205126, guid: 5b0175f313bd4aa4598c5970d9a6e697, type: 3}
+  _upgradeUI: {fileID: 0}
 --- !u!1 &1002978677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2165,13 +2166,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1735259784}
   - component: {fileID: 1735259783}
+  - component: {fileID: 1735259785}
   m_Layer: 0
   m_Name: UpgradeUIDocument
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1735259783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2203,6 +2205,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1735259785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735259782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb531a624d60b04099ea9b5ebefd3e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1838267471
 GameObject:
   m_ObjectHideFlags: 0

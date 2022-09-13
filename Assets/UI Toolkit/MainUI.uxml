@@ -6,7 +6,7 @@
     <ui:VisualElement name="game_screen" style="height: 100%; width: 100%; flex-direction: column; align-items: stretch; justify-content: space-between; transform-origin: center; flex-grow: 1; display: flex;">
         <ui:VisualElement name="top_panel" class="top-panel">
             <ui:VisualElement name="topLeft_panel" tabindex="1" class="topLeft-panel">
-                <ui:Button display-tooltip-when-elided="true" name="setting-button" class="button" style="background-image: url(&apos;project://database/Assets/15.UISprite/%EC%98%B5%EC%85%98.png?fileID=2800000&amp;guid=d28ff043d78d2dc4eba27b01ebda8441&amp;type=3#옵션&apos;); background-color: rgba(108, 108, 108, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0);" />
+                <ui:Button display-tooltip-when-elided="true" name="setting-button" class="button" style="background-image: url(&apos;project://database/Assets/15.UISprite/%EC%98%B5%EC%85%98.png?fileID=2800000&amp;guid=d28ff043d78d2dc4eba27b01ebda8441&amp;type=3#옵션&apos;); background-color: rgba(108, 108, 108, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); display: none;" />
             </ui:VisualElement>
             <ui:VisualElement name="topRight_panel" tabindex="1" class="topRight-panel">
                 <ui:GroupBox name="GroupBox" class="uiBox">
@@ -21,6 +21,7 @@
                         <ui:VisualElement name="libraryLock-icon" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/15.UISprite/%EC%9E%90%EB%AC%BC%EC%87%A0.png?fileID=21300000&amp;guid=f0ad086fd824d20479da67a9dde13ff2&amp;type=3#자물쇠&apos;); display: flex; background-color: rgba(0, 0, 0, 0); -unity-background-image-tint-color: rgba(255, 255, 255, 0.9);" />
                     </ui:VisualElement>
                     <ui:Button text="업적" display-tooltip-when-elided="true" name="achievement-button" class="button" style="width: 10%; height: 100px; -unity-font-style: normal; font-size: 35px;" />
+                    <ui:Button text="업그레이드" display-tooltip-when-elided="true" name="upgradeUI-button" class="button" style="width: 10%; height: 100px; -unity-font-style: normal; font-size: 35px;" />
                 </ui:GroupBox>
             </ui:VisualElement>
         </ui:VisualElement>

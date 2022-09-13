@@ -1,0 +1,19 @@
+.upgrade-element {
+    width: 150px;
+    height: 170px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.lockIcon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url('project://database/Assets/15.UISprite/%EC%9E%90%EB%AC%BC%EC%87%A0.png?fileID=2800000&guid=f0ad086fd824d20479da67a9dde13ff2&type=3#자물쇠');
+    display: none;
+    align-items: center;
+}

@@ -74,7 +74,6 @@ public class SettingPanelComponent : UIComponent
         _settingBackButton = _soundSettingPanel.Q<Button>("back-button");
 
         // 버튼 이벤트 등록 
-        _settingButton.clicked += () => OpenClosePanel(_settingPanel);
         _backButton.clicked += () => OpenClosePanel(_settingPanel);
         _exitButton.clicked += () => _exit.QuitGame(); 
 
@@ -117,4 +116,8 @@ public class SettingPanelComponent : UIComponent
         _grapicSetting.ApplySettingScreen(); 
     }
 
+    public void OpenSetting()
+    {
+        OpenClosePanel(_settingPanel);
+    }
 }
