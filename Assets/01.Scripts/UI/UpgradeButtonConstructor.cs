@@ -85,8 +85,8 @@ public class UpgradeButtonConstructor : MonoBehaviour
                                                                                                                             _fireWorkController, costLabel, upgradeButtonInfo.costPropertyName); // 생성 
 
             upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
-            upgradeButton.RegisterCallback<MouseOverEvent>(ActiveDescription);
-            upgradeButton.RegisterCallback<MouseOutEvent>(DisableDescription);
+            upgradeButton.RegisterCallback<MouseOverEvent>((x) => ActiveDescription(x,upgradeButton));
+            upgradeButton.RegisterCallback<MouseOutEvent>((x) => DisableDescription(x));
 
 
             _buttonElementList.Add(buttonElement);
@@ -127,7 +127,7 @@ public class UpgradeButtonConstructor : MonoBehaviour
                                                                                                                             _fireWorkController, costLabel, upgradeButtonInfo.costPropertyName); // 생성 
 
             upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
-            upgradeButton.RegisterCallback<MouseOverEvent>(ActiveDescription);
+            upgradeButton.RegisterCallback<MouseOverEvent>((x) => ActiveDescription(x,upgradeButton));
             upgradeButton.RegisterCallback<MouseOutEvent>(DisableDescription);
 
 
@@ -198,9 +198,10 @@ public class UpgradeButtonConstructor : MonoBehaviour
     /// <summary>
     /// 설명창 활성화
     /// </summary>
-    public void ActiveDescription(MouseOverEvent e)
+    public void ActiveDescription(MouseOverEvent e, VisualElement v)
     {
         _descriptionPanel.style.display = DisplayStyle.Flex;
+        v.Insert(v.childCount, _descriptionPanel);
     }
 
     /// <summary>

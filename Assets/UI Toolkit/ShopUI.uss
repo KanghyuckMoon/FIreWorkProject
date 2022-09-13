@@ -13,6 +13,7 @@
     border-right-width: 3px;
     border-top-width: 3px;
     border-bottom-width: 3px;
+    margin-bottom: 50px;
 }
 
 .item-label {

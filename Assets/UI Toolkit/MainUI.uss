@@ -244,8 +244,8 @@
 }
 
 .upgrade-button:hover {
-    height: 150px;
-    width: 150px;
+    height: 100%;
+    width: 100%;
     display: flex;
     margin-left: 0;
     margin-right: 0;
@@ -260,8 +260,8 @@
 }
 
 .upgrade-button:active {
-    height: 150px;
-    width: 150px;
+    height: 100%;
+    width: 100%;
     display: flex;
     margin-left: 0;
     margin-right: 0;
