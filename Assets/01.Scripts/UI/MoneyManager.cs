@@ -12,6 +12,9 @@ public class MoneyManager : MonoBehaviour
     private VisualElement _rootElement;
     private UIDocument _moneyUIDoc;
 
+    int happyMoney;
+    int money;
+
     public UIDocument MoneyUIDoc
     {
         get
@@ -39,13 +42,34 @@ public class MoneyManager : MonoBehaviour
         _happyMoneyLabel = _rootElement.Q<Label>("happyMoney-label");
         _moneyLabel = _rootElement.Q<Label>("money-label");
     }
-    public void Update()
+    public void UpdateText()
     {
-        UpdateMoneyText(); 
+        StartCoroutine(UpdateMoneyText());
     }
-    private void UpdateMoneyText()
+
+    IEnumerator UpdateMoneyText()
     {
-        _happyMoneyLabel.text = string.Format("행복도 : {0}", UserSaveDataManager.Instance.UserSaveData.happy.ToString());
-        _moneyLabel.text = string.Format("돈 : {0}", UserSaveDataManager.Instance.UserSaveData.money.ToString());
+        if (happyMoney != UserSaveDataManager.Instance.UserSaveData.happy)
+        {
+            for (int i = 0; i < UserSaveDataManager.Instance.UserSaveData.happy; i++)
+            {
+                _happyMoneyLabel.text = string.Format("행복도 : {0}", happyMoney + 1);
+
+                yield return null;
+            }
+        }
+
+        else if(money != UserSaveDataManager.Instance.UserSaveData.money)
+        {
+            for (int i = 0; i < UserSaveDataManager.Instance.UserSaveData.happy; i++)
+            {
+                _happyMoneyLabel.text = string.Format("행복도 : {0}", happyMoney + 1);
+
+                yield return null;
+            }
+        }
+
+        happyMoney = UserSaveDataManager.Instance.UserSaveData.happy;
+        money = UserSaveDataManager.Instance.UserSaveData.money;
     }
 }
