@@ -9,6 +9,7 @@ public class DetailsUI : MonoBehaviour
     public static DetailsUI instance;
 
     public TextMeshProUGUI _text;
+    
 
     private void Awake()
     {
@@ -25,7 +26,7 @@ public class DetailsUI : MonoBehaviour
 
         _text.gameObject.SetActive(true);
 
-        seq.Append(_text.transform.DOMoveY(_text.transform.position.y + 20, 1.4f));
+        seq.Append(_text.transform.DOMoveY(_text.transform.position.y + 20, 1.1f));
 
         seq.AppendCallback(() =>
         {
