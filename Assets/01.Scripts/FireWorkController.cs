@@ -115,7 +115,7 @@ public class FireWorkController : MonoBehaviour
 
 		UpdateRate();
 		StartCoroutine(FireworkStart());
-		_upgradeButtonConstructor = FindObjectOfType<UIButtonManager>().upgradeButtonConstructor;
+		_upgradeButtonConstructor = FindObjectOfType<UpgradeButtonConstructor>();
 	}
 
 	public void StopVFX()

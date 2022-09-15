@@ -15,6 +15,14 @@ public class ItemBox : ItemUI
             return _itemChangeManager;
 		}
 	}
+	private DescriptionManager DescriptionManager
+    {
+		get
+        {
+			_descriptionManager ??= GameObject.FindObjectOfType<DescriptionManager>();
+			return _descriptionManager;
+        }
+    }
 
 	public int ItemCode
     {
@@ -33,14 +41,18 @@ public class ItemBox : ItemUI
     [SerializeField] private ItemDataSO _itemDataSO;
 	[SerializeField] private float _debugValue;
 
+	private DescriptionManager _descriptionManager;
+
 	public ItemBox(ItemData itemData,ItemDataSO itemDataSO)
 		: base(itemData)
 	{
 		_itemDataSO = itemDataSO; 
 		_itemCode = itemData.itemCode;
 
-		_button.clicked += ChangeFirework; 
-    }
+		_button.clicked += ChangeFirework;
+		//_button.RegisterCallback<MouseOverEvent>((x) => DescriptionManager()); 
+
+	}
 
 	[ContextMenu("ChangeFirework")]
     public void ChangeFirework()

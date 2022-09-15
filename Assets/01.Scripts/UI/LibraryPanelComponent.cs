@@ -2,16 +2,69 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+
+
 using System;
+using System.Linq;
+
+public class RadioButtonConstructor
+{
+    private RadioButtonGroup _toggleGroup;
+
+    private List<RadioButton> _radioButtonList = new List<RadioButton>(); //  
+
+    private RadioButton _radioButton1;
+    private RadioButton _radioButton2;
+    private RadioButton _radioButton3;
+
+    public RadioButtonConstructor(RadioButtonGroup radioButtonGroup, Action<int> clickEvent)
+    {
+        this._toggleGroup = radioButtonGroup;
+
+        _radioButton1 = _toggleGroup.Q<RadioButton>("radiobutton1");
+        _radioButton2 = _toggleGroup.Q<RadioButton>("radiobutton2");
+        _radioButton3 = _toggleGroup.Q<RadioButton>("radiobutton3");
+
+        _radioButton1.RegisterValueChangedCallback((x) =>
+        {
+            if (x.newValue == true)
+            {
+                Debug.Log("빛 세기 1단계");
+                clickEvent.Invoke(0);
+            }
+        });
+        _radioButton2.RegisterValueChangedCallback((x) =>
+        {
+            if (x.newValue == true)
+            {
+                Debug.Log("빛 세기 2단계");
+                clickEvent.Invoke(1);
+            }
+        }); _radioButton3.RegisterValueChangedCallback((x) =>
+        {
+            if (x.newValue == true)
+            {
+                Debug.Log("빛 세기 3단계");
+                clickEvent.Invoke(2);
+            }
+        });
+
+    }
+
+}
 
 [Serializable]
 public class LibraryPanelComponent : UIComponent
 {
     private AchievementViewManager _achievementViewManager;
+    private DescriptionManager _descriptionManager;
+
     private ItemChangeManager _itemChangeMnager;
     private LibraryButtonConstructor _libraryButtonConstructor;  // 라이브러리 버튼 생성자 
+    private RadioButtonConstructor _radioButtonConstructor; // 
+
     private HaveItemManager _haveItemManager;
-    private FireWorkController _fireWorkController; 
+    private FireWorkController _fireWorkController;
 
     private Button _libraryButton; // 상점 버튼
     private TemplateContainer _libraryPanel;
@@ -22,25 +75,28 @@ public class LibraryPanelComponent : UIComponent
     private VisualElement _shapeItemParent; // 모양 아이템 부모 오브젝트 
     private VisualElement _buttonParent; // 
 
-    private VisualElement _libraryLockIcon; 
+    private VisualElement _libraryLockIcon;
 
     private VisualElement _further1SettingButton;
     private VisualElement _further2SettingButton;
     private VisualElement _further3SettingButton;
     private VisualElement _further4SettingButton;
 
+    private RadioButtonGroup _toggleGroup;
+
     private Slider _intensitySlider;
     private Slider _sizeSlider;
-    private Slider _heightSlider; 
+    private Slider _heightSlider;
 
     private List<ItemBox> _libraryColorItemList = new List<ItemBox>(); // 생성된 색 아이템 리스트 
     private List<ItemBox> _libraryShapeItemList = new List<ItemBox>(); // 생성된 모양 아이템 리스트 
+    private List<RadioButton> _radioButtonList = new List<RadioButton>(); //  
 
     [SerializeField]
     private ItemDataSO _itemDataSO;
     [SerializeField]
     private int _libraryOpenCode = 33;
-    private bool _isShopOpen = false; 
+    private bool _isShopOpen = false;
 
     private int _intensitySliderOpenCode = 35;
     private int _sizeSliderOpenCode = 36;
@@ -48,21 +104,25 @@ public class LibraryPanelComponent : UIComponent
     private bool _isOpenIntensitySlider;
     private bool _isOpenSizeSlider;
 
+    private bool _isOpenIntensitySelector;
 
-    public void Init(UIButtonManager uIButtonManager, HaveItemManager haveItemManager, ItemChangeManager itemChangeManager, FireWorkController fireWorkController, AchievementViewManager achievementViewManager)
+    public void Init(UIButtonManager uIButtonManager, HaveItemManager haveItemManager, ItemChangeManager itemChangeManager, FireWorkController fireWorkController,
+                            AchievementViewManager achievementViewManager,DescriptionManager descriptionManager)
     {
         _uiButtonManager = uIButtonManager;
         _haveItemManager = haveItemManager;
         _itemChangeMnager = itemChangeManager;
         _achievementViewManager = achievementViewManager;
-        _fireWorkController = fireWorkController; 
+        _descriptionManager = descriptionManager;
+
+        _fireWorkController = fireWorkController;
 
         _libraryButton = _uiButtonManager.RootElement.Q<Button>("library-button");
         _libraryPanel = _uiButtonManager.RootElement.Q<TemplateContainer>("LibraryTemplate");
 
         _libraryLockIcon = _uiButtonManager.RootElement.Q<VisualElement>("libraryLock-icon");
 
-        _libraryPanel.style.display = DisplayStyle.None;
+        _libraryPanel.style.display = DisplayStyle.Flex;
 
         _libraryBackButton = _libraryPanel.Q<Button>("back-button");
 
@@ -75,17 +135,24 @@ public class LibraryPanelComponent : UIComponent
         _further3SettingButton = _libraryPanel.Q<VisualElement>("further3-setting-button");
         _further4SettingButton = _libraryPanel.Q<VisualElement>("further4-setting-button");
 
-        _intensitySlider = _libraryPanel.Q<Slider>("intensity-slider");
-        _sizeSlider = _libraryPanel.Q<Slider>("size-slider");
-        _heightSlider = _libraryPanel.Q<Slider>("height-slider");
+        _toggleGroup = _libraryPanel.Q<RadioButtonGroup>("intetsity-radioGroup");
+        _toggleGroup.style.display = DisplayStyle.None;
+        //_toggleGroup.Children().ToArray().ElementAt(0).style.display = DisplayStyle.None; 
 
         // 버튼 이벤트 등록 
         _libraryButton.clicked += () => OpenClosePanel(_libraryPanel);
         _libraryBackButton.clicked += () => OpenClosePanel(_libraryPanel);
 
-        //_intensitySlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeItensity(x.newValue));
-        //_sizeSlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeSize(x.newValue));
-        //_heightSlider.RegisterValueChangedCallback((x) => _fireWorkController.SetHeight(x.newValue)); 
+        /*
+         * 
+        _intensitySlider = _libraryPanel.Q<Slider>("intensity-slider");
+        _sizeSlider = _libraryPanel.Q<Slider>("size-slider");
+        _heightSlider = _libraryPanel.Q<Slider>("height-slider");
+
+         * 슬라이더 
+        _intensitySlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeItensity(x.newValue));
+        _sizeSlider.RegisterValueChangedCallback((x) => _itemChangeMnager.ChangeSize(x.newValue));
+        _heightSlider.RegisterValueChangedCallback((x) => _fireWorkController.SetHeight(x.newValue)); 
 
         _sizeSlider.Q<Label>().style.color = Color.white;
         _intensitySlider.Q<Label>().style.color = Color.white;
@@ -94,24 +161,26 @@ public class LibraryPanelComponent : UIComponent
         _sizeSlider.style.display = DisplayStyle.None; 
         _intensitySlider.style.display = DisplayStyle.None;
         _heightSlider.style.display = DisplayStyle.Flex; 
-
-        _libraryButtonConstructor = new LibraryButtonConstructor(fireWorkController, itemChangeManager, _buttonParent);
-
+        */
+        _libraryButtonConstructor = new LibraryButtonConstructor(fireWorkController, itemChangeManager, _descriptionManager,_buttonParent);
+        _radioButtonConstructor = new RadioButtonConstructor(_toggleGroup, (x) =>_itemChangeMnager.ChangeItensity(x));
+    
         CreateHaveItems();
-        LockOrUnlockSlider(); 
+        LockOrUnlockSlider();
+        _toggleGroup.style.display = DisplayStyle.Flex;
     }
 
     public override void UpdateSometing()
     {
         _libraryButtonConstructor.UpdateSometing();
-        LockOrUnlockSlider(); 
+        //LockOrUnlockSlider(); 
 
-        if(_isShopOpen == false)
+        if (_isShopOpen == false)
         {
             UnlockShopButton();
         }
-           }
-    
+    }
+
     /// <summary>
     /// 상점 버튼 해제 
     /// </summary>
@@ -126,17 +195,21 @@ public class LibraryPanelComponent : UIComponent
 
     public void LockOrUnlockSlider()
     {
-        if(_isOpenSizeSlider == false && AchievementManager.Instance.CheckHaveAchievement(_sizeSliderOpenCode) == true)
+        //if(_isOpenSizeSlider == false && AchievementManager.Instance.CheckHaveAchievement(_sizeSliderOpenCode) == true)
+        //{
+        //    _sizeSlider.style.display = DisplayStyle.Flex;
+        //    _isOpenSizeSlider = true;
+        //}
+        //if (_isOpenIntensitySlider == false && AchievementManager.Instance.CheckHaveAchievement(_intensitySliderOpenCode) == true)
+        //{
+        //    _intensitySlider.style.display = DisplayStyle.Flex;
+        //    _isOpenIntensitySlider = true;
+        //}
+        if (_isOpenIntensitySelector == false && AchievementManager.Instance.CheckHaveAchievement(_intensitySliderOpenCode) == true)
         {
-            _sizeSlider.style.display = DisplayStyle.Flex;
-            _isOpenSizeSlider = true;
+            _toggleGroup.style.display = DisplayStyle.Flex;
+            _isOpenIntensitySelector = true;
         }
-        if (_isOpenIntensitySlider == false && AchievementManager.Instance.CheckHaveAchievement(_intensitySliderOpenCode) == true)
-        {
-            _intensitySlider.style.display = DisplayStyle.Flex;
-            _isOpenIntensitySlider = true;
-        }
-
     }
 
     /// <summary>

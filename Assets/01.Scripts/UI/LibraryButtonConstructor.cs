@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class LibraryButtonConstructor
 {
     private ItemChangeManager _itemChangeManager;
+    private DescriptionManager _descriptionManager;
 
     private List<UpgradeButtonElement> _buttonElementList = new List<UpgradeButtonElement>(); // 라이브러리 버튼 리스트
 
@@ -16,12 +17,13 @@ public class LibraryButtonConstructor
     private bool _isOpenFurther3 = false;
     private bool _isOpenFurther4 = false;
 
-    public LibraryButtonConstructor(FireWorkController fireWorkController, ItemChangeManager itemChangeManager, VisualElement rootElement)
+    public LibraryButtonConstructor(FireWorkController fireWorkController, ItemChangeManager itemChangeManager, DescriptionManager descriptionManager,VisualElement rootElement)
     {
         InitEnumList();
         _buttonElementList.Clear();
 
         this._itemChangeManager = itemChangeManager;
+        this._descriptionManager = descriptionManager; 
         this._fireWorkController = fireWorkController;
 
         UpgradeButtonInfo upgradeButtonInfo; // 찾을 버튼 정보(이름, 잠김여부) 
@@ -41,6 +43,8 @@ public class LibraryButtonConstructor
             UpgradeButtonElement buttonElement = new UpgradeButtonElement(upgradeButton, lockElement, upgradeButtonInfo.isOpened, buttonType); // 생성 
 
             upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
+            upgradeButton.RegisterCallback<MouseOverEvent>((x) => _descriptionManager.ActiveDescription(true, x.originalMousePosition));
+            upgradeButton.RegisterCallback<MouseOutEvent>((x) => _descriptionManager.ActiveDescription(false, x.mousePosition));
 
             _buttonElementList.Add(buttonElement);
         }

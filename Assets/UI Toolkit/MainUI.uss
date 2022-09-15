@@ -148,9 +148,10 @@
     height: 74px;
     font-size: 60px;
     color: rgb(255, 255, 255);
-    -unity-font-definition: url('project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&guid=f30be4bb3933209499bc20092da7e369&type=2#Maplestory Bold SDF');
-    -unity-text-outline-width: 2px;
+    -unity-text-outline-width: 0;
     -unity-text-outline-color: rgb(0, 0, 0);
+    -unity-font-definition: url('project://database/Assets/16.Font/SUIT-Thin%20SDF.asset?fileID=11400000&guid=8dcc52e7918586d45a99294f607a6255&type=2#SUIT-Thin SDF');
+    -unity-font-style: normal;
 }
 
 .money-label {
@@ -158,9 +159,10 @@
     height: auto;
     font-size: 60px;
     color: rgb(255, 255, 255);
-    -unity-font-definition: url('project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&guid=f30be4bb3933209499bc20092da7e369&type=2#Maplestory Bold SDF');
-    -unity-text-outline-width: 2px;
+    -unity-font-definition: url('project://database/Assets/16.Font/SUIT-Thin%20SDF.asset?fileID=11400000&guid=8dcc52e7918586d45a99294f607a6255&type=2#SUIT-Thin SDF');
+    -unity-text-outline-width: 0;
     -unity-text-outline-color: rgb(0, 0, 0);
+    -unity-font-style: bold;
 }
 
 .top-panel {
@@ -175,7 +177,7 @@
 }
 
 .topRight-panel {
-    flex-direction: row-reverse;
+    color: flex-direction row-reverse;
     flex-grow: 1;
 }
 
@@ -221,54 +223,90 @@
 }
 
 .upgrade-button {
-    height: 150px;
-    width: 150px;
-    border-left-color: rgb(255, 255, 255);
-    border-right-color: rgb(255, 255, 255);
-    border-top-color: rgb(255, 255, 255);
-    border-bottom-color: rgb(255, 255, 255);
-    border-left-width: 3px;
-    border-right-width: 3px;
-    border-top-width: 3px;
-    border-bottom-width: 3px;
-    -unity-font-style: normal;
-    font-size: 30px;
     display: flex;
-    color: rgb(255, 255, 255);
-    background-color: rgb(108, 108, 108);
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    align-items: stretch;
+    background-color: rgba(108, 108, 108, 0);
+    align-items: center;
     justify-content: flex-start;
-    -unity-font-definition: url('project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&guid=f30be4bb3933209499bc20092da7e369&type=2#Maplestory Bold SDF');
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
 }
 
 .upgrade-button:hover {
-    height: 150px;
-    width: 150px;
-    border-left-color: rgb(255, 255, 255);
-    border-right-color: rgb(255, 255, 255);
-    border-top-color: rgb(255, 255, 255);
-    border-bottom-color: rgb(255, 255, 255);
-    border-left-width: 3px;
-    border-right-width: 3px;
-    border-top-width: 3px;
-    border-bottom-width: 3px;
-    -unity-font-style: normal;
-    font-size: 30px;
+    height: 100%;
+    width: 100%;
     display: flex;
-    color: rgb(255, 255, 255);
-    background-color: rgb(108, 108, 108);
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
-    align-items: stretch;
-    justify-content: flex-start;
-    -unity-font-definition: url('project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&guid=f30be4bb3933209499bc20092da7e369&type=2#Maplestory Bold SDF');
     translate: 0 -15px;
     transition-duration: 0.5s;
     transition-timing-function: ease-out-circ;
+    background-color: rgba(0, 0, 0, 0);
+    align-items: center;
+    scale: 1.05 1.05;
+}
+
+.upgrade-button:active {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    translate: 0 -15px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out-circ;
+    background-color: rgba(0, 0, 0, 0);
+    align-items: center;
+    scale: 0.95 0.95;
+}
+
+.neon-label {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 6px rgba(255, 0, 0, 0.95);
+}
+
+.reworkButton {
+    width: 150px;
+    height: 150px;
+    -unity-font-definition: url('project://database/Assets/16.Font/SUIT-Thin%20SDF.asset?fileID=11400000&guid=8dcc52e7918586d45a99294f607a6255&type=2#SUIT-Thin SDF');
+    font-size: 40px;
+    background-color: rgba(88, 88, 88, 0);
+    background-image: none;
+}
+
+.reworkButton:hover {
+    width: 150px;
+    height: 150px;
+    -unity-font-definition: url('project://database/Assets/16.Font/SUIT-Thin%20SDF.asset?fileID=11400000&guid=8dcc52e7918586d45a99294f607a6255&type=2#SUIT-Thin SDF');
+    font-size: 40px;
+    background-color: rgba(88, 88, 88, 0);
+    background-image: none;
+    scale: 1.05 1.05;
+}
+
+.reworkButton:active {
+    width: 150px;
+    height: 150px;
+    -unity-font-definition: url('project://database/Assets/16.Font/SUIT-Thin%20SDF.asset?fileID=11400000&guid=8dcc52e7918586d45a99294f607a6255&type=2#SUIT-Thin SDF');
+    font-size: 40px;
+    background-color: rgba(88, 88, 88, 0);
+    background-image: none;
+    scale: 0.95 0.95;
 }

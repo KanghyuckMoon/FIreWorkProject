@@ -20,6 +20,7 @@ public class ShopPanelComponent : UIComponent
     private Button _shopBackButton; // 뒤로가기 버튼 
     private VisualElement _colorItemParent; // 색 아이템 부모 오브젝트
     private VisualElement _shapeItemParent; // 모양 아이템 부모 오브젝트 
+    private VisualElement _itemParent; // 부모 오브젝트 
 
     private List<ShopItemUI> _shopColorItemList = new List<ShopItemUI>();
     private List<ShopItemUI> _shopShapeItemList = new List<ShopItemUI>();
@@ -43,8 +44,10 @@ public class ShopPanelComponent : UIComponent
         _lockIcon = _uiButtonManager.RootElement.Q<VisualElement>("shopLock-icon");
 
         _shopBackButton = _shopPanel.Q<Button>("back-button");
+        
         _colorItemParent = _shopPanel.Q<VisualElement>("colorItem-scrollview");
-        _shapeItemParent = _shopPanel.Q<VisualElement>("shapeItem-scrollview"); 
+        _shapeItemParent = _shopPanel.Q<VisualElement>("shapeItem-scrollview");
+        _itemParent = _shopPanel.Q<VisualElement>("item-panel"); 
 
         _shopButton.clicked += () => OpenClosePanel(_shopPanel); 
         _shopBackButton.clicked += () => OpenClosePanel(_shopPanel);
@@ -85,12 +88,12 @@ public class ShopPanelComponent : UIComponent
             case ItemType.Color:
                 itemCodeList = _haveItemManager.ColorItemCodeList.ToList();
                 itemList = _shopColorItemList;
-                parent = _colorItemParent; 
+                parent = _itemParent; 
                 break;
             case ItemType.Shape:
                 itemCodeList = _haveItemManager.ShapeItemCodeList.ToList();
                 itemList = _shopShapeItemList;
-                parent = _shapeItemParent; 
+                parent = _itemParent; 
                 break; 
         }
         InstantiateItems(itemCodeList, itemList, parent); 

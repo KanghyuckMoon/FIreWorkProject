@@ -8,19 +8,93 @@ using System.Reflection;
 /// <summary>
 /// 업그레이버튼 중간 관리자(생성 및 관리 ) 
 /// </summary>
-[Serializable]
-public class UpgradeButtonConstructor
+public class UpgradeButtonConstructor : MonoBehaviour
 {
+    private FireWorkController _fireWorkController;
+    private VisualElement _rootElement;
+    private UIDocument _mainUIDoc;
+
+    private VisualElement _descriptionPanel;
+
+    private Button _backButton; // 닫기 버튼 
+
     private List<UpgradeButtonElement> _buttonElementList = new List<UpgradeButtonElement>(); // 업그레이든 버튼 리스트
 
     private List<UpgradeButtonType> _buttonTypeList = new List<UpgradeButtonType>();  // 모든 버튼 타입이 담겨있는 리스트
-    private FireWorkController _fireWorkController;
 
     private bool _isOpenFurther2 = false;
-    private bool _isOpenFurther3 = false;
-    private bool _isOpenFurther4 = false;
     private bool _isOpenRenewal = false;
 
+
+    private void Awake()
+    {
+        _fireWorkController = FindObjectOfType<FireWorkController>();
+        _mainUIDoc = GetComponent<UIDocument>();
+        _rootElement = _mainUIDoc.rootVisualElement;
+    }
+
+    private void Start()
+    {
+        Init(); 
+    }
+
+    private void Update()
+    {
+        
+        if (_isOpenFurther2 == false && _fireWorkController.IsCanFurther2 == true)
+        {
+            LockOrUnlockButton(UpgradeButtonType.Further2, true);
+            _isOpenFurther2 = true;
+        }
+        if (_isOpenRenewal == false && _fireWorkController.IsCanRenewal == true)
+        {
+            LockOrUnlockButton(UpgradeButtonType.Renewal, true);
+            _isOpenRenewal = true;
+
+        }
+    }
+    private void Init()
+    {
+        _buttonElementList = new List<UpgradeButtonElement>();
+        _buttonTypeList = new List<UpgradeButtonType>(); 
+
+        _descriptionPanel = _rootElement.Q<VisualElement>("description-panel");
+        _descriptionPanel.style.display = DisplayStyle.None;
+
+        _backButton = _rootElement.Q<Button>("back-button");
+        _backButton.clicked += () =>
+        {
+            ActiveUpgradeUI(false); 
+            Debug.Log("업그레이드창 닫혀라");
+        };
+        InitEnumList(); // enumList초기화 
+        _buttonElementList.Clear();
+
+        UpgradeButtonInfo upgradeButtonInfo; // 찾을 버튼 정보(이름, 잠김여부) 
+        string lockIconName = "lock-icon";
+        string buttonName = "button";
+        string costName = "ItemCost";
+        // 업그레이드 버튼 캐싱 후 리스트에 넣기 
+        foreach (UpgradeButtonType buttonType in _buttonTypeList)
+        {
+            upgradeButtonInfo = CheckElement(buttonType); // 업그레이드 버튼 정보 찾기 
+
+            VisualElement upgradeButtonParent = _rootElement.Q<VisualElement>(upgradeButtonInfo.name); // 업그레이드 버튼 부모 element
+            VisualElement lockElement = upgradeButtonParent.Q<VisualElement>(lockIconName); // 잠금 아이콘
+            Button upgradeButton = upgradeButtonParent.Q<Button>(buttonName); // 버튼 
+            Label costLabel = upgradeButton.Q<Label>(costName); // 가격 
+
+            UpgradeButtonElement buttonElement = new UpgradeButtonElement(upgradeButton, lockElement, upgradeButtonInfo.isOpened, buttonType,
+                                                                                                                            _fireWorkController, costLabel, upgradeButtonInfo.costPropertyName); // 생성 
+
+            upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
+            upgradeButton.RegisterCallback<MouseOverEvent>((x) => ActiveDescription(x,upgradeButton));
+            upgradeButton.RegisterCallback<MouseOutEvent>((x) => DisableDescription(x));
+
+
+            _buttonElementList.Add(buttonElement);
+        }
+    }
     /// <summary>
     /// 
     /// </summary>
@@ -29,6 +103,10 @@ public class UpgradeButtonConstructor
     /// <param name="count">업그레이드 버튼 개수</param>
     public UpgradeButtonConstructor(FireWorkController fireWorkController, VisualElement rootElement)
     {
+        _descriptionPanel = _rootElement.Q<VisualElement>("description-panel");
+        _descriptionPanel.style.display = DisplayStyle.None;
+
+
         InitEnumList(); // enumList초기화 
         _buttonElementList.Clear();
 
@@ -52,7 +130,11 @@ public class UpgradeButtonConstructor
                                                                                                                             _fireWorkController, costLabel, upgradeButtonInfo.costPropertyName); // 생성 
 
             upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
-
+            upgradeButton.RegisterCallback<MouseOverEvent>((x) =>
+            { ActiveDescription(x, upgradeButton);
+                Debug.Log("마우스 오버");
+            });
+            upgradeButton.RegisterCallback<MouseOutEvent>(DisableDescription);
 
             _buttonElementList.Add(buttonElement);
         }
@@ -104,28 +186,48 @@ public class UpgradeButtonConstructor
 
     private void InitEnumList()
     {
+        if(_buttonTypeList == null)
+        {
+            Debug.Log("ERROR");
+            _buttonTypeList = new List<UpgradeButtonType>(); 
+        }
         _buttonTypeList.Clear();
 
+     
         foreach (UpgradeButtonType buttonType in Enum.GetValues(typeof(UpgradeButtonType)))
         {
             _buttonTypeList.Add(buttonType);
         }
     }
 
-    public void UpdateSomething()
+    /// <summary>
+    /// 설명창 활성화
+    /// </summary>
+    public void ActiveDescription(MouseOverEvent e, VisualElement v)
     {
-        if (_isOpenFurther2 == false && _fireWorkController.IsCanFurther2 == true )
-        {
-            LockOrUnlockButton(UpgradeButtonType.Further2, true);
-            _isOpenFurther2 = true;
-        }
-        if (_isOpenRenewal == false && _fireWorkController.IsCanRenewal == true)
-        {
-            LockOrUnlockButton(UpgradeButtonType.Renewal, true);
-            _isOpenRenewal = true;
-
-        }
+        //e.mousePosition
+        _descriptionPanel.style.display = DisplayStyle.Flex;
+        v.Insert(v.childCount, _descriptionPanel);
     }
+
+    /// <summary>
+    /// 설명창 활성화
+    /// </summary>
+    public void DisableDescription(MouseOutEvent e)
+    {
+        _descriptionPanel.style.display = DisplayStyle.None;
+    }
+
+    public void ActiveUpgradeUI(bool isActive)
+    {
+        if(isActive == true)
+        {
+            _rootElement.style.display = DisplayStyle.Flex;
+            return; 
+        }
+        _rootElement.style.display = DisplayStyle.None;
+    }
+
     /// <summary>
     /// 가격 텍스트 업데이트
     /// </summary>
@@ -153,9 +255,9 @@ public class UpgradeButtonConstructor
             }
         });
     }
-
-
 }
+
+
 public struct UpgradeButtonInfo
 {
     public string name; // 이름
@@ -164,6 +266,8 @@ public struct UpgradeButtonInfo
     public Action clickEvent;
 
 }
+
+
 /// <summary>
 /// 업그레이드 버튼 (SO로 관리할 수도..) 
 /// </summary>
@@ -249,7 +353,5 @@ public enum UpgradeButtonType
     RateUp,
     Renewal,
     Further1,
-    Further2,
-    Further3,
-    Further4
+    Further2
 }
