@@ -41,4 +41,7 @@ public class UserSaveData
 	public int further2TextureItemCode = 999;
 	public int further1Size = 1;
 	public int further2Size = 1;
+	public int furtherDirectionCode0 = 0;
+	public int furtherDirectionCode1 = 0;
+	public int furtherDirectionCode2 = 0;
 }

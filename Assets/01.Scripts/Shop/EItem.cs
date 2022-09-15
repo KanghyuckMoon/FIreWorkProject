@@ -7,4 +7,5 @@ public enum EItem
 	None,
 	Color,
 	Texture,
+	Direction,
 }

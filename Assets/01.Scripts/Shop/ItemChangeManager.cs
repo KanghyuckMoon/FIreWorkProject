@@ -6,6 +6,7 @@ public class ItemChangeManager : MonoBehaviour
 {
 	public enum CurrentSettingMode
 	{
+		Further0,
 		Further1,
 		Further2,
 	}
@@ -22,6 +23,8 @@ public class ItemChangeManager : MonoBehaviour
 	[SerializeField] private FireWorkController _fireWorkController;
 	[SerializeField] private CurrentSettingMode _currentSettingMode;
 	[SerializeField] private float _intensity = 5f;
+	[SerializeField] private ItemDataSO _itemDataSO;
+	[SerializeField] private int _itemCode;
 
 	/// <summary>
 	/// 받은 아이템데이터로 불꽃놀이 커스터마이즈, 불꽃놀이 변경
@@ -58,6 +61,23 @@ public class ItemChangeManager : MonoBehaviour
 					case CurrentSettingMode.Further2:
 						UserSaveDataManager.Instance.UserSaveData.further2TextureItemCode = itemData.itemCode;
 						FireWorkController.ChangeFurtherTexture2(itemData.texture2D);
+						break;
+				}
+				break;
+			case EItem.Direction:
+				switch (_currentSettingMode)
+				{
+					case CurrentSettingMode.Further0:
+						UserSaveDataManager.Instance.UserSaveData.furtherDirectionCode0 = itemData.directionCode;
+						FireWorkController.ChangeFurtherDirection0(itemData.directionCode);
+						break;
+					case CurrentSettingMode.Further1:
+						UserSaveDataManager.Instance.UserSaveData.furtherDirectionCode1 = itemData.directionCode;
+						FireWorkController.ChangeFurtherDirection1(itemData.directionCode);
+						break;
+					case CurrentSettingMode.Further2:
+						UserSaveDataManager.Instance.UserSaveData.furtherDirectionCode2 = itemData.directionCode;
+						FireWorkController.ChangeFurtherDirection2(itemData.directionCode);
 						break;
 				}
 				break;
@@ -148,6 +168,13 @@ public class ItemChangeManager : MonoBehaviour
 				}
 				break;
 		}
+	}
+
+
+	[ContextMenu("ChangeFirework")]
+	public void ChangeFirework()
+	{
+		ChangeFirework(_itemDataSO.GetItemData(_itemCode));
 	}
 
 
