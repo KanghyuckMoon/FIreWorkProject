@@ -55,6 +55,7 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 	/// <param name="money"></param>
 	public void AddMoney(int money)
 	{
+		//DetailsUI.instance.AddingScore(money);
 		UserSaveDataManager.Instance.UserSaveData.money += money;
 	}
 	/// <summary>
@@ -77,6 +78,7 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 				break;
 		}
 		UserSaveDataManager.Instance.UserSaveData.happy += gethappy;
+		DetailsUI.instance.AddingScore(gethappy);
 	}
 
 	/// <summary>
