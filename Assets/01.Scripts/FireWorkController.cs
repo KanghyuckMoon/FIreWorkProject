@@ -94,12 +94,14 @@ public class FireWorkController : MonoBehaviour
 	[SerializeField] private Gradient _furtherColor2_3;
 	[SerializeField] private Texture2D _furtherTexture1;
 	[SerializeField] private Texture2D _furtherTexture2;
+	[SerializeField] private int _furtherDirection0;
+	[SerializeField] private int _furtherDirection1;
+	[SerializeField] private int _furtherDirection2;
 	[SerializeField] private ItemDataSO _itemDataSO;
 	[SerializeField] private HappyMoneyManager _happyMoneyManager;
 	private UpgradeButtonConstructor _upgradeButtonConstructor; //
 
-	private List<float> _explosiontime1 = new List<float>();
-	private List<float> _explosiontime2 = new List<float>();
+	private List<float> _explosiontime = new List<float>();
 	public bool corotin;
 	public bool saveDatasetting;
 	private bool _isStop;
@@ -130,19 +132,6 @@ public class FireWorkController : MonoBehaviour
 	{
 		Explosion();
 	}
-
-	/// <summary>
-	/// 외부 변수 캐싱 
-	/// </summary>
-	/// <returns></returns>
-	//private IEnumerator Cashing()//
-	//{
-	//	while (_uIButtonManager.UpgradeButtonConstructor == null)
-	//	{
-	//		yield return null;
-	//	}
-	//	_upgradeButtonConstructor = _uIButtonManager.UpgradeButtonConstructor;
-	//}
 
 	/// <summary>
 	/// 저장 데이터기반 설정
@@ -194,12 +183,11 @@ public class FireWorkController : MonoBehaviour
 					float lifeTime = Random.Range(3f, 3.5f);
 					float further1lifeTime = 0f;
 					_visualEffect.SetFloat("lifeTime", lifeTime);
-					_explosiontime1.Add(lifeTime);
+					_explosiontime.Add(lifeTime);
 					if (IsCanFurther2)
 					{
 						further1lifeTime = Random.Range(1f, 1.2f);
 						_visualEffect.SetFloat("FurtherLifeTime1", further1lifeTime);
-						_explosiontime2.Add(further1lifeTime + lifeTime);
 					}
 					_visualEffect.SendEvent("Play");
 
@@ -214,8 +202,7 @@ public class FireWorkController : MonoBehaviour
 
 	public void Explosion()
 	{
-		TimeCheckList(_explosiontime1, 1);
-		TimeCheckList(_explosiontime2, 2);
+		TimeCheckList(_explosiontime, 1);
 	}
 
 	private void TimeCheckList(List<float> explosionList, int further = 1)
@@ -226,15 +213,6 @@ public class FireWorkController : MonoBehaviour
 			if (explosionList[i] <= 0f)
 			{
 				_visualEffect.SendEvent("Explosion");
-				switch (further)
-				{
-					case 1:
-						HappyMoneyManager.AddHappy(_further1);
-						break;
-					case 2:
-						HappyMoneyManager.AddHappy(_further2);
-						break;
-				}
 				explosionList.RemoveAt(i--);
 			}
 		}
@@ -298,6 +276,28 @@ public class FireWorkController : MonoBehaviour
 	public void UpdateFurtherTexture2()
 	{
 		VFXSetTexture(_visualEffect, "FurtherTexture2", _furtherTexture2);
+	}
+
+	/// <summary>
+	/// 폭죽 방향 설정
+	/// </summary>
+	public void UpdateFurtherDirectionCode0()
+	{
+		VFXSetInt(_visualEffect, "Direction1", _furtherDirection0);
+	}
+	/// <summary>
+	/// 폭발 방향 설정
+	/// </summary>
+	public void UpdateFurtherDirectionCode1()
+	{
+		VFXSetInt(_visualEffect, "Direction2", _furtherDirection1);
+	}
+	/// <summary>
+	/// 추가 폭발 방향 설정
+	/// </summary>
+	public void UpdateFurtherDirectionCode2()
+	{
+		VFXSetInt(_visualEffect, "Direction3", _furtherDirection2);
 	}
 
 	/// <summary>
@@ -427,6 +427,35 @@ public class FireWorkController : MonoBehaviour
 	{
 		_furtherTexture2 = texture;
 		UpdateFurtherTexture2();
+	}
+	/// <summary>
+	/// 추가폭발 색상 1변경
+	/// </summary>
+	/// <param name="gradient"></param>
+	public void ChangeFurtherDirection0(int code)
+	{
+		_furtherDirection0 = code;
+		UpdateFurtherDirectionCode0();
+	}
+
+	/// <summary>
+	/// 추가폭발 색상 1변경
+	/// </summary>
+	/// <param name="gradient"></param>
+	public void ChangeFurtherDirection1(int code)
+	{
+		_furtherDirection1 = code;
+		UpdateFurtherDirectionCode1();
+	}
+
+	/// <summary>
+	/// 추가폭발 색상 1변경
+	/// </summary>
+	/// <param name="gradient"></param>
+	public void ChangeFurtherDirection2(int code)
+	{
+		_furtherDirection2 = code;
+		UpdateFurtherDirectionCode2();
 	}
 
 	[ContextMenu("RefreshUpdateFurtherColor")]

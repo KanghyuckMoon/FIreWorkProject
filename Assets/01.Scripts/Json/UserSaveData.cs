@@ -35,10 +35,13 @@ public class UserSaveData
 	//∫“≤…≥Ó¿Ã ¿˙¿Â
 	public int further1ColorItemCode = 0;
 	public int further2ColorItemCode = 999;
-	public float further1ColorLight = 0f;
-	public float further2ColorLight = 0f;
+	public int further1ColorLight = 1;
+	public int further2ColorLight = 1;
 	public int further1TextureItemCode = 0;
 	public int further2TextureItemCode = 999;
-	public float further1Size = 1f;
-	public float further2Size = 1f;
+	public int further1Size = 1;
+	public int further2Size = 1;
+	public int furtherDirectionCode0 = 0;
+	public int furtherDirectionCode1 = 0;
+	public int furtherDirectionCode2 = 0;
 }
