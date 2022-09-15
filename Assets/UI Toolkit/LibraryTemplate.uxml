@@ -1,17 +1,17 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/MainUI.uss?fileID=7433441132597879392&amp;guid=dd05040a117160447bb194c19628c36f&amp;type=3#MainUI" />
     <Style src="project://database/Assets/UI%20Toolkit/ShopUI.uss?fileID=7433441132597879392&amp;guid=2446fca0ca2c7544ea0b2711d94dac1d&amp;type=3#ShopUI" />
-    <ui:VisualElement name="LibraryPanel" style="flex-grow: 1; justify-content: space-around; align-items: stretch; flex-direction: column; background-color: rgba(204, 204, 204, 0);">
+    <ui:VisualElement name="LibraryPanel" style="flex-grow: 1; justify-content: space-around; align-items: stretch; flex-direction: column; background-color: rgb(101, 101, 101);">
         <ui:VisualElement name="item-lists" style="justify-content: flex-start; flex-direction: column; align-items: stretch; flex-grow: 1; margin-top: 0; padding-bottom: 0;">
             <ui:VisualElement name="empty" style="flex-grow: 2;" />
             <ui:VisualElement name="UIPanel" style="background-color: rgba(255, 255, 255, 0);">
                 <ui:VisualElement name="buttonParent" class="line" style="border-bottom-width: 0; padding-bottom: 0; flex-direction: row; justify-content: space-around; height: 100px;">
                     <ui:VisualElement style="flex-direction: row; flex-grow: 1;">
-                        <ui:VisualElement name="further4-setting-button" style="flex-direction: row; align-items: stretch; padding-right: 0; width: 101px; margin-right: 20px;">
+                        <ui:VisualElement name="further4-setting-button" style="flex-direction: row; align-items: stretch; padding-right: 0; width: 101px; margin-right: 20px; display: none;">
                             <ui:Button text="추가 폭발4" display-tooltip-when-elided="true" name="button" class="button" style="width: 100%; height: 100%; font-size: 20%; -unity-font-style: normal; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background-color: rgba(0, 0, 0, 0.5);" />
                             <ui:VisualElement name="lock-icon" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/15.UISprite/%EC%9E%90%EB%AC%BC%EC%87%A0.png?fileID=21300000&amp;guid=f0ad086fd824d20479da67a9dde13ff2&amp;type=3#자물쇠&apos;); display: none;" />
                         </ui:VisualElement>
-                        <ui:VisualElement name="further3-setting-button" style="flex-direction: row; align-items: stretch; padding-right: 0; width: 101px; margin-right: 20px;">
+                        <ui:VisualElement name="further3-setting-button" style="flex-direction: row; align-items: stretch; padding-right: 0; width: 101px; margin-right: 20px; display: none;">
                             <ui:Button text="추가 폭발3" display-tooltip-when-elided="true" name="button" class="button" style="width: 100px; height: 100%; font-size: 20%; -unity-font-style: normal; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background-color: rgba(0, 0, 0, 0.5);" />
                             <ui:VisualElement name="lock-icon" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/15.UISprite/%EC%9E%90%EB%AC%BC%EC%87%A0.png?fileID=21300000&amp;guid=f0ad086fd824d20479da67a9dde13ff2&amp;type=3#자물쇠&apos;); display: none;" />
                         </ui:VisualElement>
@@ -24,10 +24,14 @@
                             <ui:VisualElement name="lock-icon" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/15.UISprite/%EC%9E%90%EB%AC%BC%EC%87%A0.png?fileID=21300000&amp;guid=f0ad086fd824d20479da67a9dde13ff2&amp;type=3#자물쇠&apos;); display: none;" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement style="flex-grow: 1; flex-direction: column; justify-content: space-between;">
+                    <ui:VisualElement style="flex-grow: 1; flex-direction: column; justify-content: space-between; display: none;">
                         <ui:Slider picking-mode="Ignore" label="빛 조절" value="42" high-value="100" name="intensity-slider" style="scale: 3 4; width: 250px; height: auto; margin-bottom: 0; margin-top: 10px; -unity-font-definition: url(&apos;project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&amp;guid=f30be4bb3933209499bc20092da7e369&amp;type=2#Maplestory Bold SDF&apos;); font-size: 12px; color: rgb(0, 0, 0); -unity-font: url(&apos;project://database/Assets/16.Font/Maplestory%20Bold.ttf?fileID=12800000&amp;guid=280e0a94badedbd41b469aba0523d054&amp;type=3#Maplestory Bold&apos;); margin-left: 547px;" />
-                        <ui:Slider picking-mode="Ignore" label="크기 조절" value="42" high-value="100" name="size-slider" class="slider" />
                     </ui:VisualElement>
+                    <ui:RadioButtonGroup value="-1" name="intetsity-radioGroup" style="scale: 2.5 2.5; justify-content: flex-start; align-items: stretch; flex-direction: row; height: 23px; margin-top: 42px; padding-right: 217px; -unity-font-definition: url(&apos;project://database/Assets/16.Font/SUIT-Thin%20SDF.asset?fileID=11400000&amp;guid=8dcc52e7918586d45a99294f607a6255&amp;type=2#SUIT-Thin SDF&apos;); -unity-font-style: bold; font-size: 14px;">
+                        <ui:RadioButton label="                   빛 세기 1단계" name="radiobutton1" style="-unity-font-style: bold; padding-right: 20px;" />
+                        <ui:RadioButton label="                   빛 세기 2단계" name="radiobutton2" style="padding-right: 20px;" />
+                        <ui:RadioButton label="                   빛 세기 3단계" name="radiobutton3" />
+                    </ui:RadioButtonGroup>
                 </ui:VisualElement>
                 <ui:ScrollView mode="Horizontal" horizontal-page-size="1" focusable="false" elasticity="0.1" scroll-deceleration-rate="0.135" vertical-scroller-visibility="Hidden" vertical-page-size="1" touch-scroll-type="Clamped" horizontal-scroller-visibility="AlwaysVisible" nested-interaction-kind="ForwardScrolling" name="shapeItem-scrollview" style="display: flex; margin-bottom: 0; margin-left: 40px; margin-right: 40px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 10px; border-left-width: 0; border-right-width: 0; border-bottom-width: 10px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px; padding-top: 20px; background-color: rgba(0, 0, 0, 0.5);">
                     <ui:VisualElement name="shopitem" class="shopItem" style="display: none; visibility: visible;">
@@ -46,9 +50,8 @@
                 <ui:ScrollView mode="Horizontal" horizontal-page-size="1" focusable="false" elasticity="0.1" scroll-deceleration-rate="0.135" vertical-scroller-visibility="Hidden" vertical-page-size="1" touch-scroll-type="Clamped" horizontal-scroller-visibility="AlwaysVisible" nested-interaction-kind="ForwardScrolling" name="colorItem-scrollview" class="line" style="background-color: rgba(0, 0, 0, 0.5); margin-top: 13px;">
                     <ui:VisualElement style="width: 0; height: 150px;" />
                 </ui:ScrollView>
-                <ui:VisualElement name="bottom-panel" style="justify-content: space-around; flex-direction: row-reverse; flex-grow: 0; margin-bottom: 0; align-items: stretch; margin-right: 0; background-color: rgb(48, 48, 48); color: rgb(209, 209, 209);">
-                    <ui:Button text="돌아가기" display-tooltip-when-elided="true" name="back-button" class="button" style="flex-direction: column; -unity-font-definition: url(&apos;project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&amp;guid=f30be4bb3933209499bc20092da7e369&amp;type=2#Maplestory Bold SDF&apos;); -unity-font-style: normal; font-size: 45px; width: 200px; height: 120px; margin-top: 5px; left: 15%; margin-bottom: 5px; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background-color: rgba(0, 0, 0, 255);" />
-                    <ui:Slider picking-mode="Ignore" label="불꽃놀이 높이 조절" value="0" high-value="1" name="height-slider" class="slider" style="margin-left: 0; margin-bottom: 0; width: 238px; height: 20px; padding-top: 0; margin-top: 0; color: rgb(0, 0, 0); translate: 0 50px;" />
+                <ui:VisualElement name="bottom-panel" style="justify-content: space-between; flex-direction: row-reverse; flex-grow: 0; margin-bottom: 0; align-items: flex-end; margin-right: 0; background-color: rgb(48, 48, 48); color: rgb(209, 209, 209); flex-wrap: nowrap;">
+                    <ui:Button text="돌아가기" display-tooltip-when-elided="true" name="back-button" class="button" style="flex-direction: column; -unity-font-definition: url(&apos;project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&amp;guid=f30be4bb3933209499bc20092da7e369&amp;type=2#Maplestory Bold SDF&apos;); -unity-font-style: normal; font-size: 45px; width: 200px; height: 120px; margin-top: 5px; left: 15%; margin-bottom: 5px; border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; background-color: rgb(0, 0, 0); margin-right: 364px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>

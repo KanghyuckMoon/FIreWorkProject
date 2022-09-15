@@ -62,8 +62,11 @@ public class UpgradeButtonConstructor : MonoBehaviour
         _descriptionPanel.style.display = DisplayStyle.None;
 
         _backButton = _rootElement.Q<Button>("back-button");
-        _backButton.clicked += () => gameObject.SetActive(false); 
-
+        _backButton.clicked += () =>
+        {
+            ActiveUpgradeUI(false); 
+            Debug.Log("업그레이드창 닫혀라");
+        };
         InitEnumList(); // enumList초기화 
         _buttonElementList.Clear();
 
@@ -129,7 +132,6 @@ public class UpgradeButtonConstructor : MonoBehaviour
             upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
             upgradeButton.RegisterCallback<MouseOverEvent>((x) => ActiveDescription(x,upgradeButton));
             upgradeButton.RegisterCallback<MouseOutEvent>(DisableDescription);
-
 
             _buttonElementList.Add(buttonElement);
         }
@@ -200,6 +202,7 @@ public class UpgradeButtonConstructor : MonoBehaviour
     /// </summary>
     public void ActiveDescription(MouseOverEvent e, VisualElement v)
     {
+        //e.mousePosition
         _descriptionPanel.style.display = DisplayStyle.Flex;
         v.Insert(v.childCount, _descriptionPanel);
     }
@@ -212,10 +215,16 @@ public class UpgradeButtonConstructor : MonoBehaviour
         _descriptionPanel.style.display = DisplayStyle.None;
     }
 
-    public void UpdateSomething()
+    public void ActiveUpgradeUI(bool isActive)
     {
- 
+        if(isActive == true)
+        {
+            _rootElement.style.display = DisplayStyle.Flex;
+            return; 
+        }
+        _rootElement.style.display = DisplayStyle.None;
     }
+
     /// <summary>
     /// 가격 텍스트 업데이트
     /// </summary>

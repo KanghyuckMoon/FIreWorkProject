@@ -26,7 +26,7 @@ public class UIButtonManager : MonoBehaviour
     [SerializeField]
     private VisualTreeAsset _settingTemplate; // 설정 템플릿
     [SerializeField]
-    private GameObject _upgradeUI; 
+    private UpgradeButtonConstructor _upgradeUI; 
     private VisualElement _settingPanel; // 설정 패널 
 
 
@@ -70,6 +70,8 @@ public class UIButtonManager : MonoBehaviour
         _settingPanelComponent.Init(this, _graphicSetting, _soundSetting, _exit); // 설정 버튼, 패널 캐싱 
         _shopPanelComponent.Init(this, _haveItemManager, _shopManager, _libraryPanelComponent);
         _libraryPanelComponent.Init(this, _haveItemManager, _itemChangeManager, _fireWorkController, AchievementViewManager);
+
+        _upgradeUI.ActiveUpgradeUI(false);
     }
     private void Update()
     {
@@ -104,8 +106,7 @@ public class UIButtonManager : MonoBehaviour
         _soundSetting = FindObjectOfType<SoundSetting>();
         _exit = FindObjectOfType<Exit>();
 
-        _upgradeUI = FindObjectOfType<UpgradeButtonConstructor>().gameObject;
-        _upgradeUI.SetActive(false); 
+        _upgradeUI = FindObjectOfType<UpgradeButtonConstructor>();
 
         _moneyElement = FindObjectOfType<MoneyManager>().RootElement; 
 
@@ -141,7 +142,11 @@ public class UIButtonManager : MonoBehaviour
             Debug.Log("닫거나 열어라");
         };
         _achievementButton.clicked += () => _achievementViewManager.OpenAchievementView();
-        _upgradeOpenButton.clicked += () => _upgradeUI.SetActive(true); 
+        _upgradeOpenButton.clicked += () =>
+        {
+            _upgradeUI.ActiveUpgradeUI(true); 
+            Debug.Log("업그레이드창 열려라");
+        }; 
     }
 
 

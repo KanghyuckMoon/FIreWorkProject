@@ -148,9 +148,10 @@
     height: 74px;
     font-size: 60px;
     color: rgb(255, 255, 255);
-    -unity-font-definition: url('project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&guid=f30be4bb3933209499bc20092da7e369&type=2#Maplestory Bold SDF');
-    -unity-text-outline-width: 2px;
+    -unity-text-outline-width: 0;
     -unity-text-outline-color: rgb(0, 0, 0);
+    -unity-font-definition: url('project://database/Assets/16.Font/SUIT-Thin%20SDF.asset?fileID=11400000&guid=8dcc52e7918586d45a99294f607a6255&type=2#SUIT-Thin SDF');
+    -unity-font-style: normal;
 }
 
 .money-label {
@@ -158,9 +159,10 @@
     height: auto;
     font-size: 60px;
     color: rgb(255, 255, 255);
-    -unity-font-definition: url('project://database/Assets/16.Font/Maplestory%20Bold%20SDF.asset?fileID=11400000&guid=f30be4bb3933209499bc20092da7e369&type=2#Maplestory Bold SDF');
-    -unity-text-outline-width: 2px;
+    -unity-font-definition: url('project://database/Assets/16.Font/SUIT-Thin%20SDF.asset?fileID=11400000&guid=8dcc52e7918586d45a99294f607a6255&type=2#SUIT-Thin SDF');
+    -unity-text-outline-width: 0;
     -unity-text-outline-color: rgb(0, 0, 0);
+    -unity-font-style: bold;
 }
 
 .top-panel {
@@ -277,5 +279,34 @@
 
 .neon-label {
     color: rgb(255, 255, 255);
-    text-shadow: 0 0 6px rgb(255, 0, 0);
+    text-shadow: 0 0 6px rgba(255, 0, 0, 0.95);
+}
+
+.reworkButton {
+    width: 150px;
+    height: 150px;
+    -unity-font-definition: url('project://database/Assets/16.Font/SUIT-Thin%20SDF.asset?fileID=11400000&guid=8dcc52e7918586d45a99294f607a6255&type=2#SUIT-Thin SDF');
+    font-size: 40px;
+    background-color: rgba(88, 88, 88, 0);
+    background-image: none;
+}
+
+.reworkButton:hover {
+    width: 150px;
+    height: 150px;
+    -unity-font-definition: url('project://database/Assets/16.Font/SUIT-Thin%20SDF.asset?fileID=11400000&guid=8dcc52e7918586d45a99294f607a6255&type=2#SUIT-Thin SDF');
+    font-size: 40px;
+    background-color: rgba(88, 88, 88, 0);
+    background-image: none;
+    scale: 1.05 1.05;
+}
+
+.reworkButton:active {
+    width: 150px;
+    height: 150px;
+    -unity-font-definition: url('project://database/Assets/16.Font/SUIT-Thin%20SDF.asset?fileID=11400000&guid=8dcc52e7918586d45a99294f607a6255&type=2#SUIT-Thin SDF');
+    font-size: 40px;
+    background-color: rgba(88, 88, 88, 0);
+    background-image: none;
+    scale: 0.95 0.95;
 }
