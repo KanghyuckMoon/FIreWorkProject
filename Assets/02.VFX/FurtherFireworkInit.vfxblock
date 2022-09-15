@@ -126,7 +126,7 @@ MonoBehaviour:
     x: 662
     y: -478
     width: 596
-    height: 458
+    height: 459
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 20
+      m_SerializableObject: 0
     m_Space: 2147483647
   m_Property:
     name: MaxSpeed
@@ -364,7 +364,7 @@ MonoBehaviour:
   - {fileID: 34}
   m_ExposedName: minSpeed
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 1
   m_Category: 
   m_Min:
     m_Type:
@@ -444,7 +444,7 @@ MonoBehaviour:
   - {fileID: 36}
   m_ExposedName: maxSpeed
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 2
   m_Category: 
   m_Min:
     m_Type:
@@ -517,14 +517,14 @@ MonoBehaviour:
   m_Parent: {fileID: 2}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 38}
   m_ExposedName: Direction
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 3
   m_Category: 
   m_Min:
     m_Type:
@@ -543,7 +543,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 38}
       inputSlot: {fileID: 18}
-    position: {x: 672, y: -122}
+    position: {x: 672, y: -127.2}
     expandedSlots: []
     expanded: 0
 --- !u!114 &38
