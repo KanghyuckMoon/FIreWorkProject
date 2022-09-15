@@ -53,6 +53,7 @@ public class UIButtonManager : MonoBehaviour
     private Exit _exit;
     private ItemChangeManager _itemChangeManager; // 
     private AchievementViewManager _achievementViewManager;
+    private DescriptionManager _descriptionManager; 
 
     // 프로퍼티 
     public VisualElement RootElement => _rootElement;
@@ -69,7 +70,7 @@ public class UIButtonManager : MonoBehaviour
         //_shopPanelComponent = new ShopPanelComponent(); 
         _settingPanelComponent.Init(this, _graphicSetting, _soundSetting, _exit); // 설정 버튼, 패널 캐싱 
         _shopPanelComponent.Init(this, _haveItemManager, _shopManager, _libraryPanelComponent);
-        _libraryPanelComponent.Init(this, _haveItemManager, _itemChangeManager, _fireWorkController, AchievementViewManager);
+        _libraryPanelComponent.Init(this, _haveItemManager, _itemChangeManager, _fireWorkController, AchievementViewManager, _descriptionManager);
 
         _upgradeUI.ActiveUpgradeUI(false);
     }
@@ -98,6 +99,7 @@ public class UIButtonManager : MonoBehaviour
     private void CashingElements()
     {
         // 외부 변수 캐싱 
+        _descriptionManager = FindObjectOfType<DescriptionManager>(); 
         _haveItemManager = FindObjectOfType<HaveItemManager>();
         _fireWorkController = FindObjectOfType<FireWorkController>();
         _itemChangeManager = FindObjectOfType<ItemChangeManager>();

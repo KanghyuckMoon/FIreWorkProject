@@ -130,7 +130,10 @@ public class UpgradeButtonConstructor : MonoBehaviour
                                                                                                                             _fireWorkController, costLabel, upgradeButtonInfo.costPropertyName); // 생성 
 
             upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
-            upgradeButton.RegisterCallback<MouseOverEvent>((x) => ActiveDescription(x,upgradeButton));
+            upgradeButton.RegisterCallback<MouseOverEvent>((x) =>
+            { ActiveDescription(x, upgradeButton);
+                Debug.Log("마우스 오버");
+            });
             upgradeButton.RegisterCallback<MouseOutEvent>(DisableDescription);
 
             _buttonElementList.Add(buttonElement);
