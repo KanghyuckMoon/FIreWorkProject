@@ -229,7 +229,7 @@ public class LibraryPanelComponent : UIComponent
 
             itemCode = haveItemList[i]; // 아이템 코드 
             ItemData itemData = _itemDataSO.GetItemData(itemCode);
-
+            
             ItemBox item = new ItemBox(itemData, _itemDataSO);
 
             if (IsContainItem(libraryItemInfo.itemList, item.ItemCode) == false) // 생성된 아이템이 아니라면 생성 
