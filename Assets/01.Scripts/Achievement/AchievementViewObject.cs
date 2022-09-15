@@ -8,8 +8,8 @@ using TMPro;
 public class AchievementViewObject : MonoBehaviour
 {
 	[SerializeField] private TextMeshProUGUI _nameText;
-	[SerializeField] private TextMeshProUGUI _contentText;
 	[SerializeField] private TextMeshProUGUI _clearText;
+	[SerializeField] private Image _image;
 	private RectTransform _rectTransform;
 
 	/// <summary>
@@ -20,8 +20,6 @@ public class AchievementViewObject : MonoBehaviour
 	public void UpdateUI(AchievementData achievementData, bool isGetAchievement)
 	{
 		_rectTransform ??= GetComponent<RectTransform>();
-
-		_contentText.text = achievementData._content;
 
 		if(isGetAchievement)
 		{
@@ -36,6 +34,7 @@ public class AchievementViewObject : MonoBehaviour
 
 		_rectTransform.localScale = Vector3.zero;
 		_rectTransform.DOScale(1, 0.3f).SetEase(Ease.InOutElastic).SetDelay(achievementData._achievementCode * 0.1f);
+		_image.sprite = achievementData._sprite;
 	}
 
 }
