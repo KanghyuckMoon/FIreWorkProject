@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class HappyMoneyManager : Singleton<HappyMoneyManager>
 {
@@ -66,7 +67,7 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 	{
 		int gethappy = happy;
 
-		switch(UserSaveDataManager.Instance.UserSaveData.renewal)
+		switch (UserSaveDataManager.Instance.UserSaveData.renewal)
 		{
 			case 0:
 				break;
@@ -77,8 +78,9 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 				gethappy = (int)(gethappy * 1.4f);
 				break;
 		}
-		UserSaveDataManager.Instance.UserSaveData.happy += gethappy;
+
 		DetailsUI.instance.AddingScore(gethappy);
+		UserSaveDataManager.Instance.UserSaveData.happy += gethappy;
 	}
 
 	/// <summary>
@@ -89,6 +91,7 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 		int happy = 0;
 		happy += FireWorkController.Further1;
 		happy *= FireWorkController.Further2 > 0 ? FireWorkController.Further2 : 1;
+
 
 		AddHappy(happy);
 	}

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System.Linq;
 using System;
+using static UnityEngine.Random;
 
 [Serializable]
 public class ShopPanelComponent : UIComponent
@@ -42,6 +43,7 @@ public class ShopPanelComponent : UIComponent
         _shopPanel.style.display = DisplayStyle.None;
         _shopButton = _uiButtonManager.RootElement.Q<Button>("shop-button");
         _lockIcon = _uiButtonManager.RootElement.Q<VisualElement>("shopLock-icon");
+        _lockIcon.style.display = DisplayStyle.Flex; 
 
         _shopBackButton = _shopPanel.Q<Button>("back-button");
         
@@ -108,15 +110,30 @@ public class ShopPanelComponent : UIComponent
     private void InstantiateItems(List<int> itemCodeList,List<ShopItemUI> itemList,VisualElement parent)
     {
         int count = itemCodeList.Count;
-
-        for (int i =0; i < count; i++)
+        int[] _randnum = new int[count];
+        
+        for (int i = 0; i < count; i++)
         {
-            int itemCode = itemCodeList[i];
+            _randnum[i] = i;
+        }
+
+        for(int i = 0; i < 100; i++)
+        {
+            int _rand1 = Range(0, count + 1);
+            int _rand2 = Range(0, count + 1);
+            int temp = _randnum[_rand1];
+            _randnum[_rand1] = _randnum[_rand2];
+            _randnum[_rand2] = temp;
+        }
+
+        for (int i = 0; i < count; i++)
+        {
+            int itemCode = itemCodeList[_randnum[i]];
 
             ShopItemUI item = new ShopItemUI(_itemDataSO.GetItemData(itemCode),
-                buyCheckEvent: () =>_shopManager.BuyItem(itemCode),
-                librartUpdateEvent: () => _libraryPanelComponent.CreateHaveItems());
-            
+    buyCheckEvent: () => _shopManager.BuyItem(itemCode),
+    librartUpdateEvent: () => _libraryPanelComponent.CreateHaveItems());
+
             if (itemList.Contains(item) == false) // 생성된 아이템이 아니라면 생성 
             {
                 itemList.Add(item);
@@ -124,7 +141,7 @@ public class ShopPanelComponent : UIComponent
             }
             else
             {
-                item = null; 
+                item = null;
             }
         }
 
