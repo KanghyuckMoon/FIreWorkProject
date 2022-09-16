@@ -15,10 +15,17 @@ public class DescriptionManager : MonoBehaviour
     [SerializeField]
     private DescriptionInfoSO _descriptionInfoSO;
 
+    public DescriptionInfoSO DescriptionInfoSO => _descriptionInfoSO; 
     private void Awake()
     {
         
     }
+
+    /// <summary>
+    /// UI빌더 버튼 설명창
+    /// </summary>
+    /// <param name="button"></param>
+    /// <param name="code"></param>
     public void SetDescriptionClickEvent(UnityEngine.UIElements.Button button,int code)
     {
         button.RegisterCallback<MouseOverEvent>((x) => ActiveDescription(true, code));
@@ -26,44 +33,22 @@ public class DescriptionManager : MonoBehaviour
     }
 
     /// <summary>
-    /// UI빌더 설명창 활성화
+    /// 설명창 활성화
     /// </summary>
     /// <param name="isActive"></param>
-    private void ActiveDescription(bool isActive, int code)
+    public void ActiveDescription(bool isActive, int code)
     {
         Debug.Log("설명 활성화");
         Debug.Log("코드 : " + code);
         if(isActive == true)    
         {
-            DescriptionInfo descriptionInfo = _descriptionInfoSO.GetDescriptionData(code);
+            DescriptionData descriptionInfo = _descriptionInfoSO.GetDescriptionData(code);
             _description.titleText.text = descriptionInfo.title;
             _description.contentText.text = descriptionInfo.content;
 
             _descriptionPanelRect.gameObject.SetActive(true);
             _descriptionPanelRect.anchoredPosition = Input.mousePosition;
             return; 
-        }
-        _descriptionPanelRect.gameObject.SetActive(false);
-    }
-
-
-    /// <summary>
-    /// 캔버스 설명창 활성화
-    /// </summary>
-    /// <param name="isActive"></param>
-    /// <param name="code"></param>
-    private void ActiveDescriptionInCanvas(bool isActive, int code)
-    {
-        Debug.Log("설명 활성화");
-        if (isActive == true)
-        {
-            DescriptionInfo descriptionInfo = _descriptionInfoSO.GetDescriptionData(code);
-            _description.titleText.text = descriptionInfo.title;
-            _description.contentText.text = descriptionInfo.content;
-
-            _descriptionPanelRect.gameObject.SetActive(true);
-            _descriptionPanelRect.anchoredPosition = Input.mousePosition;
-            return;
         }
         _descriptionPanelRect.gameObject.SetActive(false);
     }
@@ -76,7 +61,7 @@ public class Description
     public TextMeshProUGUI contentText;
 }
 
-public enum DescriptionType 
+public enum DescriptionType_
 {
     // 색 아이템 
     Color_1,

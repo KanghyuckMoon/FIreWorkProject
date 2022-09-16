@@ -122,7 +122,6 @@ public class LibraryPanelComponent : UIComponent
 
         _libraryLockIcon = _uiButtonManager.RootElement.Q<VisualElement>("libraryLock-icon");
 
-        _libraryPanel.style.display = DisplayStyle.Flex;
 
         _libraryBackButton = _libraryPanel.Q<Button>("back-button");
 
@@ -167,13 +166,17 @@ public class LibraryPanelComponent : UIComponent
     
         CreateHaveItems();
         LockOrUnlockSlider();
-        _toggleGroup.style.display = DisplayStyle.Flex;
+        
+        //È®ÀÎ¿ë
+        //  _toggleGroup.style.display = DisplayStyle.Flex;
+        //_libraryPanel.style.display = DisplayStyle.Flex;
+
     }
 
     public override void UpdateSometing()
     {
         _libraryButtonConstructor.UpdateSometing();
-        //LockOrUnlockSlider(); 
+        LockOrUnlockSlider(); 
 
         if (_isShopOpen == false)
         {

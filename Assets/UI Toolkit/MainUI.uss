@@ -179,6 +179,7 @@
 .topRight-panel {
     color: flex-direction row-reverse;
     flex-grow: 1;
+    visibility: visible;
 }
 
 .line {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2.2820969, g: 2.5192542, b: 4.067169, a: 1}
+  m_IndirectSpecularColor: {r: 2310.8276, g: 2705.5654, b: 3450.4375, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1674,12 +1674,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shopPanelComponent:
     _itemDataSO: {fileID: 11400000, guid: 2fe665e60a56e774a9dc9dbb56f4a1d4, type: 2}
-    _shopOpenCode: 33
+    _shopOpenCode: 53
   _libraryPanelComponent:
     _itemDataSO: {fileID: 11400000, guid: 2fe665e60a56e774a9dc9dbb56f4a1d4, type: 2}
     _libraryOpenCode: 33
   _settingTemplate: {fileID: 9197481963319205126, guid: 5b0175f313bd4aa4598c5970d9a6e697, type: 3}
-  _upgradeUI: {fileID: 0}
+  _upgradeUI: {fileID: 1735259785}
 --- !u!1 &969704423
 GameObject:
   m_ObjectHideFlags: 0

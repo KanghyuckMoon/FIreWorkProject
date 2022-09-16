@@ -6,9 +6,36 @@ using UnityEngine;
 public class DescriptionInfoSO : ScriptableObject
 {
     public List<DescriptionInfo> descriptionList = new List<DescriptionInfo>();
-    public DescriptionInfo GetDescriptionData(int code)
+    
+    /// <summary>
+    /// 설명 정보 반환 
+    /// </summary>
+    /// <param name="code"></param>
+    /// <returns></returns>
+    public DescriptionData GetDescriptionData(int code)
     {
-        return descriptionList.Find(x => x.code == code);
+        // 설명할 아이템 타입 확인 
+        DescriptionType descriptionType = DescriptionType.None;
+        if (code < (int)DescriptionType.ColorItem)
+        {
+            descriptionType = DescriptionType.ColorItem;
+        }
+        else if (code < (int)DescriptionType.ShapeItem)
+        {
+            descriptionType = DescriptionType.ShapeItem;
+        }
+        else if (code < (int)DescriptionType.Achievement)
+        {
+            descriptionType = DescriptionType.Achievement;
+        }
+        else if (code < (int)DescriptionType.Upgrade)
+        {
+            descriptionType = DescriptionType.Upgrade;
+        }
+
+        var v = descriptionList.Find((x) => x.descriptionType == descriptionType);
+        return v.descriptionData.Find((x) => x.code == code);
+        //return descriptionList.Find(x => x.code == code);
     }
 
 }
@@ -16,11 +43,20 @@ public class DescriptionInfoSO : ScriptableObject
 [System.Serializable]
 public class DescriptionInfo
 {
+    [Header("설명 아이템 종류")]
+    public DescriptionType descriptionType;
+    [Header("설명 데이터")]
+    public List<DescriptionData> descriptionData = new List<DescriptionData>(); 
+}
+
+[System.Serializable]
+public class DescriptionData
+{
 
     // 0 ~ 100 - 색 아이템
     // 101 ~ 220 - 모양 아이템 
-    // 221 ~ 300 - 업적 
-    // 301 ~ 350 - 업그레이드바 
+    // 300 ~ 400 - 업적 
+    // 500 ~ 600 - 업그레이드바 
     
     [Header("ID코드")]
     public int code; 
@@ -32,7 +68,12 @@ public class DescriptionInfo
 
 }
 
-public enum DescriptionType
+public enum DescriptionType : int
 {
+    None = -1, 
+    ColorItem = 0,
+    ShapeItem = 101,
+    Achievement = 221,
+    Upgrade = 301
 
 }
