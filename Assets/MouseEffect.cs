@@ -19,9 +19,7 @@ public class MouseEffect : MonoBehaviour
 
     void MouseDownEffect()
     {
-        point = Input.mousePosition; 
-        //point = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
-        //        Input.mousePosition.y, -Camera.main.transform.position.z));   
+        point = Input.mousePosition;   
 
         Sequence seq = DOTween.Sequence();
 
@@ -30,9 +28,9 @@ public class MouseEffect : MonoBehaviour
         seq.AppendCallback(() => _mouseEffectImage.rectTransform.position = point);
 
         seq.AppendCallback(() => _mouseEffectImage.gameObject.SetActive(true));
-        seq.Append(_mouseEffectImage.DOFade(1, 0.1f));
-        seq.Join(_mouseEffectImage.transform.DOScale(1.2f, 0.1f));
-        seq.Append(_mouseEffectImage.DOFade(0, 0.15f));
-        seq.Join(_mouseEffectImage.transform.DOScale(0, 0.15f));
+        seq.Append(_mouseEffectImage.DOFade(1, 0.18f));
+        seq.Join(_mouseEffectImage.transform.DOScale(1.2f, 0.18f));
+        seq.Append(_mouseEffectImage.DOFade(0, 0.1f));
+        seq.Join(_mouseEffectImage.transform.DOScale(0, 0.1f));
     }
 }

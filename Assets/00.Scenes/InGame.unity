@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2.1853437, g: 2.524828, b: 3.1931114, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -30775,7 +30775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 559, y: 507.42}
+  m_AnchoredPosition: {x: -533, y: 481}
   m_SizeDelta: {x: 305.4332, y: 65.1529}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &945835610
@@ -30800,7 +30800,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: +100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 66838da4bb3fa964e8290ff1d7b6b40a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f353b13cad077d340828e7d4d2777389, type: 2}
   m_sharedMaterial: {fileID: 7691499373802897488, guid: 66838da4bb3fa964e8290ff1d7b6b40a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -30864,7 +30864,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &945835611
@@ -37611,7 +37611,7 @@ PlayableDirector:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202900244}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 9a77a053a1e1c7a4a9e4f2a401b77e75, type: 2}
   m_InitialState: 1
@@ -88461,7 +88461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8056361067340841525, guid: 66ba116bd90768a4a99252250c486712, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8056361067340841524, guid: 66ba116bd90768a4a99252250c486712, type: 3}

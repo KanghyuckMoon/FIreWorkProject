@@ -40,8 +40,10 @@ public class ChangeDay : MonoBehaviour
 
     private void ActiveSun()
     {
-        if (Mathf.Abs(transform.eulerAngles.z) > 90f && Mathf.Abs(transform.eulerAngles.z) < 91f) { sun.SetActive(true); moon.SetActive(false); }
-        else if (Mathf.Abs(transform.eulerAngles.z) > 250f && Mathf.Abs(transform.eulerAngles.z) < 255f) { sun.SetActive(false); moon.SetActive(true); }
+        if (transform.eulerAngles.z > 90f && transform.eulerAngles.z < 91f) { sun.SetActive(true); moon.SetActive(false); }
+        else if (transform.eulerAngles.z > 270f && transform.eulerAngles.z < 271f) { sun.SetActive(false); moon.SetActive(true); }
+
+        Debug.Log("$$$$$ ::: " + transform.eulerAngles.z);
     }
 
     private void SunMove()
@@ -79,8 +81,11 @@ public class ChangeDay : MonoBehaviour
             }
         }
 
-        transform.rotation *= Quaternion.Euler(0, 0, 0.1f);
-        //transform.Rotate(Vector3.forward * currentSpeed * Time.deltaTime);
+        //transform.rotation *= Quaternion.Euler(0, 0, 0.1f);
+        transform.Rotate(Vector3.forward * currentSpeed * Time.deltaTime);
+
+        //sun.transform.RotateAround(transform.position, currentSpeed * Time.deltaTime);
+        //moon.transform.RotateAround(transform.position, currentSpeed * Time.deltaTime);
     }
 
     IEnumerator ChangeSky()
