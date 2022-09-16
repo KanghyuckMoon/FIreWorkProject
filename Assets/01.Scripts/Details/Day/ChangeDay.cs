@@ -79,7 +79,8 @@ public class ChangeDay : MonoBehaviour
             }
         }
 
-        transform.Rotate(Vector3.forward * currentSpeed * Time.deltaTime);
+        transform.rotation *= Quaternion.Euler(0, 0, 0.1f);
+        //transform.Rotate(Vector3.forward * currentSpeed * Time.deltaTime);
     }
 
     IEnumerator ChangeSky()
