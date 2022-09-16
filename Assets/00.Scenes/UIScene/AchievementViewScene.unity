@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2.3357615, g: 2.7010517, b: 3.418066, a: 1}
+  m_IndirectSpecularColor: {r: 1242.4873, g: 1453.8232, b: 1852.6997, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &100479302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +433,7 @@ MonoBehaviour:
   _achievementBackground: {fileID: 198451503}
   _achievementDataSO: {fileID: 11400000, guid: bda4b58d3acb68f4aa93d394a794939d, type: 2}
   _achievementViewObject: {fileID: 7761923187429178621, guid: 86adbe5bc4d82c5418d413c5ac350945, type: 3}
+  _backgroundImage: {fileID: 0}
 --- !u!1 &1750762790
 GameObject:
   m_ObjectHideFlags: 0
