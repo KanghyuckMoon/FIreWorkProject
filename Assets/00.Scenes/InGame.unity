@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.26070184, g: 0.37717962, b: 0.57868385, a: 1}
+  m_IndirectSpecularColor: {r: 0.487203, g: 5.0678596, b: 12.5056, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -44295,7 +44295,7 @@ VisualEffect:
       m_Array: []
     m_Int:
       m_Array:
-      - m_Value: 10
+      - m_Value: 1
         m_Name: FurtherCount1
         m_Overridden: 1
       - m_Value: 1
