@@ -27,6 +27,8 @@ public class UpgradeButtonConstructor : MonoBehaviour
     private bool _isOpenFurther2 = false;
     private bool _isOpenRenewal = false;
 
+    [SerializeField]
+    private GameObject _backgroundCanvas; 
 
     private void Awake()
     {
@@ -57,6 +59,8 @@ public class UpgradeButtonConstructor : MonoBehaviour
     }
     private void Init()
     {
+        _rootElement.style.display = DisplayStyle.None; 
+
         _buttonElementList = new List<UpgradeButtonElement>();
         _buttonTypeList = new List<UpgradeButtonType>(); 
 
@@ -79,6 +83,8 @@ public class UpgradeButtonConstructor : MonoBehaviour
         // 업그레이드 버튼 캐싱 후 리스트에 넣기 
         foreach (UpgradeButtonType buttonType in _buttonTypeList)
         {
+            if (buttonType == UpgradeButtonType.Renewal) continue;   // 임시 스킵 
+
             upgradeButtonInfo = CheckElement(buttonType); // 업그레이드 버튼 정보 찾기 
 
             VisualElement upgradeButtonParent = _rootElement.Q<VisualElement>(upgradeButtonInfo.name); // 업그레이드 버튼 부모 element
@@ -229,9 +235,11 @@ public class UpgradeButtonConstructor : MonoBehaviour
         if(isActive == true)
         {
             _rootElement.style.display = DisplayStyle.Flex;
-            return; 
+            _backgroundCanvas.SetActive(true); 
+            return;
         }
         _rootElement.style.display = DisplayStyle.None;
+        _backgroundCanvas.SetActive(false);
     }
 
     /// <summary>
@@ -261,6 +269,8 @@ public class UpgradeButtonConstructor : MonoBehaviour
             }
         });
     }
+
+
 }
 
 

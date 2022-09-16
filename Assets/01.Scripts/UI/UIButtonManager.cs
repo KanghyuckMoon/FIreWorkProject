@@ -68,8 +68,8 @@ public class UIButtonManager : MonoBehaviour
         _settingPanelComponent = new SettingPanelComponent();
         //_shopPanelComponent = new ShopPanelComponent(); 
         _settingPanelComponent.Init(this, _graphicSetting, _soundSetting, _exit); // 설정 버튼, 패널 캐싱 
-        _shopPanelComponent.Init(this, _haveItemManager, _shopManager, _libraryPanelComponent);
         _libraryPanelComponent.Init(this, _haveItemManager, _itemChangeManager, _fireWorkController, AchievementViewManager, _descriptionManager);
+        _shopPanelComponent.Init(this, _haveItemManager, _shopManager, _libraryPanelComponent);
 
         _upgradeUI.ActiveUpgradeUI(false);
     }

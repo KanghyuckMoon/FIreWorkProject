@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 //using UnityEditor.UIElements; 
 using System;
 
+// 라이브러리 아이템 
 public class ItemBox : ItemUI
 {
     private ItemChangeManager ItemChangeManager
@@ -33,7 +34,6 @@ public class ItemBox : ItemUI
 	[SerializeField] private ItemChangeManager _itemChangeManager;
     [SerializeField] private ItemDataSO _itemDataSO;
 	[SerializeField] private float _debugValue;
-
 
 
 	public ItemBox(ItemData itemData,ItemDataSO itemDataSO)

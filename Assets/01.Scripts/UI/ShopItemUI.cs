@@ -40,6 +40,14 @@ public class ShopItemUI : ItemUI
         PurchasedItem();
     }
 
+    public void ResetItems(ItemData itemData)
+    {
+        // 이미지 바꾸기
+        // 아이템 코드 바꾸기 
+        _itemCost.text = itemData.money.ToString();
+        PurchasedItem(); 
+    }
+
     /// <summary>
     /// 아이템 구매시 UI 변경 
     /// </summary>
