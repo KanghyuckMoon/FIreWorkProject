@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2.1870384, g: 2.526452, b: 3.1948023, a: 1}
+  m_IndirectSpecularColor: {r: 2.1814766, g: 2.5210772, b: 3.1896477, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6972,8 +6972,8 @@ MonoBehaviour:
   _description:
     titleText: {fileID: 2246343394376832371}
     contentText: {fileID: 2246343394376832372}
-    additionalInfoText: {fileID: 0}
-    image: {fileID: 0}
+    additionalInfoText: {fileID: 2246343394376832374}
+    image: {fileID: 2246343394376832373}
   _descriptionPanelRect: {fileID: 934604642}
   _descriptionInfoSO: {fileID: 11400000, guid: e9b97d0ea9a9dfa4f9ba37f938d15dff, type: 2}
   _achievementDataSO: {fileID: 11400000, guid: bda4b58d3acb68f4aa93d394a794939d, type: 2}
@@ -8355,6 +8355,28 @@ MonoBehaviour:
 --- !u!114 &2246343394376832372 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2200007369471578354, guid: e1d9a1ef8ee144d408359e70a0794087, type: 3}
+  m_PrefabInstance: {fileID: 2246343394376832370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2246343394376832373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2246343393968720767, guid: e1d9a1ef8ee144d408359e70a0794087, type: 3}
+  m_PrefabInstance: {fileID: 2246343394376832370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2246343394376832374 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3536496587446979396, guid: e1d9a1ef8ee144d408359e70a0794087, type: 3}
   m_PrefabInstance: {fileID: 2246343394376832370}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
