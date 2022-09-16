@@ -8,7 +8,7 @@ public class DescriptionInfoSO : ScriptableObject
     [Header("ID 코드")]
     [Header(" 0 ~ 100 - 색 아이템")]
     [Header("101 ~ 220 - 모양 아이템")]
-    [Header("300 ~ 400 - 업적")]
+   // [Header("300 ~ 400 - 업적")]
     [Header("500 ~ 600 - 업그레이드바")]
     public List<DescriptionInfo> descriptionList = new List<DescriptionInfo>();
     
@@ -69,6 +69,8 @@ public class DescriptionData
     public string title; // 설명 제목 
     [TextArea(2,4),Header("내용")]
     public string content; // 내용 
+    [Header("이미지")]
+    public Sprite sprite; 
     // GIF? 
 
 }
