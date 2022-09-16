@@ -51,17 +51,17 @@ public class AchievementChecker
 		_achievements.Add(new Achievement(26, x => x.happy >= 90000)); //또행성의 집3
 		_achievements.Add(new Achievement(27, x => x.happy >= 105000)); //또행성의 집4
 		_achievements.Add(new Achievement(28, x => x.happy >= 145000)); //또행성의 유니티짱
-		_achievements.Add(new Achievement(29, x => x.happy >= 1920000)); //유니티짱2
-		_achievements.Add(new Achievement(30, x => x.happy >= 2000000)); //2차 폭발 개방
+		_achievements.Add(new Achievement(29, x => x.happy >= 300000)); //유니티짱2
+		_achievements.Add(new Achievement(30, x => x.happy >= 100000)); //2차 폭발 개방
 		//_achievements.Add(new Achievement(31, x => x.happy >= 80000)); //3차 폭발 개방
 		//_achievements.Add(new Achievement(32, x => x.happy >= 150000)); //4차 폭발 개방
 		_achievements.Add(new Achievement(33, x => x.haveAchievement.Count >= 5)); //라이브러리 개방
 		//_achievements.Add(new Achievement(34, x => x.happy >= 60000)); //리뉴얼 개방
 		_achievements.Add(new Achievement(35, x => x.happy >= 70000)); //빛조절 개방
 		//_achievements.Add(new Achievement(36, x => x.happy >= 80000)); //크기조절 개방
-		_achievements.Add(new Achievement(37, x => x.happy >= 3840000)); //유니티짱3 개방
-		_achievements.Add(new Achievement(38, x => x.happy >= 2000)); //장식구1 개방
-		_achievements.Add(new Achievement(39, x => x.happy >= 3000)); //장식구2 개방
+		_achievements.Add(new Achievement(37, x => x.happy >= 1000000)); //유니티짱3 개방
+		//_achievements.Add(new Achievement(38, x => x.happy >= 2000)); //장식구1 개방
+		//_achievements.Add(new Achievement(39, x => x.happy >= 3000)); //장식구2 개방
 		_achievements.Add(new Achievement(40, x => x.happy >= 4000)); //색깔아이템1세트 개방
 		_achievements.Add(new Achievement(41, x => x.happy >= 5000)); //모양아이템1세트 개방
 		_achievements.Add(new Achievement(42, x => x.happy >= 6000)); //색깔아이템2세트 개방
@@ -70,12 +70,12 @@ public class AchievementChecker
 		_achievements.Add(new Achievement(45, x => x.happy >= 9000)); //모양아이템마지막세트 개방
 		_achievements.Add(new Achievement(46, x => _click >= 50)); //특별한 색깔 아이템 추가
 		_achievements.Add(new Achievement(47, x => Time.time > 3600)); //특별한 모양 아이템 추가
-		_achievements.Add(new Achievement(48, x => x.haveAchievement.Count >= 49)); //엔딩
+		_achievements.Add(new Achievement(48, x => x.haveAchievement.Count >= 46)); //엔딩
 		_achievements.Add(new Achievement(49, x => true)); //게임 시작
 		_achievements.Add(new Achievement(50, x => x.happy >= 50)); //강화에 대해
 		_achievements.Add(new Achievement(51, x => x.haveAchievement.Count >= 20)); //많은 업적 달성
-		_achievements.Add(new Achievement(52, x => x.haveAchievement.Count >= 20 && x.renewal >= 1)); //다시 한번 많은 업적 달성!
-		_achievements.Add(new Achievement(53, x => x.happy >= 500 && x.haveAchievement.Count >= 5)); //상점 개방
+		//_achievements.Add(new Achievement(52, x => x.haveAchievement.Count >= 20)); //다시 한번 많은 업적 달성!
+		_achievements.Add(new Achievement(53, x => x.haveAchievement.Count >= 5)); //상점 개방
 	}
 
 	private AchievementDataSO _achievementDataSO = null;
