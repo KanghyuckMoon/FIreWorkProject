@@ -28,6 +28,8 @@ public class ShopItemUI : ItemUI
         _button.clicked += buyCheckEvent;
         _button.clicked += librartUpdateEvent;
         _button.clicked += PurchasedItem;
+        _button.clicked += UpdateUI;
+
 
         _purchasedImage.AddToClassList("purchased-image");
         _purchasedLabel.AddToClassList("purchased-label");

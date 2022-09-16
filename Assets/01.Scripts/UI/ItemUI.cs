@@ -55,13 +55,22 @@ public class ItemUI : VisualElement
         this.Add(_button);
         _button.Add(_itemImage);
 
-        DescriptionManager.SetDescriptionClickEvent(_button, _itemCode);
+        UpdateUI(); 
 
         //        CheckPurchasable(isPurchasable); // 구매 가능한 아이템인지 체크(라이브러리 아이템이면 구매 불가) 
 
         //PurchasedItem();
 
 
+    }
+
+    /// <summary>
+    /// 갸격 텍스트 업데이트 
+    /// </summary>
+    public void UpdateUI()
+    {
+        string cost = $"가격 : {_itemData.money}";
+        DescriptionManager.SetDescriptionClickEvent(_button, _itemCode, cost);
     }
 
     private void SetColor(ItemData itemData)

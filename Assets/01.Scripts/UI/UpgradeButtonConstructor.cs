@@ -96,6 +96,8 @@ public class UpgradeButtonConstructor : MonoBehaviour
                                                                                                                             _fireWorkController, costLabel, upgradeButtonInfo.costPropertyName); // 생성 
 
             upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
+
+
             //upgradeButton.RegisterCallback<MouseOverEvent>((x) => ActiveDescription(x,upgradeButton));
             //upgradeButton.RegisterCallback<MouseOutEvent>((x) => DisableDescription(x));
             
@@ -344,6 +346,7 @@ public class UpgradeButtonElement
     {
         _cost = (int)_propertyInfo.GetValue(_fireWorkController);
         Debug.Log(_cost);
+
         _costLabel.text = _cost.ToString();
     }
 

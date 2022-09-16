@@ -13,6 +13,8 @@ public class AchievementViewObject : MonoBehaviour,IPointerEnterHandler,IPointer
 	[SerializeField] private Image _image;
 	private RectTransform _rectTransform;
 
+	private bool _isClear = false; // 달성했는가 
+
 	private AchievementData _achievementData; // 업적 데이터 
 	private DescriptionManager _descriptionManager; // 설명창 관리자  
     private void Awake()
@@ -21,11 +23,12 @@ public class AchievementViewObject : MonoBehaviour,IPointerEnterHandler,IPointer
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-		_descriptionManager.ActiveAchievementDescriptoin(true, _achievementData._achievementCode);
+
+		_descriptionManager.ActiveAchievementDescriptoin(isActive: true,isClear: _isClear, _achievementData._achievementCode);
 	}
 	public void OnPointerExit(PointerEventData eventData)
 	{
-		_descriptionManager.ActiveAchievementDescriptoin(false, _achievementData._achievementCode);
+		_descriptionManager.ActiveAchievementDescriptoin(isActive:  false, isClear: _isClear, _achievementData._achievementCode);
 	}
 	/// <summary>
 	/// UI 업데이트
@@ -35,9 +38,11 @@ public class AchievementViewObject : MonoBehaviour,IPointerEnterHandler,IPointer
 	public void UpdateUI(AchievementData achievementData, bool isGetAchievement)
 	{
 		_rectTransform ??= GetComponent<RectTransform>();
-		_achievementData ??= achievementData; 
+		_achievementData ??= achievementData;
 
-		if(isGetAchievement)
+		_isClear = isGetAchievement; 
+
+		if (isGetAchievement)
 		{
 			_nameText.text = achievementData._achievementName;
 			_clearText.text = "달성!";
