@@ -21,11 +21,11 @@ public class DescriptionInfoSO : ScriptableObject
     {
         // 설명할 아이템 타입 확인 
         DescriptionType descriptionType = DescriptionType.None;
-        if (code < (int)DescriptionType.ColorItem)
-        {
-            descriptionType = DescriptionType.ColorItem;
-        }
-        else if (code < (int)DescriptionType.ShapeItem)
+        //if (code >= (int)DescriptionType.ColorItem && (int)DescriptionType.ShapeItem)
+     //   {
+      //      descriptionType = DescriptionType.ColorItem;
+       // }
+         if (code < (int)DescriptionType.ShapeItem)
         {
             descriptionType = DescriptionType.ShapeItem;
         }
