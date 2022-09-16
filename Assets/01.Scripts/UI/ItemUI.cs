@@ -76,6 +76,7 @@ public class ItemUI : VisualElement
         _itemImage.style.unityBackgroundImageTintColor = new StyleColor(Color.white);
 
     }
+
     /*
     /// <summary>
     /// 구매 가능한 아이템인지 체크

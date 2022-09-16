@@ -4,10 +4,10 @@
         <ui:VisualElement name="topLeft-panel" class="topLeft-panel" style="display: flex; visibility: visible; flex-direction: row; justify-content: flex-start; align-items: stretch; flex-grow: 0.7;">
             <ui:VisualElement name="uiBox" class="uiBox" style="flex-direction: column; align-items: flex-start; padding-left: 3%; padding-top: 20px;">
                 <ui:VisualElement name="happyMoneyParent" style="flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 1%;">
-                    <ui:VisualElement name="happyMoney-image" style="height: 100%; flex-grow: 0; width: auto; padding-left: 70px; background-image: url(&apos;project://database/Assets/18.CharacterSprite/man.png?fileID=21300000&amp;guid=19a0d5435ab6f934797d9bf251d7a368&amp;type=3#man&apos;); margin-right: 10px;" />
-                    <ui:Label text="Label" display-tooltip-when-elided="true" name="happyMoney-label" class="happyMoney-label neon-label" style="height: 100%; flex-grow: 0; -unity-font-style: bold; -unity-text-outline-width: 0; text-shadow: 0 0 8px rgba(255, 60, 0, 0.95);" />
+                    <ui:VisualElement name="happyMoney-image" style="height: 100%; flex-grow: 0; width: auto; padding-left: 70px; background-image: url(&apos;project://database/Assets/15.UISprite/%ED%96%89%EB%B3%B5%EC%9E%AC%ED%99%94.png?fileID=21300000&amp;guid=c9dc283977dd8f643993d3c7338c9969&amp;type=3#행복재화&apos;); margin-right: 10px; -unity-background-image-tint-color: rgba(255, 255, 255, 255);" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" name="happyMoney-label" class="happyMoney-label neon-label" style="height: 100%; flex-grow: 0; -unity-font-style: bold; -unity-text-outline-width: 0; text-shadow: 0 0 8px rgba(255, 181, 0, 0.95);" />
                 </ui:VisualElement>
-                <ui:VisualElement name="moneyParent" style="flex-direction: row; justify-content: flex-start; align-items: center;">
+                <ui:VisualElement name="moneyParent" style="flex-direction: row; justify-content: flex-start; align-items: center; display: none;">
                     <ui:VisualElement name="money-image" style="height: 100%; flex-grow: 0; width: auto; padding-left: 70px; background-image: url(&apos;project://database/Assets/18.CharacterSprite/man.png?fileID=21300000&amp;guid=19a0d5435ab6f934797d9bf251d7a368&amp;type=3#man&apos;); margin-right: 10px;" />
                     <ui:Label text="Label" display-tooltip-when-elided="true" name="money-label" class="money-label neon-label" style="height: 100%; flex-grow: 0; text-shadow: 0 0 8px rgba(255, 199, 0, 0.96);" />
                 </ui:VisualElement>

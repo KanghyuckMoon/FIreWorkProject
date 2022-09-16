@@ -19,6 +19,8 @@ public class LibraryButtonConstructor
 
     public LibraryButtonConstructor(FireWorkController fireWorkController, ItemChangeManager itemChangeManager, DescriptionManager descriptionManager,VisualElement rootElement)
     {
+        Debug.Log("라이브러리 생성");
+
         InitEnumList();
         _buttonElementList.Clear();
 

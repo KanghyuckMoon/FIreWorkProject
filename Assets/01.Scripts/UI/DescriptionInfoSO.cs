@@ -21,19 +21,19 @@ public class DescriptionInfoSO : ScriptableObject
     {
         // 설명할 아이템 타입 확인 
         DescriptionType descriptionType = DescriptionType.None;
-        //if (code >= (int)DescriptionType.ColorItem && (int)DescriptionType.ShapeItem)
-     //   {
-      //      descriptionType = DescriptionType.ColorItem;
-       // }
-         if (code < (int)DescriptionType.ShapeItem)
+        if (code >= (int)DescriptionType.ColorItem && code < (int)DescriptionType.ShapeItem)
+        {
+            descriptionType = DescriptionType.ColorItem;
+        }
+        else if (code >= (int)DescriptionType.ShapeItem && code < (int)DescriptionType.Achievement)
         {
             descriptionType = DescriptionType.ShapeItem;
         }
-        else if (code < (int)DescriptionType.Achievement)
+        else if (code >= (int)DescriptionType.Achievement && code < (int)DescriptionType.Upgrade)
         {
             descriptionType = DescriptionType.Achievement;
         }
-        else if (code < (int)DescriptionType.Upgrade)
+        else if (code >= (int)DescriptionType.Upgrade)
         {
             descriptionType = DescriptionType.Upgrade;
         }

@@ -109,6 +109,7 @@ public class LibraryPanelComponent : UIComponent
     public void Init(UIButtonManager uIButtonManager, HaveItemManager haveItemManager, ItemChangeManager itemChangeManager, FireWorkController fireWorkController,
                             AchievementViewManager achievementViewManager,DescriptionManager descriptionManager)
     {
+        Debug.Log("라이브러리 초기화");
         _uiButtonManager = uIButtonManager;
         _haveItemManager = haveItemManager;
         _itemChangeMnager = itemChangeManager;
@@ -169,7 +170,7 @@ public class LibraryPanelComponent : UIComponent
         
         //확인용
         //  _toggleGroup.style.display = DisplayStyle.Flex;
-        //_libraryPanel.style.display = DisplayStyle.Flex;
+        _libraryPanel.style.display = DisplayStyle.None;
 
     }
 

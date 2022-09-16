@@ -26,6 +26,8 @@ public class ShopPanelComponent : UIComponent
     private List<ShopItemUI> _shopColorItemList = new List<ShopItemUI>();
     private List<ShopItemUI> _shopShapeItemList = new List<ShopItemUI>();
 
+    private List<ShopItemUI> _shopItemList = new List<ShopItemUI>(); 
+
     [SerializeField]
     private ItemDataSO _itemDataSO;
     [SerializeField]
@@ -101,6 +103,7 @@ public class ShopPanelComponent : UIComponent
         InstantiateItems(itemCodeList, itemList, parent); 
     }
 
+
     /// <summary>
     /// 상점 아이템 생성 
     /// </summary>
@@ -110,29 +113,30 @@ public class ShopPanelComponent : UIComponent
     private void InstantiateItems(List<int> itemCodeList,List<ShopItemUI> itemList,VisualElement parent)
     {
         int count = itemCodeList.Count;
-        int[] _randnum = new int[count];
+        //int[] _randnum = new int[count];
         
+        //for (int i = 0; i < count; i++)
+        //{
+        //    _randnum[i] = i;
+        //}
+
+        //for(int i = 0; i < 100; i++)
+        //{
+        //    int _rand1 = Range(0, count);
+        //    int _rand2 = Range(0, count);
+        //    int temp = _randnum[_rand1];
+        //    _randnum[_rand1] = _randnum[_rand2];
+        //    _randnum[_rand2] = temp;
+        //}
+
         for (int i = 0; i < count; i++)
         {
-            _randnum[i] = i;
-        }
-
-        for(int i = 0; i < 100; i++)
-        {
-            int _rand1 = Range(0, count + 1);
-            int _rand2 = Range(0, count + 1);
-            int temp = _randnum[_rand1];
-            _randnum[_rand1] = _randnum[_rand2];
-            _randnum[_rand2] = temp;
-        }
-
-        for (int i = 0; i < count; i++)
-        {
-            int itemCode = itemCodeList[_randnum[i]];
+            //int itemCode = itemCodeList[_randnum[i]];
+            int itemCode = i; 
 
             ShopItemUI item = new ShopItemUI(_itemDataSO.GetItemData(itemCode),
-    buyCheckEvent: () => _shopManager.BuyItem(itemCode),
-    librartUpdateEvent: () => _libraryPanelComponent.CreateHaveItems());
+            buyCheckEvent: () => _shopManager.BuyItem(itemCode),
+            librartUpdateEvent: () => _libraryPanelComponent.CreateHaveItems());
 
             if (itemList.Contains(item) == false) // 생성된 아이템이 아니라면 생성 
             {
