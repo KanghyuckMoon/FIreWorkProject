@@ -75,7 +75,7 @@ public class ChangeDay : MonoBehaviour
             {
                 _hdrisky.exposure.value += 0.1f;
             }
-            if (_light.intensity <= 4000)
+            if (_light.intensity <= 500)
             {
                 _light.intensity += 200f;
             }
