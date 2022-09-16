@@ -43,6 +43,16 @@ public class ItemBox : ItemUI
 		_itemCode = itemData.itemCode;
 
 		_button.clicked += ChangeFirework;
+		UpdateUI(); 
+	}
+
+	/// <summary>
+	/// 갸격 텍스트 업데이트 
+	/// </summary>
+	public void UpdateUI()
+	{
+		string cost = $"가격 : {_itemData.money}";
+		DescriptionManager.SetDescriptionClickEvent(_button, _itemCode, null);
 	}
 
 	[ContextMenu("ChangeFirework")]

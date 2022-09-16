@@ -39,6 +39,8 @@ public class ShopItemUI : ItemUI
         this.Add(_purchasedImage);
         _purchasedImage.Add(_purchasedLabel);
 
+        UpdateUI();
+
         PurchasedItem();
     }
 
@@ -48,6 +50,15 @@ public class ShopItemUI : ItemUI
         // 아이템 코드 바꾸기 
         _itemCost.text = itemData.money.ToString();
         PurchasedItem(); 
+    }
+
+    /// <summary>
+    /// 갸격 텍스트 업데이트 
+    /// </summary>
+    public void UpdateUI()
+    {
+        string cost = $"가격 : {_itemData.money}";
+        DescriptionManager.SetDescriptionClickEvent(_button, _itemCode, cost);
     }
 
     /// <summary>

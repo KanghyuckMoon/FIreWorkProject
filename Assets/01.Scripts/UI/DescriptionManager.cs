@@ -49,9 +49,13 @@ public class DescriptionManager : MonoBehaviour
             _description.contentText.text = descriptionInfo.content;
             if(addInfo != null)
             {
-                _description.additionalInfoText.text = addInfo; 
+                _description.additionalInfoText.text = addInfo;
+                _description.additionalInfoText.gameObject.SetActive(true);
             }
-
+            else
+            {
+                _description.additionalInfoText.gameObject.SetActive(false);
+            }
 
             _descriptionPanelRect.gameObject.SetActive(true);
             _descriptionPanelRect.anchoredPosition = Input.mousePosition;
@@ -67,6 +71,7 @@ public class DescriptionManager : MonoBehaviour
     {
         if (isActive == true)
         {
+            _description.additionalInfoText.gameObject.SetActive(false);
             Debug.Log("code : " + code);
             string clearText = " (¹Ì´Þ¼º!)";
             if (isClear == true)
