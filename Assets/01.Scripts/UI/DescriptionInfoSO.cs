@@ -69,6 +69,8 @@ public class DescriptionData
     public string title; // 설명 제목 
     [TextArea(2,4),Header("내용")]
     public string content; // 내용 
+    [Header("이미지")]
+    public Sprite sprite; 
     // GIF? 
 
 }

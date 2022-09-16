@@ -21,11 +21,11 @@ public class AchievementViewObject : MonoBehaviour,IPointerEnterHandler,IPointer
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-		_descriptionManager.ActiveDescription(true, _achievementData._achievementCode + (int)DescriptionType.Achievement);
+		_descriptionManager.ActiveAchievementDescriptoin(true, _achievementData._achievementCode);
 	}
 	public void OnPointerExit(PointerEventData eventData)
 	{
-		_descriptionManager.ActiveDescription(false, _achievementData._achievementCode + (int)DescriptionType.Achievement);
+		_descriptionManager.ActiveAchievementDescriptoin(false, _achievementData._achievementCode);
 	}
 	/// <summary>
 	/// UI 업데이트

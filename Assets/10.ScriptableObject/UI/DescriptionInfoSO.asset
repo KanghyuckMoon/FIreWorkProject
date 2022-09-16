@@ -27,7 +27,13 @@ MonoBehaviour:
       title: 
       content: 
   - descriptionType: 300
-    descriptionData: []
+    descriptionData:
+    - code: 0
+      title: "\uB098\uBB34"
+      content: "100 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+    - code: 1
+      title: "\uB3CC"
+      content: 
   - descriptionType: 500
     descriptionData:
     - code: 500

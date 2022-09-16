@@ -14,6 +14,10 @@ public class DescriptionManager : MonoBehaviour
     private RectTransform _descriptionPanelRect;
     [SerializeField]
     private DescriptionInfoSO _descriptionInfoSO;
+    [SerializeField]
+    private AchievementDataSO _achievementDataSO;
+    [SerializeField]
+    private ItemDataSO _itemDataSO; 
 
     public DescriptionInfoSO DescriptionInfoSO => _descriptionInfoSO; 
     /// <summary>
@@ -47,6 +51,24 @@ public class DescriptionManager : MonoBehaviour
         }
         _descriptionPanelRect.gameObject.SetActive(false);
     }
+
+    /// <summary>
+    /// 업적 설명창 활성화
+    /// </summary>
+    public void ActiveAchievementDescriptoin(bool isActive, int code)
+    {
+        if (isActive == true)
+        {
+            AchievementData achievementData = _achievementDataSO._achievementDatas.Find((x) => x._achievementCode == code);
+            _description.titleText.text = achievementData._achievementName;
+            _description.contentText.text = achievementData._content;
+
+            _descriptionPanelRect.gameObject.SetActive(true);
+            _descriptionPanelRect.anchoredPosition = Input.mousePosition;
+            return;
+        }
+        _descriptionPanelRect.gameObject.SetActive(false);
+    }
 }
 
 [System.Serializable]
@@ -54,6 +76,7 @@ public class Description
 {
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI contentText;
+    public UnityEngine.UI.Image image; 
 }
 
 public enum DescriptionType_
