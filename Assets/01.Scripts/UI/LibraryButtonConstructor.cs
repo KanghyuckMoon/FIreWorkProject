@@ -43,8 +43,6 @@ public class LibraryButtonConstructor
             UpgradeButtonElement buttonElement = new UpgradeButtonElement(upgradeButton, lockElement, upgradeButtonInfo.isOpened, buttonType); // 생성 
 
             upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
-            upgradeButton.RegisterCallback<MouseOverEvent>((x) => _descriptionManager.ActiveDescription(true, x.originalMousePosition));
-            upgradeButton.RegisterCallback<MouseOutEvent>((x) => _descriptionManager.ActiveDescription(false, x.mousePosition));
 
             _buttonElementList.Add(buttonElement);
         }

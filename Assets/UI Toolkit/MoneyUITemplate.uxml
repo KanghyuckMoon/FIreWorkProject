@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/MainUI.uss?fileID=7433441132597879392&amp;guid=dd05040a117160447bb194c19628c36f&amp;type=3#MainUI" />
-    <ui:VisualElement name="top-panel" class="top-panel" style="justify-content: flex-start; width: 100%; flex-direction: row; flex-wrap: nowrap; margin-left: 0; left: auto;">
-        <ui:VisualElement name="topLeft-panel" class="topLeft-panel" style="display: flex; visibility: visible; flex-direction: row; justify-content: flex-start; align-items: stretch;">
+    <ui:VisualElement name="top-panel" class="top-panel" style="justify-content: flex-start; width: 70%; flex-direction: row; flex-wrap: nowrap; margin-left: 0; left: auto;">
+        <ui:VisualElement name="topLeft-panel" class="topLeft-panel" style="display: flex; visibility: visible; flex-direction: row; justify-content: flex-start; align-items: stretch; flex-grow: 0.7;">
             <ui:VisualElement name="uiBox" class="uiBox" style="flex-direction: column; align-items: flex-start; padding-left: 3%; padding-top: 20px;">
                 <ui:VisualElement name="happyMoneyParent" style="flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 1%;">
                     <ui:VisualElement name="happyMoney-image" style="height: 100%; flex-grow: 0; width: auto; padding-left: 70px; background-image: url(&apos;project://database/Assets/18.CharacterSprite/man.png?fileID=21300000&amp;guid=19a0d5435ab6f934797d9bf251d7a368&amp;type=3#man&apos;); margin-right: 10px;" />
@@ -13,6 +13,6 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="topRight-panel" class="topRight-panel" style="flex-grow: 0.8;" />
+        <ui:VisualElement name="topRight-panel" class="topRight-panel" style="flex-grow: 0.8; display: none; visibility: hidden;" />
     </ui:VisualElement>
 </ui:UXML>

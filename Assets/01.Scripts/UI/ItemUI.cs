@@ -6,6 +6,15 @@ using UnityEngine.Scripting;
 using System;
 public class ItemUI : VisualElement
 {
+    protected DescriptionManager DescriptionManager
+    {
+        get
+        {
+            _descriptionManager ??= GameObject.FindObjectOfType<DescriptionManager>();
+            return _descriptionManager;
+        }
+    }
+
     protected ItemData _itemData;
     protected int _itemCode; 
 
@@ -13,7 +22,7 @@ public class ItemUI : VisualElement
     protected VisualElement _itemImage;
     protected Label _itemCost;
 
-
+    protected DescriptionManager _descriptionManager;
     /// <summary>
     /// 
     /// </summary>
@@ -46,11 +55,15 @@ public class ItemUI : VisualElement
         this.Add(_button);
         _button.Add(_itemImage);
 
-//        CheckPurchasable(isPurchasable); // 구매 가능한 아이템인지 체크(라이브러리 아이템이면 구매 불가) 
+        DescriptionManager.SetDescriptionClickEvent(_button, _itemCode);
+
+        //        CheckPurchasable(isPurchasable); // 구매 가능한 아이템인지 체크(라이브러리 아이템이면 구매 불가) 
 
         //PurchasedItem();
+
+
     }
-    
+
     private void SetColor(ItemData itemData)
     {
         if (itemData.itemType == EItem.Color) // 색 아이템이면 

@@ -93,6 +93,6 @@
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:Instance template="SettingTemplate" name="SettingTemplate" style="width: 100%; height: 100%; position: absolute; display: none; transform-origin: center;" />
-    <ui:Instance template="ShopUI" name="ShopTemplate" style="position: absolute; width: 100%; height: 100%; display: none;" />
+    <ui:Instance template="ShopUI" name="ShopTemplate" style="position: absolute; width: 100%; height: 100%; display: flex;" />
     <ui:Instance template="LibraryTemplate" name="LibraryTemplate" style="position: absolute; width: 100%; height: 100%; display: none;" />
 </ui:UXML>

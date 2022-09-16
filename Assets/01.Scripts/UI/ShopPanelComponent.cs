@@ -43,6 +43,7 @@ public class ShopPanelComponent : UIComponent
         _shopPanel.style.display = DisplayStyle.None;
         _shopButton = _uiButtonManager.RootElement.Q<Button>("shop-button");
         _lockIcon = _uiButtonManager.RootElement.Q<VisualElement>("shopLock-icon");
+        _lockIcon.style.display = DisplayStyle.Flex; 
 
         _shopBackButton = _shopPanel.Q<Button>("back-button");
         

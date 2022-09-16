@@ -29,7 +29,6 @@ public class UIButtonManager : MonoBehaviour
     private UpgradeButtonConstructor _upgradeUI; 
     private VisualElement _settingPanel; // 설정 패널 
 
-
     private UIDocument _mainUIDoc; // 메인 UIDocument 
     private VisualElement _rootElement; // 최상위 오브젝트 
     private VisualElement _gameScreen; // mainUI 화면 
