@@ -135,13 +135,13 @@ MonoBehaviour:
   active: 1
   rotation:
     m_OverrideState: 1
-    m_Value: 95.4018
+    m_Value: 166.63606
   skyIntensityMode:
     m_OverrideState: 1
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 2.9
   multiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -505,22 +505,22 @@ MonoBehaviour:
       m_Value: {fileID: 2800000, guid: 57a33fc2476a01644865bfde5f06e2f4, type: 3}
     opacityR:
       m_OverrideState: 1
-      m_Value: 1
+      m_Value: 0.573
     opacityG:
       m_OverrideState: 1
-      m_Value: 0.308
+      m_Value: 0.937
     opacityB:
       m_OverrideState: 1
-      m_Value: 1
+      m_Value: 0
     opacityA:
       m_OverrideState: 1
-      m_Value: 0
+      m_Value: 0.678
     rotation:
       m_OverrideState: 1
       m_Value: 0
     tint:
       m_OverrideState: 1
-      m_Value: {r: 1, g: 1, b: 1, a: 1}
+      m_Value: {r: 0.4764151, g: 0.8451527, b: 1, a: 1}
     exposure:
       m_OverrideState: 1
       m_Value: 0

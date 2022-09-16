@@ -16600,7 +16600,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 10
-  m_ColorTemperature: 2573
+  m_ColorTemperature: 3304
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 1.02e-43, y: 0.000000008658667, z: 4.5904e-41, w: 0}
   m_UseBoundingSphereOverride: 0
