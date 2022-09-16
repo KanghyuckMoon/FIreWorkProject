@@ -9,7 +9,6 @@ public class UserSaveData
 	public string name;
 
 	//재화
-	public int money;
 	public int happy;
 
 	//리뉴얼
