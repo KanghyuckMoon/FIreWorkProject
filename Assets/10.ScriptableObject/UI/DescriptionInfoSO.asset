@@ -18,36 +18,46 @@ MonoBehaviour:
     - code: 0
       title: "\uBD89\uC740\uC0C9"
       content: "\uBD89\uC740\uC0C9\uC785\uB2C8\uB2E4 "
+      sprite: {fileID: 0}
     - code: 1
       title: "\uBD89\uC740\uC0C9"
       content: "\uBD89\uC740\uC0C9\uC785\uB2C8\uB2E4 "
+      sprite: {fileID: 0}
   - descriptionType: 101
     descriptionData:
     - code: 0
       title: 
       content: 
+      sprite: {fileID: 0}
   - descriptionType: 300
     descriptionData:
     - code: 0
       title: "\uB098\uBB34"
       content: "100 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+      sprite: {fileID: 0}
     - code: 1
       title: "\uB3CC"
       content: 
+      sprite: {fileID: 0}
   - descriptionType: 500
     descriptionData:
     - code: 500
       title: "\uAC1C\uC218 \uC99D\uAC00"
       content: 
+      sprite: {fileID: 21300000, guid: 2eea44525661b714ca69c59d5680fef0, type: 3}
     - code: 501
       title: "\uC18D\uB3C4 \uC99D\uAC00"
       content: 
+      sprite: {fileID: 21300000, guid: cfb73d75822a05741ace9c9d4904a5f5, type: 3}
     - code: 502
       title: "\uB9AC\uB274\uC5BC"
       content: 
+      sprite: {fileID: 21300000, guid: cfb73d75822a05741ace9c9d4904a5f5, type: 3}
     - code: 503
       title: "\uCD94\uAC00\uD3ED\uBC1C1 \uAC15\uD654"
       content: 
+      sprite: {fileID: 21300000, guid: c0128d8e0fde42547939a574c3f3fd51, type: 3}
     - code: 504
       title: "\uCD94\uAC00\uD3ED\uBC1C2 \uAC15\uD654"
       content: 
+      sprite: {fileID: 21300000, guid: c0128d8e0fde42547939a574c3f3fd51, type: 3}

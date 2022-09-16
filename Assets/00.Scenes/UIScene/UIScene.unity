@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2.1837535, g: 2.5231857, b: 3.1917372, a: 1}
+  m_IndirectSpecularColor: {r: 2.1822553, g: 2.521758, b: 3.1901798, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1237,7 +1237,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &477193060
 RectTransform:
@@ -6972,8 +6972,11 @@ MonoBehaviour:
   _description:
     titleText: {fileID: 2246343394376832371}
     contentText: {fileID: 2246343394376832372}
+    image: {fileID: 0}
   _descriptionPanelRect: {fileID: 934604642}
   _descriptionInfoSO: {fileID: 11400000, guid: e9b97d0ea9a9dfa4f9ba37f938d15dff, type: 2}
+  _achievementDataSO: {fileID: 11400000, guid: bda4b58d3acb68f4aa93d394a794939d, type: 2}
+  _itemDataSO: {fileID: 0}
 --- !u!1 &1002978677
 GameObject:
   m_ObjectHideFlags: 0

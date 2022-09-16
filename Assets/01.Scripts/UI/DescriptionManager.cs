@@ -59,6 +59,7 @@ public class DescriptionManager : MonoBehaviour
     {
         if (isActive == true)
         {
+            Debug.Log("code : " + code); 
             AchievementData achievementData = _achievementDataSO._achievementDatas.Find((x) => x._achievementCode == code);
             _description.titleText.text = achievementData._achievementName;
             _description.contentText.text = achievementData._content;
