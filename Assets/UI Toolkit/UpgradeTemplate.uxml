@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/UI%20Toolkit/UpgradeUI.uss?fileID=7433441132597879392&amp;guid=d92fbeb8e08528346a93e416eef095c5&amp;type=3#UpgradeUI" />
     <Style src="project://database/Assets/UI%20Toolkit/MainUI.uss?fileID=7433441132597879392&amp;guid=dd05040a117160447bb194c19628c36f&amp;type=3#MainUI" />
     <ui:VisualElement name="game_screen" style="height: 100%; width: 100%; flex-direction: column; align-items: center; justify-content: flex-start; flex-grow: 1; background-color: rgba(47, 48, 47, 0); display: flex;">
-        <ui:VisualElement style="flex-grow: 0.7; align-items: stretch; justify-content: space-around; left: 0; position: absolute; flex-direction: row; height: 100%; display: flex; width: 100%; top: -16px;">
+        <ui:VisualElement style="flex-grow: 0.7; align-items: stretch; justify-content: space-around; left: 0; position: absolute; flex-direction: row; height: 100%; display: flex; width: 100%; top: -16px; background-color: rgba(0, 0, 0, 0);">
             <ui:VisualElement name="left-panel" style="flex-grow: 1; align-items: flex-end; justify-content: flex-start; margin-top: 10%;">
                 <ui:VisualElement name="further2-upgrade-button" class="neon-label upgrade-element" style="translate: 0 0;">
                     <ui:VisualElement name="lock-icon" class="lockIcon" />
