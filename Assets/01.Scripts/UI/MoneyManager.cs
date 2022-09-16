@@ -53,7 +53,7 @@ public class MoneyManager : MonoBehaviour
     void UpdateMoneyText()
     {
         _happyMoneyLabel.text = string.Format("Çàº¹µµ : {0}", UserSaveDataManager.Instance.UserSaveData.happy);
-        _moneyLabel.text = string.Format("µ· : {0}", UserSaveDataManager.Instance.UserSaveData.money);
+        //_moneyLabel.text = string.Format("µ· : {0}", UserSaveDataManager.Instance.UserSaveData.money);
             
         //int a = happyMoney;
         //int b = money;

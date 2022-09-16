@@ -9,8 +9,8 @@ using UnityEngine.EventSystems;
 public class AchievementViewObject : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 {
 	[SerializeField] private TextMeshProUGUI _nameText;
-	[SerializeField] private TextMeshProUGUI _contentText;
 	[SerializeField] private TextMeshProUGUI _clearText;
+	[SerializeField] private Image _image;
 	private RectTransform _rectTransform;
 
 	private AchievementData _achievementData; // 업적 데이터 
@@ -37,8 +37,6 @@ public class AchievementViewObject : MonoBehaviour,IPointerEnterHandler,IPointer
 		_rectTransform ??= GetComponent<RectTransform>();
 		_achievementData ??= achievementData; 
 
-		_contentText.text = achievementData._content;
-
 		if(isGetAchievement)
 		{
 			_nameText.text = achievementData._achievementName;
@@ -52,6 +50,7 @@ public class AchievementViewObject : MonoBehaviour,IPointerEnterHandler,IPointer
 
 		_rectTransform.localScale = Vector3.zero;
 		_rectTransform.DOScale(1, 0.3f).SetEase(Ease.InOutElastic).SetDelay(achievementData._achievementCode * 0.1f);
+		_image.sprite = achievementData._sprite;
 	}
 
 
