@@ -15,7 +15,7 @@ MonoBehaviour:
   _achievementDatas:
   - _achievementCode: 0
     _achievementName: "\uB098\uBB34"
-    _content: "0000 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
+    _content: "100 \uD589\uBCF5\uB3C4 \uB2EC\uC131"
     _functionName: OpenCutScene
     _functionParameter: 2
     _isCantView: 0
