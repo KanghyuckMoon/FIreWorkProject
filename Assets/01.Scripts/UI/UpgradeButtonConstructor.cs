@@ -11,6 +11,8 @@ using System.Reflection;
 public class UpgradeButtonConstructor : MonoBehaviour
 {
     private FireWorkController _fireWorkController;
+    private DescriptionManager _descriptionManager; 
+
     private VisualElement _rootElement;
     private UIDocument _mainUIDoc;
 
@@ -29,6 +31,7 @@ public class UpgradeButtonConstructor : MonoBehaviour
     private void Awake()
     {
         _fireWorkController = FindObjectOfType<FireWorkController>();
+        _descriptionManager = FindObjectOfType<DescriptionManager>(); 
         _mainUIDoc = GetComponent<UIDocument>();
         _rootElement = _mainUIDoc.rootVisualElement;
     }
@@ -50,7 +53,6 @@ public class UpgradeButtonConstructor : MonoBehaviour
         {
             LockOrUnlockButton(UpgradeButtonType.Renewal, true);
             _isOpenRenewal = true;
-
         }
     }
     private void Init()
@@ -88,8 +90,12 @@ public class UpgradeButtonConstructor : MonoBehaviour
                                                                                                                             _fireWorkController, costLabel, upgradeButtonInfo.costPropertyName); // 생성 
 
             upgradeButton.clicked += upgradeButtonInfo.clickEvent; // 클릭 이벤트 넣기 
-            upgradeButton.RegisterCallback<MouseOverEvent>((x) => ActiveDescription(x,upgradeButton));
-            upgradeButton.RegisterCallback<MouseOutEvent>((x) => DisableDescription(x));
+            //upgradeButton.RegisterCallback<MouseOverEvent>((x) => ActiveDescription(x,upgradeButton));
+            //upgradeButton.RegisterCallback<MouseOutEvent>((x) => DisableDescription(x));
+            
+            // 설명창 활성화 이벤트 등록 
+            upgradeButton.RegisterCallback<MouseOverEvent>((x) => _descriptionManager.ActiveDescription(true,(int)buttonType + (int)DescriptionType.Upgrade));
+            upgradeButton.RegisterCallback<MouseOutEvent>((x) => _descriptionManager.ActiveDescription(false, (int)buttonType + (int)DescriptionType.Upgrade));
 
 
             _buttonElementList.Add(buttonElement);
@@ -351,7 +357,8 @@ public enum UpgradeButtonType
 {
     CountUp,
     RateUp,
-    Renewal,
     Further1,
-    Further2
+    Further2,
+    Renewal,
+
 }

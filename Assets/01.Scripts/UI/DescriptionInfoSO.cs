@@ -5,6 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="SO/UI/DescriptionInfoSO")]
 public class DescriptionInfoSO : ScriptableObject
 {
+    [Header("ID 코드")]
+    [Header(" 0 ~ 100 - 색 아이템")]
+    [Header("101 ~ 220 - 모양 아이템")]
+    [Header("300 ~ 400 - 업적")]
+    [Header("500 ~ 600 - 업그레이드바")]
     public List<DescriptionInfo> descriptionList = new List<DescriptionInfo>();
     
     /// <summary>
@@ -62,7 +67,7 @@ public class DescriptionData
     public int code; 
     [Header("제목")]
     public string title; // 설명 제목 
-    [Multiline,Header("내용")]
+    [TextArea(2,4),Header("내용")]
     public string content; // 내용 
     // GIF? 
 
@@ -73,7 +78,7 @@ public enum DescriptionType : int
     None = -1, 
     ColorItem = 0,
     ShapeItem = 101,
-    Achievement = 221,
-    Upgrade = 301
+    Achievement = 300,
+    Upgrade = 500
 
 }

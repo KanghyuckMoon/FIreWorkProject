@@ -16,11 +16,6 @@ public class DescriptionManager : MonoBehaviour
     private DescriptionInfoSO _descriptionInfoSO;
 
     public DescriptionInfoSO DescriptionInfoSO => _descriptionInfoSO; 
-    private void Awake()
-    {
-        
-    }
-
     /// <summary>
     /// UI빌더 버튼 설명창
     /// </summary>

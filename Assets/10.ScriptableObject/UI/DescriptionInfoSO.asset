@@ -28,5 +28,20 @@ MonoBehaviour:
       content: 
   - descriptionType: 221
     descriptionData: []
-  - descriptionType: 301
-    descriptionData: []
+  - descriptionType: 500
+    descriptionData:
+    - code: 500
+      title: "\uAC1C\uC218 \uC99D\uAC00"
+      content: 
+    - code: 501
+      title: "\uC18D\uB3C4 \uC99D\uAC00"
+      content: 
+    - code: 502
+      title: "\uB9AC\uB274\uC5BC"
+      content: 
+    - code: 503
+      title: "\uCD94\uAC00\uD3ED\uBC1C1 \uAC15\uD654"
+      content: 
+    - code: 504
+      title: "\uCD94\uAC00\uD3ED\uBC1C2 \uAC15\uD654"
+      content: 
