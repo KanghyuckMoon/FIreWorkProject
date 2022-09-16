@@ -520,7 +520,6 @@ public class FireWorkController : MonoBehaviour
 		}
 
 		HappyMoneyManager.Instance.Happy = 0;
-		HappyMoneyManager.Instance.AddMoney((int)Mathf.Abs(_count - _rate / 2) * (_further1 + 1) * (_further2 + 1));
 
 		_count = 1;
 		_rate = 10f;

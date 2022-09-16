@@ -19,17 +19,6 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 			_popUpManager = value;
 		}
 	}
-	public int Money
-	{
-		get
-		{
-			return UserSaveDataManager.Instance.UserSaveData.money;
-		}
-		set
-		{
-			UserSaveDataManager.Instance.UserSaveData.money = value;
-		}
-	}
 	public int Happy
 	{
 		get
@@ -48,16 +37,6 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 			_fireWorkController ??= FindObjectOfType<FireWorkController>();
 			return _fireWorkController;
 		}
-	}
-
-	/// <summary>
-	/// 돈 증가
-	/// </summary>
-	/// <param name="money"></param>
-	public void AddMoney(int money)
-	{
-		//DetailsUI.instance.AddingScore(money);
-		UserSaveDataManager.Instance.UserSaveData.money += money;
 	}
 	/// <summary>
 	/// 행복도 증가
@@ -94,22 +73,6 @@ public class HappyMoneyManager : Singleton<HappyMoneyManager>
 
 
 		AddHappy(happy);
-	}
-
-	/// <summary>
-	/// 돈 감소
-	/// </summary>
-	/// <param name="money"></param>
-	/// <returns></returns>
-	public bool RemoveMoney(int money)
-	{
-		if (UserSaveDataManager.Instance.UserSaveData.money < money)
-		{
-			PopUpManager.SetPopUp("돈이 부족합니다");
-			return false;
-		}
-		UserSaveDataManager.Instance.UserSaveData.money -= money;
-		return true;
 	}
 	/// <summary>
 	/// 행복도 감소
