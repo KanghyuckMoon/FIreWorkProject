@@ -25,8 +25,8 @@ public class ChangeDay : MonoBehaviour
         var profiles = _volume.sharedProfile;
         profiles.TryGet<HDRISky>(out _hdrisky);
 
-        _hdrisky.exposure.value = 5f;
-        _light.intensity = 0;
+        _hdrisky.exposure.value = 3f;
+        _light.intensity = 60;
 
         StartCoroutine(ChangeSky());
     }
@@ -57,12 +57,12 @@ public class ChangeDay : MonoBehaviour
         if (transform.eulerAngles.z < 90f || transform.eulerAngles.z > 270f)
         {
             currentSpeed = night;
-            if (_hdrisky.exposure.value >= 5)
+            if (_hdrisky.exposure.value >= 3)
             {
                 _hdrisky.exposure.value -= 0.1f;
             }
 
-            if (_light.intensity >= 0)
+            if (_light.intensity >= 60)
             {
                 _light.intensity -= 3f;
             }
@@ -71,13 +71,13 @@ public class ChangeDay : MonoBehaviour
         else //if(Mathf.Abs(transform.eulerAngles.z) < 270f && Mathf.Abs(transform.eulerAngles.z) < 90f)
         {
             currentSpeed = dayTime;
-            if (_hdrisky.exposure.value <= 15)
+            if (_hdrisky.exposure.value <= 6)
             {
                 _hdrisky.exposure.value += 0.1f;
             }
-            if (_light.intensity <= 600)
+            if (_light.intensity <= 4000)
             {
-                _light.intensity += 3f;
+                _light.intensity += 200f;
             }
         }
 
