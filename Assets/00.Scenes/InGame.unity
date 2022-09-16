@@ -62525,8 +62525,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sun: {fileID: 242306687}
   moon: {fileID: 1734879835}
-  dayTime: 10
-  night: 10
+  dayTime: 0.5
+  night: 0.1
   currentSpeed: 0
   _volume: {fileID: 2134502909}
   _hdrisky: {fileID: 0}
